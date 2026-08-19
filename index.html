@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arnold Verhoeven — AGV IT Consulting | IT Project Manager, Consultant &amp; Web Developer</title>
+<meta name="description" content="Arnold Verhoeven — independent IT project manager, IT consultant and freelance web developer, specialised in ISO 27001, NIS2 compliance, IAM/SSO and infrastructure programmes. PMP &amp; PRINCE2 certified.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --bg-panel:#F1F5FC;
+    --bg-panel-2:#E3ECFA;
+    --line:#DAE5F5;
+    --line-soft:#EAF1FB;
+    --text:#0E2240;
+    --text-muted:#54627E;
+    --text-faint:#8B98B3;
+    --amber:#2563EB;
+    --amber-hover:#3B82F6;
+    --blue:#0284C7;
+    --radius:2px;
+    --maxw:1180px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+    background-image:
+      linear-gradient(var(--line-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+    background-size:64px 64px;
+    opacity:0.7;
+    mask-image:radial-gradient(ellipse 90% 60% at 50% 0%, black 40%, transparent 100%);
+    -webkit-mask-image:radial-gradient(ellipse 90% 60% at 50% 0%, black 40%, transparent 100%);
+  }
+
+  h1,h2,h3{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:600;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing:0.02em;
+  }
+
+  a{color:inherit;}
+
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 32px;
+    position:relative;
+    z-index:1;
+  }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(255,255,255,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:18px 32px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .logo{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size:15px;
+    letter-spacing:0.02em;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    color:var(--text);
+  }
+  .logo-mark{
+    width:9px;height:9px;
+    background:var(--amber);
+    border-radius:1px;
+    flex-shrink:0;
+  }
+  nav.links{
+    display:flex;
+    gap:36px;
+    font-size:14px;
+    color:var(--text-muted);
+  }
+  nav.links a{
+    text-decoration:none;
+    transition:color .2s;
+    position:relative;
+  }
+  nav.links a:hover, nav.links a:focus-visible{color:var(--text);}
+  .nav-cta{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:13px;
+    font-family:'IBM Plex Mono', monospace;
+    color:#FFFFFF;
+    background:var(--amber);
+    padding:9px 16px;
+    border-radius:var(--radius);
+    text-decoration:none;
+    white-space:nowrap;
+    transition:background .2s, transform .2s;
+  }
+  .nav-cta:hover{background:var(--amber-hover);}
+  .nav-mobile-toggle{display:none;}
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--blue);
+    outline-offset:3px;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:96px 0 88px;
+    position:relative;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:48px;
+    align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:var(--amber);
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    margin-bottom:22px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px;height:1px;
+    background:var(--amber);
+  }
+  .hero h1{
+    font-size:clamp(34px, 4.4vw, 54px);
+    line-height:1.09;
+    color:var(--text);
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--amber);
+  }
+  .hero p.lead{
+    margin-top:24px;
+    font-size:17px;
+    line-height:1.7;
+    color:var(--text-muted);
+    max-width:46ch;
+  }
+  .hero-actions{
+    margin-top:36px;
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-size:14px;
+    font-weight:500;
+    padding:13px 22px;
+    border-radius:var(--radius);
+    text-decoration:none;
+    transition:all .2s;
+    border:1px solid transparent;
+  }
+  .btn-primary{
+    background:var(--amber);
+    color:#FFFFFF;
+  }
+  .btn-primary:hover{background:var(--amber-hover); transform:translateY(-1px);}
+  .btn-ghost{
+    border-color:var(--line);
+    color:var(--text);
+  }
+  .btn-ghost:hover{border-color:var(--blue); color:var(--blue);}
+
+  .hero-meta{
+    margin-top:44px;
+    display:flex;
+    gap:32px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--text-faint);
+  }
+  .hero-meta span{color:var(--text-muted);}
+
+  /* schematic */
+  .schematic{
+    position:relative;
+    aspect-ratio:1/1;
+    max-width:480px;
+    margin:0 auto;
+  }
+  .schematic svg{width:100%; height:100%; overflow:visible;}
+  .sch-line{
+    stroke:var(--line);
+    stroke-width:1.2;
+    fill:none;
+    stroke-dasharray:400;
+    stroke-dashoffset:400;
+    animation:draw 1.8s ease forwards;
+  }
+  .sch-line.active{stroke:rgba(37,99,235,0.3);}
+  @keyframes draw{to{stroke-dashoffset:0;}}
+  .sch-node{
+    fill:var(--bg-panel);
+    stroke:var(--line);
+    stroke-width:1.2;
+  }
+  .sch-node.active{
+    stroke:var(--amber);
+  }
+  .sch-node.center{
+    fill:var(--bg-panel-2);
+    stroke:var(--blue);
+  }
+  .sch-pulse{
+    fill:none;
+    stroke:var(--amber);
+    stroke-width:1.5;
+    opacity:0;
+    transform-origin:center;
+    animation:pulse 3s ease-out infinite;
+  }
+  .sch-pulse.d2{animation-delay:1.5s;}
+  @keyframes pulse{
+    0%{opacity:0.65; transform:scale(1);}
+    100%{opacity:0; transform:scale(1.9);}
+  }
+  .sch-label{
+    font-family:'IBM Plex Mono', monospace;
+    fill:var(--text-muted);
+    font-size:10.5px;
+  }
+  .sch-label.active{fill:var(--amber);}
+  .sch-label.center{fill:var(--text); font-size:11px;}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{
+    padding:96px 0;
+    border-top:1px solid var(--line);
+    position:relative;
+  }
+  .section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:24px;
+    margin-bottom:56px;
+    flex-wrap:wrap;
+  }
+  .section-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--text-faint);
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+  }
+  .section-head h2{
+    font-size:clamp(24px, 2.6vw, 32px);
+    margin-top:10px;
+    max-width:36ch;
+  }
+  .section-note{
+    font-size:14px;
+    color:var(--text-muted);
+    max-width:32ch;
+    text-align:right;
+  }
+  @media (max-width:700px){.section-note{text-align:left;}}
+
+  .reveal{
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity .7s ease, transform .7s ease;
+  }
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* ---------- FOCUS AREAS ---------- */
+  .focus-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .focus-card{
+    background:var(--bg);
+    padding:32px 26px;
+    transition:background .25s;
+  }
+  .focus-card:hover{background:var(--bg-panel);}
+  .focus-num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--amber);
+  }
+  .focus-card h3{
+    font-size:18px;
+    margin-top:18px;
+    color:var(--text);
+  }
+  .focus-card p{
+    font-size:14px;
+    color:var(--text-muted);
+    margin-top:12px;
+    line-height:1.65;
+  }
+
+  /* ---------- TRACK RECORD ---------- */
+  .ledger{
+    border-top:1px solid var(--line);
+  }
+  .ledger-row{
+    display:grid;
+    grid-template-columns:150px 1fr 2.2fr;
+    gap:24px;
+    padding:26px 0;
+    border-bottom:1px solid var(--line);
+    align-items:baseline;
+  }
+  .ledger-row .years{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--amber);
+  }
+  .ledger-row .org{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:600;
+    font-size:16px;
+    color:var(--text);
+  }
+  .ledger-row .org span{
+    display:block;
+    font-family:'Inter', sans-serif;
+    font-weight:400;
+    font-size:13px;
+    color:var(--text-faint);
+    margin-top:3px;
+  }
+  .ledger-row .desc{
+    font-size:14px;
+    color:var(--text-muted);
+    line-height:1.7;
+  }
+  @media (max-width:760px){
+    .ledger-row{grid-template-columns:1fr; gap:6px;}
+  }
+
+  /* ---------- CERTS ---------- */
+  .certs{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .cert-card{
+    background:var(--bg);
+    padding:34px;
+    display:flex;
+    align-items:center;
+    gap:22px;
+  }
+  .cert-seal{
+    width:56px; height:56px;
+    border-radius:50%;
+    border:1.5px solid var(--blue);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--blue);
+    flex-shrink:0;
+  }
+  .cert-info h3{font-size:16px;}
+  .cert-info p{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--text-faint);
+    margin-top:6px;
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact-panel{
+    background:var(--bg-panel);
+    border:1px solid var(--line);
+    padding:64px 56px;
+    text-align:center;
+    position:relative;
+  }
+  .contact-panel h2{
+    font-size:clamp(26px, 3.4vw, 38px);
+    max-width:22ch;
+    margin:0 auto;
+  }
+  .contact-panel p{
+    color:var(--text-muted);
+    margin-top:18px;
+    font-size:15px;
+  }
+  .contact-actions{
+    margin-top:34px;
+    display:flex;
+    justify-content:center;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  @media (max-width:640px){.contact-panel{padding:48px 24px;}}
+
+  footer{
+    padding:36px 0 48px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--text-faint);
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  footer a{text-decoration:none; color:var(--text-faint); transition:color .2s;}
+  footer a:hover{color:var(--text-muted);}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr; gap:56px;}
+    .schematic{max-width:360px;}
+    .certs{grid-template-columns:1fr;}
+    nav.links{display:none;}
+  }
+  @media (max-width:560px){
+    .wrap{padding:0 20px;}
+    .nav-inner{padding:16px 20px;}
+    section{padding:64px 0;}
+    .hero{padding:56px 0 64px;}
+    .focus-grid{grid-template-columns:1fr;}
+    .ledger-row{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="#top" class="logo"><span class="logo-mark"></span>AGV IT CONSULTING</a>
+    <nav class="links">
+      <a href="#focus">Focus</a>
+      <a href="#track-record">Track record</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="https://www.linkedin.com/in/arnold-verhoeven" target="_blank" rel="noopener">LinkedIn ↗</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" style="border-top:none;">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">IT Project Manager · Consultant · Web Developer · Antwerp, Belgium</div>
+        <h1>Security &amp; compliance programmes, <em>turned into working infrastructure.</em></h1>
+        <p class="lead">I'm Arnold Verhoeven, a PMP and PRINCE2 certified IT project manager, consultant and freelance web developer. I built my experience across the pharmaceutical and logistics sectors, on projects of every kind — which is exactly what lets me challenge every stakeholder I work with, from the boardroom to the build itself.</p>
+        <p class="lead">Today that experience is concentrated on ISO 27001 certification tracks, NIS2 compliance programmes, and the identity, network and automation projects that sit underneath them.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://www.linkedin.com/in/arnold-verhoeven" target="_blank" rel="noopener">View full profile on LinkedIn</a>
+          <a class="btn btn-ghost" href="#contact">Get in touch</a>
+        </div>
+        <div class="hero-meta">
+          <div><span>13+ yrs</span> IT project management</div>
+          <div><span>PMP</span> &amp; <span>PRINCE2</span> certified</div>
+          <div><span>EMEA / AMER</span> programme delivery</div>
+        </div>
+      </div>
+
+      <div class="schematic" aria-hidden="true">
+        <svg viewBox="0 0 400 400">
+          <!-- connecting lines -->
+          <line class="sch-line active" x1="200" y1="200" x2="200" y2="70"/>
+          <line class="sch-line active" x1="200" y1="200" x2="330" y2="140"/>
+          <line class="sch-line" x1="200" y1="200" x2="345" y2="270"/>
+          <line class="sch-line" x1="200" y1="200" x2="200" y2="335"/>
+          <line class="sch-line" x1="200" y1="200" x2="60" y2="270"/>
+          <line class="sch-line" x1="200" y1="200" x2="70" y2="135"/>
+
+          <!-- center node -->
+          <circle class="sch-node center" cx="200" cy="200" r="34"/>
+          <text class="sch-label center" x="200" y="197" text-anchor="middle">SECURITY</text>
+          <text class="sch-label center" x="200" y="211" text-anchor="middle">PROGRAMME</text>
+
+          <!-- ISO 27001 node (active) -->
+          <circle class="sch-pulse" cx="200" cy="70" r="26"/>
+          <circle class="sch-node active" cx="200" cy="70" r="26"/>
+          <text class="sch-label active" x="200" y="66" text-anchor="middle">ISO</text>
+          <text class="sch-label active" x="200" y="78" text-anchor="middle">27001</text>
+
+          <!-- NIS2 node (active) -->
+          <circle class="sch-pulse d2" cx="330" cy="140" r="24"/>
+          <circle class="sch-node active" cx="330" cy="140" r="24"/>
+          <text class="sch-label active" x="330" y="144" text-anchor="middle">NIS2</text>
+
+          <!-- IAM -->
+          <circle class="sch-node" cx="345" cy="270" r="24"/>
+          <text class="sch-label" x="345" y="274" text-anchor="middle">IAM</text>
+
+          <!-- SSO -->
+          <circle class="sch-node" cx="200" cy="335" r="24"/>
+          <text class="sch-label" x="200" y="339" text-anchor="middle">SSO</text>
+
+          <!-- LAN/WAN -->
+          <circle class="sch-node" cx="60" cy="270" r="24"/>
+          <text class="sch-label" x="60" y="266" text-anchor="middle">LAN</text>
+          <text class="sch-label" x="60" y="278" text-anchor="middle">WAN</text>
+
+          <!-- M&A -->
+          <circle class="sch-node" cx="70" cy="135" r="24"/>
+          <text class="sch-label" x="70" y="139" text-anchor="middle">M&amp;A</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOCUS -->
+  <section id="focus">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-tag">Where I focus</div>
+          <h2>Four areas, one underlying discipline: making sure the programme actually lands.</h2>
+        </div>
+        <p class="section-note">Currently concentrated on ISO 27001 and NIS2 for business unit IT.</p>
+      </div>
+
+      <div class="focus-grid reveal">
+        <div class="focus-card">
+          <div class="focus-num">01</div>
+          <h3>ISO 27001 &amp; NIS2</h3>
+          <p>Leading the certification track and compliance roadmap for business unit IT — from gap analysis to audit-ready evidence.</p>
+        </div>
+        <div class="focus-card">
+          <div class="focus-num">02</div>
+          <h3>Identity &amp; Access</h3>
+          <p>IAM programmes, SSO rollouts and SaaS transition projects that reduce exposure without slowing the business down.</p>
+        </div>
+        <div class="focus-card">
+          <div class="focus-num">03</div>
+          <h3>Infrastructure &amp; automation</h3>
+          <p>IT-side delivery of automation projects — goods-to-man, ASRS, conveyors, vertical lift modules — plus LAN/WAN renewals across EMEA and AMER.</p>
+        </div>
+        <div class="focus-card">
+          <div class="focus-num">04</div>
+          <h3>Site start-ups &amp; M&amp;A</h3>
+          <p>Standing up IT for new sites and integrating acquisitions, so the security and infrastructure baseline is right from day one.</p>
+        </div>
+        <div class="focus-card">
+          <div class="focus-num">05</div>
+          <h3>IT consultancy &amp; web development</h3>
+          <p>Pragmatic advice outside the confines of a single programme, plus hands-on freelance web development — this site included.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACK RECORD -->
+  <section id="track-record">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-tag">Track record</div>
+          <h2>13 years across pharma, logistics, healthcare and rail.</h2>
+        </div>
+        <p class="section-note">Full project history and references available on LinkedIn.</p>
+      </div>
+
+      <div class="ledger reveal">
+        <div class="ledger-row">
+          <div class="years mono">2023 — Now</div>
+          <div class="org">Katoen Natie<span>IT Project Manager</span></div>
+          <div class="desc">ISO 27001 &amp; NIS2 lead for business unit IT, IAM and SSO projects, SaaS transitions, automation programmes, site start-ups &amp; M&amp;A, and global LAN/WAN renewals.</div>
+        </div>
+        <div class="ledger-row">
+          <div class="years mono">2023</div>
+          <div class="org">Lonza<span>IT Project Manager, freelance</span></div>
+          <div class="desc">Migration of 250 servers to a new domain as a security-audit remediation action — dependency mapping, timeline and project charter.</div>
+        </div>
+        <div class="ledger-row">
+          <div class="years mono">2022</div>
+          <div class="org">CM — Christelijke Mutualiteit<span>Project Manager, freelance</span></div>
+          <div class="desc">New monitoring programme (CMDB, ELK/OpenSearch), file system upgrade, data-centre relocation and telephony fallback projects.</div>
+        </div>
+        <div class="ledger-row">
+          <div class="years mono">2017 — 2021</div>
+          <div class="org">Johnson &amp; Johnson (via NTT)<span>Project Manager</span></div>
+          <div class="desc">SD-WAN migration across 30 sites, EOL hardware consolidation, and multi-year voice transformation across EMEA.</div>
+        </div>
+        <div class="ledger-row">
+          <div class="years mono">2014 — 2017</div>
+          <div class="org">Ypto (NMBS)<span>Junior Project Manager</span></div>
+          <div class="desc">IT-business alignment, demand management and lifecycle rollout programmes across 10,000+ devices nationwide.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-tag">Certifications</div>
+          <h2>Credentials behind the delivery.</h2>
+        </div>
+      </div>
+
+      <div class="certs reveal">
+        <div class="cert-card">
+          <div class="cert-seal mono">PMP</div>
+          <div class="cert-info">
+            <h3>Project Management Professional</h3>
+            <p class="mono">CERTIFIED SINCE 2021 · PMI</p>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-seal mono">P2</div>
+          <div class="cert-info">
+            <h3>PRINCE2 Practitioner</h3>
+            <p class="mono">CERTIFIED SINCE 2017</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-panel reveal">
+        <div class="section-tag" style="margin-bottom:14px;">Get in touch</div>
+        <h2>Have a security, compliance or infrastructure programme that needs a hand on the wheel?</h2>
+        <p>Based in Antwerp, working across Belgium and EMEA. Freelance engagements, short-term or programme-length.</p>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="https://www.linkedin.com/in/arnold-verhoeven" target="_blank" rel="noopener">Message on LinkedIn</a>
+          <a class="btn btn-ghost" href="mailto:arnold.verhoeven@agv-it.be">arnold.verhoeven@agv-it.be</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:12px;">
+    <span>© 2026 AGV IT Consulting BV</span>
+    <a href="https://www.linkedin.com/in/arnold-verhoeven" target="_blank" rel="noopener">linkedin.com/in/arnold-verhoeven ↗</a>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+</script>
+
+</body>
+</html>
