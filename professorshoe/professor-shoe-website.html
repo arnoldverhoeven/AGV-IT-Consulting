@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professor Shoe — Meester schoenmaker, sleutel- &amp; slotenmakerij, Antwerpen</title>
+<meta name="description" content="Professor Shoe (Van Roelofs bv) in de Anselmostraat, Antwerpen: meester schoenmaker, herstelling van schoenen, tassen &amp; lederwaren, sleutel- en slotenmakerij, stempels &amp; graveerwerk.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --parchment:#f2e6d2;
+    --card:#fbf4e6;
+    --ink:#241813;
+    --leather:#7a3e23;
+    --leather-dark:#4a2414;
+    --copper:#b5732e;
+    --copper-light:#d69a5c;
+    --moss:#5b6650;
+    --line: rgba(36,24,19,0.14);
+    --shadow: 0 10px 24px rgba(74,36,20,0.14);
+    --radius: 2px;
+    --display: "Fraunces", Georgia, serif;
+    --body: "Inter", -apple-system, sans-serif;
+    --mono: "IBM Plex Mono", monospace;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--parchment);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;}
+  h1,h2,h3{font-family:var(--display); margin:0; color:var(--leather-dark); font-weight:700;}
+  p{margin:0;}
+  .container{max-width:1160px; margin:0 auto; padding:0 28px;}
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--copper);
+    font-weight:600;
+  }
+
+  /* subtle leather-grain texture, reused as a background layer */
+  .grain{position:relative;}
+  .grain::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      radial-gradient(rgba(74,36,20,0.05) 1px, transparent 1px),
+      radial-gradient(rgba(74,36,20,0.04) 1px, transparent 1px);
+    background-size: 3px 3px, 7px 7px;
+    background-position: 0 0, 2px 3px;
+    opacity:0.6;
+    pointer-events:none;
+  }
+
+  button, .btn{
+    font-family:var(--body);
+    font-weight:600;
+    font-size:14.5px;
+    cursor:pointer;
+    border:none;
+    border-radius:var(--radius);
+    letter-spacing:0.01em;
+  }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:13px 22px;
+    text-decoration:none;
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{
+    background:var(--leather);
+    color:var(--parchment);
+    box-shadow:var(--shadow);
+  }
+  .btn-primary:hover{background:var(--leather-dark);}
+  .btn-ghost{
+    background:transparent;
+    color:var(--leather-dark);
+    border:1.5px solid var(--leather-dark);
+    padding:11.5px 20px;
+  }
+  .btn-ghost:hover{background:var(--leather-dark); color:var(--parchment);}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(242,230,210,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-row{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 28px;
+  }
+  .logo{
+    display:flex; align-items:center; gap:10px;
+    text-decoration:none;
+  }
+  .logo-mark{width:34px; height:34px; flex-shrink:0;}
+  .logo-text{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:20px;
+    color:var(--leather-dark);
+    line-height:1;
+  }
+  .logo-text span{
+    display:block;
+    font-family:var(--mono);
+    font-size:9.5px;
+    letter-spacing:0.16em;
+    color:var(--copper);
+    font-weight:600;
+    margin-top:3px;
+  }
+  nav ul{
+    list-style:none; display:flex; gap:32px; margin:0; padding:0;
+  }
+  nav a{
+    text-decoration:none;
+    font-size:14.5px;
+    font-weight:500;
+    color:var(--ink);
+    position:relative;
+    padding-bottom:3px;
+  }
+  nav a::after{
+    content:"";
+    position:absolute; left:0; right:0; bottom:0;
+    height:2px; background:var(--copper);
+    transform:scaleX(0); transform-origin:left;
+    transition:transform 0.2s ease;
+  }
+  nav a:hover::after{transform:scaleX(1);}
+  .nav-actions{display:flex; align-items:center; gap:18px;}
+  .nav-toggle{display:none;}
+  .nav-toggle-label{display:none;}
+
+  @media (max-width:860px){
+    nav{
+      position:absolute; top:100%; left:0; right:0;
+      background:var(--parchment);
+      border-bottom:1px solid var(--line);
+      max-height:0; overflow:hidden;
+      transition:max-height 0.25s ease;
+    }
+    nav ul{flex-direction:column; gap:0; padding:8px 28px 18px;}
+    nav ul li{border-top:1px solid var(--line);}
+    nav ul li a{display:block; padding:14px 0;}
+    .nav-toggle:checked ~ nav{max-height:320px;}
+    .nav-toggle-label{
+      display:flex; flex-direction:column; gap:5px;
+      width:26px; cursor:pointer;
+    }
+    .nav-toggle-label span{height:2px; background:var(--leather-dark); border-radius:2px;}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg, #f6ecd9 0%, var(--parchment) 100%);
+    overflow:hidden;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-inner{
+    display:grid;
+    grid-template-columns:1.05fr 0.85fr;
+    align-items:center;
+    gap:40px;
+    padding:76px 28px 64px;
+  }
+  .hero-copy .eyebrow{margin-bottom:18px; display:inline-block;}
+  .hero h1{
+    font-size:clamp(2.4rem, 4.4vw, 3.6rem);
+    line-height:1.06;
+    letter-spacing:-0.01em;
+    margin-bottom:22px;
+  }
+  .hero h1 em{
+    font-style:italic;
+    font-weight:500;
+    color:var(--leather);
+  }
+  .hero p.lead{
+    font-size:18px;
+    max-width:46ch;
+    color:#3a2a1f;
+    margin-bottom:32px;
+  }
+  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:36px;}
+  .hero-meta{
+    display:flex; gap:28px; flex-wrap:wrap;
+    font-family:var(--mono); font-size:12.5px; color:var(--leather-dark);
+  }
+  .hero-meta div{display:flex; align-items:center; gap:8px;}
+  .hero-meta svg{width:15px; height:15px; stroke:var(--copper);}
+
+  .hero-art{position:relative; height:420px;}
+  .hero-art svg{position:absolute; inset:0; width:100%; height:100%;}
+
+  /* ---------- intro strip ---------- */
+  .intro{
+    padding:72px 28px;
+    border-bottom:1px solid var(--line);
+  }
+  .intro-inner{
+    max-width:820px; margin:0 auto; text-align:center;
+  }
+  .intro h2{
+    font-size:clamp(1.7rem, 3vw, 2.3rem);
+    line-height:1.25;
+    font-weight:600;
+  }
+  .intro .eyebrow{display:block; margin-bottom:14px;}
+
+  /* ---------- services: hanging tags ---------- */
+  .services{padding:88px 28px 96px;}
+  .section-head{max-width:640px; margin:0 auto 56px; text-align:center;}
+  .section-head .eyebrow{display:block; margin-bottom:14px;}
+  .section-head h2{font-size:clamp(1.8rem,3vw,2.4rem);}
+  .section-head p{margin-top:14px; color:#4a382c; font-size:16px;}
+
+  .tag-grid{
+    max-width:1160px; margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:34px 26px;
+  }
+  .tag{
+    position:relative;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:34px 20px 24px;
+    box-shadow:var(--shadow);
+    text-align:center;
+    transition:transform 0.2s ease;
+  }
+  .tag:hover{transform:translateY(-4px) rotate(0deg) !important;}
+  .tag:nth-child(4n+1){transform:rotate(-1.4deg);}
+  .tag:nth-child(4n+2){transform:rotate(1deg);}
+  .tag:nth-child(4n+3){transform:rotate(-0.6deg);}
+  .tag:nth-child(4n+4){transform:rotate(1.3deg);}
+  .tag-hole{
+    position:absolute; top:14px; left:50%; transform:translateX(-50%);
+    width:14px; height:14px; border-radius:50%;
+    background:var(--parchment);
+    border:2px solid var(--copper);
+    box-shadow:inset 0 1px 2px rgba(0,0,0,0.25);
+  }
+  .tag-icon{
+    width:40px; height:40px; margin:14px auto 16px;
+    color:var(--leather);
+  }
+  .tag-icon svg{width:100%; height:100%; stroke:var(--leather); fill:none; stroke-width:1.5;}
+  .tag h3{font-size:16.5px; font-weight:600; margin-bottom:8px; line-height:1.3;}
+  .tag p{font-size:13.5px; color:#5a4636; line-height:1.5;}
+  .tag-num{
+    display:block; margin-top:16px;
+    font-family:var(--mono); font-size:10.5px; letter-spacing:0.1em;
+    color:var(--copper); text-transform:uppercase;
+  }
+
+  @media (max-width:940px){
+    .tag-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:560px){
+    .tag-grid{grid-template-columns:1fr; max-width:340px;}
+    .tag:nth-child(n){transform:rotate(0deg);}
+  }
+
+  /* ---------- brands strip ---------- */
+  .brands{
+    background:var(--leather-dark);
+    padding:56px 28px;
+    border-top:1px solid rgba(0,0,0,0.2);
+    border-bottom:1px solid rgba(0,0,0,0.2);
+  }
+  .brands-inner{max-width:1000px; margin:0 auto; text-align:center;}
+  .brands .eyebrow{color:var(--copper-light);}
+  .brands h2{color:var(--parchment); font-size:clamp(1.4rem,2.4vw,1.9rem); margin:14px 0 34px; font-weight:500;}
+  .brand-row{
+    display:flex; flex-wrap:wrap; justify-content:center; align-items:center;
+    gap:14px 0;
+  }
+  .brand-row span{
+    font-family:var(--display);
+    font-style:italic;
+    font-weight:500;
+    font-size:clamp(1.1rem,2.3vw,1.5rem);
+    color:#f3e4c8;
+    padding:0 26px;
+    border-right:1px solid rgba(243,228,200,0.25);
+  }
+  .brand-row span:last-child{border-right:none;}
+  .brand-row .plus{
+    font-family:var(--mono); font-style:normal; font-size:14px; color:var(--copper-light);
+  }
+
+  /* ---------- why us ---------- */
+  .why{padding:96px 28px;}
+  .why-grid{
+    max-width:1000px; margin:0 auto;
+    display:grid; grid-template-columns:repeat(3,1fr); gap:44px;
+  }
+  .why-item{text-align:left;}
+  .why-icon{width:44px; height:44px; margin-bottom:18px;}
+  .why-icon svg{width:100%; height:100%; stroke:var(--copper); fill:none; stroke-width:1.4;}
+  .why-item h3{font-size:18px; margin-bottom:10px;}
+  .why-item p{font-size:14.5px; color:#4a382c;}
+  @media (max-width:760px){
+    .why-grid{grid-template-columns:1fr; gap:36px;}
+  }
+
+  /* ---------- location ---------- */
+  .location{
+    background:var(--card);
+    border-top:1px solid var(--line);
+    padding:96px 28px;
+  }
+  .location-inner{
+    max-width:1160px; margin:0 auto;
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:start;
+  }
+  .location-copy .eyebrow{display:block; margin-bottom:14px;}
+  .location h2{font-size:clamp(1.8rem,3vw,2.3rem); margin-bottom:20px;}
+  .location p.lead{font-size:16px; color:#4a382c; max-width:48ch; margin-bottom:34px;}
+  .map-sketch{
+    width:100%; aspect-ratio:16/10;
+    border:1px solid var(--line);
+    background:var(--parchment);
+    margin-bottom:34px;
+    position:relative;
+    overflow:hidden;
+  }
+  .map-sketch svg{width:100%; height:100%;}
+
+  .ticket{
+    background:var(--parchment);
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+    padding:36px 32px;
+    position:relative;
+  }
+  .ticket::before, .ticket::after{
+    content:"";
+    position:absolute; width:22px; height:22px; border-radius:50%;
+    background:var(--card);
+    border:1px solid var(--line);
+    top:50%; transform:translateY(-50%);
+  }
+  .ticket::before{left:-11px;}
+  .ticket::after{right:-11px;}
+  .ticket-row{
+    display:flex; justify-content:space-between; align-items:baseline;
+    padding:14px 0; border-bottom:1px dashed var(--line);
+    gap:16px;
+  }
+  .ticket-row:last-child{border-bottom:none;}
+  .ticket-label{
+    font-family:var(--mono); font-size:11.5px; letter-spacing:0.08em;
+    text-transform:uppercase; color:var(--copper); white-space:nowrap;
+  }
+  .ticket-value{font-size:15px; font-weight:500; text-align:right;}
+  .ticket-value small{display:block; font-weight:400; font-size:12.5px; color:#6b5847; margin-top:2px;}
+  .ticket-cta{margin-top:26px; display:flex; gap:12px; flex-wrap:wrap;}
+
+  /* ---------- footer ---------- */
+  footer{
+    background:var(--leather-dark);
+    color:#e9d9bd;
+    padding:56px 28px 28px;
+  }
+  .footer-inner{
+    max-width:1160px; margin:0 auto;
+    display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px;
+    padding-bottom:36px;
+    border-bottom:1px solid rgba(233,217,189,0.15);
+  }
+  .footer-brand .logo-text{color:#f3e4c8;}
+  .footer-brand p{margin-top:14px; font-size:13.5px; color:#c9b490; max-width:34ch; line-height:1.6;}
+  .footer-col h4{
+    font-family:var(--mono); font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--copper-light); margin-bottom:16px; font-weight:600;
+  }
+  .footer-col ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px;}
+  .footer-col a{text-decoration:none; font-size:14px; color:#e9d9bd; opacity:0.85;}
+  .footer-col a:hover{opacity:1; color:var(--copper-light);}
+  .footer-bottom{
+    max-width:1160px; margin:0 auto; padding-top:22px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    font-size:12px; color:#a68e68; font-family:var(--mono);
+  }
+  @media (max-width:760px){
+    .footer-inner{grid-template-columns:1fr; gap:30px;}
+  }
+
+  @media (max-width:940px){
+    .hero-inner{grid-template-columns:1fr; padding-top:52px;}
+    .hero-art{height:280px; order:-1;}
+    .location-inner{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-row">
+    <a class="logo" href="#home">
+      <svg class="logo-mark" viewBox="0 0 40 40" fill="none">
+        <circle cx="20" cy="20" r="19" stroke="var(--leather-dark)" stroke-width="1.4"/>
+        <path d="M12 24c0-5 3.5-9 8-9s8 4 8 9" stroke="var(--copper)" stroke-width="1.6" stroke-linecap="round"/>
+        <circle cx="20" cy="15" r="3.2" stroke="var(--leather-dark)" stroke-width="1.6"/>
+        <path d="M20 18.2v3.2" stroke="var(--leather-dark)" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-text">Professor Shoe<span>VAN ROELOFS BV · SINDS JAAR&nbsp;·</span></span>
+    </a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-label"><span></span><span></span><span></span></label>
+
+    <nav>
+      <ul>
+        <li><a href="#diensten">Diensten</a></li>
+        <li><a href="#merken">Merken</a></li>
+        <li><a href="#over">Waarom wij</a></li>
+        <li><a href="#locatie">Locatie &amp; uren</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <a class="btn btn-primary" href="tel:+3232000000">Bel de winkel</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <span class="eyebrow">Meester schoenmaker · Anselmostraat, Antwerpen</span>
+        <h1>Waar een versleten zool, <em>een vastzittend slot</em> en een gebroken rits allemaal thuishoren.</h1>
+        <p class="lead">Professor Shoe herstelt schoenen, tassen en lederwaren met vakmanschap van een meester-schoenmaker — en snijdt daarnaast sleutels, opent sloten en graveert stempels. Eén werkbank, alle ambachten.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#diensten">Bekijk alle diensten</a>
+          <a class="btn btn-ghost" href="#locatie">Route naar de winkel</a>
+        </div>
+        <div class="hero-meta">
+          <div>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+            Anselmostraat, 2018 Antwerpen
+          </div>
+          <div>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+            Ma–Vr 9:00–18:00 · Za 9:00–17:00*
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 480 420" xmlns="http://www.w3.org/2000/svg">
+          <!-- soft backdrop blob -->
+          <ellipse cx="250" cy="220" rx="210" ry="180" fill="var(--copper)" opacity="0.08"/>
+
+          <!-- shoe sole cross-section -->
+          <g transform="translate(30,190) rotate(-4)">
+            <path d="M0 60 C10 10 90 -10 190 5 C260 15 300 40 320 70 C330 95 300 110 260 108 L40 108 C15 108 -5 90 0 60 Z"
+                  fill="var(--card)" stroke="var(--leather-dark)" stroke-width="2"/>
+            <path d="M0 60 C10 10 90 -10 190 5 C260 15 300 40 320 70" fill="none" stroke="var(--leather)" stroke-width="6" stroke-linecap="round"/>
+            <!-- stitching -->
+            <path d="M20 95 C90 108 220 108 300 88" fill="none" stroke="var(--copper)" stroke-width="1.4" stroke-dasharray="4 5"/>
+          </g>
+
+          <!-- large key -->
+          <g transform="translate(230,60) rotate(18)">
+            <circle cx="40" cy="40" r="34" fill="none" stroke="var(--copper)" stroke-width="10"/>
+            <circle cx="40" cy="40" r="12" fill="var(--parchment)" stroke="var(--leather-dark)" stroke-width="2"/>
+            <rect x="70" y="32" width="120" height="16" rx="2" fill="var(--copper)"/>
+            <rect x="150" y="48" width="14" height="20" fill="var(--copper)"/>
+            <rect x="172" y="48" width="14" height="28" fill="var(--copper)"/>
+            <rect x="190" y="32" width="10" height="16" fill="var(--copper)"/>
+          </g>
+
+          <!-- stamp / seal mark -->
+          <g transform="translate(70,40)">
+            <circle cx="0" cy="0" r="30" fill="none" stroke="var(--leather-dark)" stroke-width="1.4" stroke-dasharray="2 4"/>
+            <text x="0" y="5" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="var(--leather-dark)" letter-spacing="1">ATELIER</text>
+          </g>
+
+          <!-- needle & thread doodle -->
+          <g transform="translate(80,300)" stroke="var(--leather)" stroke-width="1.6" fill="none" stroke-linecap="round">
+            <path d="M0 0 C40 -20 90 20 130 -10"/>
+            <circle cx="130" cy="-10" r="3" fill="var(--leather)"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="intro grain">
+    <div class="intro-inner">
+      <span class="eyebrow">Eén adres, meerdere ambachten</span>
+      <h2>Meester-schoenmaker, sleutel- en slotenmaker, graveur en lederspecialist — onder één dak in de Anselmostraat.</h2>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="diensten">
+    <div class="section-head">
+      <span class="eyebrow">Onze diensten</span>
+      <h2>Van zool tot slot</h2>
+      <p>Elke dienst krijgt bij ons dezelfde aandacht: vakwerk, geen haastklus. Hieronder een overzicht van wat er allemaal op de werkbank van Professor Shoe voorbijkomt.</p>
+    </div>
+
+    <div class="tag-grid">
+
+      <div class="tag">
+        <div class="tag-hole"></div>
+        <div class="tag-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 18c0-6 2-11 7-13 1 3-1 5-1 5s6-1 8 3c1 2 1 5-1 5H4z" stroke-linejoin="round"/><path d="M4 18h16" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Schoenherstelling</h3>
+        <p>Zolen, hakken, leest- en lederherstel voor Van Bommel, Ambiorix, Church's en alle andere merken.</p>
+        <span class="tag-num">№ 01 — Atelier</span>
+      </div>
+
+      <div class="tag">
+        <div class="tag-hole"></div>
+        <div class="tag-icon">
+          <svg viewBox="0 0 24 24"><rect x="5" y="9" width="14" height="11" rx="1.5"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></svg>
+        </div>
+        <h3>Tassen &amp; lederwaren</h3>
+        <p>Herstelling van tassen en alle lederartikelen, inclusief het vervangen van ritsen.</p>
+        <span class="tag-num">№ 02 — Atelier</span>
+      </div>
+
+      <div class="tag">
+        <div class="tag-hole"></div>
+        <div class="tag-icon">
+          <svg viewBox="0 0 24 24"><circle cx="8" cy="14" r="4"/><path d="M11.5 11.5 20 3M16 5l2 2M19 2l2 2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Sleutels kopiëren</h3>
+        <p>Kopiëren van huis-, kast- en fietssleutels, terwijl u wacht.</p>
+        <span class="tag-num">№ 03 — Sleutels</span>
+      </div>
+
+      <div class="tag">
+        <div class="tag-hole"></div>
+        <div class="tag-icon">
+          <svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="1.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15" r="1.4" fill="var(--leather)" stroke="none"/></svg>
+        </div>
+        <h3>Slotenmakerij</h3>
+        <p>Plaatsen, herstellen en vervangen van sloten voor woning en zaak.</p>
+        <span class="tag-num">№ 04 — Sleutels</span>
+      </div>
+
+      <div class="tag">
+        <div class="tag-hole"></div>
+        <div class="tag-icon">
+          <svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="10" rx="1.5"/><circle cx="9" cy="12" r="1.6"/><path d="M13 12h4" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Transponder autosleutels</h3>
+        <p>Aanmaak en programmatie van transponder- en chipsleutels voor de meeste automerken.</p>
+        <span class="tag-num">№ 05 — Auto</span>
+      </div>
+
+      <div class="tag">
+        <div class="tag-hole"></div>
+        <div class="tag-icon">
+          <svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="9" rx="1"/><path d="M8 15v3M16 15v3M6 18h12" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Autoplaten</h3>
+        <p>Vervaardiging van nummerplaten, klaar om direct mee te nemen.</p>
+        <span class="tag-num">№ 06 — Auto</span>
+      </div>
+
+      <div class="tag">
+        <div class="tag-hole"></div>
+        <div class="tag-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Stempels &amp; graveerwerk</h3>
+        <p>Op maat gemaakte stempels en fijn graveerwerk voor naam-, tekst- of logoplaten.</p>
+        <span class="tag-num">№ 07 — Atelier</span>
+      </div>
+
+      <div class="tag">
+        <div class="tag-hole"></div>
+        <div class="tag-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 4h6v3l2 2v11H7V9l2-2V4z"/><path d="M9 9h6" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Lederwaren &amp; onderhoud</h3>
+        <p>Verkoop van lederwaren en onderhoudsproducten om schoenen en tassen mooi te houden.</p>
+        <span class="tag-num">№ 08 — Winkel</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BRANDS -->
+  <section class="brands" id="merken">
+    <div class="brands-inner">
+      <span class="eyebrow">Specialisatie</span>
+      <h2>Gespecialiseerd in het herstellen van premium schoenmerken</h2>
+      <div class="brand-row">
+        <span>Van Bommel</span>
+        <span>Ambiorix</span>
+        <span>Church's</span>
+        <span class="plus">+ alle andere merken</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="why" id="over">
+    <div class="section-head">
+      <span class="eyebrow">Waarom Professor Shoe</span>
+      <h2>Vakmanschap dat je kan vertrouwen</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 3 3 7l9 4 9-4-9-4Z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg>
+        </div>
+        <h3>Meester-vakmanschap</h3>
+        <p>Herstellingen uitgevoerd met de precisie van een meester-schoenmaker — ook voor de meest verfijnde lederwaren.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M10 4v16"/></svg>
+        </div>
+        <h3>Alles onder één dak</h3>
+        <p>Schoenen, tassen, sleutels, sloten, stempels en autoplaten: geen omweg naar drie verschillende winkels.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+        </div>
+        <h3>In het hart van Antwerpen</h3>
+        <p>Vlot bereikbare zaak in de Anselmostraat, met persoonlijk advies aan de toonbank.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="location" id="locatie">
+    <div class="location-inner">
+      <div class="location-copy">
+        <span class="eyebrow">Bezoek de werkbank</span>
+        <h2>Loop binnen in de Anselmostraat</h2>
+        <p class="lead">Breng uw schoenen, tas of sleutel langs — de meeste kleine herstellingen en sleutelkopieën worden terwijl u wacht klaargemaakt.</p>
+
+        <div class="map-sketch" aria-hidden="true">
+          <svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="250" fill="var(--parchment)"/>
+            <path d="M0 60 H400 M0 150 H400" stroke="var(--line)" stroke-width="10"/>
+            <path d="M90 0 V250 M300 0 V250" stroke="var(--line)" stroke-width="10"/>
+            <path d="M0 60 H400" stroke="var(--copper)" stroke-width="2" stroke-dasharray="1 8" stroke-linecap="round"/>
+            <circle cx="195" cy="60" r="9" fill="var(--leather)"/>
+            <circle cx="195" cy="60" r="16" fill="none" stroke="var(--leather)" stroke-width="1.4" opacity="0.5"/>
+            <text x="205" y="45" font-family="IBM Plex Mono" font-size="11" fill="var(--leather-dark)">Anselmostraat</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="ticket">
+        <div class="ticket-row">
+          <span class="ticket-label">Adres</span>
+          <span class="ticket-value">Anselmostraat<small>2018 Antwerpen, België</small></span>
+        </div>
+        <div class="ticket-row">
+          <span class="ticket-label">Telefoon</span>
+          <span class="ticket-value">+32 3 200 00 00<small>* vraag naar de juiste gegevens</small></span>
+        </div>
+        <div class="ticket-row">
+          <span class="ticket-label">E-mail</span>
+          <span class="ticket-value">info@professorshoe.be<small>* placeholder</small></span>
+        </div>
+        <div class="ticket-row">
+          <span class="ticket-label">Openingsuren</span>
+          <span class="ticket-value">Ma–Vr 9:00–18:00<small>Za 9:00–17:00 · Zo gesloten*</small></span>
+        </div>
+        <div class="ticket-row">
+          <span class="ticket-label">Onderneming</span>
+          <span class="ticket-value">Van Roelofs bv<small>handelend als Professor Shoe</small></span>
+        </div>
+        <div class="ticket-cta">
+          <a class="btn btn-primary" href="tel:+3232000000">Bel de winkel</a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Anselmostraat+Antwerpen" target="_blank" rel="noopener">Plan je route</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo-text">Professor Shoe</span>
+      <p>Meester schoenmaker, sleutel- en slotenmakerij in de Anselmostraat, Antwerpen. Een zaak van Van Roelofs bv.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Diensten</h4>
+      <ul>
+        <li><a href="#diensten">Schoenherstelling</a></li>
+        <li><a href="#diensten">Tassen &amp; lederwaren</a></li>
+        <li><a href="#diensten">Sleutels &amp; sloten</a></li>
+        <li><a href="#diensten">Stempels &amp; graveerwerk</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Zaak</h4>
+      <ul>
+        <li><a href="#merken">Merken</a></li>
+        <li><a href="#over">Waarom wij</a></li>
+        <li><a href="#locatie">Locatie &amp; uren</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Van Roelofs bv — Professor Shoe, Anselmostraat, Antwerpen</span>
+    <span>Gegevens met * zijn placeholders, nog aan te vullen</span>
+  </div>
+</footer>
+
+</body>
+</html>
