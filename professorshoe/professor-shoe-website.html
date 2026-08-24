@@ -18,6 +18,11 @@
     --copper:#b5732e;
     --copper-light:#d69a5c;
     --moss:#5b6650;
+    --amber:#e0a53c;
+    --amber-deep:#c78c26;
+    --navy:#232c5c;
+    --navy-deep:#171d40;
+    --sign-red:#b4382a;
     --line: rgba(36,24,19,0.14);
     --shadow: 0 10px 24px rgba(74,36,20,0.14);
     --radius: 2px;
@@ -220,6 +225,37 @@
   .hero-art{position:relative; height:420px;}
   .hero-art svg{position:absolute; inset:0; width:100%; height:100%;}
 
+  /* ---------- storefront sign strip ---------- */
+  .sign-strip{
+    background:var(--amber);
+    border-top:1px solid var(--amber-deep);
+    border-bottom:1px solid var(--amber-deep);
+    overflow:hidden;
+    padding:13px 0;
+  }
+  .sign-strip-track{
+    display:flex;
+    width:max-content;
+    animation:sign-scroll 32s linear infinite;
+  }
+  .sign-strip-track span{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:15px;
+    letter-spacing:0.02em;
+    color:var(--navy-deep);
+    white-space:nowrap;
+    padding:0 22px;
+    border-right:1.5px solid rgba(23,29,64,0.28);
+  }
+  @keyframes sign-scroll{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .sign-strip-track{animation:none;}
+  }
+
   /* ---------- intro strip ---------- */
   .intro{
     padding:72px 28px;
@@ -259,10 +295,10 @@
     transition:transform 0.2s ease;
   }
   .tag:hover{transform:translateY(-4px) rotate(0deg) !important;}
-  .tag:nth-child(4n+1){transform:rotate(-1.4deg);}
-  .tag:nth-child(4n+2){transform:rotate(1deg);}
-  .tag:nth-child(4n+3){transform:rotate(-0.6deg);}
-  .tag:nth-child(4n+4){transform:rotate(1.3deg);}
+  .tag:nth-child(4n+1){transform:rotate(-0.6deg);}
+  .tag:nth-child(4n+2){transform:rotate(0.5deg);}
+  .tag:nth-child(4n+3){transform:rotate(-0.3deg);}
+  .tag:nth-child(4n+4){transform:rotate(0.6deg);}
   .tag-hole{
     position:absolute; top:14px; left:50%; transform:translateX(-50%);
     width:14px; height:14px; border-radius:50%;
@@ -293,14 +329,14 @@
 
   /* ---------- brands strip ---------- */
   .brands{
-    background:var(--leather-dark);
+    background:var(--navy-deep);
     padding:56px 28px;
-    border-top:1px solid rgba(0,0,0,0.2);
-    border-bottom:1px solid rgba(0,0,0,0.2);
+    border-top:3px solid var(--amber);
+    border-bottom:1px solid rgba(0,0,0,0.3);
   }
   .brands-inner{max-width:1000px; margin:0 auto; text-align:center;}
-  .brands .eyebrow{color:var(--copper-light);}
-  .brands h2{color:var(--parchment); font-size:clamp(1.4rem,2.4vw,1.9rem); margin:14px 0 34px; font-weight:500;}
+  .brands .eyebrow{color:var(--amber);}
+  .brands h2{color:#f4ecd8; font-size:clamp(1.4rem,2.4vw,1.9rem); margin:14px 0 34px; font-weight:500;}
   .brand-row{
     display:flex; flex-wrap:wrap; justify-content:center; align-items:center;
     gap:14px 0;
@@ -310,13 +346,13 @@
     font-style:italic;
     font-weight:500;
     font-size:clamp(1.1rem,2.3vw,1.5rem);
-    color:#f3e4c8;
+    color:#f4ecd8;
     padding:0 26px;
-    border-right:1px solid rgba(243,228,200,0.25);
+    border-right:1px solid rgba(244,236,216,0.2);
   }
   .brand-row span:last-child{border-right:none;}
   .brand-row .plus{
-    font-family:var(--mono); font-style:normal; font-size:14px; color:var(--copper-light);
+    font-family:var(--mono); font-style:normal; font-size:14px; color:var(--amber);
   }
 
   /* ---------- why us ---------- */
@@ -347,15 +383,18 @@
   .location-copy .eyebrow{display:block; margin-bottom:14px;}
   .location h2{font-size:clamp(1.8rem,3vw,2.3rem); margin-bottom:20px;}
   .location p.lead{font-size:16px; color:#4a382c; max-width:48ch; margin-bottom:34px;}
-  .map-sketch{
+  .map-embed{
     width:100%; aspect-ratio:16/10;
     border:1px solid var(--line);
-    background:var(--parchment);
+    background:var(--card);
     margin-bottom:34px;
     position:relative;
     overflow:hidden;
+    filter:sepia(8%) saturate(1.05);
   }
-  .map-sketch svg{width:100%; height:100%;}
+  .map-embed iframe{
+    width:100%; height:100%; border:0; display:block;
+  }
 
   .ticket{
     background:var(--parchment);
@@ -435,7 +474,7 @@
         <circle cx="20" cy="15" r="3.2" stroke="var(--leather-dark)" stroke-width="1.6"/>
         <path d="M20 18.2v3.2" stroke="var(--leather-dark)" stroke-width="1.6" stroke-linecap="round"/>
       </svg>
-      <span class="logo-text">Professor Shoe<span>VAN ROELOFS BV · SINDS JAAR&nbsp;·</span></span>
+      <span class="logo-text">Professor Shoe<span>VAN ROELOFS BV · SINDS 1915</span></span>
     </a>
 
     <input type="checkbox" id="nav-toggle" class="nav-toggle">
@@ -464,7 +503,7 @@
       <div class="hero-copy">
         <span class="eyebrow">Meester schoenmaker · Anselmostraat, Antwerpen</span>
         <h1>Waar een versleten zool, <em>een vastzittend slot</em> en een gebroken rits allemaal thuishoren.</h1>
-        <p class="lead">Professor Shoe herstelt schoenen, tassen en lederwaren met vakmanschap van een meester-schoenmaker — en snijdt daarnaast sleutels, opent sloten en graveert stempels. Eén werkbank, alle ambachten.</p>
+        <p class="lead">Professor Shoe herstelt schoenen, tassen en lederwaren met vakmanschap van een meester-schoenmaker — en snijdt daarnaast sleutels, opent sloten en graveert stempels. Een familiebedrijf sinds 1915, nog altijd op hetzelfde vakmanschap gebouwd.</p>
         <div class="hero-ctas">
           <a class="btn btn-primary" href="#diensten">Bekijk alle diensten</a>
           <a class="btn btn-ghost" href="#locatie">Route naar de winkel</a>
@@ -477,6 +516,10 @@
           <div>
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
             Ma–Vr 9:00–18:00 · Za 9:00–17:00*
+          </div>
+          <div>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round"><path d="M4 4h16v6a8 8 0 0 1-16 0V4z"/><path d="M8 20h8M12 16v4"/></svg>
+            111 jaar vakmanschap · familiebedrijf
           </div>
         </div>
       </div>
@@ -507,8 +550,9 @@
 
           <!-- stamp / seal mark -->
           <g transform="translate(70,40)">
-            <circle cx="0" cy="0" r="30" fill="none" stroke="var(--leather-dark)" stroke-width="1.4" stroke-dasharray="2 4"/>
-            <text x="0" y="5" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="var(--leather-dark)" letter-spacing="1">ATELIER</text>
+            <circle cx="0" cy="0" r="30" fill="none" stroke="var(--navy)" stroke-width="1.4" stroke-dasharray="2 4"/>
+            <text x="0" y="1" text-anchor="middle" font-family="IBM Plex Mono" font-size="8" fill="var(--navy)" letter-spacing="0.5">SINDS</text>
+            <text x="0" y="12" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="var(--navy)" font-weight="600" letter-spacing="0.5">1915</text>
           </g>
 
           <!-- needle & thread doodle -->
@@ -521,11 +565,19 @@
     </div>
   </section>
 
+  <!-- STOREFRONT SIGN STRIP -->
+  <div class="sign-strip" aria-hidden="true">
+    <div class="sign-strip-track">
+      <span>Bronzeren</span><span>Graveren</span><span>Stempels</span><span>Schoen &amp; sleutelmakerij</span><span>Autoplaten</span><span>Horlogebanden</span>
+      <span>Bronzeren</span><span>Graveren</span><span>Stempels</span><span>Schoen &amp; sleutelmakerij</span><span>Autoplaten</span><span>Horlogebanden</span>
+    </div>
+  </div>
+
   <!-- INTRO -->
   <section class="intro grain">
     <div class="intro-inner">
-      <span class="eyebrow">Eén adres, meerdere ambachten</span>
-      <h2>Meester-schoenmaker, sleutel- en slotenmaker, graveur en lederspecialist — onder één dak in de Anselmostraat.</h2>
+      <span class="eyebrow">Familiebedrijf sinds 1915</span>
+      <h2>Meester-schoenmaker, sleutel- en slotenmaker, graveur en lederspecialist — al meer dan een eeuw onder één dak in de Anselmostraat.</h2>
     </div>
   </section>
 
@@ -619,6 +671,26 @@
         <span class="tag-num">№ 08 — Winkel</span>
       </div>
 
+      <div class="tag">
+        <div class="tag-hole"></div>
+        <div class="tag-icon">
+          <svg viewBox="0 0 24 24"><path d="M8 20c-2-4-2-8 1-11 2-2 5-2 6 1 1 2-1 4-3 4"/><path d="M6 20h12" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Bronzeren van babyschoentjes</h3>
+        <p>Een blijvende herinnering: uw eerste schoentjes vakkundig gebronsd.</p>
+        <span class="tag-num">№ 09 — Atelier</span>
+      </div>
+
+      <div class="tag">
+        <div class="tag-hole"></div>
+        <div class="tag-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="6"/><path d="M9 3h6M9 21h6M5 9l-2-1M19 9l2-1M5 15l-2 1M19 15l2 1"/></svg>
+        </div>
+        <h3>Horlogebanden</h3>
+        <p>Vervanging en aanpassing van horlogebanden, in leder of metaal.</p>
+        <span class="tag-num">№ 10 — Winkel</span>
+      </div>
+
     </div>
   </section>
 
@@ -675,16 +747,13 @@
         <h2>Loop binnen in de Anselmostraat</h2>
         <p class="lead">Breng uw schoenen, tas of sleutel langs — de meeste kleine herstellingen en sleutelkopieën worden terwijl u wacht klaargemaakt.</p>
 
-        <div class="map-sketch" aria-hidden="true">
-          <svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
-            <rect width="400" height="250" fill="var(--parchment)"/>
-            <path d="M0 60 H400 M0 150 H400" stroke="var(--line)" stroke-width="10"/>
-            <path d="M90 0 V250 M300 0 V250" stroke="var(--line)" stroke-width="10"/>
-            <path d="M0 60 H400" stroke="var(--copper)" stroke-width="2" stroke-dasharray="1 8" stroke-linecap="round"/>
-            <circle cx="195" cy="60" r="9" fill="var(--leather)"/>
-            <circle cx="195" cy="60" r="16" fill="none" stroke="var(--leather)" stroke-width="1.4" opacity="0.5"/>
-            <text x="205" y="45" font-family="IBM Plex Mono" font-size="11" fill="var(--leather-dark)">Anselmostraat</text>
-          </svg>
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps?q=Anselmostraat,Antwerpen&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Professor Shoe op de kaart — Anselmostraat, Antwerpen">
+          </iframe>
         </div>
       </div>
 
@@ -707,7 +776,7 @@
         </div>
         <div class="ticket-row">
           <span class="ticket-label">Onderneming</span>
-          <span class="ticket-value">Van Roelofs bv<small>handelend als Professor Shoe</small></span>
+          <span class="ticket-value">Van Roelofs bv<small>handelend als Professor Shoe · familiebedrijf sinds 1915</small></span>
         </div>
         <div class="ticket-cta">
           <a class="btn btn-primary" href="tel:+3232000000">Bel de winkel</a>
@@ -723,7 +792,7 @@
   <div class="footer-inner">
     <div class="footer-brand">
       <span class="logo-text">Professor Shoe</span>
-      <p>Meester schoenmaker, sleutel- en slotenmakerij in de Anselmostraat, Antwerpen. Een zaak van Van Roelofs bv.</p>
+      <p>Meester schoenmaker, sleutel- en slotenmakerij in de Anselmostraat, Antwerpen. Een familiebedrijf van Van Roelofs bv, actief sinds 1915.</p>
     </div>
     <div class="footer-col">
       <h4>Diensten</h4>
