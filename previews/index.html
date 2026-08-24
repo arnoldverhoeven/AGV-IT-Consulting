@@ -1,1 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Draft Previews — AGV IT Consulting</title>
+<!-- Not meant to be indexed or linked from the main site -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --bg-panel:#F1F5FC;
+    --line:#DAE5F5;
+    --text:#0E2240;
+    --text-muted:#54627E;
+    --text-faint:#8B98B3;
+    --blue:#2563EB;
+    --blue-hover:#3B82F6;
+    --radius:4px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter', sans-serif;
+    line-height:1.6;
+  }
+  .wrap{ max-width:760px; margin:0 auto; padding:64px 32px 96px; }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--blue);
+    text-transform:uppercase;
+    letter-spacing:0.12em;
+    margin-bottom:14px;
+  }
+  h1{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:clamp(26px, 4vw, 34px);
+    margin:0 0 12px;
+  }
+  p.lead{ color:var(--text-muted); max-width:56ch; margin:0 0 40px; font-size:15px; }
 
+  .state{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--text-faint);
+    padding:24px 0;
+  }
+  .state.err{ color:#B91C1C; }
+
+  .list{ border-top:1px solid var(--line); }
+  .row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:20px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .row-main h2{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:17px;
+    margin:0 0 4px;
+  }
+  .row-main .path{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--text-faint);
+  }
+  .btn{
+    flex-shrink:0;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:13px;
+    font-weight:500;
+    color:#fff;
+    background:var(--blue);
+    padding:10px 16px;
+    border-radius:var(--radius);
+    text-decoration:none;
+    transition:background .2s;
+  }
+  .btn:hover{ background:var(--blue-hover); }
+
+  footer{
+    margin-top:56px;
+    padding-top:24px;
+    border-top:1px solid var(--line);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--text-faint);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Internal &middot; not indexed</div>
+  <h1>Draft previews</h1>
+  <p class="lead">
+    Every folder added to the root of the
+    <strong>AGV-IT-Consulting</strong> repository shows up here automatically as a preview
+    link — nothing to update by hand when a new draft is pushed.
+  </p>
+
+  <div id="state" class="state">Loading previews&hellip;</div>
+  <div id="list" class="list"></div>
+
+  <footer>
+    Source: github.com/<span id="owner-label"></span>/<span id="repo-label"></span> &middot;
+    generated client-side via the GitHub Contents API
+  </footer>
+</div>
+
+<script>
+  // ---- Configuration -----------------------------------------------------
+  const GITHUB_OWNER = "arnoldverhoeven";     // <- confirm this is your GitHub username/org
+  const GITHUB_REPO  = "AGV-IT-Consulting";   // <- confirm this is the exact repo name
+  const GITHUB_BRANCH = "";                   // leave blank to use the repo's default branch
+
+  // Folders in the repo root that should never show up as a draft
+  // (add to this list as needed).
+  const EXCLUDE = new Set(["previews", "assets", "img", "images", "css", "js", ".github"]);
+  // -------------------------------------------------------------------------
+
+  document.getElementById("owner-label").textContent = GITHUB_OWNER;
+  document.getElementById("repo-label").textContent = GITHUB_REPO;
+
+  const stateEl = document.getElementById("state");
+  const listEl = document.getElementById("list");
+
+  function apiUrl(path) {
+    const branchQuery = GITHUB_BRANCH ? `?ref=${encodeURIComponent(GITHUB_BRANCH)}` : "";
+    return `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${path}${branchQuery}`;
+  }
+
+  function humanize(name) {
+    return name.replace(/[-_]+/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+  }
+
+  async function findEntryHtml(folderName) {
+    const res = await fetch(apiUrl(encodeURIComponent(folderName)));
+    if (!res.ok) return null;
+    const items = await res.json();
+    if (!Array.isArray(items)) return null;
+
+    const htmlFiles = items.filter(i => i.type === "file" && /\.html?$/i.test(i.name));
+    if (htmlFiles.length === 0) return null;
+
+    // Prefer index.html (clean folder URL); otherwise take the first HTML file found.
+    const indexFile = htmlFiles.find(f => f.name.toLowerCase() === "index.html");
+    const chosen = indexFile || htmlFiles[0];
+
+    return {
+      fileName: chosen.name,
+      isIndex: !!indexFile,
+    };
+  }
+
+  async function loadDrafts() {
+    try {
+      const res = await fetch(apiUrl(""));
+      if (!res.ok) {
+        if (res.status === 403) {
+          throw new Error("GitHub API rate limit reached — try again shortly.");
+        }
+        throw new Error(`Could not read the repository (HTTP ${res.status}). Check the owner/repo name above.`);
+      }
+      const items = await res.json();
+      const folders = items.filter(i => i.type === "dir" && !EXCLUDE.has(i.name));
+
+      if (folders.length === 0) {
+        stateEl.textContent = "No draft folders found yet.";
+        return;
+      }
+
+      const results = await Promise.all(folders.map(async f => {
+        const entry = await findEntryHtml(f.name);
+        return entry ? { folder: f.name, ...entry } : null;
+      }));
+
+      const drafts = results.filter(Boolean);
+
+      if (drafts.length === 0) {
+        stateEl.textContent = "Draft folders exist, but none contain an .html file yet.";
+        return;
+      }
+
+      stateEl.remove();
+      drafts.forEach(d => {
+        const href = d.isIndex
+          ? `/${d.folder}/`
+          : `/${d.folder}/${d.fileName}`;
+
+        const row = document.createElement("div");
+        row.className = "row";
+        row.innerHTML = `
+          <div class="row-main">
+            <h2>${humanize(d.folder)}</h2>
+            <div class="path">/${d.folder}/${d.isIndex ? "" : d.fileName}</div>
+          </div>
+          <a class="btn" href="${href}" target="_blank" rel="noopener">Open preview &rarr;</a>
+        `;
+        listEl.appendChild(row);
+      });
+    } catch (err) {
+      stateEl.textContent = err.message || "Something went wrong loading the previews.";
+      stateEl.classList.add("err");
+    }
+  }
+
+  loadDrafts();
+</script>
+</body>
+</html>
