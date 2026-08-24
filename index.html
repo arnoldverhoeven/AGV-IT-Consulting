@@ -3,930 +3,117 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arnold Verhoeven — AGV IT Consulting | IT Project Manager, Consultant &amp; Web Developer</title>
-<meta name="description" content="Arnold Verhoeven — independent IT project manager, IT consultant and freelance web developer, specialised in ISO 27001, NIS2 compliance, IAM/SSO and infrastructure programmes. PMP &amp; PRINCE2 certified.">
-
-<!-- Favicon (self-contained: embedded as data URIs, no extra files needed) -->
+<title>Portfolio — AGV IT Consulting</title>
+<meta name="description" content="Selected work by Arnold Verhoeven — platforms, client sites and web apps built end-to-end, from architecture to launch.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMwRTIyNDAiLz48dGV4dCB4PSIzMiIgeT0iNDUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjM2IiBmaWxsPSIjRkZGRkZGIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5BPC90ZXh0Pjwvc3ZnPg==">
-<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABvUlEQVR4nGNkwAL4lBz+YxOnFHy6d4ARXQxFgFYW43MIE70tR7eLid6WozuCiZBCWgPGgfA9MhjwEBh1AAs5mtjZWBlun1zHwM/HAxfbsO0AQ3xuI8lmkRUCni7WKJbjEqOZAyID3TDE2NlYGQK9HGjvABEhAQYXezM4/+6DJ3B2BBaHUd0BIb5ODCzMzAwMDAwMnz5/ZShrnAyXszTRZVCQlaStAyKD3OHsrXuOMuw/eobh1Zv3cDFSQ4EkB6iryDMY6KjB+eu37mf4+/cfw+adh+jjAOTE9/HTF4b9R85AHLLtIFxcUU6KwdxIm/oOYGJiZAjzd4Hzt+w+wvDr9x8GBgYGhqOnLqBEA3I0EQJEV0b2VkYMmxb3EmXoh4+fGdQsghl+/vpNUC3RIUBK3Arw8zK4O1kSpZYoB3BysjP4e9jB+cX1Exj4lR0x8M79J+BqIgOJiwaiHODnbsfAzcUJ5+86cBKrul0HEA5wdTBjEBbkp44DIgIQwX/jzkOGR09eYFW3++ApOJuVhYUhxNeZoNmjLaJRBzBh6y7RC3y6d4Bx4EMA5hJ6WwyzkwldgJ6WMzCg9Y5hgJ7dcwCAYIRVFS3C+QAAAABJRU5ErkJggg==">
-<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
 <meta name="theme-color" content="#2563EB">
-
-<!-- Social sharing preview (WhatsApp, Facebook, LinkedIn, Twitter/X) -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.agv-it.be/">
-<meta property="og:site_name" content="AGV IT Consulting">
-<meta property="og:title" content="Arnold Verhoeven — AGV IT Consulting">
-<meta property="og:description" content="IT project manager, IT consultant and freelance web developer. ISO 27001, NIS2, IAM/SSO — plus websites, webshops and booking systems.">
-<meta property="og:image" content="https://www.agv-it.be/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="AGV IT Consulting — Looks like you could use a website.">
-<meta property="og:locale" content="en_US">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Arnold Verhoeven — AGV IT Consulting">
-<meta name="twitter:description" content="IT project manager, IT consultant and freelance web developer. ISO 27001, NIS2, IAM/SSO — plus websites, webshops and booking systems.">
-<meta name="twitter:image" content="https://www.agv-it.be/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#FFFFFF;
-    --bg-panel:#F1F5FC;
-    --bg-panel-2:#E3ECFA;
-    --line:#DAE5F5;
-    --line-soft:#EAF1FB;
-    --text:#0E2240;
-    --text-muted:#54627E;
-    --text-faint:#8B98B3;
-    --amber:#2563EB;
-    --amber-hover:#3B82F6;
-    --blue:#0284C7;
-    --radius:2px;
-    --maxw:1180px;
-  }
-
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto;}
-    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
-  }
-
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--text);
-    font-family:'Inter', sans-serif;
-    font-size:16px;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-
-  body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    z-index:0;
-    background-image:
-      linear-gradient(var(--line-soft) 1px, transparent 1px),
-      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
-    background-size:64px 64px;
-    opacity:0.7;
-    mask-image:radial-gradient(ellipse 90% 60% at 50% 0%, black 40%, transparent 100%);
-    -webkit-mask-image:radial-gradient(ellipse 90% 60% at 50% 0%, black 40%, transparent 100%);
-  }
-
-  h1,h2,h3{
-    font-family:'Space Grotesk', sans-serif;
-    font-weight:600;
-    margin:0;
-    letter-spacing:-0.01em;
-  }
-
-  .mono{
-    font-family:'IBM Plex Mono', monospace;
-    letter-spacing:0.02em;
-  }
-
-  a{color:inherit;}
-
-  .wrap{
-    max-width:var(--maxw);
-    margin:0 auto;
-    padding:0 32px;
-    position:relative;
-    z-index:1;
-  }
-
-  /* ---------- NAV ---------- */
-  header{
-    position:sticky;
-    top:0;
-    z-index:50;
-    background:rgba(255,255,255,0.86);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
-  }
-  .nav-inner{
-    max-width:var(--maxw);
-    margin:0 auto;
-    padding:18px 32px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-  }
-  .logo{
-    font-family:'Space Grotesk', sans-serif;
-    font-weight:700;
-    font-size:15px;
-    letter-spacing:0.02em;
-    display:flex;
-    align-items:center;
-    gap:10px;
-    text-decoration:none;
-    color:var(--text);
-  }
-  .logo-mark{
-    width:9px;height:9px;
-    background:var(--amber);
-    border-radius:1px;
-    flex-shrink:0;
-  }
-  nav.links{
-    display:flex;
-    gap:36px;
-    font-size:14px;
-    color:var(--text-muted);
-  }
-  nav.links a{
-    text-decoration:none;
-    transition:color .2s;
-    position:relative;
-  }
-  nav.links a:hover, nav.links a:focus-visible{color:var(--text);}
-  .nav-cta{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    font-size:13px;
-    font-family:'IBM Plex Mono', monospace;
-    color:#FFFFFF;
-    background:var(--amber);
-    padding:9px 16px;
-    border-radius:var(--radius);
-    text-decoration:none;
-    white-space:nowrap;
-    transition:background .2s, transform .2s;
-  }
-  .nav-cta:hover{background:var(--amber-hover);}
-  .nav-mobile-toggle{display:none;}
-
-  a:focus-visible, button:focus-visible{
-    outline:2px solid var(--blue);
-    outline-offset:3px;
-  }
-
-  /* ---------- HERO ---------- */
-  .hero{
-    padding:96px 0 88px;
-    position:relative;
-  }
-  .hero-grid{
-    display:grid;
-    grid-template-columns:1.05fr 0.95fr;
-    gap:48px;
-    align-items:center;
-  }
-  .eyebrow{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12.5px;
-    color:var(--amber);
-    text-transform:uppercase;
-    letter-spacing:0.14em;
-    margin-bottom:22px;
-  }
-  .eyebrow::before{
-    content:"";
-    width:22px;height:1px;
-    background:var(--amber);
-  }
-  .hero h1{
-    font-size:clamp(34px, 4.4vw, 54px);
-    line-height:1.09;
-    color:var(--text);
-  }
-  .hero h1 em{
-    font-style:normal;
-    color:var(--amber);
-  }
-  .hero p.lead{
-    margin-top:24px;
-    font-size:17px;
-    line-height:1.7;
-    color:var(--text-muted);
-    max-width:46ch;
-  }
-  .hero-actions{
-    margin-top:36px;
-    display:flex;
-    gap:16px;
-    flex-wrap:wrap;
-  }
-  .btn{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    font-size:14px;
-    font-weight:500;
-    padding:13px 22px;
-    border-radius:var(--radius);
-    text-decoration:none;
-    transition:all .2s;
-    border:1px solid transparent;
-  }
-  .btn-primary{
-    background:var(--amber);
-    color:#FFFFFF;
-  }
-  .btn-primary:hover{background:var(--amber-hover); transform:translateY(-1px);}
-  .btn-ghost{
-    border-color:var(--line);
-    color:var(--text);
-  }
-  .btn-ghost:hover{border-color:var(--blue); color:var(--blue);}
-
-  .hero-meta{
-    margin-top:44px;
-    display:flex;
-    gap:32px;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px;
-    color:var(--text-faint);
-  }
-  .hero-meta span{color:var(--text-muted);}
-
-  /* schematic */
-  .schematic{
-    position:relative;
-    aspect-ratio:1/1;
-    max-width:480px;
-    margin:0 auto;
-  }
-  .schematic svg{width:100%; height:100%; overflow:visible;}
-  .sch-line{
-    stroke:var(--line);
-    stroke-width:1.2;
-    fill:none;
-    stroke-dasharray:400;
-    stroke-dashoffset:400;
-    animation:draw 1.8s ease forwards;
-  }
-  .sch-line.active{stroke:rgba(37,99,235,0.3);}
-  @keyframes draw{to{stroke-dashoffset:0;}}
-  .sch-node{
-    fill:var(--bg-panel);
-    stroke:var(--line);
-    stroke-width:1.2;
-  }
-  .sch-node.active{
-    stroke:var(--amber);
-  }
-  .sch-node.center{
-    fill:var(--bg-panel-2);
-    stroke:var(--blue);
-  }
-  .sch-pulse{
-    fill:none;
-    stroke:var(--amber);
-    stroke-width:1.5;
-    opacity:0;
-    transform-origin:center;
-    animation:pulse 3s ease-out infinite;
-  }
-  .sch-pulse.d2{animation-delay:1.5s;}
-  @keyframes pulse{
-    0%{opacity:0.65; transform:scale(1);}
-    100%{opacity:0; transform:scale(1.9);}
-  }
-  .sch-label{
-    font-family:'IBM Plex Mono', monospace;
-    fill:var(--text-muted);
-    font-size:10.5px;
-  }
-  .sch-label.active{fill:var(--amber);}
-  .sch-label.center{fill:var(--text); font-size:11px;}
-
-  /* ---------- SECTION SHELL ---------- */
-  section{
-    padding:96px 0;
-    border-top:1px solid var(--line);
-    position:relative;
-  }
-  .section-head{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-end;
-    gap:24px;
-    margin-bottom:56px;
-    flex-wrap:wrap;
-  }
-  .section-tag{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px;
-    color:var(--text-faint);
-    text-transform:uppercase;
-    letter-spacing:0.14em;
-  }
-  .section-head h2{
-    font-size:clamp(24px, 2.6vw, 32px);
-    margin-top:10px;
-    max-width:36ch;
-  }
-  .section-note{
-    font-size:14px;
-    color:var(--text-muted);
-    max-width:32ch;
-    text-align:right;
-  }
-  @media (max-width:700px){.section-note{text-align:left;}}
-
-  .reveal{
-    opacity:0;
-    transform:translateY(18px);
-    transition:opacity .7s ease, transform .7s ease;
-  }
-  .reveal.in{opacity:1; transform:translateY(0);}
-
-  /* ---------- FOCUS AREAS ---------- */
-  .focus-grid{
-    display:grid;
-    grid-template-columns:repeat(2, 1fr);
-    gap:1px;
-    background:var(--line);
-    border:1px solid var(--line);
-  }
-  .focus-card{
-    background:var(--bg);
-    padding:32px 26px;
-    transition:background .25s;
-  }
-  .focus-card:hover{background:var(--bg-panel);}
-  .focus-num{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px;
-    color:var(--amber);
-  }
-  .focus-card h3{
-    font-size:18px;
-    margin-top:18px;
-    color:var(--text);
-  }
-  .focus-card p{
-    font-size:14px;
-    color:var(--text-muted);
-    margin-top:12px;
-    line-height:1.65;
-  }
-
-  /* ---------- SELECTED WORK ---------- */
-  .work-grid{
-    display:grid;
-    grid-template-columns:1.3fr 1fr;
-    gap:1px;
-    background:var(--line);
-    border:1px solid var(--line);
-  }
-  .work-card{
-    background:var(--bg);
-    padding:36px;
-    text-decoration:none;
-    color:var(--text);
-    display:flex;
-    flex-direction:column;
-    transition:background .2s;
-  }
-  .work-card:hover{background:var(--bg-panel);}
-  .work-card:hover .work-link{color:var(--amber);}
-  .work-label{
-    font-size:11.5px;
-    color:var(--text-faint);
-    text-transform:uppercase;
-    letter-spacing:0.08em;
-  }
-  .work-card h3{
-    font-size:24px;
-    margin-top:14px;
-  }
-  .work-card p{
-    font-size:14.5px;
-    color:var(--text-muted);
-    line-height:1.7;
-    margin-top:14px;
-    flex-grow:1;
-  }
-  .work-tags{
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-    margin-top:20px;
-  }
-  .work-tags span{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px;
-    color:var(--text-muted);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:4px 9px;
-  }
-  .work-link{
-    margin-top:24px;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:13px;
-    color:var(--text);
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-    transition:color .2s;
-  }
-  .work-link .arrow{transition:transform .2s;}
-  .work-card:hover .arrow{transform:translate(2px,-2px);}
-  @media (max-width:800px){
-    .work-grid{grid-template-columns:1fr;}
-  }
-
-  /* ---------- TRACK RECORD ---------- */
-  .ledger{
-    border-top:1px solid var(--line);
-  }
-  .ledger-row{
-    display:grid;
-    grid-template-columns:150px 1fr 2.2fr;
-    gap:24px;
-    padding:26px 0;
-    border-bottom:1px solid var(--line);
-    align-items:baseline;
-  }
-  .ledger-row .years{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:13px;
-    color:var(--amber);
-  }
-  .ledger-row .org{
-    font-family:'Space Grotesk', sans-serif;
-    font-weight:600;
-    font-size:16px;
-    color:var(--text);
-  }
-  .ledger-row .org span{
-    display:block;
-    font-family:'Inter', sans-serif;
-    font-weight:400;
-    font-size:13px;
-    color:var(--text-faint);
-    margin-top:3px;
-  }
-  .ledger-row .desc{
-    font-size:14px;
-    color:var(--text-muted);
-    line-height:1.7;
-  }
-  @media (max-width:760px){
-    .ledger-row{grid-template-columns:1fr; gap:6px;}
-  }
-
-  /* ---------- CERTS ---------- */
-  .certs{
-    display:grid;
-    grid-template-columns:repeat(2, 1fr);
-    gap:1px;
-    background:var(--line);
-    border:1px solid var(--line);
-  }
-  .cert-card{
-    background:var(--bg);
-    padding:34px;
-    display:flex;
-    align-items:center;
-    gap:22px;
-  }
-  .cert-seal{
-    width:56px; height:56px;
-    border-radius:50%;
-    border:1.5px solid var(--blue);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:13px;
-    color:var(--blue);
-    flex-shrink:0;
-  }
-  .cert-info h3{font-size:16px;}
-  .cert-info p{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px;
-    color:var(--text-faint);
-    margin-top:6px;
-  }
-
-  /* ---------- QUOTE FORM ---------- */
-  .quote-form{
-    background:var(--bg-panel);
-    border:1px solid var(--line);
-    padding:40px;
-    max-width:760px;
-  }
-  .qf-row{
-    display:flex;
-    gap:24px;
-  }
-  .qf-field{
-    flex:1;
-    display:flex;
-    flex-direction:column;
-    margin-bottom:22px;
-  }
-  .qf-field label{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px;
-    color:var(--text-muted);
-    margin-bottom:8px;
-    letter-spacing:0.02em;
-  }
-  .qf-field label span[aria-hidden]{color:var(--amber); margin-left:2px;}
-  .qf-field label .opt{color:var(--text-faint); font-weight:400;}
-  .qf-field input,
-  .qf-field select,
-  .qf-field textarea{
-    font-family:'Inter', sans-serif;
-    font-size:15px;
-    color:var(--text);
-    background:var(--bg);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:12px 14px;
-    outline:none;
-    transition:border-color .2s;
-    resize:vertical;
-  }
-  .qf-field input:focus,
-  .qf-field select:focus,
-  .qf-field textarea:focus{
-    border-color:var(--amber);
-  }
-  .qf-field select{appearance:auto;}
-  .qf-footer{
-    display:flex;
-    align-items:center;
-    justify-content:flex-end;
-    gap:20px;
-    margin-top:6px;
-  }
-  .qf-status{
-    margin:0;
-    font-size:13px;
-    color:var(--text-muted);
-    flex:1;
-  }
-  .qf-status.ok{color:#15803D;}
-  .qf-status.err{color:#B91C1C;}
-  @media (max-width:640px){
-    .quote-form{padding:26px;}
-    .qf-row{flex-direction:column; gap:0;}
-    .qf-footer{flex-direction:column-reverse; align-items:stretch; text-align:center;}
-  }
-
-  /* ---------- CONTACT ---------- */
-  .contact-panel{
-    background:var(--bg-panel);
-    border:1px solid var(--line);
-    padding:64px 56px;
-    text-align:center;
-    position:relative;
-  }
-  .contact-panel h2{
-    font-size:clamp(26px, 3.4vw, 38px);
-    max-width:22ch;
-    margin:0 auto;
-  }
-  .contact-panel p{
-    color:var(--text-muted);
-    margin-top:18px;
-    font-size:15px;
-  }
-  .contact-actions{
-    margin-top:34px;
-    display:flex;
-    justify-content:center;
-    gap:16px;
-    flex-wrap:wrap;
-  }
-  @media (max-width:640px){.contact-panel{padding:48px 24px;}}
-
-  footer{
-    padding:36px 0 48px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px;
-    color:var(--text-faint);
-    flex-wrap:wrap;
-    gap:12px;
-  }
-  footer a{text-decoration:none; color:var(--text-faint); transition:color .2s;}
-  footer a:hover{color:var(--text-muted);}
-
-  /* ---------- RESPONSIVE ---------- */
-  @media (max-width:900px){
-    .hero-grid{grid-template-columns:1fr; gap:56px;}
-    .schematic{max-width:360px;}
-    .certs{grid-template-columns:1fr;}
-    nav.links{display:none;}
-  }
-  @media (max-width:560px){
-    .wrap{padding:0 20px;}
-    .nav-inner{padding:16px 20px;}
-    section{padding:64px 0;}
-    .hero{padding:56px 0 64px;}
-    .focus-grid{grid-template-columns:1fr;}
-    .ledger-row{grid-template-columns:1fr;}
-  }
-</style>
+<link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
 
 <header>
   <div class="nav-inner">
-    <a href="#top" class="logo"><span class="logo-mark"></span>AGV IT CONSULTING</a>
+    <a href="/#top" class="logo"><span class="logo-mark"></span>AGV IT CONSULTING</a>
     <nav class="links">
-      <a href="#services">Services</a>
-      <a href="/portfolio/">Work</a>
-      <a href="#track-record">Track record</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#contact">Contact</a>
+      <a href="/#services">Services</a>
+      <a href="/portfolio/" class="active">Work</a>
+      <a href="/#track-record">Track record</a>
+      <a href="/#certifications">Certifications</a>
+      <a href="/#contact">Contact</a>
     </nav>
-    <a class="nav-cta" href="#quote">Request a quote</a>
+    <a class="nav-cta" href="/#quote">Request a quote</a>
   </div>
 </header>
 
-<main id="top">
+<main>
 
-  <!-- HERO -->
-  <section class="hero" style="border-top:none;">
-    <div class="wrap hero-grid">
-      <div>
-        <div class="eyebrow">IT Project Manager · Consultant · Web Developer · Antwerp, Belgium</div>
-        <h1>Security &amp; compliance programmes, <em>turned into working infrastructure.</em></h1>
-        <p class="lead">I'm Arnold Verhoeven, a PMP and PRINCE2 certified IT project manager, consultant and freelance web developer. I built my experience across the pharmaceutical and logistics sectors, on projects of every kind — which is exactly what lets me challenge every stakeholder I work with, from the boardroom to the build itself.</p>
-        <p class="lead">Today that experience is concentrated on ISO 27001 certification tracks, NIS2 compliance programmes, and the identity, network and automation projects that sit underneath them.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#quote">Request a website quote</a>
-          <a class="btn btn-ghost" href="https://www.linkedin.com/in/arnold-verhoeven" target="_blank" rel="noopener">View profile on LinkedIn</a>
-        </div>
-        <div class="hero-meta">
-          <div><span>13+ yrs</span> IT project management</div>
-          <div><span>PMP</span> &amp; <span>PRINCE2</span> certified</div>
-          <div><span>EMEA / AMER</span> programme delivery</div>
-        </div>
-      </div>
-
-      <div class="schematic" aria-hidden="true">
-        <svg viewBox="0 0 400 400">
-          <!-- connecting lines -->
-          <line class="sch-line active" x1="200" y1="200" x2="200" y2="70"/>
-          <line class="sch-line active" x1="200" y1="200" x2="330" y2="140"/>
-          <line class="sch-line" x1="200" y1="200" x2="345" y2="270"/>
-          <line class="sch-line" x1="200" y1="200" x2="200" y2="335"/>
-          <line class="sch-line" x1="200" y1="200" x2="60" y2="270"/>
-          <line class="sch-line" x1="200" y1="200" x2="70" y2="135"/>
-
-          <!-- center node -->
-          <circle class="sch-node center" cx="200" cy="200" r="34"/>
-          <text class="sch-label center" x="200" y="197" text-anchor="middle">SECURITY</text>
-          <text class="sch-label center" x="200" y="211" text-anchor="middle">PROGRAMME</text>
-
-          <!-- ISO 27001 node (active) -->
-          <circle class="sch-pulse" cx="200" cy="70" r="26"/>
-          <circle class="sch-node active" cx="200" cy="70" r="26"/>
-          <text class="sch-label active" x="200" y="66" text-anchor="middle">ISO</text>
-          <text class="sch-label active" x="200" y="78" text-anchor="middle">27001</text>
-
-          <!-- NIS2 node (active) -->
-          <circle class="sch-pulse d2" cx="330" cy="140" r="24"/>
-          <circle class="sch-node active" cx="330" cy="140" r="24"/>
-          <text class="sch-label active" x="330" y="144" text-anchor="middle">NIS2</text>
-
-          <!-- IAM -->
-          <circle class="sch-node" cx="345" cy="270" r="24"/>
-          <text class="sch-label" x="345" y="274" text-anchor="middle">IAM</text>
-
-          <!-- SSO -->
-          <circle class="sch-node" cx="200" cy="335" r="24"/>
-          <text class="sch-label" x="200" y="339" text-anchor="middle">SSO</text>
-
-          <!-- LAN/WAN -->
-          <circle class="sch-node" cx="60" cy="270" r="24"/>
-          <text class="sch-label" x="60" y="266" text-anchor="middle">LAN</text>
-          <text class="sch-label" x="60" y="278" text-anchor="middle">WAN</text>
-
-          <!-- M&A -->
-          <circle class="sch-node" cx="70" cy="135" r="24"/>
-          <text class="sch-label" x="70" y="139" text-anchor="middle">M&amp;A</text>
-        </svg>
-      </div>
+  <section class="page-hero" style="border-top:none;">
+    <div class="wrap">
+      <div class="eyebrow">Portfolio</div>
+      <h1>Every project, from architecture to launch.</h1>
+      <p class="lead">A selection of platforms, client sites and web apps built end-to-end — design, development, hosting and everything that keeps them running afterwards.</p>
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section id="services">
+  <section>
     <div class="wrap">
-      <div class="section-head reveal">
-        <div>
-          <div class="section-tag">Services</div>
-          <h2>From strategic advice to the platform itself — and keeping it running afterwards.</h2>
-        </div>
-        <p class="section-note">Every engagement can be scoped as a one-off build or an ongoing retainer.</p>
-      </div>
+      <div class="port-grid reveal">
 
-      <div class="focus-grid reveal">
-        <div class="focus-card">
-          <div class="focus-num">01</div>
-          <h3>IT consultancy &amp; advice</h3>
-          <p>Independent advice on infrastructure, tooling, security frameworks and digital workflows — sized to fit your organisation, not a generic template.</p>
-        </div>
-        <div class="focus-card">
-          <div class="focus-num">02</div>
-          <h3>Websites, web apps &amp; hosting</h3>
-          <p>Development of websites and custom web applications, with reliable hosting and ongoing technical management — from the first line of code to staying online.</p>
-        </div>
-        <div class="focus-card">
-          <div class="focus-num">03</div>
-          <h3>Webshops</h3>
-          <p>Setup and management of e-commerce platforms — from the first order through to day-to-day operations.</p>
-        </div>
-        <div class="focus-card">
-          <div class="focus-num">04</div>
-          <h3>Booking &amp; reservation systems</h3>
-          <p>Custom online booking and reservation solutions, built around how your business or service actually works.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SELECTED WORK -->
-  <section id="work">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div>
-          <div class="section-tag">Selected work</div>
-          <h2>Two platforms built end-to-end, from architecture to launch.</h2>
-        </div>
-        <p class="section-note">More client work and references available on request. <a href="/portfolio/" style="color:var(--amber); font-weight:600; text-decoration:none;">View full portfolio ↗</a></p>
-      </div>
-
-      <div class="work-grid reveal">
-        <a class="work-card featured" href="https://shopzo.be" target="_blank" rel="noopener">
-          <div class="work-label mono">Platform · Multi-tenant e-commerce</div>
-          <h3>Shopzo</h3>
-          <p>A white-label e-commerce platform built for small retailers — seller dashboard, multi-tenant architecture, and its first live storefront, Happy Paws Store.</p>
-          <div class="work-tags">
-            <span>React</span><span>Supabase</span><span>Multi-tenant</span>
+        <a class="port-card" href="./shopzo/">
+          <div class="port-shot">
+            <img src="https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fshopzo.be%2F?w=1200&h=750" alt="Shopzo.be homepage screenshot" loading="lazy">
           </div>
-          <div class="work-link">Visit shopzo.be <span class="arrow">↗</span></div>
+          <div class="port-body">
+            <div class="work-label mono">Platform · Multi-tenant e-commerce</div>
+            <h3>Shopzo</h3>
+            <p>A white-label e-commerce platform built for small retailers — seller dashboard, multi-tenant architecture, and its first live storefront, Happy Paws Store.</p>
+            <div class="work-tags">
+              <span>React</span><span>Supabase</span><span>Multi-tenant</span>
+            </div>
+            <div class="port-links">
+              <div class="work-link">View project <span class="arrow">↗</span></div>
+              <a class="ext-link" href="https://shopzo.be" target="_blank" rel="noopener" onclick="event.stopPropagation()">shopzo.be</a>
+            </div>
+          </div>
         </a>
 
-        <a class="work-card" href="https://jessbeauty.be" target="_blank" rel="noopener">
-          <div class="work-label mono">Client site · Hair salon</div>
-          <h3>Jess Beauty Antwerp</h3>
-          <p>A bilingual, appointment-only salon site — from brand direction to a working booking flow, delivered as a self-contained build.</p>
-          <div class="work-tags">
-            <span>EN / ES</span><span>Booking</span>
+        <a class="port-card" href="./happy-paws-store/">
+          <div class="port-shot">
+            <img src="https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fhappyhappypawsstore.netlify.app%2F?w=1200&h=750" alt="Happy Paws Store homepage screenshot" loading="lazy">
           </div>
-          <div class="work-link">Visit jessbeauty.be <span class="arrow">↗</span></div>
+          <div class="port-body">
+            <div class="work-label mono">Storefront · Built on Shopzo</div>
+            <h3>Happy Paws Store</h3>
+            <p>The first live shop on the Shopzo platform — a pet store in Antwerp selling food, toys and supplies, online and in-store.</p>
+            <div class="work-tags">
+              <span>Shopzo storefront</span><span>Retail</span>
+            </div>
+            <div class="port-links">
+              <div class="work-link">View project <span class="arrow">↗</span></div>
+              <a class="ext-link" href="https://happyhappypawsstore.netlify.app" target="_blank" rel="noopener" onclick="event.stopPropagation()">visit site</a>
+            </div>
+          </div>
         </a>
-      </div>
-    </div>
-  </section>
 
-  <!-- TRACK RECORD -->
-  <section id="track-record">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div>
-          <div class="section-tag">Track record</div>
-          <h2>13 years across pharma, logistics, healthcare and rail.</h2>
-        </div>
-        <p class="section-note">Full project history and references available on LinkedIn.</p>
-      </div>
-
-      <div class="ledger reveal">
-        <div class="ledger-row">
-          <div class="years mono">2023 — Now</div>
-          <div class="org">Katoen Natie<span>IT Project Manager</span></div>
-          <div class="desc">ISO 27001 &amp; NIS2 lead for business unit IT, IAM and SSO projects, SaaS transitions, automation programmes, site start-ups &amp; M&amp;A, and global LAN/WAN renewals.</div>
-        </div>
-        <div class="ledger-row">
-          <div class="years mono">2023</div>
-          <div class="org">Lonza<span>IT Project Manager, freelance</span></div>
-          <div class="desc">Migration of 250 servers to a new domain as a security-audit remediation action — dependency mapping, timeline and project charter.</div>
-        </div>
-        <div class="ledger-row">
-          <div class="years mono">2022</div>
-          <div class="org">CM — Christelijke Mutualiteit<span>Project Manager, freelance</span></div>
-          <div class="desc">New monitoring programme (CMDB, ELK/OpenSearch), file system upgrade, data-centre relocation and telephony fallback projects.</div>
-        </div>
-        <div class="ledger-row">
-          <div class="years mono">2017 — 2021</div>
-          <div class="org">Johnson &amp; Johnson (via NTT)<span>Project Manager</span></div>
-          <div class="desc">SD-WAN migration across 30 sites, EOL hardware consolidation, and multi-year voice transformation across EMEA.</div>
-        </div>
-        <div class="ledger-row">
-          <div class="years mono">2014 — 2017</div>
-          <div class="org">Ypto (NMBS)<span>Junior Project Manager</span></div>
-          <div class="desc">IT-business alignment, demand management and lifecycle rollout programmes across 10,000+ devices nationwide.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CERTIFICATIONS -->
-  <section id="certifications">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div>
-          <div class="section-tag">Certifications</div>
-          <h2>Credentials behind the delivery.</h2>
-        </div>
-      </div>
-
-      <div class="certs reveal">
-        <div class="cert-card">
-          <div class="cert-seal mono">PMP</div>
-          <div class="cert-info">
-            <h3>Project Management Professional</h3>
-            <p class="mono">CERTIFIED SINCE 2021 · PMI</p>
+        <a class="port-card" href="./jess-beauty/">
+          <div class="port-shot">
+            <img src="https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fjessbeauty.be%2F?w=1200&h=750" alt="Jess Beauty homepage screenshot" loading="lazy">
           </div>
-        </div>
-        <div class="cert-card">
-          <div class="cert-seal mono">P2</div>
-          <div class="cert-info">
-            <h3>PRINCE2 Practitioner</h3>
-            <p class="mono">CERTIFIED SINCE 2017</p>
+          <div class="port-body">
+            <div class="work-label mono">Client site · Hair salon</div>
+            <h3>Jess Beauty Antwerp</h3>
+            <p>A bilingual, appointment-only salon site — from brand direction to a working booking flow, delivered as a self-contained build.</p>
+            <div class="work-tags">
+              <span>EN / ES</span><span>Booking</span>
+            </div>
+            <div class="port-links">
+              <div class="work-link">View project <span class="arrow">↗</span></div>
+              <a class="ext-link" href="https://jessbeauty.be" target="_blank" rel="noopener" onclick="event.stopPropagation()">jessbeauty.be</a>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        </a>
 
-  <!-- QUOTE REQUEST -->
-  <section id="quote">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div>
-          <div class="section-tag">Get a quote</div>
-          <h2>Tell me about your website, webshop or booking project.</h2>
-        </div>
-        <p class="section-note">Fill this in and it opens a pre-filled email — no account or back-and-forth needed to get started.</p>
-      </div>
+        <a class="port-card" href="./agv-it/">
+          <div class="port-shot">
+            <img src="https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fagv-it.be%2F?w=1200&h=750" alt="AGV IT Consulting homepage screenshot" loading="lazy">
+          </div>
+          <div class="port-body">
+            <div class="work-label mono">Own site · IT consultancy</div>
+            <h3>AGV IT Consulting</h3>
+            <p>A single-page site built from scratch to carry the consultancy, web development and webshop services under one roof.</p>
+            <div class="work-tags">
+              <span>Single-page</span><span>Design system</span>
+            </div>
+            <div class="port-links">
+              <div class="work-link">View project <span class="arrow">↗</span></div>
+              <a class="ext-link" href="https://agv-it.be" target="_blank" rel="noopener" onclick="event.stopPropagation()">agv-it.be</a>
+            </div>
+          </div>
+        </a>
 
-      <form id="quote-form" class="quote-form reveal" novalidate>
-        <div class="qf-row">
-          <div class="qf-field">
-            <label for="qf-name">Name<span aria-hidden="true">*</span></label>
-            <input type="text" id="qf-name" name="name" required autocomplete="name">
-          </div>
-          <div class="qf-field">
-            <label for="qf-email">Email<span aria-hidden="true">*</span></label>
-            <input type="email" id="qf-email" name="email" required autocomplete="email">
-          </div>
-        </div>
-        <div class="qf-row">
-          <div class="qf-field">
-            <label for="qf-company">Company <span class="opt">(optional)</span></label>
-            <input type="text" id="qf-company" name="company" autocomplete="organization">
-          </div>
-          <div class="qf-field">
-            <label for="qf-type">Project type<span aria-hidden="true">*</span></label>
-            <select id="qf-type" name="type" required>
-              <option value="" disabled selected>Choose one</option>
-              <option value="Website">Website</option>
-              <option value="Web application">Web application</option>
-              <option value="Webshop / e-commerce">Webshop / e-commerce</option>
-              <option value="Booking / reservation system">Booking &amp; reservation system</option>
-              <option value="Not sure yet">Not sure yet</option>
-            </select>
-          </div>
-        </div>
-        <div class="qf-field">
-          <label for="qf-message">Project details<span aria-hidden="true">*</span></label>
-          <textarea id="qf-message" name="message" rows="5" required placeholder="What are you looking to build, and what timeline are you working with?"></textarea>
-        </div>
-        <div class="qf-footer">
-          <p id="qf-status" class="qf-status" role="status"></p>
-          <button type="submit" class="btn btn-primary">Send quote request</button>
-        </div>
-      </form>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="wrap">
-      <div class="contact-panel reveal">
-        <div class="section-tag" style="margin-bottom:14px;">Anything else</div>
-        <h2>Have a broader IT consultancy, security or infrastructure question?</h2>
-        <p>Based in Antwerp, working across Belgium and EMEA. Freelance engagements, short-term or programme-length.</p>
-        <div class="contact-actions">
-          <a class="btn btn-primary" href="https://www.linkedin.com/in/arnold-verhoeven" target="_blank" rel="noopener">Message on LinkedIn</a>
-          <a class="btn btn-ghost" href="mailto:arnold.verhoeven@agv-it.be">arnold.verhoeven@agv-it.be</a>
-        </div>
       </div>
     </div>
   </section>
@@ -936,12 +123,11 @@
 <footer>
   <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:12px;">
     <span>© 2026 AGV IT Consulting BV</span>
-    <a href="https://www.linkedin.com/in/arnold-verhoeven" target="_blank" rel="noopener">linkedin.com/in/arnold-verhoeven ↗</a>
+    <a href="/#quote">Have a project in mind? Get a quote ↗</a>
   </div>
 </footer>
 
 <script>
-  // Scroll reveal
   const revealEls = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
@@ -951,49 +137,10 @@
           io.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.1 });
     revealEls.forEach(el => io.observe(el));
   } else {
     revealEls.forEach(el => el.classList.add('in'));
-  }
-
-  // Quote request form -> pre-filled email (no backend required)
-  const quoteForm = document.getElementById('quote-form');
-  if (quoteForm) {
-    quoteForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const status = document.getElementById('qf-status');
-      const name = document.getElementById('qf-name').value.trim();
-      const email = document.getElementById('qf-email').value.trim();
-      const company = document.getElementById('qf-company').value.trim();
-      const type = document.getElementById('qf-type').value;
-      const message = document.getElementById('qf-message').value.trim();
-
-      if (!name || !email || !type || !message) {
-        status.textContent = 'Please fill in the required fields.';
-        status.className = 'qf-status err';
-        return;
-      }
-
-      const subject = 'Website quote request — ' + type + (company ? ' — ' + company : '');
-      const bodyLines = [
-        'Name: ' + name,
-        'Email: ' + email,
-        company ? 'Company: ' + company : null,
-        'Project type: ' + type,
-        '',
-        'Project details:',
-        message
-      ].filter(Boolean);
-
-      const mailto = 'mailto:arnold.verhoeven@agv-it.be'
-        + '?subject=' + encodeURIComponent(subject)
-        + '&body=' + encodeURIComponent(bodyLines.join('\n'));
-
-      window.location.href = mailto;
-      status.textContent = 'Opening your email client with the request pre-filled…';
-      status.className = 'qf-status ok';
-    });
   }
 </script>
 
