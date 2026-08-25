@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABAI Jewellery — Diamonds &amp; Handmade Jewels, Antwerp</title>
+<meta name="description" content="ABAI Jewellery — specialised in diamonds, handmade jewels and certified stones. De Keyserlei 69, Antwerp, since 1990.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Cinzel:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0a0a0b;
+    --bg-elevated: #131214;
+    --bg-elevated-2: #1a191c;
+    --gold: #c6a15b;
+    --gold-soft: #a98a4f;
+    --gold-light: #e6d7ab;
+    --ivory: #f6f2e9;
+    --ivory-dim: #ded6c2;
+    --text-dark: #17161a;
+    --line: rgba(198,161,91,0.22);
+    --line-soft: rgba(198,161,91,0.12);
+    --max: 1180px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--ivory-dim);
+    font-family:'Jost', sans-serif;
+    font-weight:300;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--gold); color:#0a0a0b;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+
+  h1,h2,h3{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:500;
+    color:var(--ivory);
+    line-height:1.1;
+  }
+  .eyebrow{
+    font-family:'Cinzel', serif;
+    font-size:0.72rem;
+    letter-spacing:0.32em;
+    text-transform:uppercase;
+    color:var(--gold);
+  }
+  .wordmark{
+    font-family:'Cinzel', serif;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+  }
+
+  /* ---------- diamond facet signature icon ---------- */
+  .facet{ display:inline-block; }
+
+  /* ---------- background diamond lattice (subtle) ---------- */
+  .lattice{
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(45deg, var(--line-soft) 1px, transparent 1px),
+      linear-gradient(-45deg, var(--line-soft) 1px, transparent 1px);
+    background-size: 64px 64px;
+    opacity:0.5;
+    pointer-events:none;
+  }
+
+  /* ---------- nav ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:22px clamp(20px,5vw,64px);
+    transition:background .4s ease, padding .4s ease, border-color .4s ease;
+    border-bottom:1px solid transparent;
+  }
+  header.scrolled{
+    background:rgba(10,10,11,0.92);
+    backdrop-filter:blur(10px);
+    padding:14px clamp(20px,5vw,64px);
+    border-bottom:1px solid var(--line);
+  }
+  .logo-mark{
+    display:flex; align-items:center; gap:10px;
+    font-size:1.15rem;
+    color:var(--ivory);
+  }
+  .logo-mark svg{ width:22px; height:22px; flex-shrink:0; }
+  nav.links{ display:flex; gap:clamp(18px,3vw,40px); align-items:center; }
+  nav.links a{
+    font-family:'Jost', sans-serif;
+    font-size:0.82rem;
+    letter-spacing:0.06em;
+    color:var(--ivory-dim);
+    position:relative;
+    padding-bottom:4px;
+    transition:color .25s ease;
+  }
+  nav.links a:hover{ color:var(--gold-light); }
+  nav.links a::after{
+    content:''; position:absolute; left:0; right:100%; bottom:0; height:1px;
+    background:var(--gold); transition:right .3s ease;
+  }
+  nav.links a:hover::after{ right:0; }
+  .nav-toggle{ display:none; }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center;
+    padding:120px 24px 80px;
+    overflow:hidden;
+  }
+  .hero-diamond{
+    position:absolute;
+    top:50%; left:50%;
+    transform:translate(-50%,-50%);
+    width:min(820px, 130vw);
+    opacity:0.16;
+    animation: rotate-slow 90s linear infinite;
+  }
+  @keyframes rotate-slow{ from{transform:translate(-50%,-50%) rotate(0deg);} to{transform:translate(-50%,-50%) rotate(360deg);} }
+  .hero-content{ position:relative; z-index:2; max-width:760px; }
+  .hero .eyebrow{ margin-bottom:22px; display:block; }
+  .hero h1{
+    font-size:clamp(2.6rem, 7vw, 5.2rem);
+    letter-spacing:0.02em;
+  }
+  .hero h1 em{
+    font-style:italic; color:var(--gold-light); font-weight:400;
+  }
+  .hero-sub{
+    margin:26px auto 0;
+    max-width:480px;
+    font-size:1.02rem;
+    font-weight:300;
+    color:var(--ivory-dim);
+    line-height:1.7;
+  }
+  .hero-cta{
+    margin-top:44px;
+    display:flex; gap:18px; justify-content:center; flex-wrap:wrap;
+  }
+  .btn{
+    font-family:'Cinzel', serif;
+    font-size:0.72rem;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    padding:16px 34px;
+    border:1px solid var(--gold);
+    color:var(--gold-light);
+    transition:all .3s ease;
+    display:inline-block;
+  }
+  .btn:hover{ background:var(--gold); color:#0a0a0b; }
+  .btn.solid{ background:var(--gold); color:#0a0a0b; }
+  .btn.solid:hover{ background:transparent; color:var(--gold-light); }
+
+  .scroll-cue{
+    position:absolute; bottom:36px; left:50%; transform:translateX(-50%);
+    display:flex; flex-direction:column; align-items:center; gap:8px;
+    z-index:2;
+  }
+  .scroll-cue span{
+    font-family:'Cinzel', serif; font-size:0.62rem; letter-spacing:0.28em;
+    color:var(--gold-soft); text-transform:uppercase;
+  }
+  .scroll-line{ width:1px; height:36px; background:linear-gradient(var(--gold), transparent); animation:pulse-line 2.4s ease-in-out infinite; }
+  @keyframes pulse-line{ 0%,100%{opacity:0.4;} 50%{opacity:1;} }
+
+  /* ---------- section shell ---------- */
+  section{ position:relative; padding:120px clamp(20px,6vw,64px); }
+  .section-inner{ max-width:var(--max); margin:0 auto; }
+  .section-head{ text-align:center; max-width:640px; margin:0 auto 64px; }
+  .section-head .eyebrow{ margin-bottom:16px; }
+  .section-head h2{ font-size:clamp(2rem, 4vw, 2.9rem); }
+  .rule{
+    width:64px; height:1px; background:var(--gold); margin:22px auto 0; opacity:0.6;
+  }
+
+  /* ---------- heritage / about ---------- */
+  .heritage{
+    display:grid; grid-template-columns:0.9fr 1.1fr; gap:70px; align-items:center;
+  }
+  .heritage-figure{
+    position:relative;
+    aspect-ratio:4/5;
+    border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(198,161,91,0.10), transparent 60%),
+      var(--bg-elevated);
+  }
+  .heritage-figure svg{ width:56%; opacity:0.85; }
+  .heritage-figure::before{
+    content:''; position:absolute; inset:14px; border:1px solid var(--line-soft);
+  }
+  .est-badge{
+    position:absolute; bottom:-1px; right:-1px;
+    background:var(--gold); color:#0a0a0b;
+    font-family:'Cinzel', serif; font-size:0.68rem; letter-spacing:0.18em;
+    padding:12px 20px;
+    text-align:center;
+  }
+  .est-badge strong{ display:block; font-size:1.3rem; letter-spacing:0.06em; margin-top:2px;}
+  .heritage-text h2{ font-size:clamp(2rem,3.6vw,2.7rem); margin-bottom:24px; }
+  .heritage-text p{ font-size:1.02rem; line-height:1.85; margin-bottom:18px; color:var(--ivory-dim); }
+  .heritage-text p:last-child{ margin-bottom:0; }
+
+  /* ---------- specialisation cards ---------- */
+  .cards{ display:grid; grid-template-columns:repeat(3, 1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+  .card{
+    background:var(--bg);
+    padding:52px 38px;
+    text-align:center;
+    transition:background .35s ease;
+  }
+  .card:hover{ background:var(--bg-elevated); }
+  .card svg{ width:44px; height:44px; margin:0 auto 26px; }
+  .card h3{ font-size:1.55rem; margin-bottom:14px; font-weight:500; }
+  .card p{ font-size:0.94rem; line-height:1.75; color:var(--ivory-dim); }
+
+  /* ---------- craftsmanship strip ---------- */
+  .strip{
+    background:var(--ivory);
+    color:var(--text-dark);
+  }
+  .strip .eyebrow{ color:var(--gold-soft); }
+  .strip h2{ color:var(--text-dark); }
+  .process{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:44px;
+    margin-top:64px;
+  }
+  .process-step{ text-align:center; }
+  .process-step .num{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:1rem;
+    color:var(--gold-soft);
+    display:block;
+    margin-bottom:14px;
+  }
+  .process-step h4{
+    font-family:'Cormorant Garamond', serif;
+    font-size:1.35rem;
+    font-weight:600;
+    margin-bottom:10px;
+    color:var(--text-dark);
+  }
+  .process-step p{ font-size:0.9rem; line-height:1.7; color:#5a5648; }
+  .process-line{ display:flex; align-items:center; }
+  .process-line .line{ height:1px; flex:1; background:var(--gold-soft); opacity:0.4; margin-top:-70px; }
+
+  /* ---------- visit / hours / map ---------- */
+  .visit{ display:grid; grid-template-columns:1fr 1fr; gap:0; border:1px solid var(--line); }
+  .visit-info{ padding:64px 56px; }
+  .visit-info .eyebrow{ margin-bottom:16px; }
+  .visit-info h2{ font-size:clamp(2rem,3.6vw,2.7rem); margin-bottom:30px; }
+  .info-row{ display:flex; gap:18px; padding:18px 0; border-bottom:1px solid var(--line-soft); }
+  .info-row:last-of-type{ border-bottom:none; }
+  .info-row svg{ width:20px; height:20px; flex-shrink:0; margin-top:3px; color:var(--gold); }
+  .info-row .label{ font-family:'Cinzel', serif; font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold-soft); margin-bottom:4px; }
+  .info-row .value{ font-size:1rem; color:var(--ivory); line-height:1.6; }
+  .info-row .value a:hover{ color:var(--gold-light); }
+
+  table.hours{ width:100%; border-collapse:collapse; margin-top:8px; font-size:0.94rem; }
+  table.hours td{ padding:9px 0; border-bottom:1px solid var(--line-soft); }
+  table.hours td:first-child{ color:var(--ivory-dim); text-transform:capitalize; }
+  table.hours td:last-child{ text-align:right; color:var(--ivory); }
+  table.hours tr.closed td:last-child{ color:var(--gold-soft); font-style:italic; }
+  table.hours tr.today td{ color:var(--gold-light); }
+
+  .visit-map{
+    position:relative;
+    background:var(--bg-elevated);
+    min-height:420px;
+    display:flex; align-items:center; justify-content:center;
+    border-left:1px solid var(--line);
+  }
+  .visit-map .lattice{ opacity:0.35; }
+  .map-pin{ position:relative; z-index:2; text-align:center; padding:32px; }
+  .map-pin svg{ width:38px; height:38px; margin:0 auto 18px; color:var(--gold); }
+  .map-pin p{ font-size:0.95rem; color:var(--ivory-dim); margin-bottom:22px; max-width:260px; }
+
+  /* ---------- contact ---------- */
+  .contact{ text-align:center; }
+  .contact-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+    background:var(--line); border:1px solid var(--line);
+    margin-top:60px;
+  }
+  .contact-item{ background:var(--bg); padding:46px 30px; }
+  .contact-item svg{ width:30px; height:30px; margin:0 auto 20px; color:var(--gold); }
+  .contact-item .label{ font-family:'Cinzel', serif; font-size:0.66rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold-soft); margin-bottom:10px; }
+  .contact-item .value{ font-size:1.08rem; color:var(--ivory); }
+  .contact-item a:hover{ color:var(--gold-light); }
+
+  /* ---------- footer ---------- */
+  footer{
+    padding:56px clamp(20px,6vw,64px) 40px;
+    border-top:1px solid var(--line);
+    text-align:center;
+  }
+  footer .wordmark{ font-size:1rem; color:var(--gold-light); display:block; margin-bottom:14px; }
+  footer p{ font-size:0.82rem; color:var(--ivory-dim); opacity:0.7; letter-spacing:0.02em; }
+  footer .foot-links{ margin-top:18px; display:flex; gap:26px; justify-content:center; }
+  footer .foot-links a{ font-size:0.8rem; color:var(--ivory-dim); }
+  footer .foot-links a:hover{ color:var(--gold-light); }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 900px){
+    nav.links{
+      position:fixed; top:0; right:0; height:100vh; width:min(320px,80vw);
+      background:rgba(10,10,11,0.98); backdrop-filter:blur(10px);
+      flex-direction:column; justify-content:center; align-items:flex-start;
+      padding:40px; gap:30px;
+      transform:translateX(100%); transition:transform .4s ease;
+      border-left:1px solid var(--line);
+    }
+    nav.links.open{ transform:translateX(0); }
+    .nav-toggle{
+      display:flex; flex-direction:column; gap:5px; cursor:pointer; z-index:200;
+      background:none; border:none; padding:6px;
+    }
+    .nav-toggle span{ width:22px; height:1px; background:var(--gold-light); display:block; }
+    .heritage{ grid-template-columns:1fr; gap:44px; }
+    .cards{ grid-template-columns:1fr; }
+    .process{ grid-template-columns:1fr 1fr; row-gap:44px; }
+    .process-line{ display:none; }
+    .visit{ grid-template-columns:1fr; }
+    .visit-map{ border-left:none; border-top:1px solid var(--line); min-height:320px; }
+    .contact-grid{ grid-template-columns:1fr; }
+  }
+  @media (max-width:560px){
+    .process{ grid-template-columns:1fr; }
+    .visit-info{ padding:48px 26px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .hero-diamond{ animation:none; }
+    .scroll-line{ animation:none; }
+    html{ scroll-behavior:auto; }
+  }
+
+  :focus-visible{ outline:1px solid var(--gold); outline-offset:3px; }
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <a href="#top" class="logo-mark">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M4 8L12 2L20 8L12 22L4 8Z"/><path d="M4 8H20M8.5 8L12 2L15.5 8M8.5 8L12 22M15.5 8L12 22"/></svg>
+    <span class="wordmark">Abai <span style="color:var(--gold);">Jewellery</span></span>
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  <nav class="links" id="navLinks">
+    <a href="#heritage">Heritage</a>
+    <a href="#craft">Craftsmanship</a>
+    <a href="#specialisation">Speciality</a>
+    <a href="#visit">Visit</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" id="top">
+  <svg class="hero-diamond" viewBox="0 0 400 400" fill="none" stroke="#c6a15b" stroke-width="0.6">
+    <path d="M100 140L200 30L300 140L200 380Z"/>
+    <path d="M100 140H300M150 140L200 30L250 140M150 140L200 380M250 140L200 380"/>
+    <path d="M60 140L100 140L130 200L200 380L270 200L300 140L340 140" opacity="0.5"/>
+    <circle cx="200" cy="140" r="170" opacity="0.3"/>
+  </svg>
+  <div class="hero-content">
+    <span class="eyebrow">Antwerp Diamond District · Est. 1990</span>
+    <h1>Fine <em>diamonds</em>,<br>handmade with intention</h1>
+    <p class="hero-sub">A family jewellery house on De Keyserlei, specialised in certified diamonds and jewels handmade to order — three decades of craft in the heart of Antwerp.</p>
+    <div class="hero-cta">
+      <a href="#specialisation" class="btn solid">Our Speciality</a>
+      <a href="#visit" class="btn">Visit the Boutique</a>
+    </div>
+  </div>
+  <div class="scroll-cue">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<section id="heritage">
+  <div class="section-inner heritage">
+    <div class="heritage-figure">
+      <svg viewBox="0 0 200 200" fill="none" stroke="#c6a15b" stroke-width="0.8">
+        <path d="M50 70L100 15L150 70L100 190Z"/>
+        <path d="M50 70H150M75 70L100 15L125 70M75 70L100 190M125 70L100 190"/>
+      </svg>
+      <div class="est-badge">Established<strong>1990</strong></div>
+    </div>
+    <div class="heritage-text">
+      <span class="eyebrow">Our Heritage</span>
+      <h2 style="margin-top:16px;">Three generations of<br>Antwerp craftsmanship</h2>
+      <p>Since 1990, Abai Jewellery has been a fixture of De Keyserlei, in the heart of Antwerp's historic diamond quarter — a city that has set the world's standard for cutting and trading diamonds for over five centuries.</p>
+      <p>What began as a small family counter has grown into a trusted address for collectors, brides, and connoisseurs seeking diamonds of proven provenance and jewels made by hand, not by machine.</p>
+      <p>Every piece that leaves our boutique carries that same conviction: a stone is only as fine as the trust behind it.</p>
+    </div>
+  </div>
+</section>
+
+<section id="specialisation" style="background:var(--bg-elevated); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="eyebrow">What We Do</span>
+      <h2>Our Speciality</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <svg viewBox="0 0 48 48" fill="none" stroke="#c6a15b" stroke-width="1"><path d="M8 18L24 6L40 18L24 44Z"/><path d="M8 18H40M16 18L24 6L32 18M16 18L24 44M32 18L24 44"/></svg>
+        <h3>Diamonds</h3>
+        <p>A hand-selected range of loose and set diamonds, chosen for cut, clarity and character rather than volume.</p>
+      </div>
+      <div class="card">
+        <svg viewBox="0 0 48 48" fill="none" stroke="#c6a15b" stroke-width="1"><path d="M24 42s-16-10-16-22a10 10 0 0 1 16-8 10 10 0 0 1 16 8c0 12-16 22-16 22z"/><circle cx="24" cy="18" r="3"/></svg>
+        <h3>Handmade Jewels</h3>
+        <p>Rings, necklaces and bespoke commissions shaped by hand in-house, built around the stone rather than a catalogue.</p>
+      </div>
+      <div class="card">
+        <svg viewBox="0 0 48 48" fill="none" stroke="#c6a15b" stroke-width="1"><rect x="9" y="9" width="30" height="30" rx="2"/><path d="M16 24l6 6 12-12"/></svg>
+        <h3>Diamonds with Certificate</h3>
+        <p>Every diamond of significance is sold with independent certification, so provenance and grading are never in question.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="strip" id="craft">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="eyebrow">Craftsmanship</span>
+      <h2>How a piece comes to be</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="process">
+      <div class="process-step">
+        <span class="num">i.</span>
+        <h4>Consultation</h4>
+        <p>We start with a conversation — your occasion, budget and taste — in the boutique, by appointment.</p>
+      </div>
+      <div class="process-step">
+        <span class="num">ii.</span>
+        <h4>Stone Selection</h4>
+        <p>We source and present diamonds matched to your brief, each with clear grading and certification.</p>
+      </div>
+      <div class="process-step">
+        <span class="num">iii.</span>
+        <h4>Handcrafting</h4>
+        <p>The setting is shaped and finished by hand in our workshop, built specifically around your chosen stone.</p>
+      </div>
+      <div class="process-step">
+        <span class="num">iv.</span>
+        <h4>Presentation</h4>
+        <p>Your piece is inspected, certified and presented — ready to be worn or gifted.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="visit">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="eyebrow">Visit Us</span>
+      <h2>De Keyserlei 69, Antwerp</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="visit">
+      <div class="visit-info">
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg>
+          <div>
+            <div class="label">Address</div>
+            <div class="value">De Keyserlei 69<br>2018 Antwerpen, Belgium</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 7v5l3 3"/><circle cx="12" cy="12" r="9"/></svg>
+          <div style="width:100%;">
+            <div class="label">Opening Hours</div>
+            <table class="hours">
+              <tr><td>Monday</td><td>10:00 – 18:00</td></tr>
+              <tr><td>Tuesday</td><td>10:00 – 18:00</td></tr>
+              <tr><td>Wednesday</td><td>10:00 – 18:00</td></tr>
+              <tr><td>Thursday</td><td>10:00 – 18:00</td></tr>
+              <tr><td>Friday</td><td>10:00 – 18:00</td></tr>
+              <tr class="closed"><td>Saturday</td><td>Closed</td></tr>
+              <tr><td>Sunday</td><td>10:00 – 18:00</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="visit-map">
+        <div class="lattice"></div>
+        <div class="map-pin">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg>
+          <p>De Keyserlei 69, 2018 Antwerpen — steps from Antwerp Central Station, in the historic diamond quarter.</p>
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&query=De+Keyserlei+69+2018+Antwerpen+Belgium" target="_blank" rel="noopener">Open in Maps</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact" style="background:var(--bg-elevated); border-top:1px solid var(--line);">
+  <div class="section-inner">
+    <span class="eyebrow">Get in Touch</span>
+    <h2 style="margin-top:16px;">We're happy to answer your questions</h2>
+    <div class="rule"></div>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 3a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c1 .3 2 .5 3 .6a2 2 0 0 1 1.7 2z"/></svg>
+        <div class="label">Phone</div>
+        <div class="value"><a href="tel:+3222606046">+32 (0)2 260 06 46</a></div>
+      </div>
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>
+        <div class="label">Email</div>
+        <div class="value"><a href="mailto:abai.jewellery@gmail.com">abai.jewellery@gmail.com</a></div>
+      </div>
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1"/></svg>
+        <div class="label">Instagram</div>
+        <div class="value"><a href="#" target="_blank" rel="noopener">@abai.jewellery</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="wordmark">Abai Jewellery</span>
+  <p>De Keyserlei 69, 2018 Antwerpen, Belgium — Established 1990</p>
+  <div class="foot-links">
+    <a href="tel:+3222606046">+32 (0)2 260 06 46</a>
+    <a href="mailto:abai.jewellery@gmail.com">abai.jewellery@gmail.com</a>
+    <a href="#top">Back to top</a>
+  </div>
+</footer>
+
+<script>
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  });
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+</script>
+
+</body>
+</html>
