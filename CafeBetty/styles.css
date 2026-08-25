@@ -55,12 +55,20 @@ p{ margin:0; }
   font-weight:700;
 }
 
+.sr-only{
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+}
+
 /* ---------- Nav ---------- */
 .nav{
   position:fixed; top:0; left:0; right:0; z-index:100;
-  background:rgba(150,52,43,0.96);
-  border-bottom:1px solid rgba(246,239,226,0.15);
+  background:var(--brick);
   backdrop-filter:blur(4px);
+}
+.nav .awning{
+  position:absolute; top:100%; left:0; width:100%; height:34px;
+  display:block; pointer-events:none;
 }
 .nav__inner{
   display:flex; align-items:center; justify-content:space-between;
@@ -106,7 +114,7 @@ p{ margin:0; }
 .hero{
   background:var(--brick);
   color:var(--cream);
-  padding:150px 24px 0;
+  padding:180px 24px 0;
   text-align:center;
   position:relative;
   overflow:hidden;
@@ -119,11 +127,12 @@ p{ margin:0; }
   pointer-events:none;
 }
 .hero__eyebrow{ color:var(--gold-soft); }
-.hero__title{
-  font-size:clamp(4.2rem, 14vw, 8.8rem);
-  font-style:italic;
-  line-height:.9;
-  margin:14px 0 6px;
+.hero__logo{
+  display:block;
+  margin:22px auto 26px;
+  width:min(420px, 78vw);
+  height:auto;
+  filter:drop-shadow(0 10px 22px rgba(0,0,0,0.28));
 }
 .hero__tagline{
   font-size:1.05rem;
@@ -173,8 +182,11 @@ section{ padding:96px 0; }
 .section-head{ max-width:640px; margin:0 auto 52px; text-align:center; }
 .section-head .eyebrow{ color:var(--brick); display:block; margin-bottom:10px; }
 .section-head h2{
-  font-size:clamp(2.2rem,5vw,3rem);
-  font-style:italic;
+  font-size:clamp(1.9rem,4.2vw,2.6rem);
+  font-style:normal;
+  font-weight:600;
+  line-height:1.25;
+  letter-spacing:-0.01em;
   color:var(--oxblood);
 }
 .section-head p{ margin-top:14px; color:#5b4a40; font-size:1.02rem; line-height:1.6; }
@@ -193,11 +205,13 @@ section{ padding:96px 0; }
 .story__photo img{ width:100%; height:100%; object-fit:cover; }
 .story__text .eyebrow{ color:var(--brick); }
 .story__text h2{
-  font-size:clamp(2rem,4vw,2.7rem);
-  font-style:italic;
+  font-size:clamp(1.8rem,3.6vw,2.4rem);
+  font-style:normal;
+  font-weight:600;
+  letter-spacing:-0.01em;
   color:var(--oxblood);
   margin:12px 0 20px;
-  line-height:1.1;
+  line-height:1.3;
 }
 .story__text p{
   color:#4a3a30; line-height:1.75; font-size:1.02rem; margin-bottom:16px;
