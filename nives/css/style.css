@@ -126,9 +126,13 @@ html[data-lang="en"] [data-lc="en"] { display: inline; }
    at once. Any future .class + [data-lc] pairing needs the same treatment. */
 html[data-lang="nl"] .num[data-lc="nl"],
 html[data-lang="en"] .num[data-lc="en"] { display: block; }
+html[data-lang="nl"] .num[data-lc="en"],
+html[data-lang="en"] .num[data-lc="nl"] { display: none; }
 
 html[data-lang="nl"] .tag[data-lc="nl"],
 html[data-lang="en"] .tag[data-lc="en"] { display: inline-block; }
+html[data-lang="nl"] .tag[data-lc="en"],
+html[data-lang="en"] .tag[data-lc="nl"] { display: none; }
 
 /* ============================================================
    Organic blob frames — Nives's own signature shape,
