@@ -66,24 +66,45 @@
 </head>
 <body>
 
-<!-- ================= NAV ================= -->
-<nav class="nav">
-  <div class="nav__inner">
-    <a href="#top" class="nav__logo">Betty</a>
-    <button class="nav__toggle" id="navToggle" aria-label="Menu openen" aria-expanded="false">☰</button>
-    <ul class="nav__links" id="navLinks">
-      <li><a href="#verhaal">Verhaal</a></li>
-      <li><a href="#aanbod">Aanbod</a></li>
-      <li><a href="#sfeer">Sfeer</a></li>
-      <li><a href="#bezoek">Bezoek ons</a></li>
-    </ul>
+<!-- ================= HEADER (ticker + nav + awning) ================= -->
+<div class="site-header" id="siteHeader">
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span>Belpairestraat 28 · Berchem</span><span class="ticker__dot">●</span>
+      <span>Deel van de Andy Roasters familie</span><span class="ticker__dot">●</span>
+      <span>Vrijdag &amp; zaterdag open tot 19u</span><span class="ticker__dot">●</span>
+      <span>Specialty coffee · natuurwijn · zuurdesem</span><span class="ticker__dot">●</span>
+      <span>Belpairestraat 28 · Berchem</span><span class="ticker__dot">●</span>
+      <span>Deel van de Andy Roasters familie</span><span class="ticker__dot">●</span>
+      <span>Vrijdag &amp; zaterdag open tot 19u</span><span class="ticker__dot">●</span>
+      <span>Specialty coffee · natuurwijn · zuurdesem</span><span class="ticker__dot">●</span>
+    </div>
   </div>
-  <!-- Signature element: scalloped awning valance, hanging from the nav bar like the café's own striped awning -->
-  <svg class="awning" viewBox="0 0 1200 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="#top" class="nav__logo">
+        <img src="assets/icons/icon-192.png" alt="" class="nav__logo-mark">
+        <span>Betty</span>
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Menu openen" aria-expanded="false">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#verhaal">Verhaal</a></li>
+        <li><a href="#aanbod">Aanbod</a></li>
+        <li><a href="#sfeer">Sfeer</a></li>
+        <li><a href="#bezoek" class="nav__cta">Bezoek ons</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Signature element: scalloped awning valance with tassels, hanging from the nav bar -->
+  <svg class="awning" viewBox="0 0 1200 46" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <defs>
-      <pattern id="awningStripe" width="80" height="40" patternUnits="userSpaceOnUse" patternTransform="skewX(-18)">
-        <rect width="40" height="40" fill="#F6EFE2"></rect>
-        <rect x="40" width="40" height="40" fill="#E1C77A"></rect>
+      <pattern id="awningStripe" width="80" height="46" patternUnits="userSpaceOnUse" patternTransform="skewX(-18)">
+        <rect width="40" height="46" fill="#F6EFE2"></rect>
+        <rect x="40" width="40" height="46" fill="#E1C77A"></rect>
       </pattern>
     </defs>
     <path d="M0,0 L1200,0 L1200,12
@@ -99,8 +120,16 @@
       C275,12 275,32 250,32 C225,32 225,12 200,12
       C175,12 175,32 150,32 C125,32 125,12 100,12
       C75,12 75,32 50,32 C25,32 25,12 0,12 Z" fill="url(#awningStripe)"/>
+    <g fill="#C9A227">
+      <circle cx="25" cy="34" r="3.2"></circle><circle cx="125" cy="34" r="3.2"></circle>
+      <circle cx="225" cy="34" r="3.2"></circle><circle cx="325" cy="34" r="3.2"></circle>
+      <circle cx="425" cy="34" r="3.2"></circle><circle cx="525" cy="34" r="3.2"></circle>
+      <circle cx="625" cy="34" r="3.2"></circle><circle cx="725" cy="34" r="3.2"></circle>
+      <circle cx="825" cy="34" r="3.2"></circle><circle cx="925" cy="34" r="3.2"></circle>
+      <circle cx="1025" cy="34" r="3.2"></circle><circle cx="1125" cy="34" r="3.2"></circle>
+    </g>
   </svg>
-</nav>
+</div>
 
 <!-- ================= HERO ================= -->
 <header class="hero" id="top">

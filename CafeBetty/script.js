@@ -4,14 +4,26 @@ const navLinks = document.getElementById('navLinks');
 if (navToggle && navLinks) {
   navToggle.addEventListener('click', () => {
     const isOpen = navLinks.classList.toggle('is-open');
+    navToggle.classList.toggle('is-active', isOpen);
     navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       navLinks.classList.remove('is-open');
+      navToggle.classList.remove('is-active');
       navToggle.setAttribute('aria-expanded', 'false');
     });
   });
+}
+
+// Scroll shadow on the fixed header
+const siteHeader = document.getElementById('siteHeader');
+if (siteHeader) {
+  const updateHeaderShadow = () => {
+    siteHeader.classList.toggle('is-scrolled', window.scrollY > 8);
+  };
+  updateHeaderShadow();
+  window.addEventListener('scroll', updateHeaderShadow, { passive: true });
 }
 
 // Footer year
