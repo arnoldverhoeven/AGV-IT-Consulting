@@ -96,14 +96,6 @@
   }
   .btn:hover{ background:var(--blue-hover); }
 
-  footer{
-    margin-top:56px;
-    padding-top:24px;
-    border-top:1px solid var(--line);
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11.5px;
-    color:var(--text-faint);
-  }
 </style>
 </head>
 <body>
@@ -112,11 +104,6 @@
 
   <div id="state" class="state">Loading previews&hellip;</div>
   <div id="list" class="list"></div>
-
-  <footer>
-    Source: github.com/<span id="owner-label"></span>/<span id="repo-label"></span> &middot;
-    generated client-side via the GitHub Contents API
-  </footer>
 </div>
 
 <script>
@@ -129,9 +116,6 @@
   // (add to this list as needed).
   const EXCLUDE = new Set(["previews", "assets", "img", "images", "css", "js", ".github"]);
   // -------------------------------------------------------------------------
-
-  document.getElementById("owner-label").textContent = GITHUB_OWNER;
-  document.getElementById("repo-label").textContent = GITHUB_REPO;
 
   const stateEl = document.getElementById("state");
   const listEl = document.getElementById("list");
