@@ -1,1 +1,416 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Polette — Koffiebar in Antwerpen | Fransenplaats 6</title>
+<meta name="description" content="Polette is een hippe koffiebar aan de Fransenplaats in de Antwerpse Markgravewijk. Specialty koffie, huisgemaakte pastries (o.a. carrot cake) en een gezellige sfeer op het terras.">
+<link rel="canonical" href="https://www.polette.be/">
 
+<!-- Favicons -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0034BE">
+
+<!-- Open Graph / social preview -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Polette">
+<meta property="og:title" content="Polette — Koffiebar in Antwerpen">
+<meta property="og:description" content="Hippe koffiebar aan de Fransenplaats in de Markgravewijk. Specialty koffie, huisgemaakte pastries en een goed zonneke op het terras.">
+<meta property="og:image" content="https://www.polette.be/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://www.polette.be/">
+<meta property="og:locale" content="nl_BE">
+
+<!-- Twitter / X card (also used by some link-preview bots) -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Polette — Koffiebar in Antwerpen">
+<meta name="twitter:description" content="Hippe koffiebar aan de Fransenplaats in de Markgravewijk, Antwerpen.">
+<meta name="twitter:image" content="https://www.polette.be/assets/og-image.jpg">
+
+<!-- Local business structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "Polette",
+  "image": "https://www.polette.be/assets/og-image.jpg",
+  "url": "https://www.polette.be/",
+  "email": "info@polette.be",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Fransenplaats 6",
+    "postalCode": "2018",
+    "addressLocality": "Antwerpen",
+    "addressCountry": "BE"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "15:30" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "15:00" }
+  ],
+  "sameAs": ["https://www.instagram.com/polette.antwerp/"]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Caveat:wght@600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Ga naar inhoud</a>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top">
+      <img src="/assets/favicon-192.png" alt="" width="42" height="42">
+      <span>Polette</span>
+    </a>
+    <nav aria-label="Hoofdmenu">
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#verhaal">Verhaal</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#sfeer">Sfeer</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#bezoek">Route &amp; uren</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary nav-cta" href="#bezoek">Route plannen</a>
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu openen">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Fransenplaats 6, Markgravewijk</span>
+      <h1>Het zijn de <em>kleine gelukjes</em> in het leven.</h1>
+      <p class="hero-lede">Polette is de koffiebar op de hoek waar specialty koffie, huisgemaakte pastries en een goed zonneke op het terras samenkomen. Kom binnen voor een bakje, blijf hangen voor de sfeer.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#menu">Bekijk het menu</a>
+        <a class="btn btn-outline" href="https://maps.app.goo.gl/?q=Polette+Fransenplaats+6+Antwerpen" target="_blank" rel="noopener">Route in Google Maps</a>
+      </div>
+      <div class="hero-meta">
+        <span id="open-status"><span class="status-dot" id="status-dot"></span><span id="status-text">Openingsuren laden…</span></span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21c0-4.4-3.6-8-8-8s-8 3.6-8 8"/><circle cx="12" cy="7" r="4"/></svg>
+          Barista &amp; eigenares: Paulien
+        </span>
+      </div>
+    </div>
+    <div class="hero-photos" aria-hidden="false">
+      <figure class="polaroid polaroid-main">
+        <div class="tape"></div>
+        <img src="/assets/paulien-doorway.jpg" alt="Paulien, eigenares van Polette, voor de deur van de koffiebar aan de Fransenplaats" loading="eager">
+        <figcaption>Fransenplaats 6</figcaption>
+      </figure>
+      <figure class="polaroid polaroid-side">
+        <img src="/assets/cappuccino-waffle.jpg" alt="Cappuccino met latte art en een wafel, geserveerd op de blauwe tegelbar van Polette" loading="lazy">
+        <figcaption>koffie &amp; wafel</figcaption>
+      </figure>
+      <div class="badge-sticker">sinds<br>juni 2026</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VERHAAL ============ -->
+<section class="section story" id="verhaal">
+  <div class="wrap story-grid">
+    <figure class="story-photo reveal">
+      <img src="/assets/interior-bar.jpg" alt="Paulien achter de blauwe tegelbar van Polette met de espressomachine en verse bloemen" loading="lazy">
+    </figure>
+    <div class="story-text reveal">
+      <span class="eyebrow on-blue">Het verhaal achter Polette</span>
+      <h2>Van modesector tot eigen koffiebar</h2>
+      <p>Paulien Van De Vyver droomde al jaren van een eigen zaak. Na vijf jaar in de mode koos ze voor een radicale wending: fulltime barista worden bij koffiebar Lucien, om te ontdekken of het runnen van een koffiezaak echt zo mooi is als het lijkt.</p>
+      <p>Tijdens een wandeling met vriendinnen viel haar oog op een leegstaand hoekpand aan de Fransenplaats, in de volkse Markgravewijk. Precies de buurt waar ze altijd al iets had willen opstarten. Op 16 juni 2026 zwaaide Polette de deuren open.</p>
+      <p>De naam is een eerbetoon aan een voormalige Italiaanse collega, die haar bijnaam "Pol" nooit helemaal onder de knie kreeg en er steevast "Polette" van maakte.</p>
+      <p class="pull-quote">"Ik kreeg meteen het gevoel dat ik iets bijdraag aan de buurt."
+        <cite>— Paulien, in Gazet van Antwerpen</cite>
+      </p>
+      <div class="story-facts">
+        <div><strong>16/06</strong><span>Openingsdag 2026</span></div>
+        <div><strong>Hoekpand</strong><span>Fransenplaats, Markgravewijk</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MENU ============ -->
+<section class="section menu" id="menu">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Op de kaart</span>
+      <h2>Koffie, iets fris en een zoetigheid erbij</h2>
+      <p>Van een strakke espresso tot een iced matcha latte in de zon — en aan de bar staat altijd een wisselende selectie huisgemaakte pastries klaar, met de carrot cake als publiekslieveling.</p>
+    </div>
+
+    <div class="menu-board reveal">
+      <div class="menu-board-top">
+        <div class="menu-word">Polette<small>Instagram: @polette.antwerp</small></div>
+      </div>
+
+      <div class="menu-cols">
+        <div class="menu-cat">
+          <h3>Koffie</h3>
+          <ul>
+            <li><span>Espresso</span><span>&euro;3,40</span></li>
+            <li><span>Americano</span><span>&euro;3,70</span></li>
+            <li><span>Filter coffee</span><span>&euro;3,80</span></li>
+            <li><span>Cortado</span><span>&euro;3,70</span></li>
+            <li><span>Cappuccino</span><span>&euro;3,90</span></li>
+            <li><span>Flat white</span><span>&euro;4,50</span></li>
+            <li><span>Latte</span><span>&euro;4,30</span></li>
+          </ul>
+          <p class="menu-extras">+ extra shot &euro;0,50 &nbsp;·&nbsp; + plantaardige melk &euro;0,40 &nbsp;·&nbsp; + smaakje &euro;0,50</p>
+        </div>
+
+        <div class="menu-cat">
+          <h3>Iced drinks</h3>
+          <ul>
+            <li><span>Iced americano</span><span>&euro;4,10</span></li>
+            <li><span>Iced latte</span><span>&euro;4,70</span></li>
+            <li><span>Iced chai latte</span><span>&euro;4,70</span></li>
+            <li><span>Iced matcha latte</span><span>&euro;5,80</span></li>
+          </ul>
+        </div>
+
+        <div class="menu-cat">
+          <h3>More hot stuff</h3>
+          <ul>
+            <li><span>Chai latte</span><span>&euro;4,30</span></li>
+            <li><span>Matcha latte</span><span>&euro;5,40</span></li>
+            <li><span>Hot chocolate</span><span>&euro;4,80</span></li>
+            <li><span>Fresh ginger tea</span><span>&euro;4,50</span></li>
+            <li><span>Fresh mint tea</span><span>&euro;4,50</span></li>
+          </ul>
+        </div>
+
+        <div class="menu-cat">
+          <h3>Refreshments</h3>
+          <ul>
+            <li><span>Water (still/sparkling)</span><span>&euro;3,00</span></li>
+            <li><span>Tonic + espresso/matcha shot</span><span>+&euro;2,50</span></li>
+            <li><span>Ginger beer</span><span>&euro;4,00</span></li>
+            <li><span>Kombucha</span><span>&euro;4,50</span></li>
+            <li><span>Elderflower lemonade</span><span>&euro;4,50</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="menu-photo-note">
+        <img src="/assets/carrot-cake-menu.jpg" alt="De echte menukaart van Polette op de blauwe tegelbar, naast een bordje carrot cake" loading="lazy">
+        <p><strong>Pastries:</strong> check onze selectie huisgemaakte gebak aan de bar — inclusief de carrot cake waar buurtbewoners speciaal voor terugkomen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SFEER / GALLERY ============ -->
+<section class="section gallery" id="sfeer">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Sfeerbeeld</span>
+      <h2>Blauwe tegels, gele krukjes en een terrasje in de zon</h2>
+      <p>Een greep uit het interieur van Polette — ontworpen met evenveel liefde als de koffie zelf.</p>
+    </div>
+    <div class="gallery-grid reveal">
+      <figure>
+        <img src="/assets/interior-nook.jpg" alt="Zithoek bij Polette met gele krukjes, verse bloemen en een houten bar" loading="lazy">
+        <figcaption>De zithoek</figcaption>
+      </figure>
+      <figure>
+        <img src="/assets/cake-counter.jpg" alt="Toonbank met huisgemaakt gebak bij Polette, inclusief de populaire carrot cake" loading="lazy">
+        <figcaption>Vers gebak aan de bar</figcaption>
+      </figure>
+      <figure>
+        <img src="/assets/cookies-terrace.jpg" alt="Bord met zelfgebakken koekjes op het terras van Polette aan de Fransenplaats" loading="lazy">
+        <figcaption>Terraskoekjes</figcaption>
+      </figure>
+      <figure>
+        <img src="/assets/interior-bar.jpg" alt="De blauw betegelde bar van Polette met espressomachine en planten" loading="lazy">
+        <figcaption>De blauwe bar</figcaption>
+      </figure>
+    </div>
+    <div class="gallery-cta">
+      <a href="https://www.instagram.com/polette.antwerp/" target="_blank" rel="noopener">
+        Meer sfeerbeelden op Instagram
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="section reviews" id="reviews">
+  <div class="wrap">
+    <div class="reviews-top reveal">
+      <div>
+        <span class="eyebrow">Wat de buurt zegt</span>
+        <h2 style="color:var(--blue-deep); font-size:1.9rem;">Beoordelingen op Google</h2>
+      </div>
+      <div class="reviews-score">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <strong>5.0 / 5</strong>
+        <span>op basis van recente Google-reviews</span>
+      </div>
+    </div>
+    <div class="reviews-grid reveal">
+      <article class="review-card">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p>"Heerlijke koffie, supervriendelijke service en een ontzettend gezellige sfeer. Een echte aanrader voor wie op zoek is naar een leuk plekje voor een goede koffie of een hapje."</p>
+        <div class="review-who">
+          <div class="review-avatar">W</div>
+          <div><strong>Wout Vanspringel</strong><span>Google Reviews</span></div>
+        </div>
+      </article>
+      <article class="review-card">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p>"Wat een leuke aanwinst voor de buurt 💛 heerlijke koffie en een mega lekkere carrot cake!"</p>
+        <div class="review-who">
+          <div class="review-avatar">B</div>
+          <div><strong>Bram Michaël Christiaens</strong><span>Local Guide · Google Reviews</span></div>
+        </div>
+      </article>
+      <article class="review-card">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p>"Super kwaliteitsvolle koffie en top service!"</p>
+        <div class="review-who">
+          <div class="review-avatar">E</div>
+          <div><strong>Emma Van De Vyver</strong><span>Google Reviews</span></div>
+        </div>
+      </article>
+      <article class="review-card">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p>"Super lekkere koffie, matcha, cava en meer. Het interieur is een streling voor het oog en er is een goed zonneke op het terras."</p>
+        <div class="review-who">
+          <div class="review-avatar">S</div>
+          <div><strong>Sofie Heyman</strong><span>Google Reviews</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA STRIP ============ -->
+<section class="cta-strip">
+  <div class="wrap">
+    <h2>Tot zo, aan de bar.</h2>
+    <p>Geen reservatie nodig — kom gewoon binnenwandelen aan de Fransenplaats 6.</p>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="#bezoek">Route &amp; openingsuren</a>
+      <a class="btn btn-outline" href="mailto:info@polette.be">Stuur een mail</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEZOEK / MAP ============ -->
+<section class="section visit" id="bezoek">
+  <div class="wrap visit-grid">
+    <div class="visit-card reveal">
+      <span class="eyebrow on-blue">Route &amp; openingsuren</span>
+      <h3>Fransenplaats 6, 2018 Antwerpen</h3>
+      <table class="hours-table" id="hours-table">
+        <tbody>
+          <tr data-day="1"><td>Maandag</td><td>08:00 – 15:30</td></tr>
+          <tr data-day="2"><td>Dinsdag</td><td>08:00 – 15:30</td></tr>
+          <tr data-day="3"><td>Woensdag</td><td>08:00 – 15:30</td></tr>
+          <tr data-day="4"><td>Donderdag</td><td>08:00 – 15:30</td></tr>
+          <tr data-day="5"><td>Vrijdag</td><td>08:00 – 15:30</td></tr>
+          <tr data-day="6"><td>Zaterdag</td><td>09:00 – 15:00</td></tr>
+          <tr data-day="0"><td>Zondag</td><td>Gesloten</td></tr>
+        </tbody>
+      </table>
+      <div class="visit-contact">
+        <a href="mailto:info@polette.be">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m4 4 8 8 8-8"/></svg>
+          info@polette.be
+        </a>
+        <a href="https://maps.app.goo.gl/?q=Polette+Fransenplaats+6+Antwerpen" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          Fransenplaats 6, 2018 Antwerpen
+        </a>
+      </div>
+      <div class="social-row">
+        <a href="https://www.instagram.com/polette.antwerp/" target="_blank" rel="noopener" aria-label="Polette op Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="map-frame reveal" id="map-frame">
+      <div class="map-consent" id="map-consent">
+        <p>De kaart wordt geladen via Google Maps. Dit plaatst cookies van Google zodra je hem inschakelt.</p>
+        <button class="btn btn-yellow" id="load-map">Kaart tonen</button>
+        <a class="btn btn-outline on-blue" href="https://maps.app.goo.gl/?q=Polette+Fransenplaats+6+Antwerpen" target="_blank" rel="noopener">Open direct in Google Maps</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="/assets/favicon-192.png" alt="">
+          <span>Polette</span>
+        </div>
+        <p style="max-width:38ch; font-size:0.92rem; line-height:1.6;">Koffiebar in de Antwerpse Markgravewijk. Specialty koffie, huisgemaakte pastries en kleine gelukjes, elke dag opnieuw.</p>
+      </div>
+      <div>
+        <h4>Navigatie</h4>
+        <ul>
+          <li><a href="#verhaal">Ons verhaal</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#sfeer">Sfeer</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#bezoek">Route &amp; uren</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Fransenplaats 6, 2018 Antwerpen</li>
+          <li><a href="mailto:info@polette.be">info@polette.be</a></li>
+          <li><a href="https://www.instagram.com/polette.antwerp/" target="_blank" rel="noopener">@polette.antwerp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Polette · Fransenplaats 6, 2018 Antwerpen</span>
+      <nav aria-label="Juridisch">
+        <a href="/cookiebeleid.html">Cookiebeleid</a>
+        <a href="https://agv-it.be" target="_blank" rel="noopener">Website door AGV IT Consulting</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ COOKIE BANNER ============ -->
+<div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookiemelding">
+  <h4>We gebruiken cookies</h4>
+  <p>Polette gebruikt functionele cookies om de site goed te laten werken, en optioneel cookies van Google Maps om de kaart te tonen. Lees ons <a href="/cookiebeleid.html">cookiebeleid</a> voor meer info.</p>
+  <div class="cookie-actions">
+    <button class="btn btn-primary" id="cookie-accept">Alles accepteren</button>
+    <button class="btn btn-outline" id="cookie-necessary">Alleen noodzakelijke</button>
+  </div>
+</div>
+
+<script src="/script.js"></script>
+</body>
+</html>

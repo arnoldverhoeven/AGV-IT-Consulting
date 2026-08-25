@@ -1,0 +1,13 @@
+{
+  "name": "Polette",
+  "short_name": "Polette",
+  "description": "Koffiebar in Antwerpen aan de Fransenplaats.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7EFDC",
+  "theme_color": "#0034BE",
+  "icons": [
+    { "src": "/assets/favicon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/favicon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
