@@ -17,6 +17,7 @@
   --green-felt:   #4B5C43;
 
   --font-display: 'Bodoni Moda', 'Liberation Serif', Georgia, serif;
+  --font-heading: 'Bricolage Grotesque', 'Archivo', 'Liberation Sans', Arial, sans-serif;
   --font-body:    'Archivo', 'Liberation Sans', Arial, sans-serif;
 
   --container: 1120px;
@@ -252,11 +253,12 @@ section{ padding:96px 0; }
 .section-head{ max-width:640px; margin:0 auto 52px; text-align:center; }
 .section-head .eyebrow{ color:var(--brick); display:block; margin-bottom:10px; }
 .section-head h2{
-  font-size:clamp(1.9rem,4.2vw,2.6rem);
+  font-family:var(--font-heading);
+  font-size:clamp(1.9rem,4.2vw,2.7rem);
   font-style:normal;
-  font-weight:600;
-  line-height:1.25;
-  letter-spacing:-0.01em;
+  font-weight:700;
+  line-height:1.2;
+  letter-spacing:-0.02em;
   color:var(--oxblood);
 }
 .section-head p{ margin-top:14px; color:#5b4a40; font-size:1.02rem; line-height:1.6; }
@@ -275,13 +277,14 @@ section{ padding:96px 0; }
 .story__photo img{ width:100%; height:100%; object-fit:cover; }
 .story__text .eyebrow{ color:var(--brick); }
 .story__text h2{
-  font-size:clamp(1.8rem,3.6vw,2.4rem);
+  font-family:var(--font-heading);
+  font-size:clamp(1.8rem,3.6vw,2.5rem);
   font-style:normal;
-  font-weight:600;
-  letter-spacing:-0.01em;
+  font-weight:700;
+  letter-spacing:-0.02em;
   color:var(--oxblood);
   margin:12px 0 20px;
-  line-height:1.3;
+  line-height:1.25;
 }
 .story__text p{
   color:#4a3a30; line-height:1.75; font-size:1.02rem; margin-bottom:16px;
