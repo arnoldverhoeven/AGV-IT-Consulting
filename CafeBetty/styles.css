@@ -195,12 +195,14 @@ body::before{
   pointer-events:none;
 }
 .hero__eyebrow{ color:var(--gold-soft); }
-.hero__logo{
-  display:block;
-  margin:22px auto 26px;
-  width:min(420px, 78vw);
-  height:auto;
-  filter:drop-shadow(0 10px 22px rgba(0,0,0,0.28));
+.hero__title{
+  font-family:var(--font-display);
+  font-style:italic;
+  font-weight:700;
+  font-size:clamp(3.4rem, 10vw, 6.4rem);
+  line-height:1.05;
+  margin:16px 0 22px;
+  padding-bottom:0.12em; /* clears descenders like the 'y' from the line below */
 }
 .hero__tagline{
   font-size:1.05rem;
@@ -371,8 +373,7 @@ section{ padding:96px 0; }
   display:grid; grid-template-columns:auto 1fr auto; gap:40px; align-items:center;
 }
 .family__mark{
-  font-family:var(--font-display); font-style:italic; font-weight:700;
-  font-size:2.6rem; color:var(--brick); white-space:nowrap;
+  width:132px; height:auto; flex:0 0 auto;
 }
 .family__text h3{
   font-style:italic; font-size:1.5rem; color:var(--oxblood); margin-bottom:8px;
