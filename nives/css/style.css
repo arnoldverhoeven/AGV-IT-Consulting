@@ -116,10 +116,19 @@ h2.section-title em { font-style: italic; color: var(--terracotta); }
    Language toggle system (data-lc attribute, NOT the lang attr)
    ============================================================ */
 [data-lc] { display: none; }
-html[data-lang="nl"] [data-lc="nl"] { display: revert; }
-html[data-lang="en"] [data-lc="en"] { display: revert; }
-html[data-lang="nl"] span[data-lc="nl"],
-html[data-lang="en"] span[data-lc="en"] { display: inline; }
+html[data-lang="nl"] [data-lc="nl"],
+html[data-lang="en"] [data-lc="en"] { display: inline; }
+
+/* Components below set their own non-inline display (block, inline-block…)
+   on elements that also carry data-lc. Those component rules have higher
+   specificity than the generic toggle above, so they must be re-asserted
+   here, scoped to the active language, or both languages end up showing
+   at once. Any future .class + [data-lc] pairing needs the same treatment. */
+html[data-lang="nl"] .num[data-lc="nl"],
+html[data-lang="en"] .num[data-lc="en"] { display: block; }
+
+html[data-lang="nl"] .tag[data-lc="nl"],
+html[data-lang="en"] .tag[data-lc="en"] { display: inline-block; }
 
 /* ============================================================
    Organic blob frames — Nives's own signature shape,
