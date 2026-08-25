@@ -36,10 +36,10 @@
 <meta name="twitter:description" content="Een lichte, groene plek in Antwerpen voor ontbijt, lunch en vers gebakken zuurdesembrood. Alles bio, met de hand gemaakt.">
 <meta name="twitter:image" content="https://www.nives.be/images/og-image.jpg">
 
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Fonts: NOT loaded directly — Google Fonts transfers the visitor's IP address
+     to Google on every request, so this is gated behind cookie consent
+     ("functional" category). See js/consent.js. A system-font fallback in
+     css/style.css keeps the page fully readable before any decision is made. -->
 
 <link rel="stylesheet" href="css/style.css">
 
@@ -471,13 +471,29 @@
         </div>
       </div>
 
-      <div class="map-wrap reveal">
+      <div class="map-wrap reveal" id="mapWrap">
+        <!-- Placeholder shown until "functional" cookies are accepted -->
+        <div class="map-placeholder" id="mapPlaceholder">
+          <img src="images/about-1.jpg" alt="" class="map-placeholder-bg" aria-hidden="true">
+          <div class="map-placeholder-card">
+            <p>
+              <span data-lc="nl">De kaart komt van Google Maps en plaatst pas cookies nadat je toestemming geeft.</span>
+              <span data-lc="en">This map is provided by Google Maps and only sets cookies once you give consent.</span>
+            </p>
+            <button type="button" class="btn btn-outline" id="loadMapBtn">
+              <span data-lc="nl">Kaart tonen</span><span data-lc="en">Show map</span>
+            </button>
+          </div>
+        </div>
+        <!-- data-src, not src: only assigned to src once consent is granted, see js/consent.js -->
         <iframe
-          src="https://www.google.com/maps?q=Nives,+Harmoniestraat+25b,+2018+Antwerpen&output=embed"
+          id="mapIframe"
+          data-src="https://www.google.com/maps?q=Nives,+Harmoniestraat+25b,+2018+Antwerpen&output=embed"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           title="Kaart met de locatie van nives, Harmoniestraat 25b, Antwerpen"
-          aria-label="Google Maps locatie van nives">
+          aria-label="Google Maps locatie van nives"
+          hidden>
         </iframe>
         <a class="map-pill" href="https://www.google.com/maps/dir/?api=1&destination=Nives+Harmoniestraat+25b+2018+Antwerpen" target="_blank" rel="noopener">
           📍 <span data-lc="nl">Open in Google Maps</span><span data-lc="en">Open in Google Maps</span>
@@ -518,6 +534,11 @@
           <a href="mailto:info@nives.be">info@nives.be</a>
           <p>Harmoniestraat 25b, 2018 Antwerpen</p>
         </div>
+        <div class="footer-col">
+          <h5><span data-lc="nl">Privacy</span><span data-lc="en">Privacy</span></h5>
+          <a href="cookiebeleid.html"><span data-lc="nl">Cookiebeleid</span><span data-lc="en">Cookie policy</span></a>
+          <a href="#" id="openCookieSettings"><span data-lc="nl">Cookie-instellingen</span><span data-lc="en">Cookie settings</span></a>
+        </div>
       </div>
     </div>
 
@@ -528,6 +549,105 @@
   </div>
 </footer>
 
+<!-- ============ COOKIE CONSENT ============ -->
+<div class="consent-banner" id="consentBanner" role="region" aria-labelledby="consentTitle" hidden>
+  <div class="consent-inner">
+    <div class="consent-text">
+      <p id="consentTitle">
+        <span data-lc="nl"><strong>Cookies bij nives.</strong> We gebruiken alleen cookies die nodig zijn om de site te laten werken, tenzij je akkoord gaat met de rest. Functionele cookies laden bijvoorbeeld de kaart en lettertypes van Google. Lees meer in ons <a href="cookiebeleid.html">cookiebeleid</a>.</span>
+        <span data-lc="en"><strong>Cookies on nives.</strong> We only use cookies that are strictly necessary unless you agree to the rest. Functional cookies load things like the Google map and fonts. Read more in our <a href="cookiebeleid.html">cookie policy</a>.</span>
+      </p>
+    </div>
+    <div class="consent-actions">
+      <button type="button" class="btn btn-outline" id="consentReject">
+        <span data-lc="nl">Weiger alles</span><span data-lc="en">Reject all</span>
+      </button>
+      <button type="button" class="btn btn-outline" id="consentCustomize">
+        <span data-lc="nl">Instellingen</span><span data-lc="en">Customize</span>
+      </button>
+      <button type="button" class="btn btn-primary" id="consentAccept">
+        <span data-lc="nl">Alles toestaan</span><span data-lc="en">Accept all</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="consent-panel" id="consentPanel" hidden>
+    <div class="consent-panel-inner">
+      <h3><span data-lc="nl">Cookievoorkeuren</span><span data-lc="en">Cookie preferences</span></h3>
+      <p class="consent-panel-intro">
+        <span data-lc="nl">Kies per categorie wat je toestaat. Je kan dit later altijd aanpassen via "Cookie-instellingen" onderaan de site.</span>
+        <span data-lc="en">Choose per category what you allow. You can change this later anytime via "Cookie settings" at the bottom of the site.</span>
+      </p>
+
+      <div class="consent-category">
+        <div class="consent-category-head">
+          <span class="consent-category-name"><span data-lc="nl">Noodzakelijk</span><span data-lc="en">Necessary</span></span>
+          <span class="toggle-locked"><span data-lc="nl">Altijd aan</span><span data-lc="en">Always on</span></span>
+        </div>
+        <p class="consent-category-desc">
+          <span data-lc="nl">Onthoudt je taalkeuze en je cookievoorkeuren. Zonder deze werkt de site niet correct.</span>
+          <span data-lc="en">Remembers your language choice and your cookie preferences. The site can't work properly without these.</span>
+        </p>
+      </div>
+
+      <div class="consent-category">
+        <div class="consent-category-head">
+          <span class="consent-category-name"><span data-lc="nl">Functioneel</span><span data-lc="en">Functional</span></span>
+          <label class="switch">
+            <input type="checkbox" id="toggleFunctional">
+            <span class="switch-track" aria-hidden="true"></span>
+          </label>
+        </div>
+        <p class="consent-category-desc">
+          <span data-lc="nl">Laadt de Google Maps-kaart en onze Google-lettertypes. Google kan hierbij cookies plaatsen.</span>
+          <span data-lc="en">Loads the Google Maps embed and our Google fonts. Google may set cookies for this.</span>
+        </p>
+      </div>
+
+      <div class="consent-category">
+        <div class="consent-category-head">
+          <span class="consent-category-name"><span data-lc="nl">Analytics</span><span data-lc="en">Analytics</span></span>
+          <label class="switch">
+            <input type="checkbox" id="toggleAnalytics">
+            <span class="switch-track" aria-hidden="true"></span>
+          </label>
+        </div>
+        <p class="consent-category-desc">
+          <span data-lc="nl">Helpt ons begrijpen hoe de site gebruikt wordt. Momenteel nog niet actief op deze site.</span>
+          <span data-lc="en">Helps us understand how the site is used. Not yet active on this site.</span>
+        </p>
+      </div>
+
+      <div class="consent-category">
+        <div class="consent-category-head">
+          <span class="consent-category-name"><span data-lc="nl">Marketing</span><span data-lc="en">Marketing</span></span>
+          <label class="switch">
+            <input type="checkbox" id="toggleMarketing">
+            <span class="switch-track" aria-hidden="true"></span>
+          </label>
+        </div>
+        <p class="consent-category-desc">
+          <span data-lc="nl">Voor advertenties op andere platformen. Momenteel nog niet actief op deze site.</span>
+          <span data-lc="en">For advertising on other platforms. Not yet active on this site.</span>
+        </p>
+      </div>
+
+      <div class="consent-panel-actions">
+        <button type="button" class="btn btn-outline" id="consentRejectPanel">
+          <span data-lc="nl">Weiger alles</span><span data-lc="en">Reject all</span>
+        </button>
+        <button type="button" class="btn btn-outline" id="consentSave">
+          <span data-lc="nl">Voorkeuren opslaan</span><span data-lc="en">Save preferences</span>
+        </button>
+        <button type="button" class="btn btn-primary" id="consentAcceptPanel">
+          <span data-lc="nl">Alles toestaan</span><span data-lc="en">Accept all</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script src="js/main.js"></script>
+<script src="js/consent.js"></script>
 </body>
 </html>
