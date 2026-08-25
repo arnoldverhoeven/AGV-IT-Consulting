@@ -1,1 +1,308 @@
+<!DOCTYPE html>
+<html lang="nl" data-lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Café Betty — Koffiebar &amp; Natuurwijn in Berchem</title>
+<meta name="description" content="Café Betty is de nieuwe buurtkoffiebar van Andy Roasters in Oud-Berchem. Specialty coffee, huisgemaakt zuurdesemgebak en op vrijdag &amp; zaterdag natuurwijn tot 19u. Belpairestraat 28, Berchem.">
 
+<!-- Favicons -->
+<link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+
+<!-- Open Graph / Facebook & WhatsApp preview -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cafebetty-berchem.be/">
+<meta property="og:title" content="Café Betty — Koffiebar &amp; Natuurwijn in Berchem">
+<meta property="og:description" content="Specialty coffee, huisgemaakt zuurdesemgebak en natuurwijn. Vrijdag &amp; zaterdag aperitief tot 19u. Belpairestraat 28, Berchem. Deel van de Andy Roasters familie.">
+<meta property="og:image" content="https://cafebetty-berchem.be/assets/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="nl_BE">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Café Betty — Koffiebar &amp; Natuurwijn in Berchem">
+<meta name="twitter:description" content="Specialty coffee, huisgemaakt zuurdesemgebak en natuurwijn in Oud-Berchem. Deel van de Andy Roasters familie.">
+<meta name="twitter:image" content="https://cafebetty-berchem.be/assets/images/og-image.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;0,6..96,700;1,6..96,600;1,6..96,700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "Café Betty",
+  "image": "https://cafebetty-berchem.be/assets/images/awning-exterior.jpg",
+  "servesCuisine": "Coffee, Bakery, Wine Bar",
+  "priceRange": "€€",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Belpairestraat 28",
+    "addressLocality": "Berchem, Antwerpen",
+    "postalCode": "2600",
+    "addressCountry": "BE"
+  },
+  "telephone": "",
+  "url": "https://cafebetty-berchem.be/",
+  "sameAs": [
+    "https://www.instagram.com/cafe.betty/"
+  ],
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "07:30", "closes": "16:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "07:30", "closes": "19:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:30", "closes": "19:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "08:30", "closes": "16:00" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="#top" class="nav__logo">Betty</a>
+    <button class="nav__toggle" id="navToggle" aria-label="Menu openen" aria-expanded="false">☰</button>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="#verhaal">Verhaal</a></li>
+      <li><a href="#aanbod">Aanbod</a></li>
+      <li><a href="#sfeer">Sfeer</a></li>
+      <li><a href="#bezoek">Bezoek ons</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <div class="hero__eyebrow eyebrow">Café</div>
+  <h1 class="hero__title">Betty</h1>
+  <p class="hero__tagline">Friendly neighbourhood café — specialty coffee, huisgemaakt zuurdesem en natuurwijn in het hart van Oud-Berchem.</p>
+  <p class="hero__address">Belpairestraat 28 · Berchem</p>
+  <div class="hero__ctas">
+    <a href="#aanbod" class="btn btn--gold">Bekijk het aanbod</a>
+    <a href="#bezoek" class="btn btn--outline">Route &amp; openingsuren</a>
+  </div>
+
+  <!-- Signature element: scalloped awning divider, echoing the café's own striped valance -->
+  <svg class="awning" viewBox="0 0 1200 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <pattern id="awningStripe" width="80" height="64" patternUnits="userSpaceOnUse" patternTransform="skewX(-18)">
+        <rect width="40" height="64" fill="#F6EFE2"></rect>
+        <rect x="40" width="40" height="64" fill="#E1C77A"></rect>
+      </pattern>
+    </defs>
+    <path d="M0,0 L1200,0 L1200,20
+      C1175,20 1175,52 1150,52 C1125,52 1125,20 1100,20
+      C1075,20 1075,52 1050,52 C1025,52 1025,20 1000,20
+      C975,20 975,52 950,52 C925,52 925,20 900,20
+      C875,20 875,52 850,52 C825,52 825,20 800,20
+      C775,20 775,52 750,52 C725,52 725,20 700,20
+      C675,20 675,52 650,52 C625,52 625,20 600,20
+      C575,20 575,52 550,52 C525,52 525,20 500,20
+      C475,20 475,52 450,52 C425,52 425,20 400,20
+      C375,20 375,52 350,52 C325,52 325,20 300,20
+      C275,20 275,52 250,52 C225,52 225,20 200,20
+      C175,20 175,52 150,52 C125,52 125,20 100,20
+      C75,20 75,52 50,52 C25,52 25,20 0,20 Z" fill="url(#awningStripe)"/>
+  </svg>
+</header>
+
+<!-- ================= STORY ================= -->
+<section class="story" id="verhaal">
+  <div class="container story__grid">
+    <div class="story__text">
+      <span class="eyebrow">Het verhaal</span>
+      <h2>Een eerbetoon in het hart van Oud-Berchem</h2>
+      <p>Café Betty opende eind augustus 2025 haar deuren in het voormalige pand van café Het Been, een vertrouwde buurtkroeg die na jaren trouwe dienst moest sluiten toen de uitbaatster om gezondheidsredenen moest stoppen.</p>
+      <p>Dave Haesen en Kjell Maes — bekend van koffiebar Andy Roasters in Antwerpen-Zuid — namen het pand over en sloegen de handen ineen met Olivier Hendrikx, mede-eigenaar van Andy. Ze kozen bewust om de geschiedenis van de plek niet verloren te laten gaan.</p>
+      <p class="story__quote">"Als eerbetoon aan de vorige eigenaar hebben we onze nieuwe zaak Café Betty genoemd — een knipoog naar Het Been."</p>
+      <p>Het interieur werd volledig gestript en heropgebouwd: de bar en het meubilair zijn op maat ontworpen door Antwerps designer Nick Bal, met afwerking in gerecycleerd plastic van het Brusselse Albatros. Wat bleef, is de warmte van een echt buurtcafé.</p>
+    </div>
+    <div class="story__photo">
+      <img src="assets/images/awning-exterior.jpg" alt="De rood-wit gestreepte luifel en gevel van Café Betty aan de Belpairestraat in Berchem" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ================= AANBOD ================= -->
+<section class="offer" id="aanbod">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Op de kaart</span>
+      <h2>Koffie, zuurdesem &amp; natuurwijn</h2>
+      <p>Dezelfde specialty coffee als bij Andy Roasters, aangevuld met huisgemaakt zuurdesemgebak uit de eigen bakkerij in Borgerhout — en op vrijdag &amp; zaterdag een glas natuurwijn erbij.</p>
+    </div>
+    <div class="counter">
+      <article class="counter__card">
+        <div class="counter__img"><img src="assets/images/latte-pour.jpg" alt="Barista giet melk voor latte art in een rood-witte Andy-kop bij Café Betty" loading="lazy"></div>
+        <div class="counter__body">
+          <h3>Specialty coffee</h3>
+          <p>Gebrand door Andy Roasters in Antwerpen — van espresso en cortado tot filterkoffie met de hand gezet aan de bar.</p>
+          <ul class="counter__list">
+            <li>Espresso &amp; cortado</li>
+            <li>Oat cortado</li>
+            <li>Filterkoffie (V60)</li>
+            <li>Matcha &amp; warme chocolademelk</li>
+          </ul>
+        </div>
+      </article>
+      <article class="counter__card">
+        <div class="counter__img"><img src="assets/images/sourdough-bread.jpg" alt="Vers gebakken zuurdesembrood van Café Betty" loading="lazy"></div>
+        <div class="counter__body">
+          <h3>Huisgemaakt zuurdesem</h3>
+          <p>Elke ochtend vers van de eigen zuurdesembakkerij: van hartige broodjes tot zoet gebak, gebakken voor Andy, Betty én Butchers.</p>
+          <ul class="counter__list">
+            <li>Krentenbol met jonge kaas</li>
+            <li>Miso-sesambrioche</li>
+            <li>Sticky lemon cake</li>
+            <li>Yoghurt met huisgemaakte granola</li>
+            <li>Belegde zuurdesembroodjes</li>
+          </ul>
+        </div>
+      </article>
+      <article class="counter__card">
+        <div class="counter__img"><img src="assets/images/sourdough-sandwiches.jpg" alt="Belegde zuurdesembroodjes met hesp en kaas bij Café Betty" loading="lazy"></div>
+        <div class="counter__body">
+          <h3>Vrijdag &amp; zaterdag aperitief</h3>
+          <p>Op vrijdag- en zaterdagavond blijft Betty open tot 19u voor een glas natuurwijn of bubbels met een beperkte, doordachte snackkaart. Geen klassiek café — wel dat extra uurtje dat de buurt nodig heeft.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SFEER / GALLERY ================= -->
+<section class="gallery" id="sfeer">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">De sfeer</span>
+      <h2>Warm hout, rode terrazzovloer &amp; veel ochtendlicht</h2>
+      <p>Een greep uit het interieur en de kaart — gefotografeerd door de buurt zelf.</p>
+    </div>
+    <div class="gallery__grid">
+      <a href="assets/images/interior-counter.jpg" target="_blank" rel="noopener"><img src="assets/images/interior-counter.jpg" alt="De houten toog met pastrydisplay en rode vloer bij Café Betty" loading="lazy"></a>
+      <a href="assets/images/latte-croissant.jpg" target="_blank" rel="noopener"><img src="assets/images/latte-croissant.jpg" alt="Latte art en een croissant op marmeren tafel" loading="lazy"></a>
+      <a href="assets/images/granola.jpg" target="_blank" rel="noopener"><img src="assets/images/granola.jpg" alt="Yoghurt met huisgemaakte granola bij Café Betty" loading="lazy"></a>
+      <a href="assets/images/interior-bar.jpg" target="_blank" rel="noopener"><img src="assets/images/interior-bar.jpg" alt="Barista achter de toog van Café Betty" loading="lazy"></a>
+      <a href="assets/images/filter-coffee.jpg" target="_blank" rel="noopener"><img src="assets/images/filter-coffee.jpg" alt="Handmatig gezette filterkoffie bij Café Betty" loading="lazy"></a>
+      <a href="assets/images/coffee-window.jpg" target="_blank" rel="noopener"><img src="assets/images/coffee-window.jpg" alt="Koffie en gebak aan het raam van Café Betty" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAMILY / ANDY ROASTERS ================= -->
+<section class="family">
+  <div class="container family__inner">
+    <div class="family__mark">Andy</div>
+    <div class="family__text">
+      <h3>Deel van de Andy Roasters familie</h3>
+      <p>Café Betty is het warme zusje van koffiebar <a href="https://andy-roasters.be" target="_blank" rel="noopener">Andy Roasters</a> in Antwerpen-Zuid en van Butchers Coffee. Dezelfde specialty coffee, dezelfde zuurdesembakkerij — maar met een eigen karakter, gebouwd rond de geschiedenis van Oud-Berchem.</p>
+    </div>
+    <a href="https://andy-roasters.be" target="_blank" rel="noopener" class="btn btn--dark">Ontdek Andy Roasters</a>
+  </div>
+</section>
+
+<!-- ================= MERCH TEASER ================= -->
+<section class="merch">
+  <div class="container">
+    <div class="merch__card">
+      <div>
+        <span class="merch__badge">Binnenkort</span>
+        <h3>Andy &amp; Betty merchandise</h3>
+        <p>Mokken, caps en tees uit de Andy Roasters-collectie komen binnenkort ook naar Café Betty. Tot dan shop je ze via de Andy-webshop.</p>
+      </div>
+      <a href="https://andy-roasters.be/collections/merchandise" target="_blank" rel="noopener" class="btn btn--gold">Bekijk merchandise</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VISIT / HOURS / MAP ================= -->
+<section class="visit" id="bezoek">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Bezoek ons</span>
+      <h2>Openingsuren &amp; locatie</h2>
+    </div>
+    <div class="visit__grid">
+      <div>
+        <ul class="hours">
+          <li><span>Maandag – donderdag</span><span>7u30 – 16u00</span></li>
+          <li><span>Vrijdag</span><span>7u30 – 19u00</span></li>
+          <li><span>Zaterdag</span><span>8u30 – 19u00</span></li>
+          <li><span>Zondag</span><span>8u30 – 16u00</span></li>
+        </ul>
+        <p class="hours-note">Openingsuren onder voorbehoud van feestdagen en besloten momenten — check <a href="https://www.instagram.com/cafe.betty/" target="_blank" rel="noopener" style="color:var(--gold-soft); border-bottom:1px solid currentColor;">@cafe.betty</a> op Instagram voor de actuele stand van zaken.</p>
+        <div class="visit__contact">
+          <a href="https://www.google.com/maps/search/?api=1&query=Belpairestraat+28,+2600+Berchem" target="_blank" rel="noopener">Belpairestraat 28, 2600 Berchem (Antwerpen)</a>
+          <a href="https://www.instagram.com/cafe.betty/" target="_blank" rel="noopener">Instagram — @cafe.betty</a>
+        </div>
+      </div>
+      <div class="visit__map">
+        <iframe
+          src="https://www.google.com/maps?q=Belpairestraat+28,+2600+Berchem,+Belgium&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Kaart met locatie van Café Betty, Belpairestraat 28, Berchem">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__brand">Betty</div>
+        <p style="max-width:260px; line-height:1.6;">Friendly neighbourhood café in Oud-Berchem. Deel van de Andy Roasters familie.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Bezoek</h4>
+        <ul>
+          <li>Belpairestraat 28</li>
+          <li>2600 Berchem, Antwerpen</li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Volg ons</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/cafe.betty/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://andy-roasters.be" target="_blank" rel="noopener">Andy Roasters</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Info</h4>
+        <ul>
+          <li><a href="#bezoek">Openingsuren</a></li>
+          <li><a href="cookiebeleid.html">Cookiebeleid</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span id="year"></span> Café Betty · Belpairestraat 28, Berchem</span>
+      <a href="cookiebeleid.html">Cookiebeleid</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= COOKIE BANNER ================= -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookiemelding">
+  <p>Café Betty gebruikt functionele cookies om deze website goed te laten werken, en optioneel analytische cookies om te begrijpen hoe de site gebruikt wordt. Meer info in ons <a href="cookiebeleid.html">cookiebeleid</a>.</p>
+  <div class="cookie-banner__actions">
+    <button class="btn btn--gold" id="cookieAcceptAll">Alles accepteren</button>
+    <button class="btn btn--outline" id="cookieEssentialOnly" style="border-color:rgba(43,27,20,0.3); color:var(--cream);">Alleen noodzakelijke</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
