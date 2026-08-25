@@ -99,28 +99,10 @@
       </ul>
     </div>
   </nav>
-  <!-- Signature element: scalloped awning valance with tassels, hanging from the nav bar -->
-  <svg class="awning" viewBox="0 0 1200 46" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <defs>
-      <pattern id="awningStripe" width="80" height="46" patternUnits="userSpaceOnUse" patternTransform="skewX(-18)">
-        <rect width="40" height="46" fill="#F6EFE2"></rect>
-        <rect x="40" width="40" height="46" fill="#E1C77A"></rect>
-      </pattern>
-    </defs>
-    <path d="M0,0 L1200,0 L1200,12
-      C1175,12 1175,32 1150,32 C1125,32 1125,12 1100,12
-      C1075,12 1075,32 1050,32 C1025,32 1025,12 1000,12
-      C975,12 975,32 950,32 C925,32 925,12 900,12
-      C875,12 875,32 850,32 C825,32 825,12 800,12
-      C775,12 775,32 750,32 C725,32 725,12 700,12
-      C675,12 675,32 650,32 C625,32 625,12 600,12
-      C575,12 575,32 550,32 C525,32 525,12 500,12
-      C475,12 475,32 450,32 C425,32 425,12 400,12
-      C375,12 375,32 350,32 C325,32 325,12 300,12
-      C275,12 275,32 250,32 C225,32 225,12 200,12
-      C175,12 175,32 150,32 C125,32 125,12 100,12
-      C75,12 75,32 50,32 C25,32 25,12 0,12 Z" fill="url(#awningStripe)"/>
-  </svg>
+  <!-- Signature element: scalloped awning valance, hanging from the nav bar.
+       Rendered as a fixed-size repeating background tile (not a stretched viewBox)
+       so the scallops stay perfectly round on any screen width, mobile included. -->
+  <div class="awning" aria-hidden="true"></div>
 </div>
 
 <!-- ================= HERO ================= -->

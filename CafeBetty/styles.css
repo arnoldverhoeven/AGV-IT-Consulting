@@ -112,8 +112,11 @@ body::before{
 .site-header.is-scrolled .nav{
   box-shadow:0 8px 24px -8px rgba(0,0,0,0.35);
 }
-.nav .awning{
+.site-header .awning{
   display:block; width:100%; height:34px;
+  background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMzQiPgogIDxkZWZzPgogICAgPHBhdHRlcm4gaWQ9InMiIHdpZHRoPSI4MCIgaGVpZ2h0PSIzNCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0ic2tld1goLTE4KSI+CiAgICAgIDxyZWN0IHdpZHRoPSI0MCIgaGVpZ2h0PSIzNCIgZmlsbD0iI0Y2RUZFMiIvPgogICAgICA8cmVjdCB4PSI0MCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjM0IiBmaWxsPSIjRTFDNzdBIi8+CiAgICA8L3BhdHRlcm4+CiAgPC9kZWZzPgogIDxwYXRoIGQ9Ik0wLDAgTDEwMCwwIEwxMDAsOSBDNzUsOSA3NSwyNSA1MCwyNSBDMjUsMjUgMjUsOSAwLDkgWiIgZmlsbD0idXJsKCNzKSIvPgo8L3N2Zz4=");
+  background-repeat:repeat-x;
+  background-size:100px 34px; /* fixed px tile — never stretched by viewport width, so scallops stay round on every screen */
 }
 .nav__inner{
   display:flex; align-items:center; justify-content:space-between;
