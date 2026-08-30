@@ -1,1 +1,623 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>George's Penalty Kampioenschap ⚽🇧🇪</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Comic Sans MS', sans-serif;
+    background: linear-gradient(180deg, #6db3e8 0%, #87CEEB 50%, #388E3C 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+    overflow-x: hidden;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  h1 {
+    color: #fff;
+    text-shadow: 2px 2px 0 #1b5e20, -1px -1px 0 #1b5e20, 1px -1px 0 #1b5e20, -1px 1px 0 #1b5e20;
+    font-size: clamp(20px, 5vw, 34px);
+    margin: 6px 0 4px 0;
+    text-align: center;
+  }
+  #scoreboard {
+    display: flex;
+    gap: 16px;
+    background: rgba(0,0,0,0.75);
+    color: #fff;
+    border-radius: 14px;
+    padding: 8px 20px;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: clamp(14px, 3.5vw, 18px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #scoreboard .val { color: #FFD700; }
+  #gameArea {
+    position: relative;
+    width: 100%;
+    max-width: 760px;
+    aspect-ratio: 76/58;
+    background: linear-gradient(180deg, #79c0ef 0%, #8fd0f5 30%, #4CAF50 30%, #43a047 100%);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    border: 4px solid #fff;
+    cursor: crosshair;
+  }
+  #stadium {
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 30%;
+    background:
+      repeating-linear-gradient(90deg,
+        rgba(255,255,255,0.15) 0 6px, rgba(0,0,0,0.08) 6px 12px),
+      linear-gradient(180deg, #556 0%, #778 100%);
+  }
+  #stadium::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle 2px, rgba(255,255,220,0.9) 0 1px, transparent 2px);
+    background-size: 22px 14px;
+    opacity: 0.5;
+  }
+  #grass {
+    position: absolute;
+    top: 30%; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(180deg,
+      #4caf50 0 9%, #43a047 9% 18%);
+  }
+  #penaltyBox {
+    position: absolute;
+    left: 12%; right: 12%;
+    top: 58%; height: 30%;
+    border: 3px solid rgba(255,255,255,0.85);
+    border-bottom: none;
+    transform: perspective(300px) rotateX(35deg);
+    transform-origin: bottom;
+  }
+  #goalWrap {
+    position: absolute;
+    top: 12%;
+    left: 14%;
+    width: 72%;
+    height: 34%;
+  }
+  .post { position: absolute; background: linear-gradient(90deg,#fff,#ddd); box-shadow: 0 0 5px rgba(0,0,0,0.5); border-radius: 3px; z-index: 4; }
+  #postLeft  { left: 0; top: 0; width: 2.4%; height: 108%; }
+  #postRight { right: 0; top: 0; width: 2.4%; height: 108%; }
+  #crossbar  { left: 0; top: 0; width: 100%; height: 5%; }
+  #net {
+    position: absolute;
+    left: 2.4%; right: 2.4%; top: 5%; bottom: -8%;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.45) 0 1px, transparent 1px 11px),
+      repeating-linear-gradient(90deg, rgba(255,255,255,0.45) 0 1px, transparent 1px 11px);
+    background-color: rgba(200,220,235,0.12);
+  }
+  #targetRing {
+    position: absolute;
+    width: 34px; height: 34px;
+    border: 3px dashed #FFD700;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    opacity: 0;
+    z-index: 8;
+  }
+  #keeper {
+    position: absolute;
+    bottom: 52%;              /* op de doellijn, in de goal */
+    left: 50%;
+    width: 12.5%;             /* kleiner: hij staat verder weg */
+    transform: translateX(-50%);
+    transition: transform 0.42s cubic-bezier(.3,.9,.4,1), left 0.42s cubic-bezier(.3,.9,.4,1), bottom 0.42s cubic-bezier(.3,.9,.4,1);
+    z-index: 3;               /* vóór het net, achter de palen */
+    transform-origin: 50% 85%;
+  }
+  #player {
+    position: absolute;
+    bottom: 2%;
+    left: 40%;
+    width: 15%;
+    z-index: 7;
+    transition: left 0.28s ease-in, bottom 0.28s ease-in, transform 0.28s ease-in;
+  }
+  #ball {
+    position: absolute;
+    width: 5.2%;
+    aspect-ratio: 1;
+    left: 50.5%;
+    bottom: 5%;
+    z-index: 6;
+  }
+  #ball svg { width: 100%; height: 100%; filter: drop-shadow(0 3px 3px rgba(0,0,0,0.35)); }
+  #message {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.4);
+    font-size: clamp(26px, 7vw, 50px);
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 3px 3px 0 rgba(0,0,0,0.45);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 12;
+    transition: transform 0.28s ease, opacity 0.28s ease;
+    text-align: center;
+    width: 90%;
+  }
+  #message.show { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  #levelBanner {
+    position: absolute;
+    top: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.65);
+    color: #FFD700;
+    font-weight: bold;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: clamp(12px, 3vw, 16px);
+    z-index: 11;
+  }
+  #instructions {
+    margin-top: 8px;
+    color: #1b5e20;
+    background: rgba(255,255,255,0.88);
+    padding: 8px 14px;
+    border-radius: 12px;
+    font-size: clamp(12px, 2.8vw, 15px);
+    text-align: center;
+    max-width: 760px;
+    line-height: 1.45;
+  }
+  #restartBtn {
+    margin-top: 12px;
+    padding: 12px 28px;
+    font-size: 18px;
+    font-weight: bold;
+    background: linear-gradient(180deg,#ffb300,#ff8f00);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #e65100;
+    display: none;
+  }
+  #restartBtn:active { box-shadow: 0 1px 0 #e65100; transform: translateY(3px); }
+  .confetti { position: absolute; width: 9px; height: 9px; z-index: 20; pointer-events: none; }
+  #shots {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+  .dot {
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: #666;
+    display: inline-block;
+    border: 2px solid #999;
+  }
+  .dot.goal { background: #4CAF50; border-color: #a5d6a7; }
+  .dot.miss { background: #f44336; border-color: #ef9a9a; }
+</style>
+</head>
+<body>
 
+<h1>⚽ George's Penalty Kampioenschap 🇧🇪</h1>
+<div id="scoreboard">
+  <div>Doelpunten: <span class="val" id="goals">0</span></div>
+  <div>Schot: <span class="val" id="attempt">1</span>/10</div>
+  <div id="shots"></div>
+</div>
+
+<div id="gameArea">
+  <div id="stadium"></div>
+  <div id="grass"></div>
+  <div id="penaltyBox"></div>
+
+  <div id="goalWrap">
+    <div class="post" id="postLeft"></div>
+    <div class="post" id="postRight"></div>
+    <div class="post" id="crossbar"></div>
+    <div id="net"></div>
+  </div>
+
+  <div id="levelBanner">Keeper niveau: <span id="level">1</span> 🧤</div>
+
+  <!-- KEEPER -->
+  <div id="keeper">
+    <svg viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg">
+      <!-- armen gespreid -->
+      <g id="kArmL">
+        <rect x="2" y="38" width="26" height="9" rx="4.5" fill="#ffd400" transform="rotate(-28 15 42)"/>
+        <circle cx="4" cy="30" r="7" fill="#2e7d32"/> <!-- handschoen -->
+        <circle cx="4" cy="30" r="7" fill="none" stroke="#1b5e20" stroke-width="1.5"/>
+      </g>
+      <g id="kArmR">
+        <rect x="72" y="38" width="26" height="9" rx="4.5" fill="#ffd400" transform="rotate(28 85 42)"/>
+        <circle cx="96" cy="30" r="7" fill="#2e7d32"/>
+        <circle cx="96" cy="30" r="7" fill="none" stroke="#1b5e20" stroke-width="1.5"/>
+      </g>
+      <!-- benen licht gebogen (keeperhouding) -->
+      <rect x="32" y="88" width="12" height="30" rx="5" fill="#111" transform="rotate(8 38 100)"/>
+      <rect x="56" y="88" width="12" height="30" rx="5" fill="#111" transform="rotate(-8 62 100)"/>
+      <!-- schoenen -->
+      <ellipse cx="33" cy="121" rx="10" ry="5" fill="#333"/>
+      <ellipse cx="67" cy="121" rx="10" ry="5" fill="#333"/>
+      <!-- kousen -->
+      <rect x="31" y="105" width="11" height="14" rx="4" fill="#ffd400" transform="rotate(8 36 112)"/>
+      <rect x="58" y="105" width="11" height="14" rx="4" fill="#ffd400" transform="rotate(-8 64 112)"/>
+      <!-- shirt (geel keepersshirt) -->
+      <path d="M30 40 Q50 32 70 40 L74 88 Q50 96 26 88 Z" fill="#ffd400"/>
+      <path d="M30 40 Q50 32 70 40 L74 88 Q50 96 26 88 Z" fill="none" stroke="#c8a500" stroke-width="2"/>
+      <!-- nummer 1 -->
+      <text x="50" y="72" text-anchor="middle" font-size="26" font-weight="bold" fill="#111" font-family="Arial">1</text>
+      <!-- hoofd -->
+      <circle cx="50" cy="22" r="14" fill="#f4c08a"/>
+      <!-- donker haar -->
+      <path d="M36 20 Q38 6 50 6 Q62 6 64 20 Q57 12 50 13 Q43 12 36 20 Z" fill="#4a2c12"/>
+      <!-- ogen geconcentreerd -->
+      <circle cx="45" cy="22" r="1.8" fill="#222"/>
+      <circle cx="55" cy="22" r="1.8" fill="#222"/>
+      <path d="M42 18 L48 19" stroke="#222" stroke-width="1.4"/>
+      <path d="M58 18 L52 19" stroke="#222" stroke-width="1.4"/>
+      <path d="M46 29 Q50 31 54 29" stroke="#222" stroke-width="1.4" fill="none"/>
+    </svg>
+  </div>
+
+  <!-- GEORGE (op de rug gezien) -->
+  <div id="player">
+    <svg viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg">
+      <!-- benen -->
+      <g id="pLegL">
+        <rect x="36" y="100" width="11" height="30" rx="5" fill="#f4c08a"/>
+      </g>
+      <g id="pLegR">
+        <rect x="53" y="100" width="11" height="30" rx="5" fill="#f4c08a"/>
+      </g>
+      <!-- kousen rood -->
+      <rect x="35" y="118" width="12" height="18" rx="4" fill="#e30613"/>
+      <rect x="52" y="118" width="12" height="18" rx="4" fill="#e30613"/>
+      <!-- schoenen -->
+      <ellipse cx="41" cy="140" rx="10" ry="5" fill="#222"/>
+      <ellipse cx="58" cy="140" rx="10" ry="5" fill="#222"/>
+      <!-- broekje zwart -->
+      <path d="M32 88 L68 88 L66 106 L52 104 L48 104 L34 106 Z" fill="#111"/>
+      <!-- shirt: zwart met rode en gele accenten (België) -->
+      <path d="M28 42 Q50 34 72 42 L76 90 Q50 98 24 90 Z" fill="#1a1a1a"/>
+      <!-- gele bies -->
+      <path d="M28 42 Q50 34 72 42" fill="none" stroke="#FFD700" stroke-width="3"/>
+      <path d="M24 90 Q50 98 76 90" fill="none" stroke="#FFD700" stroke-width="3"/>
+      <!-- rode zijstrepen -->
+      <path d="M28 44 L24 90" stroke="#e30613" stroke-width="4"/>
+      <path d="M72 44 L76 90" stroke="#e30613" stroke-width="4"/>
+      <!-- mouwen -->
+      <rect x="12" y="44" width="18" height="10" rx="5" fill="#1a1a1a" transform="rotate(18 21 49)"/>
+      <rect x="70" y="44" width="18" height="10" rx="5" fill="#1a1a1a" transform="rotate(-18 79 49)"/>
+      <path d="M13 52 L18 54" stroke="#e30613" stroke-width="3"/>
+      <path d="M87 52 L82 54" stroke="#e30613" stroke-width="3"/>
+      <!-- armen -->
+      <rect x="6" y="52" width="10" height="20" rx="5" fill="#f4c08a" transform="rotate(14 11 62)"/>
+      <rect x="84" y="52" width="10" height="20" rx="5" fill="#f4c08a" transform="rotate(-14 89 62)"/>
+      <!-- naam en nummer op de rug -->
+      <text x="50" y="58" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#FFD700" font-family="Arial" letter-spacing="1">GEORGE</text>
+      <text x="50" y="82" text-anchor="middle" font-size="24" font-weight="bold" fill="#FFD700" font-family="Arial">10</text>
+      <!-- hoofd (achterkant) -->
+      <circle cx="50" cy="24" r="14" fill="#f4c08a"/>
+      <!-- blond haar (achterkant vol haar) -->
+      <path d="M36 26 Q34 6 50 5 Q66 6 64 26 Q64 32 58 33 Q62 22 50 20 Q38 22 42 33 Q36 32 36 26 Z" fill="#f7d774"/>
+      <path d="M38 27 Q37 10 50 8 Q63 10 62 27 L60 30 Q60 18 50 17 Q40 18 40 30 Z" fill="#eec14f"/>
+      <!-- oren -->
+      <circle cx="36" cy="25" r="3.5" fill="#f4c08a"/>
+      <circle cx="64" cy="25" r="3.5" fill="#f4c08a"/>
+    </svg>
+  </div>
+
+  <!-- BAL -->
+  <div id="ball">
+    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="20" cy="20" r="18" fill="#fff" stroke="#ccc"/>
+      <polygon points="20,10 26,14 24,21 16,21 14,14" fill="#222"/>
+      <path d="M20 10 L20 3 M26 14 L33 11 M24 21 L29 27 M16 21 L11 27 M14 14 L7 11" stroke="#555" stroke-width="1.4"/>
+      <circle cx="20" cy="20" r="18" fill="url(#shine)"/>
+      <defs>
+        <radialGradient id="shine" cx="0.35" cy="0.3" r="0.9">
+          <stop offset="0" stop-color="rgba(255,255,255,0.7)"/>
+          <stop offset="0.4" stop-color="rgba(255,255,255,0)"/>
+          <stop offset="1" stop-color="rgba(0,0,0,0.15)"/>
+        </radialGradient>
+      </defs>
+    </svg>
+  </div>
+
+  <div id="targetRing"></div>
+  <div id="message"></div>
+</div>
+
+<div id="instructions">
+  🎯 <b>Mik en klik ergens in het doel</b> om te schieten — hoeken zijn het moeilijkst te pakken voor de keeper, maar mik je té dicht bij de paal, dan kan de bal ernaast gaan!<br>
+  🧤 De keeper wordt elk niveau sneller en pakt méér ballen. 10 schoten — hoeveel scoor jij?
+</div>
+<button id="restartBtn" onclick="restartGame()">Opnieuw spelen 🔄</button>
+
+<script>
+  const gameArea = document.getElementById('gameArea');
+  const goalWrap = document.getElementById('goalWrap');
+  const ball = document.getElementById('ball');
+  const keeper = document.getElementById('keeper');
+  const player = document.getElementById('player');
+  const message = document.getElementById('message');
+  const goalsEl = document.getElementById('goals');
+  const attemptEl = document.getElementById('attempt');
+  const levelEl = document.getElementById('level');
+  const restartBtn = document.getElementById('restartBtn');
+  const targetRing = document.getElementById('targetRing');
+  const shotsEl = document.getElementById('shots');
+
+  const maxAttempts = 10;
+  let goals = 0, attempt = 1, locked = false;
+
+  // Geluidjes met WebAudio
+  let audioCtx = null;
+  function beep(freq, dur, type='square', vol=0.15) {
+    try {
+      if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      const o = audioCtx.createOscillator();
+      const g = audioCtx.createGain();
+      o.type = type; o.frequency.value = freq;
+      g.gain.value = vol;
+      o.connect(g); g.connect(audioCtx.destination);
+      o.start();
+      g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + dur);
+      o.stop(audioCtx.currentTime + dur);
+    } catch(e) {}
+  }
+  function kickSound()  { beep(140, 0.09, 'square', 0.2); }
+  function goalSound()  { beep(523,0.12); setTimeout(()=>beep(659,0.12),110); setTimeout(()=>beep(784,0.22),220); }
+  function saveSound()  { beep(220,0.18,'sawtooth'); setTimeout(()=>beep(160,0.25,'sawtooth'),150); }
+  function postSound()  { beep(880,0.06,'triangle',0.25); setTimeout(()=>beep(440,0.15,'triangle'),60); }
+  function missSound()  { beep(300,0.1,'sine'); setTimeout(()=>beep(200,0.2,'sine'),100); }
+
+  function initDots() {
+    shotsEl.innerHTML = '';
+    for (let i = 0; i < maxAttempts; i++) {
+      const d = document.createElement('span');
+      d.className = 'dot';
+      shotsEl.appendChild(d);
+    }
+  }
+  function setDot(i, cls) { shotsEl.children[i].classList.add(cls); }
+
+  function currentLevel() { return Math.min(5, Math.floor((attempt - 1) / 2) + 1); }
+
+  gameArea.addEventListener('click', (e) => {
+    if (locked || attempt > maxAttempts) return;
+
+    const areaRect = gameArea.getBoundingClientRect();
+    const goalRect = goalWrap.getBoundingClientRect();
+    const clickX = e.clientX, clickY = e.clientY;
+
+    // Alleen schieten als er in (de buurt van) het doel geklikt wordt
+    const margin = goalRect.width * 0.06;
+    if (clickX < goalRect.left - margin || clickX > goalRect.right + margin ||
+        clickY < goalRect.top - margin || clickY > goalRect.bottom + margin * 2) {
+      return;
+    }
+    locked = true;
+
+    // Doelpositie relatief in het doel (0..1)
+    let tx = (clickX - goalRect.left) / goalRect.width;
+    let ty = (clickY - goalRect.top) / goalRect.height;
+
+    // Realistische afwijking: hoe dichter bij de rand, hoe meer risico
+    const edgeFactor = Math.max(Math.abs(tx - 0.5) * 2, 1 - ty < 0.35 ? Math.abs(ty) : 0);
+    const err = 0.045 + edgeFactor * 0.06;
+    tx += (Math.random() - 0.5) * 2 * err;
+    ty += (Math.random() - 0.5) * 2 * err;
+
+    // Toon mikpunt
+    targetRing.style.left = (goalRect.left - areaRect.left + tx * goalRect.width) + 'px';
+    targetRing.style.top  = (goalRect.top - areaRect.top + ty * goalRect.height) + 'px';
+    targetRing.style.opacity = 1;
+
+    // George neemt een aanloop en trapt
+    kickAnimation(() => {
+      kickSound();
+      shootBall(tx, ty, areaRect, goalRect);
+    });
+  });
+
+  function kickAnimation(cb) {
+    player.style.left = '44%';
+    player.style.bottom = '3.5%';
+    player.style.transform = 'rotate(-8deg)';
+    setTimeout(() => {
+      player.style.transform = 'rotate(10deg)';
+      cb();
+    }, 280);
+  }
+
+  function shootBall(tx, ty, areaRect, goalRect) {
+    // Bepaal of de bal ernaast/erover gaat
+    const wide = tx < 0.015 || tx > 0.985;
+    const over = ty < 0.02;
+    // Paal / lat: heel dicht bij de rand
+    const hitPost = (!wide && (tx < 0.05 || tx > 0.95)) || (!over && ty < 0.06);
+
+    // Keeper kiest een duikrichting — hoger niveau = slimmer en verder reiken
+    const lvl = currentLevel();
+    levelEl.textContent = lvl;
+    let keeperX;
+    const guessChance = 0.35 + lvl * 0.08;  // kans dat keeper goed gokt
+    if (Math.random() < guessChance) {
+      keeperX = tx + (Math.random() - 0.5) * 0.18;
+    } else {
+      keeperX = Math.random();
+    }
+    keeperX = Math.min(0.94, Math.max(0.06, keeperX));
+    const keeperY = ty < 0.45 && Math.random() < 0.35 + lvl * 0.06 ? 0.35 : 0.75;
+
+    // Keeper duikt (binnen de goal: 14%–86% breed, doellijn op 52%)
+    const dive = (keeperX - 0.5);
+    keeper.style.left = (14 + keeperX * 72) + '%';
+    keeper.style.bottom = keeperY < 0.5 ? '62%' : '52%';
+    keeper.style.transform = `translateX(-50%) rotate(${dive * 70}deg)`;
+
+    // Bal vliegt
+    const endX = goalRect.left - areaRect.left + tx * goalRect.width;
+    const endY = goalRect.top - areaRect.top + ty * goalRect.height;
+    const leftPct = (endX / areaRect.width) * 100;
+    const bottomPct = 100 - (endY / areaRect.height) * 100;
+
+    ball.style.transition = 'left 0.42s cubic-bezier(.25,.7,.35,1), bottom 0.42s cubic-bezier(.2,.5,.3,1), transform 0.42s linear';
+    ball.style.left = leftPct + '%';
+    ball.style.bottom = bottomPct + '%';
+    ball.style.transform = 'rotate(900deg) scale(0.75)';
+
+    setTimeout(() => {
+      let result;
+      if (wide)      result = 'wide';
+      else if (over) result = 'over';
+      else if (hitPost && Math.random() < 0.6) result = 'post';
+      else {
+        // Redding als keeper dichtbij genoeg is
+        const reach = 0.13 + lvl * 0.022;
+        const dx = Math.abs(keeperX - tx);
+        const dy = Math.abs(keeperY - ty) * 0.55;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        result = dist < reach ? 'save' : 'goal';
+      }
+      resolveShot(result);
+    }, 440);
+  }
+
+  function resolveShot(result) {
+    targetRing.style.opacity = 0;
+    const i = attempt - 1;
+    if (result === 'goal') {
+      goals++;
+      goalsEl.textContent = goals;
+      setDot(i, 'goal');
+      goalSound();
+      showMessage(['GOAL! 🎉','WAT EEN SCHOT! ⚡','TOPGOAL GEORGE! 🌟'][Math.floor(Math.random()*3)], '#4CAF50');
+      launchConfetti();
+    } else if (result === 'save') {
+      setDot(i, 'miss');
+      saveSound();
+      showMessage('Gered door de keeper! 🧤', '#f44336');
+    } else if (result === 'post') {
+      setDot(i, 'miss');
+      postSound();
+      showMessage('Op de paal! 😱', '#ff9800');
+      shakeBall();
+    } else if (result === 'over') {
+      setDot(i, 'miss');
+      missSound();
+      showMessage('Over het doel! ☁️', '#f44336');
+    } else {
+      setDot(i, 'miss');
+      missSound();
+      showMessage('Net ernaast! 😬', '#f44336');
+    }
+
+    setTimeout(() => {
+      attempt++;
+      if (attempt > maxAttempts) endGame();
+      else {
+        attemptEl.textContent = attempt;
+        levelEl.textContent = currentLevel();
+        resetPositions();
+        locked = false;
+      }
+    }, 1300);
+  }
+
+  function shakeBall() {
+    ball.animate([
+      { transform: 'rotate(900deg) scale(0.75) translateX(0)' },
+      { transform: 'rotate(900deg) scale(0.75) translateX(-16px)' },
+      { transform: 'rotate(900deg) scale(0.75) translateX(10px)' },
+      { transform: 'rotate(900deg) scale(0.75) translateX(0)' }
+    ], { duration: 320 });
+  }
+
+  function showMessage(text, color) {
+    message.textContent = text;
+    message.style.color = color;
+    message.classList.add('show');
+    setTimeout(() => message.classList.remove('show'), 1150);
+  }
+
+  function resetPositions() {
+    ball.style.transition = 'none';
+    ball.style.left = '50.5%';
+    ball.style.bottom = '5%';
+    ball.style.transform = 'rotate(0deg) scale(1)';
+    keeper.style.left = '50%';
+    keeper.style.bottom = '52%';
+    keeper.style.transform = 'translateX(-50%) rotate(0deg)';
+    player.style.left = '40%';
+    player.style.bottom = '2%';
+    player.style.transform = 'rotate(0deg)';
+    void ball.offsetWidth;
+  }
+
+  function endGame() {
+    let txt;
+    if (goals >= 9)      txt = `ONGELOOFLIJK! ${goals}/10! 🏆👑`;
+    else if (goals >= 7) txt = `SUPERGOED! ${goals}/10! 🏆`;
+    else if (goals >= 5) txt = `Knap gedaan: ${goals}/10! ⭐`;
+    else if (goals >= 3) txt = `${goals}/10 — blijven oefenen! 💪`;
+    else                 txt = `${goals}/10 — die keeper was sterk! 🧤`;
+    showMessage(txt, '#FFD700');
+    setTimeout(() => showMessage(txt, '#FFD700'), 1400);
+    restartBtn.style.display = 'inline-block';
+  }
+
+  function restartGame() {
+    goals = 0; attempt = 1; locked = false;
+    goalsEl.textContent = 0;
+    attemptEl.textContent = 1;
+    levelEl.textContent = 1;
+    restartBtn.style.display = 'none';
+    initDots();
+    resetPositions();
+  }
+
+  function launchConfetti() {
+    const colors = ['#e30613', '#FFD700', '#1a1a1a', '#4CAF50', '#2196f3'];
+    for (let i = 0; i < 30; i++) {
+      const c = document.createElement('div');
+      c.className = 'confetti';
+      c.style.background = colors[Math.floor(Math.random() * colors.length)];
+      c.style.left = (35 + Math.random() * 30) + '%';
+      c.style.top = '30%';
+      c.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+      gameArea.appendChild(c);
+      const dx = (Math.random() - 0.5) * 340;
+      const dy = 160 + Math.random() * 180;
+      const rot = Math.random() * 900;
+      c.animate([
+        { transform: 'translate(0,0) rotate(0deg)', opacity: 1 },
+        { transform: `translate(${dx}px, ${dy}px) rotate(${rot}deg)`, opacity: 0 }
+      ], { duration: 950 + Math.random() * 500, easing: 'ease-out' });
+      setTimeout(() => c.remove(), 1500);
+    }
+  }
+
+  initDots();
+</script>
+
+</body>
+</html>
