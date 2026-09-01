@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+<script src="shopzo-client.js"></script>
 <style>
   :root {
     --ink: #2B2420;
@@ -149,16 +150,13 @@
 <header>
   <div class="wrap nav">
     <a href="#" class="logo">Loam Living</a>
-    <ul class="nav-links" style="list-style:none; display:flex; gap:30px;">
-      <li><a href="#shop">Shop</a></li>
-      <li><a href="#">Wonen</a></li>
-      <li><a href="#">Keuken</a></li>
-      <li><a href="#">Sale</a></li>
+    <ul class="nav-links" id="shopzo-nav" style="list-style:none; display:flex; gap:30px;">
+      <li><a href="shop.html">Shop</a></li>
     </ul>
     <div style="display:flex; align-items:center; gap:18px;">
       <a href="#" class="icon-btn">♡</a>
-      <a href="#" class="icon-btn">🛒<span class="cart-count">2</span></a>
-      <a href="#" class="btn btn--outline" style="padding:8px 18px;">Inloggen</a>
+      <a href="cart.html" class="icon-btn">🛒<span class="cart-count">0</span></a>
+      <a href="https://app.shopzo.be" target="_blank" class="btn btn--outline" style="padding:8px 18px;">Inloggen</a>
     </div>
   </div>
 </header>
@@ -187,12 +185,8 @@
 </section>
 
 <div class="wrap">
-  <div class="cat-strip">
-    <a href="#" class="cat-pill active">Alles</a>
-    <a href="#" class="cat-pill">Keramiek</a>
-    <a href="#" class="cat-pill">Textiel</a>
-    <a href="#" class="cat-pill">Verlichting &amp; geur</a>
-    <a href="#" class="cat-pill">Hout &amp; rotan</a>
+  <div class="cat-strip" id="cat-strip">
+    <a href="shop.html" class="cat-pill active">Alles</a>
   </div>
 </div>
 
@@ -200,122 +194,35 @@
   <div class="wrap">
     <div class="section-head">
       <h2>De collectie</h2>
-      <a href="#" class="see-all">Alles bekijken →</a>
+      <a href="shop.html" class="see-all">Alles bekijken →</a>
     </div>
 
-    <div class="products">
-
-      <a href="#" class="product-card">
-        <div class="product-photo" style="background:linear-gradient(150deg,#E3D6C2,#B5654A);">
-          <svg viewBox="0 0 300 300" style="position:absolute; inset:0;">
-            <ellipse cx="150" cy="255" rx="70" ry="10" fill="#00000015"/>
-            <path d="M120 90 Q108 160 118 230 Q150 245 182 230 Q192 160 180 90 Q168 72 150 72 Q132 72 120 90Z" fill="#FBF6EC"/>
-            <ellipse cx="150" cy="92" rx="30" ry="9" fill="#E7DCC7"/>
-          </svg>
-        </div>
-        <div class="tag-row">
-          <span class="ptag" style="background:#F5D9CE;color:#93513B;">bestseller</span>
-        </div>
-        <h3>Keramische Vaas 'Terra'</h3>
-        <div class="sub">Handgedraaid · Antwerpen</div>
-        <div class="price-row"><span class="price">€ 42,00</span></div>
-      </a>
-
-      <a href="#" class="product-card">
-        <div class="product-photo" style="background:linear-gradient(150deg,#EDE4D5,#B9A488);">
-          <svg viewBox="0 0 300 300" style="position:absolute; inset:0;">
-            <rect x="55" y="120" width="190" height="130" rx="10" fill="#F7F1E6" transform="rotate(-3 150 185)"/>
-            <path d="M60 150 Q150 170 240 145" stroke="#D8C9AC" stroke-width="4" fill="none" transform="rotate(-3 150 185)"/>
-            <path d="M60 190 Q150 210 240 185" stroke="#D8C9AC" stroke-width="4" fill="none" transform="rotate(-3 150 185)"/>
-          </svg>
-        </div>
-        <div class="tag-row">
-          <span class="ptag" style="background:#E7EBE0;color:#4F5A45;">nieuw</span>
-        </div>
-        <h3>Linnen Plaid Naturel</h3>
-        <div class="sub">130 x 180 cm · 100% linnen</div>
-        <div class="price-row"><span class="price">€ 68,00</span></div>
-      </a>
-
-      <a href="#" class="product-card">
-        <div class="product-photo" style="background:linear-gradient(150deg,#D9C7A8,#93513B);">
-          <svg viewBox="0 0 300 300" style="position:absolute; inset:0;">
-            <ellipse cx="150" cy="250" rx="62" ry="9" fill="#00000018"/>
-            <rect x="95" y="140" width="110" height="105" rx="8" fill="#F0E4CF"/>
-            <ellipse cx="150" cy="140" rx="55" ry="12" fill="#3A2E22"/>
-            <ellipse cx="150" cy="136" rx="55" ry="10" fill="#C08A4E"/>
-            <rect x="145" y="95" width="10" height="42" rx="4" fill="#E8DAC0"/>
-            <path d="M150 95 q10 -14 -2 -26" stroke="#C7BBA6" stroke-width="3" fill="none" opacity="0.7"/>
-          </svg>
-        </div>
-        <div class="tag-row">
-          <span class="ptag" style="background:#FCE7DD;color:#93513B;">geur</span>
-        </div>
-        <h3>Geurkaars Ceder &amp; Vetiver</h3>
-        <div class="sub">45 branduren · sojawas</div>
-        <div class="price-row"><span class="price">€ 29,50</span></div>
-      </a>
-
-      <a href="#" class="product-card">
-        <div class="product-photo" style="background:linear-gradient(150deg,#EFE7DA,#C9A98A);">
-          <svg viewBox="0 0 300 300" style="position:absolute; inset:0;">
-            <ellipse cx="110" cy="200" rx="42" ry="16" fill="#F3ECDF"/>
-            <ellipse cx="110" cy="192" rx="42" ry="15" fill="#FBF6EC"/>
-            <ellipse cx="185" cy="215" rx="36" ry="14" fill="#EEE3D0"/>
-            <ellipse cx="185" cy="208" rx="36" ry="13" fill="#F8F1E4"/>
-            <ellipse cx="150" cy="165" rx="30" ry="11" fill="#E7DCC7"/>
-            <ellipse cx="150" cy="159" rx="30" ry="10" fill="#F5EEE0"/>
-          </svg>
-          <span class="sale-flag">Sale</span>
-        </div>
-        <div class="tag-row">
-          <span class="ptag" style="background:#F5D9CE;color:#93513B;">sale</span>
-          <span class="ptag" style="background:#EDE4D5;color:#5C4530;">set van 3</span>
-        </div>
-        <h3>Handgemaakte Kommenset</h3>
-        <div class="sub">3-delig · gespikkeld glazuur</div>
-        <div class="price-row">
-          <span class="price price-sale">€ 44,00</span>
-          <span class="price-old">€ 54,00</span>
-        </div>
-      </a>
-
-      <a href="#" class="product-card">
-        <div class="product-photo" style="background:linear-gradient(150deg,#D8CBB2,#7C8A6E);">
-          <svg viewBox="0 0 300 300" style="position:absolute; inset:0;">
-            <path d="M100 90 Q150 60 200 90 Q220 150 200 220 Q150 250 100 220 Q80 150 100 90Z" fill="none" stroke="#EFE7DA" stroke-width="6"/>
-            <ellipse cx="150" cy="235" rx="55" ry="14" fill="#5F6E52"/>
-            <path d="M150 235 Q140 190 150 150" stroke="#EFE7DA" stroke-width="4" fill="none"/>
-            <path d="M150 190 Q170 175 185 160" stroke="#9AAA8A" stroke-width="4" fill="none"/>
-            <path d="M150 170 Q130 155 115 140" stroke="#9AAA8A" stroke-width="4" fill="none"/>
-          </svg>
-        </div>
-        <div class="tag-row">
-          <span class="ptag" style="background:#E7EBE0;color:#4F5A45;">planten</span>
-        </div>
-        <h3>Rotan Hangplant Vlecht</h3>
-        <div class="sub">Handgevlochten · Ø28 cm</div>
-        <div class="price-row"><span class="price">€ 38,00</span></div>
-      </a>
-
-      <a href="#" class="product-card">
-        <div class="product-photo" style="background:linear-gradient(150deg,#E3D6C2,#93513B);">
-          <svg viewBox="0 0 300 300" style="position:absolute; inset:0;">
-            <ellipse cx="150" cy="180" rx="95" ry="60" fill="#C9A472"/>
-            <ellipse cx="150" cy="174" rx="95" ry="58" fill="#DCB98A"/>
-            <ellipse cx="150" cy="174" rx="72" ry="42" fill="#EAD2A5" opacity="0.6"/>
-          </svg>
-        </div>
-        <div class="tag-row">
-          <span class="ptag" style="background:#EDE4D5;color:#5C4530;">keuken</span>
-        </div>
-        <h3>Eiken Dienblad Rond</h3>
-        <div class="sub">Ø38 cm · massief eik</div>
-        <div class="price-row"><span class="price">€ 46,00</span></div>
-      </a>
-
+    <div class="products" id="home-products">
+      <p style="grid-column:1/-1; padding:30px 0; color:var(--muted); font-size:0.9rem;">Producten laden…</p>
     </div>
   </div>
+</section>
+
+<script>
+  (async function () {
+    const grid = document.getElementById('home-products');
+    const catStrip = document.getElementById('cat-strip');
+    try {
+      const products = await shopzoFetchProducts();
+
+      const categories = [...new Set(products.map((p) => p.category).filter(Boolean))];
+      catStrip.innerHTML = '<a href="shop.html" class="cat-pill active">Alles</a>' +
+        categories.map((cat) => `<a href="shop.html?category=${encodeURIComponent(cat)}" class="cat-pill">${cat}</a>`).join('');
+
+      grid.innerHTML = products.length
+        ? products.slice(0, 6).map((p) => renderProductCard(p)).join('')
+        : '<p style="grid-column:1/-1; padding:30px 0; color:var(--muted); font-size:0.9rem;">Nog geen producten — kom binnenkort terug.</p>';
+    } catch (err) {
+      grid.innerHTML = '<p style="grid-column:1/-1; padding:30px 0; color:var(--clay-dark); font-size:0.9rem;">Producten konden niet geladen worden.</p>';
+    }
+  })();
+</script>
+
 </section>
 
 <section>

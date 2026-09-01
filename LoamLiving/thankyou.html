@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bedankt — Loam Living</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script src="shopzo-client.js"></script>
+<style>
+  :root {
+    --ink: #2B2420; --clay: #B5654A; --clay-dark: #93513B;
+    --sand: #F4EEE4; --line: #E3DACB; --white: #FFFDF9; --muted: #8A7F70;
+    --font-display: 'Fraunces', serif; --font-body: 'Inter', sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-body); background: var(--sand); color: var(--ink); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 28px; }
+  header { border-bottom: 1px solid var(--line); }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
+  .logo { font-family: var(--font-display); font-weight: 600; font-size: 1.5rem; }
+  .icon-btn { font-size: 1.05rem; position: relative; }
+  .cart-count { position: absolute; top: -6px; right: -10px; background: var(--clay); color: #fff; font-size: 0.62rem; font-weight: 700; width: 16px; height: 16px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+
+  .center-shell { min-height: 60vh; display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
+  .card { background: var(--white); border: 1px solid var(--line); border-radius: 18px; padding: 44px; text-align: center; max-width: 440px; }
+  .card .icon { font-size: 2.4rem; margin-bottom: 12px; }
+  .card h1 { font-family: var(--font-display); font-weight: 600; font-size: 1.5rem; margin-bottom: 10px; }
+  .card p { color: var(--muted); font-size: 0.92rem; line-height: 1.6; }
+  .btn { display: inline-flex; margin-top: 26px; background: var(--ink); color: var(--white); font-weight: 600; font-size: 0.9rem; padding: 13px 26px; border-radius: 999px; }
+
+  footer { background: var(--ink); color: var(--sand); padding: 30px 0; }
+  .footer-bottom { font-size: 0.78rem; color: #8A8071; display: flex; justify-content: space-between; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="logo">Loam Living</a>
+    <a href="cart.html" class="icon-btn">🛒<span class="cart-count">0</span></a>
+  </div>
+</header>
+
+<div class="center-shell">
+  <div class="card">
+    <div class="icon">🌿</div>
+    <h1>Bedankt voor je bestelling!</h1>
+    <p>We hebben je bestelling ontvangen en sturen je binnenkort een bevestiging per e-mail.</p>
+    <a href="shop.html" class="btn">Verder winkelen</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap footer-bottom">
+    <span>© 2026 Loam Living. Alle rechten voorbehouden.</span>
+    <span>Fictief voorbeeld — gebouwd op Shopzo</span>
+  </div>
+</footer>
+
+<script>
+  // Winkelmandje leegmaken na een checkout-poging.
+  saveCart([]);
+</script>
+
+</body>
+</html>

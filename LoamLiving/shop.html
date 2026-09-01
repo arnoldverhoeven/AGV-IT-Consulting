@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shop — Loam Living</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+<script src="shopzo-client.js"></script>
+<style>
+  :root {
+    --ink: #2B2420; --clay: #B5654A; --clay-dark: #93513B;
+    --sand: #F4EEE4; --sand-2: #EDE4D5; --sage: #7C8A6E; --sage-tint: #E7EBE0;
+    --line: #E3DACB; --white: #FFFDF9; --muted: #8A7F70;
+    --font-display: 'Fraunces', serif; --font-body: 'Inter', sans-serif; --font-mono: 'JetBrains Mono', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-body); background: var(--sand); color: var(--ink); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; } img, svg { display: block; max-width: 100%; }
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 28px; }
+  header { position: sticky; top: 0; z-index: 50; background: rgba(244,238,228,0.9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
+  .logo { font-family: var(--font-display); font-weight: 600; font-size: 1.5rem; text-decoration: none; }
+  .nav-links a { text-decoration: none; font-size: 0.9rem; font-weight: 500; color: var(--ink); }
+  .nav-links a:hover { color: var(--clay); }
+  .icon-btn { font-size: 1.05rem; text-decoration: none; position: relative; }
+  .cart-count { position: absolute; top: -6px; right: -10px; background: var(--clay); color: #fff; font-size: 0.62rem; font-weight: 700; width: 16px; height: 16px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.88rem; padding: 12px 22px; border-radius: 999px; text-decoration: none; border: 1px solid transparent; cursor: pointer; }
+  .btn--primary { background: var(--ink); color: var(--white); }
+  .btn--outline { background: transparent; border-color: var(--ink); color: var(--ink); }
+
+  .breadcrumb { font-size: 0.82rem; color: var(--muted); padding: 24px 0 0; }
+  .breadcrumb a { text-decoration: none; color: var(--muted); }
+  .page-head { padding: 10px 0 20px; }
+  .page-head h1 { font-family: var(--font-display); font-weight: 600; font-size: 2rem; }
+  .page-head .count { font-size: 0.88rem; color: var(--muted); margin-top: 6px; }
+
+  .cat-strip { display: flex; gap: 10px; padding: 6px 0 24px; overflow-x: auto; flex-wrap: wrap; }
+  .cat-pill { flex-shrink: 0; padding: 9px 18px; border-radius: 999px; background: var(--white); border: 1px solid var(--line); font-size: 0.86rem; font-weight: 500; cursor: pointer; }
+  .cat-pill.active { background: var(--ink); color: var(--white); border-color: var(--ink); }
+
+  .toolbar { display: flex; align-items: center; justify-content: space-between; padding-bottom: 20px; flex-wrap: wrap; gap: 12px; }
+  .toolbar .count-label { font-size: 0.85rem; color: var(--muted); }
+  .filter-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .filter-row input[type=number] {
+    width: 70px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px;
+    font-family: var(--font-body); font-size: 0.85rem; background: var(--white);
+  }
+  select.sort-select { padding: 9px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--white); font-size: 0.85rem; }
+  label.sale-only { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; }
+
+  .products { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; padding-bottom: 60px; }
+  .product-card { text-decoration: none; color: var(--ink); }
+  .product-photo { aspect-ratio: 1/1; border-radius: 14px; overflow: hidden; position: relative; margin-bottom: 14px; box-shadow: 0 18px 40px -22px rgba(43,36,32,0.35); }
+  .product-photo .sale-flag { position: absolute; top: 12px; left: 12px; background: var(--white); color: var(--ink); font-size: 0.68rem; font-weight: 700; padding: 4px 10px; border-radius: 999px; }
+  .tag-row { display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; }
+  .ptag { font-size: 0.68rem; font-weight: 600; padding: 3px 9px; border-radius: 999px; }
+  .product-card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; margin-bottom: 4px; }
+  .product-card .sub { font-size: 0.8rem; color: var(--muted); margin-bottom: 8px; }
+  .price-row { display: flex; align-items: baseline; gap: 8px; }
+  .price { font-family: var(--font-mono); font-weight: 500; font-size: 0.95rem; }
+  .price-sale { color: var(--clay-dark); }
+  .price-old { font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); text-decoration: line-through; }
+
+  footer { background: var(--ink); color: var(--sand); padding: 40px 0 26px; }
+  .footer-bottom { font-size: 0.78rem; color: #8A8071; display: flex; justify-content: space-between; }
+
+  @media (max-width: 860px) { .products { grid-template-columns: repeat(2, 1fr); } .nav-links { display: none; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="logo">Loam Living</a>
+    <ul class="nav-links" id="shopzo-nav" style="list-style:none; display:flex; gap:30px;">
+      <li><a href="shop.html">Shop</a></li>
+    </ul>
+    <div style="display:flex; align-items:center; gap:18px;">
+      <a href="#" class="icon-btn">♡</a>
+      <a href="cart.html" class="icon-btn">🛒<span class="cart-count">0</span></a>
+      <a href="https://app.shopzo.be" target="_blank" class="btn btn--outline" style="padding:8px 18px;">Inloggen</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="breadcrumb"><a href="index.html">Home</a> / <span>Shop</span></div>
+  <div class="page-head">
+    <h1>De collectie</h1>
+    <div class="count" id="page-count-label">Laden…</div>
+  </div>
+
+  <div class="cat-strip" id="category-filters"></div>
+
+  <div class="toolbar">
+    <span class="count-label" id="toolbar-count-label">Laden…</span>
+    <div class="filter-row">
+      <label class="sale-only"><input type="checkbox" id="sale-only-checkbox"> Alleen sale</label>
+      <input type="number" id="price-min" placeholder="€ van">
+      <input type="number" id="price-max" placeholder="€ tot">
+      <select class="sort-select" id="sort-select">
+        <option value="popular">Sorteren: Populair</option>
+        <option value="price-asc">Prijs: laag naar hoog</option>
+        <option value="price-desc">Prijs: hoog naar laag</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="products" id="shopzo-products">
+    <p style="grid-column:1/-1; padding:40px 0; color:var(--muted);">Producten laden…</p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap footer-bottom">
+    <span>© 2026 Loam Living. Alle rechten voorbehouden.</span>
+    <span>Fictief voorbeeld — gebouwd op Shopzo</span>
+  </div>
+</footer>
+
+<script>
+  let allProducts = [];
+  const urlParams = new URLSearchParams(window.location.search);
+
+  function effectivePrice(p) { return (p.sale_price_cents ?? p.price_cents) / 100; }
+
+  function renderCategoryPills(products) {
+    const categories = [...new Set(products.map((p) => p.category).filter(Boolean))].sort();
+    const container = document.getElementById('category-filters');
+    container.innerHTML = '<button type="button" class="cat-pill active" data-cat="">Alles</button>' +
+      categories.map((cat) => `<button type="button" class="cat-pill" data-cat="${escapeHtml(cat)}">${escapeHtml(cat)}</button>`).join('');
+
+    container.querySelectorAll('.cat-pill').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        container.querySelectorAll('.cat-pill').forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        applyFilters();
+      });
+    });
+
+    const catParam = urlParams.get('category');
+    if (catParam) {
+      const match = [...container.querySelectorAll('.cat-pill')].find((b) => b.dataset.cat === catParam);
+      if (match) {
+        container.querySelectorAll('.cat-pill').forEach((b) => b.classList.remove('active'));
+        match.classList.add('active');
+      }
+    }
+    if (urlParams.get('sale') === '1') {
+      document.getElementById('sale-only-checkbox').checked = true;
+    }
+  }
+
+  function applyFilters() {
+    const activeCat = document.querySelector('.cat-pill.active')?.dataset.cat || '';
+    const saleOnly = document.getElementById('sale-only-checkbox').checked;
+    const min = parseFloat(document.getElementById('price-min').value) || 0;
+    const maxInput = document.getElementById('price-max').value;
+    const max = maxInput ? parseFloat(maxInput) : Infinity;
+    const sort = document.getElementById('sort-select').value;
+
+    let filtered = allProducts.filter((p) => {
+      const catOk = !activeCat || p.category === activeCat;
+      const saleOk = !saleOnly || !!p.sale_price_cents;
+      const price = effectivePrice(p);
+      return catOk && saleOk && price >= min && price <= max;
+    });
+
+    if (sort === 'price-asc') filtered.sort((a, b) => effectivePrice(a) - effectivePrice(b));
+    if (sort === 'price-desc') filtered.sort((a, b) => effectivePrice(b) - effectivePrice(a));
+
+    renderGrid(filtered);
+  }
+
+  function renderGrid(products) {
+    const grid = document.getElementById('shopzo-products');
+    const total = allProducts.length;
+    document.getElementById('page-count-label').textContent = `${total} product${total === 1 ? '' : 'en'}`;
+    document.getElementById('toolbar-count-label').textContent = `${products.length} van ${total} getoond`;
+    grid.innerHTML = products.length
+      ? products.map((p) => renderProductCard(p)).join('')
+      : '<p style="grid-column:1/-1; padding:40px 0; color:var(--muted);">Geen producten gevonden met deze filters.</p>';
+  }
+
+  document.getElementById('price-min').addEventListener('input', applyFilters);
+  document.getElementById('price-max').addEventListener('input', applyFilters);
+  document.getElementById('sort-select').addEventListener('change', applyFilters);
+  document.getElementById('sale-only-checkbox').addEventListener('change', applyFilters);
+
+  (async function () {
+    const grid = document.getElementById('shopzo-products');
+    try {
+      allProducts = await shopzoFetchProducts();
+      renderCategoryPills(allProducts);
+      if (allProducts.length === 0) {
+        document.getElementById('page-count-label').textContent = '0 producten';
+        document.getElementById('toolbar-count-label').textContent = '0 van 0 getoond';
+        grid.innerHTML = '<p style="grid-column:1/-1; padding:40px 0; color:var(--muted);">Nog geen producten — kom binnenkort terug.</p>';
+        return;
+      }
+      applyFilters();
+    } catch (err) {
+      grid.innerHTML = '<p style="grid-column:1/-1; padding:40px 0; color:var(--clay-dark);">Producten konden niet geladen worden.</p>';
+    }
+  })();
+</script>
+
+</body>
+</html>
