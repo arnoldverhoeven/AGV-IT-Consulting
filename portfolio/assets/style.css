@@ -258,19 +258,18 @@ section{
 .port-grid{
   display:grid;
   grid-template-columns:repeat(2, 1fr);
-  gap:1px;
-  background:var(--line);
-  border:1px solid var(--line);
+  gap:28px;
 }
 .port-card{
   background:var(--bg);
+  border:1px solid var(--line);
   text-decoration:none;
   color:var(--text);
   display:flex;
   flex-direction:column;
-  transition:background .2s;
+  transition:background .2s, border-color .2s;
 }
-.port-card:hover{background:var(--bg-panel);}
+.port-card:hover{background:var(--bg-panel); border-color:var(--amber);}
 .port-card:hover .work-link{color:var(--amber);}
 .port-shot{
   aspect-ratio:16/10.5;
