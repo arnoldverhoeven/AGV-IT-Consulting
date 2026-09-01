@@ -2,6 +2,10 @@
 <html lang="nl">
 <head>
 <meta charset="UTF-8" />
+<link rel="icon" href="assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Loam Living — Wonen met natuurlijke materialen</title>
 <meta name="description" content="Loam Living verkoopt tijdloze woonaccessoires van klei, linnen, rotan en eik. Rechtstreeks vanuit Antwerpen." />
@@ -68,17 +72,55 @@
   .btn--outline { background: transparent; border-color: var(--ink); color: var(--ink); }
 
   /* ---------- Hero ---------- */
-  .hero { padding: 64px 0 56px; }
-  .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  /* ---------- Hero: full-bleed photo with overlaid text ---------- */
+  .hero {
+    position: relative;
+    height: min(78vh, 680px);
+    min-height: 480px;
+    overflow: hidden;
+    border-radius: 0 0 26px 26px;
+    margin-bottom: 6px;
+  }
+  .hero-img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center 58%;
+  }
+  .hero-scrim {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(100deg, rgba(20,15,11,0.58) 0%, rgba(20,15,11,0.22) 42%, rgba(20,15,11,0.02) 62%),
+      linear-gradient(180deg, rgba(20,15,11,0.05) 0%, rgba(20,15,11,0.3) 55%, rgba(16,12,9,0.82) 100%);
+  }
+  .hero-content {
+    position: relative; z-index: 1;
+    height: 100%;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding-bottom: 60px;
+  }
   .eyebrow {
     display: inline-block; font-family: var(--font-mono); font-size: 0.72rem;
-    letter-spacing: 0.06em; text-transform: uppercase; color: var(--clay-dark);
-    background: var(--sand-2); padding: 5px 12px; border-radius: 999px; margin-bottom: 18px;
+    letter-spacing: 0.06em; text-transform: uppercase; color: var(--sand);
+    background: rgba(255,255,255,0.16); backdrop-filter: blur(6px);
+    padding: 6px 14px; border-radius: 999px; margin-bottom: 20px;
+    width: fit-content;
+    border: 1px solid rgba(255,255,255,0.25);
   }
-  .hero h1 { font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3.1rem); line-height: 1.08; font-weight: 600; }
-  .hero p.lead { margin-top: 18px; font-size: 1.05rem; line-height: 1.65; color: var(--muted); max-width: 42ch; }
-  .hero-ctas { margin-top: 28px; display: flex; gap: 14px; }
-  .hero-visual { position: relative; aspect-ratio: 4/5; border-radius: 18px; overflow: hidden; }
+  .hero h1 {
+    font-family: var(--font-display); font-weight: 600;
+    font-size: clamp(2.4rem, 5vw, 3.6rem); line-height: 1.05;
+    color: #FFFDF9;
+    max-width: 16ch;
+    text-shadow: 0 2px 24px rgba(0,0,0,0.25);
+  }
+  .hero p.lead {
+    margin-top: 18px; font-size: 1.08rem; line-height: 1.65;
+    color: rgba(255,253,249,0.88); max-width: 44ch;
+  }
+  .hero-ctas { margin-top: 30px; display: flex; gap: 14px; }
+  .hero .btn--outline { border-color: rgba(255,253,249,0.7); color: #FFFDF9; }
+  .hero .btn--outline:hover { background: rgba(255,255,255,0.12); }
 
   /* ---------- Category strip ---------- */
   .cat-strip { display: flex; gap: 14px; padding: 30px 0 10px; overflow-x: auto; }
@@ -138,7 +180,7 @@
   .footer-bottom { margin-top: 40px; padding-top: 20px; border-top: 1px solid #423A32; display: flex; justify-content: space-between; font-size: 0.78rem; color: #8A8071; }
 
   @media (max-width: 860px) {
-    .hero-grid { grid-template-columns: 1fr; }
+    .hero { border-radius: 0 0 18px 18px; }
     .products { grid-template-columns: repeat(2, 1fr); }
     .trust { grid-template-columns: 1fr; }
     .nav-links { display: none; }
@@ -162,24 +204,15 @@
 </header>
 
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="eyebrow">Nieuwe collectie · Herfst 2026</span>
-      <h1>Wonen, teruggebracht<br>tot het wezenlijke.</h1>
-      <p class="lead">Handgemaakte woonaccessoires van klei, linnen, rotan en eik — gemaakt om lang mee te gaan, niet om te vervangen.</p>
-      <div class="hero-ctas">
-        <a href="#shop" class="btn btn--primary">Bekijk de collectie →</a>
-        <a href="#" class="btn btn--outline">Ons verhaal</a>
-      </div>
-    </div>
-    <div class="hero-visual" style="background:linear-gradient(160deg,#E9DFCD,#C9A98A);">
-      <svg viewBox="0 0 400 500" style="position:absolute; inset:0; width:100%; height:100%;">
-        <ellipse cx="200" cy="430" rx="140" ry="18" fill="#00000012"/>
-        <path d="M150 180 Q140 300 165 420 L235 420 Q260 300 250 180 Q240 150 200 150 Q160 150 150 180Z" fill="#EFE7DA" opacity="0.95"/>
-        <ellipse cx="200" cy="178" rx="52" ry="16" fill="#DCCFB6"/>
-        <path d="M170 190 Q200 210 230 190" stroke="#C9A98A" stroke-width="3" fill="none" opacity="0.6"/>
-        <path d="M165 260 Q200 280 235 260" stroke="#C9A98A" stroke-width="3" fill="none" opacity="0.4"/>
-      </svg>
+  <img class="hero-img" src="assets/hero.jpg" alt="Sfeervol, aards interieur met rotan zetel, linnen kussens en handgemaakte accessoires" />
+  <div class="hero-scrim"></div>
+  <div class="wrap hero-content">
+    <span class="eyebrow">Nieuwe collectie · Herfst 2026</span>
+    <h1>Wonen, teruggebracht tot het wezenlijke.</h1>
+    <p class="lead">Handgemaakte woonaccessoires van klei, linnen, rotan en eik — gemaakt om lang mee te gaan, niet om te vervangen.</p>
+    <div class="hero-ctas">
+      <a href="#shop" class="btn btn--primary">Bekijk de collectie →</a>
+      <a href="#" class="btn btn--outline">Ons verhaal</a>
     </div>
   </div>
 </section>
