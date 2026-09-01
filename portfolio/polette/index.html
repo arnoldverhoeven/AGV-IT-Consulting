@@ -1,1 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Polette — Portfolio — AGV IT Consulting</title>
+<meta name="description" content="Polette: a concept site for a neighbourhood coffee bar in Antwerp's Markgravewijk, built around its story, menu and Google reviews.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMwRTIyNDAiLz48dGV4dCB4PSIzMiIgeT0iNDUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjM2IiBmaWxsPSIjRkZGRkZGIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5BPC90ZXh0Pjwvc3ZnPg==">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
+<meta name="theme-color" content="#2563EB">
 
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AGV IT Consulting">
+<meta property="og:title" content="Polette — Portfolio — AGV IT Consulting">
+<meta property="og:description" content="A concept site for a neighbourhood coffee bar in Antwerp's Markgravewijk.">
+<meta property="og:url" content="https://agv-it.be/portfolio/polette/">
+<meta property="og:image" content="https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fagv-it.be%2Fpolette%2F?w=1200&h=630">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Polette — Portfolio — AGV IT Consulting">
+<meta name="twitter:description" content="A concept site for a neighbourhood coffee bar in Antwerp's Markgravewijk.">
+<meta name="twitter:image" content="https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fagv-it.be%2Fpolette%2F?w=1200&h=630">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="/#top" class="logo"><span class="logo-mark"></span>AGV IT CONSULTING</a>
+    <nav class="links">
+      <a href="/#services">Services</a>
+      <a href="/portfolio/" class="active">Work</a>
+      <a href="/#track-record">Track record</a>
+      <a href="/#certifications">Certifications</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="/#quote">Request a quote</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero" style="border-top:none;">
+    <div class="wrap">
+      <a class="back-link mono" href="/portfolio/">← Back to portfolio</a>
+      <div class="eyebrow">Concept · Coffee bar</div>
+      <h1>Polette</h1>
+      <p class="lead">A corner coffee bar in Antwerp's Markgravewijk, built around specialty coffee, house-made pastries and a loyal neighbourhood following.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://agv-it.be/polette/" target="_blank" rel="noopener">View the concept ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="shot-frame reveal">
+      <img src="https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fagv-it.be%2Fpolette%2F?w=1600&h=1000" alt="Polette concept site screenshot" loading="lazy">
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-tag">Overview</div>
+          <h2>A concept built around the owner's own story.</h2>
+        </div>
+      </div>
+      <div class="detail-body reveal">
+        <p>Polette is a real coffee bar on Fransenplaats, opened in 2026 by a former fashion-industry professional turned full-time barista. This concept site leads with that story, backs it up with a full drinks menu and the bar's carrot cake reputation, and closes the trust loop with real Google reviews pulled straight from the neighbourhood.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-tag">Key features</div>
+          <h2>What the concept actually does.</h2>
+        </div>
+      </div>
+      <div class="focus-grid reveal">
+        <div class="focus-card">
+          <div class="focus-num mono">01</div>
+          <h3>Founder story up front</h3>
+          <p>The "why" behind the bar — a career change and a vacant corner shop — told as the centrepiece of the homepage, not an afterthought.</p>
+        </div>
+        <div class="focus-card">
+          <div class="focus-num mono">02</div>
+          <h3>Full drinks menu</h3>
+          <p>Espresso-based, iced and hot drinks laid out with prices, so visitors know what to expect before they walk in.</p>
+        </div>
+        <div class="focus-card">
+          <div class="focus-num mono">03</div>
+          <h3>Real Google reviews</h3>
+          <p>Five-star reviews from actual customers, built into the page as social proof rather than a generic testimonials block.</p>
+        </div>
+        <div class="focus-card">
+          <div class="focus-num mono">04</div>
+          <h3>Route &amp; opening hours</h3>
+          <p>A clear map link and weekly hours, so the last step before visiting takes one tap.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-tag">Built with</div>
+          <h2>Stack &amp; infrastructure.</h2>
+        </div>
+      </div>
+      <div class="stack-row reveal">
+        <span>HTML / CSS / JavaScript</span>
+        <span>Netlify</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="next-project">
+      <a href="/portfolio/souvenir-tattoo-parlour/">
+        <div class="label mono">Next project</div>
+        <div class="title">Souvenir Tattoo Parlour →</div>
+      </a>
+      <a class="all-link mono" href="/portfolio/">All projects</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:12px;">
+    <span>© 2026 AGV IT Consulting BV</span>
+    <a href="/#quote">Have a project in mind? Get a quote ↗</a>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+</script>
+
+</body>
+</html>
