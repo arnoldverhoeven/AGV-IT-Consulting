@@ -29,6 +29,7 @@
   .nav-links a { text-decoration: none; font-size: 0.9rem; font-weight: 500; color: var(--ink); }
   .icon-btn { font-size: 1.05rem; text-decoration: none; position: relative; }
   .cart-count { position: absolute; top: -6px; right: -10px; background: var(--clay); color: #fff; font-size: 0.62rem; font-weight: 700; width: 16px; height: 16px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+  .favorites-count { position: absolute; top: -6px; right: -10px; background: var(--clay); color: #fff; font-size: 0.62rem; font-weight: 700; width: 16px; height: 16px; border-radius: 50%; display: none; align-items: center; justify-content: center; }
   .btn { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.9rem; padding: 13px 24px; border-radius: 999px; text-decoration: none; border: 1px solid transparent; cursor: pointer; }
   .btn--primary { background: var(--ink); color: var(--white); }
   .btn--outline { background: transparent; border-color: var(--ink); color: var(--ink); }
@@ -59,6 +60,15 @@
 
   .pd-meta { border-top: 1px solid var(--line); padding-top: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 0.86rem; color: var(--muted); }
   .pd-meta strong { color: var(--ink); }
+  .pd-fav-btn {
+    display: flex; align-items: center; gap: 9px;
+    background: none; border: none; cursor: pointer;
+    font-family: var(--font-body); font-size: 0.88rem; font-weight: 600; color: var(--ink);
+    padding: 0 0 22px; margin: 0;
+  }
+  .pd-fav-btn svg { width: 20px; height: 20px; fill: none; stroke: var(--ink); stroke-width: 1.8; }
+  .pd-fav-btn.active svg { fill: var(--clay); stroke: var(--clay); }
+  .pd-fav-btn.active #pd-fav-label { color: var(--clay-dark); }
 
   footer { background: var(--ink); color: var(--sand); padding: 40px 0 26px; margin-top: 30px; }
   .footer-bottom { font-size: 0.78rem; color: #8A8071; display: flex; justify-content: space-between; }
@@ -75,7 +85,7 @@
       <li><a href="shop.html">Shop</a></li>
     </ul>
     <div style="display:flex; align-items:center; gap:18px;">
-      <a href="#" class="icon-btn">♡</a>
+      <a href="favorites.html" class="icon-btn">♡<span class="favorites-count">0</span></a>
       <a href="cart.html" class="icon-btn">🛒<span class="cart-count">0</span></a>
       <a href="https://app.shopzo.be" target="_blank" class="btn btn--outline" style="padding:8px 18px;">Inloggen</a>
     </div>
@@ -106,6 +116,11 @@
         </div>
         <button type="button" id="pd-add-to-cart" class="btn btn--primary" style="flex:1; justify-content:center;">In winkelmandje</button>
       </div>
+
+      <button type="button" id="pd-fav-btn" class="pd-fav-btn">
+        <span id="pd-fav-icon"></span>
+        <span id="pd-fav-label">Toevoegen aan favorieten</span>
+      </button>
 
       <div class="pd-meta">
         <div id="pd-stock"><strong>Op voorraad</strong></div>
@@ -202,6 +217,23 @@
         window.location.href = 'cart.html';
       });
     }
+
+    // Favorieten-knop op de productpagina
+    const favBtn = document.getElementById('pd-fav-btn');
+    const favIcon = document.getElementById('pd-fav-icon');
+    const favLabel = document.getElementById('pd-fav-label');
+
+    function renderFavState(active) {
+      favBtn.classList.toggle('active', active);
+      favIcon.innerHTML = heartIconSvg();
+      favLabel.textContent = active ? 'Toegevoegd aan favorieten' : 'Toevoegen aan favorieten';
+    }
+    renderFavState(isFavorite(product.id));
+
+    favBtn.addEventListener('click', () => {
+      const nowActive = toggleFavorite(product.id);
+      renderFavState(nowActive);
+    });
 
     loadingEl.style.display = 'none';
     contentEl.style.display = 'grid';

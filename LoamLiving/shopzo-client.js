@@ -66,6 +66,57 @@ function renderCartCount() {
   });
 }
 
+/* ---------- Favorieten ---------- */
+
+const FAVORITES_STORAGE_KEY = `shopzo_favorites_${SHOPZO_SELLER}`;
+
+function getFavorites() {
+  try {
+    return JSON.parse(localStorage.getItem(FAVORITES_STORAGE_KEY)) || [];
+  } catch {
+    return [];
+  }
+}
+
+function saveFavorites(list) {
+  localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(list));
+  renderFavoritesCount();
+}
+
+function isFavorite(productId) {
+  return getFavorites().includes(productId);
+}
+
+function toggleFavorite(productId) {
+  const list = getFavorites();
+  const idx = list.indexOf(productId);
+  if (idx === -1) {
+    list.push(productId);
+  } else {
+    list.splice(idx, 1);
+  }
+  saveFavorites(list);
+  return list.includes(productId);
+}
+
+function renderFavoritesCount() {
+  const count = getFavorites().length;
+  document.querySelectorAll('.favorites-count').forEach((el) => {
+    el.textContent = count;
+    el.style.display = count > 0 ? 'flex' : 'none';
+  });
+}
+
+// Wordt aangeroepen vanuit het hartje op een productkaart. Voorkomt dat de
+// klik ook de kaart-link opent, en werkt enkel dat ene hartje bij i.p.v. de
+// hele grid opnieuw te tekenen.
+function handleFavoriteClick(event, productId, btnEl) {
+  event.preventDefault();
+  event.stopPropagation();
+  const nowFavorite = toggleFavorite(productId);
+  btnEl.classList.toggle('active', nowFavorite);
+}
+
 /* ---------- Communicatie met api.shopzo.be ---------- */
 
 // Producten worden zowel door de navigatiebalk (categorieën) als door de
@@ -201,6 +252,11 @@ function placeholderPhoto() {
   </svg>`;
 }
 
+// Standaard hartje-icoon (omlijnd, of gevuld als het al favoriet is).
+function heartIconSvg() {
+  return `<svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`;
+}
+
 // Rendert één product volgens Loam Living's kaartopmaak (product-card /
 // product-photo / tag-row / price-row), gevuld met echte data uit Shopzo.
 function renderProductCard(product) {
@@ -216,12 +272,17 @@ function renderProductCard(product) {
   const saleFlag = onSale ? '<span class="sale-flag">Sale</span>' : '';
   const subLabel = product.subcategory || product.category || '';
   const tagsHtml = renderTagPills(product.tags);
+  const favActive = isFavorite(product.id) ? ' active' : '';
 
   return `
     <a href="product.html?id=${product.id}" class="product-card">
       <div class="product-photo" style="background:linear-gradient(150deg,#D8CBB2,#93513B);">
         ${photoContent}
         ${saleFlag}
+        <button type="button" class="fav-btn${favActive}" aria-label="Toevoegen aan favorieten"
+          onclick="handleFavoriteClick(event, '${product.id}', this)">
+          ${heartIconSvg()}
+        </button>
       </div>
       ${tagsHtml ? `<div class="tag-row">${tagsHtml}</div>` : ''}
       <h3>${escapeHtml(product.name)}</h3>
@@ -255,5 +316,6 @@ async function renderShopzoNav() {
 
 document.addEventListener('DOMContentLoaded', () => {
   renderCartCount();
+  renderFavoritesCount();
   renderShopzoNav();
 });

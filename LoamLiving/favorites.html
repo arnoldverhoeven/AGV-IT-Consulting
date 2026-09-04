@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Favorieten — Loam Living</title>
+<link rel="icon" href="assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+<script src="shopzo-client.js"></script>
+<style>
+  :root {
+    --ink: #2B2420; --clay: #B5654A; --clay-dark: #93513B;
+    --sand: #F4EEE4; --line: #E3DACB; --white: #FFFDF9; --muted: #8A7F70;
+    --font-display: 'Fraunces', serif; --font-body: 'Inter', sans-serif; --font-mono: 'JetBrains Mono', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-body); background: var(--sand); color: var(--ink); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; } img, svg { display: block; max-width: 100%; }
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 28px; }
+  header { position: sticky; top: 0; z-index: 50; background: rgba(244,238,228,0.9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
+  .logo { font-family: var(--font-display); font-weight: 600; font-size: 1.5rem; text-decoration: none; }
+  .nav-links a { text-decoration: none; font-size: 0.9rem; font-weight: 500; color: var(--ink); }
+  .icon-btn { font-size: 1.05rem; text-decoration: none; position: relative; }
+  .cart-count, .favorites-count { position: absolute; top: -6px; right: -10px; background: var(--clay); color: #fff; font-size: 0.62rem; font-weight: 700; width: 16px; height: 16px; border-radius: 50%; display: none; align-items: center; justify-content: center; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.9rem; padding: 13px 24px; border-radius: 999px; text-decoration: none; border: 1px solid transparent; cursor: pointer; }
+  .btn--primary { background: var(--ink); color: var(--white); }
+  .btn--outline { background: transparent; border-color: var(--ink); color: var(--ink); padding: 8px 18px; }
+
+  .breadcrumb { font-size: 0.82rem; color: var(--muted); padding: 24px 0 0; }
+  .breadcrumb a { text-decoration: none; color: var(--muted); }
+  .page-head { padding: 10px 0 30px; }
+  .page-head h1 { font-family: var(--font-display); font-weight: 600; font-size: 2rem; }
+  .page-head .count { font-size: 0.88rem; color: var(--muted); margin-top: 6px; }
+
+  .products { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; padding-bottom: 70px; }
+  .product-card { text-decoration: none; color: var(--ink); }
+  .product-photo { aspect-ratio: 1/1; border-radius: 14px; overflow: hidden; position: relative; margin-bottom: 14px; box-shadow: 0 18px 40px -22px rgba(43,36,32,0.35); }
+  .product-photo .sale-flag { position: absolute; top: 12px; left: 12px; background: var(--white); color: var(--ink); font-size: 0.68rem; font-weight: 700; padding: 4px 10px; border-radius: 999px; }
+  .fav-btn { position: absolute; top: 10px; right: 10px; z-index: 2; width: 32px; height: 32px; border-radius: 50%; background: rgba(255,253,249,0.92); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(43,36,32,0.18); transition: transform 0.15s ease; }
+  .fav-btn:hover { transform: scale(1.08); }
+  .fav-btn svg { width: 17px; height: 17px; fill: none; stroke: var(--ink); stroke-width: 1.8; }
+  .fav-btn.active svg { fill: var(--clay); stroke: var(--clay); }
+  .tag-row { display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; }
+  .ptag { font-size: 0.68rem; font-weight: 600; padding: 3px 9px; border-radius: 999px; }
+  .product-card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; margin-bottom: 4px; }
+  .product-card .sub { font-size: 0.8rem; color: var(--muted); margin-bottom: 8px; }
+  .price-row { display: flex; align-items: baseline; gap: 8px; }
+  .price { font-family: var(--font-mono); font-weight: 500; font-size: 0.95rem; }
+  .price-sale { color: var(--clay-dark); }
+  .price-old { font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); text-decoration: line-through; }
+
+  .empty-state { text-align: center; padding: 60px 20px; }
+  .empty-state .icon { font-size: 2.2rem; margin-bottom: 14px; }
+  .empty-state h2 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin-bottom: 10px; }
+  .empty-state p { color: var(--muted); font-size: 0.92rem; margin-bottom: 22px; }
+
+  footer { background: var(--ink); color: var(--sand); padding: 40px 0 26px; }
+  .footer-bottom { font-size: 0.78rem; color: #8A8071; display: flex; justify-content: space-between; }
+
+  @media (max-width: 860px) { .products { grid-template-columns: repeat(2, 1fr); } .nav-links { display: none; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="logo">Loam Living</a>
+    <ul class="nav-links" id="shopzo-nav" style="list-style:none; display:flex; gap:30px;">
+      <li><a href="shop.html">Shop</a></li>
+    </ul>
+    <div style="display:flex; align-items:center; gap:18px;">
+      <a href="favorites.html" class="icon-btn">♡<span class="favorites-count">0</span></a>
+      <a href="cart.html" class="icon-btn">🛒<span class="cart-count">0</span></a>
+      <a href="https://app.shopzo.be" target="_blank" class="btn btn--outline">Inloggen</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="breadcrumb"><a href="index.html">Home</a> / <span>Favorieten</span></div>
+  <div class="page-head">
+    <h1>Je favorieten</h1>
+    <div class="count" id="page-count-label">Laden…</div>
+  </div>
+
+  <div id="favorites-content">
+    <p style="color:var(--muted); padding-bottom:60px;">Favorieten laden…</p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap footer-bottom">
+    <span>© 2026 Loam Living. Alle rechten voorbehouden.</span>
+    <span>Fictief voorbeeld — gebouwd op Shopzo</span>
+  </div>
+</footer>
+
+<script>
+  (async function () {
+    const container = document.getElementById('favorites-content');
+    const favoriteIds = getFavorites();
+
+    if (favoriteIds.length === 0) {
+      document.getElementById('page-count-label').textContent = '0 producten';
+      container.innerHTML = `
+        <div class="empty-state">
+          <div class="icon">♡</div>
+          <h2>Nog geen favorieten</h2>
+          <p>Klik op het hartje bij een product om het hier te bewaren.</p>
+          <a href="shop.html" class="btn btn--primary">Bekijk de collectie →</a>
+        </div>
+      `;
+      return;
+    }
+
+    try {
+      const allProducts = await shopzoFetchProducts();
+      const favoriteProducts = allProducts.filter((p) => favoriteIds.includes(p.id));
+
+      document.getElementById('page-count-label').textContent =
+        `${favoriteProducts.length} product${favoriteProducts.length === 1 ? '' : 'en'}`;
+
+      container.innerHTML = favoriteProducts.length
+        ? `<div class="products">${favoriteProducts.map((p) => renderProductCard(p)).join('')}</div>`
+        : `<div class="empty-state">
+             <div class="icon">♡</div>
+             <h2>Deze favorieten zijn niet meer beschikbaar</h2>
+             <p>De producten die je bewaarde staan niet meer in de collectie.</p>
+             <a href="shop.html" class="btn btn--primary">Bekijk de collectie →</a>
+           </div>`;
+    } catch (err) {
+      container.innerHTML = '<p style="color:var(--clay-dark); padding-bottom:60px;">Favorieten konden niet geladen worden.</p>';
+    }
+  })();
+</script>
+
+</body>
+</html>

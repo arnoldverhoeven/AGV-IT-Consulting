@@ -27,6 +27,7 @@
   .logo { font-family: var(--font-display); font-weight: 600; font-size: 1.5rem; text-decoration: none; }
   .icon-btn { font-size: 1.05rem; text-decoration: none; position: relative; }
   .cart-count { position: absolute; top: -6px; right: -10px; background: var(--clay); color: #fff; font-size: 0.62rem; font-weight: 700; width: 16px; height: 16px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+  .favorites-count { position: absolute; top: -6px; right: -10px; background: var(--clay); color: #fff; font-size: 0.62rem; font-weight: 700; width: 16px; height: 16px; border-radius: 50%; display: none; align-items: center; justify-content: center; }
   .btn { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.9rem; padding: 13px 24px; border-radius: 999px; text-decoration: none; border: 1px solid transparent; cursor: pointer; width: 100%; justify-content: center; }
   .btn--primary { background: var(--ink); color: var(--white); }
   .btn--primary:disabled { opacity: 0.5; cursor: not-allowed; }
@@ -75,6 +76,7 @@
   <div class="wrap nav">
     <a href="index.html" class="logo">Loam Living</a>
     <div style="display:flex; align-items:center; gap:18px;">
+      <a href="favorites.html" class="icon-btn">♡<span class="favorites-count">0</span></a>
       <a href="cart.html" class="icon-btn">🛒<span class="cart-count">0</span></a>
       <a href="https://app.shopzo.be" target="_blank" class="btn btn--outline">Inloggen</a>
     </div>
