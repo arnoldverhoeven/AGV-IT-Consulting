@@ -553,7 +553,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--faint);f
 
 <script>
 /* ========= CONFIG ========= */
-const SYNC_URL = 'sync.php';            // zet op '' om enkel lokaal (browser) te bewaren
+const SYNC_URL = '/api/sync';  // Netlify Function (zie netlify/functions/sync.mjs); zet op '' om enkel lokaal te bewaren
 const START = new Date(2026, 10, 20, 17, 0, 0); // vr 20 nov 2026, 17:00 (aankomst 17-19u)
 const END   = new Date(2026, 10, 22, 20, 0, 0); // zo 22 nov, vertrek voor 20u
 
