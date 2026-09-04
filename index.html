@@ -374,22 +374,39 @@
     line-height:1.65;
   }
 
-  /* ---------- SELECTED WORK ---------- */
+  /* ---------- SELECTED WORK / PORTFOLIO ---------- */
   .work-grid{
     display:grid;
-    grid-template-columns:1.3fr 1fr;
+    grid-template-columns:repeat(2, 1fr);
     gap:1px;
     background:var(--line);
     border:1px solid var(--line);
   }
+  .work-shot{
+    aspect-ratio:16/10.5;
+    overflow:hidden;
+    border-bottom:1px solid var(--line);
+    background:var(--bg-panel);
+  }
+  .work-shot img{
+    width:100%; height:100%;
+    object-fit:cover;
+    object-position:top;
+    display:block;
+  }
   .work-card{
     background:var(--bg);
-    padding:36px;
     text-decoration:none;
     color:var(--text);
     display:flex;
     flex-direction:column;
     transition:background .2s;
+  }
+  .work-body{
+    padding:28px 32px 32px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
   }
   .work-card:hover{background:var(--bg-panel);}
   .work-card:hover .work-link{color:var(--amber);}
@@ -400,21 +417,21 @@
     letter-spacing:0.08em;
   }
   .work-card h3{
-    font-size:24px;
+    font-size:22px;
     margin-top:14px;
   }
   .work-card p{
-    font-size:14.5px;
+    font-size:14px;
     color:var(--text-muted);
     line-height:1.7;
-    margin-top:14px;
+    margin-top:12px;
     flex-grow:1;
   }
   .work-tags{
     display:flex;
     flex-wrap:wrap;
     gap:8px;
-    margin-top:20px;
+    margin-top:18px;
   }
   .work-tags span{
     font-family:'IBM Plex Mono', monospace;
@@ -425,7 +442,7 @@
     padding:4px 9px;
   }
   .work-link{
-    margin-top:24px;
+    margin-top:20px;
     font-family:'IBM Plex Mono', monospace;
     font-size:13px;
     color:var(--text);
@@ -647,7 +664,7 @@
     <a href="#top" class="logo"><span class="logo-mark"></span>AGV IT CONSULTING</a>
     <nav class="links">
       <a href="#services">Services</a>
-      <a href="/portfolio/">Work</a>
+      <a href="/portfolio/">Portfolio</a>
       <a href="#track-record">Track record</a>
       <a href="#certifications">Certifications</a>
       <a href="#contact">Contact</a>
@@ -668,7 +685,7 @@
         <p class="lead">Today that experience is concentrated on ISO 27001 certification tracks, NIS2 compliance programmes, and the identity, network and automation projects that sit underneath them.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#quote">Request a website quote</a>
-          <a class="btn btn-ghost" href="https://www.linkedin.com/in/arnoldverhoeven" target="_blank" rel="noopener">View profile on LinkedIn</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/arnold-verhoeven" target="_blank" rel="noopener">View profile on LinkedIn</a>
         </div>
         <div class="hero-meta">
           <div><span>13+ yrs</span> IT project management</div>
@@ -760,36 +777,76 @@
     </div>
   </section>
 
-  <!-- SELECTED WORK -->
-  <section id="work">
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
     <div class="wrap">
       <div class="section-head reveal">
         <div>
-          <div class="section-tag">Selected work</div>
-          <h2>Two platforms built end-to-end, from architecture to launch.</h2>
+          <div class="section-tag">Portfolio</div>
+          <h2>Platforms and concepts built end-to-end, from architecture to launch.</h2>
         </div>
         <p class="section-note">More client work and references available on request. <a href="/portfolio/" style="color:var(--amber); font-weight:600; text-decoration:none;">View full portfolio ↗</a></p>
       </div>
 
       <div class="work-grid reveal">
-        <a class="work-card featured" href="https://shopzo.be" target="_blank" rel="noopener">
-          <div class="work-label mono">Platform · Multi-tenant e-commerce</div>
-          <h3>Shopzo</h3>
-          <p>A white-label e-commerce platform built for small retailers — seller dashboard, multi-tenant architecture, and its first live storefront, Happy Paws Store.</p>
-          <div class="work-tags">
-            <span>React</span><span>Supabase</span><span>Multi-tenant</span>
+        <a class="work-card" href="/portfolio/shopzo/">
+          <div class="work-shot">
+            <img src="https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fshopzo.be%2F?w=1200&h=750" alt="Shopzo.be homepage screenshot" loading="lazy">
           </div>
-          <div class="work-link">Visit shopzo.be <span class="arrow">↗</span></div>
+          <div class="work-body">
+            <div class="work-label mono">Platform · Multi-tenant e-commerce</div>
+            <h3>Shopzo</h3>
+            <p>A white-label e-commerce platform built for small retailers — seller dashboard, multi-tenant architecture, and a demo storefront, Ryve.</p>
+            <div class="work-tags">
+              <span>React</span><span>Supabase</span><span>Multi-tenant</span>
+            </div>
+            <div class="work-link">View project <span class="arrow">↗</span></div>
+          </div>
         </a>
 
-        <a class="work-card" href="https://jessbeauty.be" target="_blank" rel="noopener">
-          <div class="work-label mono">Client site · Hair salon</div>
-          <h3>Jess Beauty Antwerp</h3>
-          <p>A bilingual, appointment-only salon site — from brand direction to a working booking flow, delivered as a self-contained build.</p>
-          <div class="work-tags">
-            <span>EN / ES</span><span>Booking</span>
+        <a class="work-card" href="/portfolio/loam-living/">
+          <div class="work-shot">
+            <img src="/portfolio/assets/loam-living-shop-card.jpg" alt="Loam Living product page screenshot" loading="lazy">
           </div>
-          <div class="work-link">Visit jessbeauty.be <span class="arrow">↗</span></div>
+          <div class="work-body">
+            <div class="work-label mono">Demo · Shopzo storefront</div>
+            <h3>Loam Living</h3>
+            <p>A fictional Dutch-language home-decor shop, built to demonstrate Shopzo's webshop functionality — browsing, cart, wishlist and checkout.</p>
+            <div class="work-tags">
+              <span>Shopzo storefront</span><span>NL</span>
+            </div>
+            <div class="work-link">View project <span class="arrow">↗</span></div>
+          </div>
+        </a>
+
+        <a class="work-card" href="/portfolio/nives/">
+          <div class="work-shot">
+            <img src="https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fagv-it.be%2Fnives%2F?w=1200&h=750" alt="Nives concept site screenshot" loading="lazy">
+          </div>
+          <div class="work-body">
+            <div class="work-label mono">Concept · Breakfast &amp; bakery</div>
+            <h3>Nives</h3>
+            <p>A bright, bilingual NL/EN concept for a breakfast and lunch spot with its own sourdough bakery, on the edge of Harmoniepark.</p>
+            <div class="work-tags">
+              <span>NL / EN</span><span>Concept</span>
+            </div>
+            <div class="work-link">View project <span class="arrow">↗</span></div>
+          </div>
+        </a>
+
+        <a class="work-card" href="/portfolio/polette/">
+          <div class="work-shot">
+            <img src="https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fagv-it.be%2Fpolette%2F?w=1200&h=750" alt="Polette concept site screenshot" loading="lazy">
+          </div>
+          <div class="work-body">
+            <div class="work-label mono">Concept · Coffee bar</div>
+            <h3>Polette</h3>
+            <p>A corner coffee bar concept in Antwerp's Markgravewijk, built around its founder's story, menu and real Google reviews.</p>
+            <div class="work-tags">
+              <span>Founder story</span><span>Concept</span>
+            </div>
+            <div class="work-link">View project <span class="arrow">↗</span></div>
+          </div>
         </a>
       </div>
     </div>
@@ -924,7 +981,7 @@
         <h2>Have a broader IT consultancy, security or infrastructure question?</h2>
         <p>Based in Antwerp, working across Belgium and EMEA. Freelance engagements, short-term or programme-length.</p>
         <div class="contact-actions">
-          <a class="btn btn-primary" href="https://www.linkedin.com/in/arnoldverhoeven" target="_blank" rel="noopener">Message on LinkedIn</a>
+          <a class="btn btn-primary" href="https://www.linkedin.com/in/arnold-verhoeven" target="_blank" rel="noopener">Message on LinkedIn</a>
           <a class="btn btn-ghost" href="mailto:arnold.verhoeven@agv-it.be">arnold.verhoeven@agv-it.be</a>
         </div>
       </div>
@@ -936,7 +993,7 @@
 <footer>
   <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:12px;">
     <span>© 2026 AGV IT Consulting BV</span>
-    <a href="https://www.linkedin.com/in/arnoldverhoeven" target="_blank" rel="noopener">linkedin.com/in/arnoldverhoeven ↗</a>
+    <a href="https://www.linkedin.com/in/arnold-verhoeven" target="_blank" rel="noopener">linkedin.com/in/arnold-verhoeven ↗</a>
   </div>
 </footer>
 
