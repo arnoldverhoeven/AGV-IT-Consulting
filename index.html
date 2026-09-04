@@ -378,9 +378,7 @@
   .work-grid{
     display:grid;
     grid-template-columns:repeat(2, 1fr);
-    gap:1px;
-    background:var(--line);
-    border:1px solid var(--line);
+    gap:28px;
   }
   .work-shot{
     aspect-ratio:16/10.5;
@@ -396,11 +394,12 @@
   }
   .work-card{
     background:var(--bg);
+    border:1px solid var(--line);
     text-decoration:none;
     color:var(--text);
     display:flex;
     flex-direction:column;
-    transition:background .2s;
+    transition:background .2s, border-color .2s;
   }
   .work-body{
     padding:28px 32px 32px;
@@ -408,7 +407,7 @@
     flex-direction:column;
     flex:1;
   }
-  .work-card:hover{background:var(--bg-panel);}
+  .work-card:hover{background:var(--bg-panel); border-color:var(--amber);}
   .work-card:hover .work-link{color:var(--amber);}
   .work-label{
     font-size:11.5px;
