@@ -68,11 +68,53 @@ function renderCartCount() {
 
 /* ---------- Communicatie met api.shopzo.be ---------- */
 
+// Producten worden zowel door de navigatiebalk (categorieën) als door de
+// productgrid opgevraagd — zonder cache gebeurt dat dubbel op elke pagina.
+// Deze cache lost twee dingen op:
+// 1. Dedup: als twee delen van de pagina tegelijk aanroepen, wacht de tweede
+//    gewoon op dezelfde lopende aanvraag i.p.v. een nieuwe te starten.
+// 2. Korte hergebruik-periode (5 min) via sessionStorage, zodat doorklikken
+//    naar een andere pagina binnen dezelfde bezoeksessie niet telkens
+//    opnieuw naar de API moet — vooral voelbaar na een "cold start" van de
+//    Netlify Function, wanneer de allereerste aanvraag trager is.
+const PRODUCTS_CACHE_TTL_MS = 5 * 60 * 1000; // 5 minuten
+const PRODUCTS_CACHE_KEY = `shopzo_products_cache_${SHOPZO_SELLER}`;
+let _productsFetchPromise = null;
+
 async function shopzoFetchProducts() {
-  const res = await fetch(`${SHOPZO_API_BASE}/products?seller=${SHOPZO_SELLER}`);
-  if (!res.ok) throw new Error('Producten konden niet geladen worden');
-  const data = await res.json();
-  return data.products;
+  if (_productsFetchPromise) return _productsFetchPromise;
+
+  try {
+    const cached = JSON.parse(sessionStorage.getItem(PRODUCTS_CACHE_KEY));
+    if (cached && Date.now() - cached.timestamp < PRODUCTS_CACHE_TTL_MS) {
+      return cached.products;
+    }
+  } catch {
+    // Corrupte of ontbrekende cache-entry — gewoon vers ophalen hieronder.
+  }
+
+  _productsFetchPromise = fetch(`${SHOPZO_API_BASE}/products?seller=${SHOPZO_SELLER}`)
+    .then((res) => {
+      if (!res.ok) throw new Error('Producten konden niet geladen worden');
+      return res.json();
+    })
+    .then((data) => {
+      try {
+        sessionStorage.setItem(
+          PRODUCTS_CACHE_KEY,
+          JSON.stringify({ products: data.products, timestamp: Date.now() })
+        );
+      } catch {
+        // sessionStorage kan uitzonderlijk falen (privénavigatie, vol) —
+        // geen probleem, dan wordt er gewoon niet gecachet.
+      }
+      return data.products;
+    })
+    .finally(() => {
+      _productsFetchPromise = null;
+    });
+
+  return _productsFetchPromise;
 }
 
 async function shopzoFetchProduct(productId) {
