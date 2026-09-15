@@ -261,6 +261,7 @@ section{
   gap:28px;
 }
 .port-card{
+  position:relative;
   background:var(--bg);
   border:1px solid var(--line);
   text-decoration:none;
@@ -271,6 +272,11 @@ section{
 }
 .port-card:hover{background:var(--bg-panel); border-color:var(--amber);}
 .port-card:hover .work-link{color:var(--amber);}
+.card-link{
+  position:absolute;
+  inset:0;
+  z-index:1;
+}
 .port-shot{
   aspect-ratio:16/10.5;
   overflow:hidden;
@@ -334,6 +340,8 @@ section{
 .work-link .arrow{transition:transform .2s;}
 .port-card:hover .arrow{transform:translate(2px,-2px);}
 .ext-link{
+  position:relative;
+  z-index:2;
   font-family:'IBM Plex Mono', monospace;
   font-size:12.5px;
   color:var(--text-faint);
@@ -361,7 +369,6 @@ section{
   line-height:1.75;
 }
 
-/* Feature grid reuses the homepage focus-area language */
 .focus-grid{
   display:grid;
   grid-template-columns:repeat(2, 1fr);
