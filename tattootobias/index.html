@@ -68,21 +68,22 @@ header.scrolled{background:rgba(18,18,18,.96);box-shadow:0 8px 24px rgba(0,0,0,.
 .brand{font-family:var(--display);font-size:28px;letter-spacing:.06em;text-transform:uppercase;color:var(--paper);text-decoration:none;white-space:nowrap}
 .brand b{color:var(--red);font-weight:400}
 nav{display:flex;gap:8px;flex-wrap:nowrap}
-nav a{position:relative;display:inline-flex;align-items:center;min-height:44px;padding:0 17px;background:var(--navy);color:#fff;border:2px solid var(--paper);border-radius:2px;text-decoration:none;font-family:var(--display);font-size:16px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;box-shadow:4px 4px 0 var(--red);transition:transform .15s,box-shadow .15s,background .15s,color .15s}
-nav a:hover,nav a:focus-visible{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--red);background:var(--paper);color:var(--navy)}
-nav a:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--red)}
-nav a.on{background:var(--paper);color:var(--navy)}
-nav a.on::before{content:"★";color:var(--red);margin-right:7px;font-size:12px}
-nav a.cta{background:var(--red);box-shadow:4px 4px 0 var(--paper)}
-nav a.cta:hover,nav a.cta:focus-visible{background:var(--paper);color:var(--red-d);box-shadow:2px 2px 0 var(--red)}
-nav{gap:12px}
+nav a{position:relative;display:inline-flex;align-items:center;min-height:44px;padding:0 16px;background:var(--navy);color:#fff;border:1px solid rgba(239,230,211,.22);border-radius:3px;text-decoration:none;font-family:var(--display);font-size:15px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;transition:background .2s,border-color .2s}
+nav a::after{content:"";position:absolute;left:16px;right:16px;bottom:9px;height:2px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+nav a:hover,nav a:focus-visible{background:#1b2c52;border-color:rgba(239,230,211,.45)}
+nav a:hover::after,nav a:focus-visible::after,nav a.on::after{transform:scaleX(1)}
+nav a.on{border-color:rgba(239,230,211,.45)}
+nav a.cta{background:var(--red);border-color:var(--red)}
+nav a.cta::after{display:none}
+nav a.cta:hover,nav a.cta:focus-visible{background:var(--red-d);border-color:var(--red-d)}
+nav{gap:8px}
 
 /* hero */
 .hero{min-height:100vh;padding:150px 0 72px;display:flex;align-items:center;background:var(--ink);color:var(--paper);overflow:hidden}
 .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(900px 600px at 78% 40%,rgba(224,52,43,.16),transparent 65%);pointer-events:none}
 .hgrid>*{min-width:0}
 .hgrid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center;position:relative;z-index:1}
-.hero h1{font-size:clamp(60px,8.6vw,136px);margin:8px 0 28px}
+.hero h1{font-size:clamp(34px,4.6vw,72px);margin:8px 0 28px}
 .hero h1 span{color:var(--red)}
 .hero p.lead{font-size:19px;max-width:520px;color:#d9d0bd;margin-bottom:36px}
 .hbtns{display:flex;gap:12px;flex-wrap:wrap}
@@ -260,10 +261,11 @@ footer a{color:#d9d0bd;text-decoration:none}footer a:hover{color:var(--orange)}
  header{background:rgba(18,18,18,.96);padding:10px 0}
  .hbar{flex-direction:column;align-items:stretch;gap:8px}
  .brand{font-size:24px}
- nav{flex-wrap:wrap;gap:9px 10px;padding:0 3px 4px 0}
+ nav{flex-wrap:wrap;gap:6px}
  nav a.cta{display:none}
  nav a{flex-basis:30%}
- nav a{flex:1 1 auto;justify-content:center;padding:0 8px;font-size:14px;min-height:44px;box-shadow:3px 3px 0 var(--red)}
+ nav a{flex:1 1 auto;justify-content:center;padding:0 8px;font-size:14px;min-height:44px}
+ nav a::after{left:10px;right:10px;bottom:8px}
  .hmeta{gap:20px;margin-top:40px}.hmeta strong{font-size:22px}
  .hero{padding-top:190px}
  html{scroll-padding-top:170px}
@@ -358,7 +360,7 @@ footer a{color:#d9d0bd;text-decoration:none}footer a:hover{color:var(--orange)}
       <a href="#healing">Healing</a>
       <a href="https://tobiasdebruyn.bigcartel.com/" target="_blank" rel="noopener">Shop</a>
       <a href="#contact">Contact</a>
-      <a class="cta" href="mailto:hello@tattootobias.com?subject=Tattoo%20idea&amp;body=Hi%20Tobias%2C%0A%0AYour%20general%20idea%3A%20%0APlacement%3A%20%0AApproximate%20size%3A%20%0ABlack%20or%20color%3A%20%0AIf%20you%20have%20reference%20material%2C%20include%20it.%0A%0A">Book now</a>
+      <a class="cta" href="mailto:hello@tattootobias.com?subject=Tattoo%20idea&amp;body=Hi%20Tobias%2C%0A%0AHere%20is%20my%20tattoo%20idea.%0A%0AIdea%3A%20%5Bidea%5D%0APlacement%3A%20%5Bplacement%5D%0AApproximate%20size%3A%20%0ABlack%20or%20color%3A%20%0A%28If%20you%20have%20reference%20material%2C%20include%20it%29%0A%0A%0A%5BName%5D%0A%5BTelephone%20number%5D%0A">Book now</a>
     </nav>
   </div>
 </header>
@@ -507,7 +509,7 @@ footer a{color:#d9d0bd;text-decoration:none}footer a:hover{color:var(--orange)}
       <label class="fdrop" id="f-drop" for="f-files"><input id="f-files" type="file" accept="image/*,.pdf" multiple><strong>Add reference photos</strong><span>drag them here or tap to choose · up to 8 files</span></label>
       <div class="fthumbs" id="f-thumbs" aria-live="polite"></div>
       <button class="btn" type="submit">Send my idea →</button>
-      <p class="alt">or mail directly: <a href="mailto:hello@tattootobias.com?subject=Tattoo%20idea&amp;body=Hi%20Tobias%2C%0A%0AYour%20general%20idea%3A%20%0APlacement%3A%20%0AApproximate%20size%3A%20%0ABlack%20or%20color%3A%20%0AIf%20you%20have%20reference%20material%2C%20include%20it.%0A%0A"><strong>hello@tattootobias.com</strong></a></p>
+      <p class="alt">or mail directly: <a href="mailto:hello@tattootobias.com?subject=Tattoo%20idea&amp;body=Hi%20Tobias%2C%0A%0AHere%20is%20my%20tattoo%20idea.%0A%0AIdea%3A%20%5Bidea%5D%0APlacement%3A%20%5Bplacement%5D%0AApproximate%20size%3A%20%0ABlack%20or%20color%3A%20%0A%28If%20you%20have%20reference%20material%2C%20include%20it%29%0A%0A%0A%5BName%5D%0A%5BTelephone%20number%5D%0A"><strong>hello@tattootobias.com</strong></a></p>
       </div>
       <div id="f-done" hidden>
         <h3>Thanks<span id="f-who"></span>!</h3>
@@ -573,7 +575,7 @@ footer a{color:#d9d0bd;text-decoration:none}footer a:hover{color:var(--orange)}
       <p class="eyebrow">Contact</p>
       <h2>Come by — by appointment</h2>
       <dl>
-        <dt>Email · preferred for booking</dt><dd><a href="mailto:hello@tattootobias.com?subject=Tattoo%20idea&amp;body=Hi%20Tobias%2C%0A%0AYour%20general%20idea%3A%20%0APlacement%3A%20%0AApproximate%20size%3A%20%0ABlack%20or%20color%3A%20%0AIf%20you%20have%20reference%20material%2C%20include%20it.%0A%0A">hello@tattootobias.com</a></dd>
+        <dt>Email · preferred for booking</dt><dd><a href="mailto:hello@tattootobias.com?subject=Tattoo%20idea&amp;body=Hi%20Tobias%2C%0A%0AHere%20is%20my%20tattoo%20idea.%0A%0AIdea%3A%20%5Bidea%5D%0APlacement%3A%20%5Bplacement%5D%0AApproximate%20size%3A%20%0ABlack%20or%20color%3A%20%0A%28If%20you%20have%20reference%20material%2C%20include%20it%29%0A%0A%0A%5BName%5D%0A%5BTelephone%20number%5D%0A">hello@tattootobias.com</a></dd>
         <dt>Tattoo studio</dt><dd>Godtsstraat 19<br>2140 Borgerhout, Antwerp</dd>
         <dt>Opening</dt><dd>Private studio · only by appointment</dd>
       </dl>
@@ -585,7 +587,7 @@ footer a{color:#d9d0bd;text-decoration:none}footer a:hover{color:var(--orange)}
 </main>
 
 <footer><div class="wrap">
-  <span>© 2026 Tattoo Tobias · Godtsstraat 19, 2140 Borgerhout · <a href="mailto:hello@tattootobias.com?subject=Tattoo%20idea&amp;body=Hi%20Tobias%2C%0A%0AYour%20general%20idea%3A%20%0APlacement%3A%20%0AApproximate%20size%3A%20%0ABlack%20or%20color%3A%20%0AIf%20you%20have%20reference%20material%2C%20include%20it.%0A%0A">hello@tattootobias.com</a></span>
+  <span>© 2026 Tattoo Tobias · Godtsstraat 19, 2140 Borgerhout · <a href="mailto:hello@tattootobias.com?subject=Tattoo%20idea&amp;body=Hi%20Tobias%2C%0A%0AHere%20is%20my%20tattoo%20idea.%0A%0AIdea%3A%20%5Bidea%5D%0APlacement%3A%20%5Bplacement%5D%0AApproximate%20size%3A%20%0ABlack%20or%20color%3A%20%0A%28If%20you%20have%20reference%20material%2C%20include%20it%29%0A%0A%0A%5BName%5D%0A%5BTelephone%20number%5D%0A">hello@tattootobias.com</a></span>
   <span>Photography by Jannis Bachard · <a href="#admin" data-admin>Studio login</a></span>
 </div></footer>
 
@@ -820,7 +822,7 @@ var rv=document.querySelectorAll('.rv');
 if('IntersectionObserver'in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08});rv.forEach(function(e){io.observe(e)})}
 else rv.forEach(function(e){e.classList.add('in')});
 /* mail template on every mailto link */
-var TPL='Hi Tobias,\n\nYour general idea: \nPlacement: \nApproximate size: \nBlack or color: \nIf you have reference material, include it.\n\n';
+var TPL='Hi Tobias,\n\nHere is my tattoo idea.\n\nIdea: [idea]\nPlacement: [placement]\nApproximate size: \nBlack or color: \n(If you have reference material, include it)\n\n\n[Name]\n[Telephone number]\n';
 var MAILTO='mailto:hello@tattootobias.com?subject='+encodeURIComponent('Tattoo idea')+'&body='+encodeURIComponent(TPL);
 [].forEach.call(document.querySelectorAll('a[href^="mailto:hello@tattootobias.com"]'),function(a){a.href=MAILTO});
 /* booking form with attachments (demo) */
