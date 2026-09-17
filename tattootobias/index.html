@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tattoo Tobias — Traditional tattoo artist in Antwerp, private studio</title>
+<meta name="description" content="Tattoo Tobias is a modern & aesthetic traditional tattoo artist based in Antwerp. 10+ years of experience, private studio in Borgerhout, by appointment only.">
+<meta property="og:title" content="Tattoo Tobias — Traditional tattoo artist in Antwerp">
+<meta property="og:description" content="Powerful, timeless and personal tattoos. Private studio in Borgerhout, by appointment.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_BE">
+<meta property="og:image" content="https://tattootobias.com/wp-content/uploads/2020/11/traditional-tattoo-woman.jpg">
+<meta name="theme-color" content="#121212">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23121212'/%3E%3Ctext x='32' y='46' font-family='Impact,Arial Black,sans-serif' font-size='40' text-anchor='middle' fill='%23e0342b'%3ET%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["HealthAndBeautyBusiness", "TattooParlor"],
+  "name": "Tattoo Tobias",
+  "description": "Modern & aesthetic traditional tattoo artist based in Antwerp. Private studio, by appointment only. Over 10 years of experience in classic Western and American Traditional tattooing.",
+  "url": "https://tattootobias.com/",
+  "email": "hello@tattootobias.com",
+  "image": "https://tattootobias.com/wp-content/uploads/2020/11/traditional-tattoo-woman.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Godtsstraat 19",
+    "postalCode": "2140",
+    "addressLocality": "Borgerhout",
+    "addressRegion": "Antwerpen",
+    "addressCountry": "BE"
+  },
+  "areaServed": "Antwerpen",
+  "founder": { "@type": "Person", "name": "Tobias De Bruyn", "jobTitle": "Tattoo artist" },
+  "knowsAbout": ["Traditional tattoo", "American Traditional tattooing", "Western traditional tattooing"],
+  "sameAs": ["https://tobiasdebruyn.bigcartel.com/"]
+}
+</script>
+<style>
+:root{--ink:#121212;--ink2:#1b1b1b;--paper:#efe6d3;--paper2:#e6dbc3;--red:#e0342b;--red-d:#b3241d;--navy:#14213d;--orange:#f28c28;--muted:#8d8677;--r:4px;
+--display:'Anton',Impact,'Arial Narrow Bold','Haettenschweiler',sans-serif;--body:'DM Sans',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{font-family:var(--body);font-size:17px;line-height:1.65;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;line-height:.98;letter-spacing:.01em}
+h2{font-size:clamp(44px,7vw,96px)}
+h3{font-size:clamp(24px,2.6vw,32px);letter-spacing:.03em}
+.wrap{width:min(1240px,100% - 48px);margin-inline:auto}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red-d);display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.eyebrow::before{content:"★";font-size:14px}
+.dark .eyebrow{color:var(--orange)}
+section{padding:112px 0;position:relative}
+.dark{background:var(--ink);color:var(--paper)}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 28px;border-radius:var(--r);font-weight:700;font-size:15px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:2px solid var(--red);background:var(--red);color:#fff;cursor:pointer;transition:background .2s,color .2s,border-color .2s;font-family:var(--body)}
+.btn:hover{background:var(--red-d);border-color:var(--red-d)}
+.btn.ghost{background:transparent;color:inherit;border-color:currentColor}
+.btn.ghost:hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.paper .btn.ghost:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+/* header */
+header{position:fixed;inset:0 0 auto 0;z-index:50;padding:16px 0;transition:background .25s,box-shadow .25s,padding .25s}
+header.scrolled{background:rgba(18,18,18,.96);box-shadow:0 8px 24px rgba(0,0,0,.35);padding:10px 0}
+.hbar{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{font-family:var(--display);font-size:28px;letter-spacing:.06em;text-transform:uppercase;color:var(--paper);text-decoration:none;white-space:nowrap}
+.brand b{color:var(--red);font-weight:400}
+nav{display:flex;gap:8px;flex-wrap:nowrap}
+nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;background:var(--navy);color:#fff;border-radius:var(--r);text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border-bottom:3px solid var(--orange);transition:background .2s;white-space:nowrap}
+nav a:hover,nav a.on{background:#1f3160}
+nav a.cta{background:var(--red);border-bottom-color:#fff}
+nav a.cta:hover{background:var(--red-d)}
+
+/* hero */
+.hero{min-height:100vh;padding:150px 0 72px;display:flex;align-items:center;background:var(--ink);color:var(--paper);overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(900px 600px at 78% 40%,rgba(224,52,43,.16),transparent 65%);pointer-events:none}
+.hgrid>*{min-width:0}
+.hgrid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center;position:relative;z-index:1}
+.hero h1{font-size:clamp(60px,9.4vw,152px);margin:8px 0 28px}
+.hero h1 span{color:var(--red)}
+.hero p.lead{font-size:19px;max-width:520px;color:#d9d0bd;margin-bottom:36px}
+.hbtns{display:flex;gap:12px;flex-wrap:wrap}
+.hmeta{display:flex;gap:32px;flex-wrap:wrap;margin-top:56px;padding-top:24px;border-top:1px solid rgba(239,230,211,.18);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#b9b09c}
+.hmeta strong{display:block;font-family:var(--display);font-weight:400;font-size:30px;letter-spacing:.03em;color:var(--paper)}
+.sheets{position:relative;height:min(640px,72vh)}
+.sheet{position:absolute;background:var(--paper);padding:10px 10px 34px;border-radius:2px;box-shadow:0 24px 60px rgba(0,0,0,.55);opacity:0;animation:pin .9s cubic-bezier(.2,.7,.2,1) forwards}
+.sheet img{width:100%;height:100%;object-fit:cover;filter:contrast(1.03)}
+.sheet::after{content:attr(data-cap);position:absolute;left:12px;bottom:8px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink)}
+.s1{width:54%;height:78%;left:0;top:10%;transform:rotate(-4deg);animation-delay:.15s;--rot:-4deg}
+.s2{width:46%;height:62%;right:0;top:0;transform:rotate(3deg);animation-delay:.35s;--rot:3deg}
+.s3{width:42%;height:48%;right:6%;bottom:0;transform:rotate(-2deg);animation-delay:.55s;--rot:-2deg}
+@keyframes pin{from{opacity:0;transform:translateY(18px) rotate(var(--rot))}to{opacity:1;transform:translateY(0) rotate(var(--rot))}}
+
+/* marquee */
+.ticker{background:var(--red);color:#fff;overflow:hidden;white-space:nowrap;padding:16px 0;border-block:3px solid var(--ink)}
+.ticker div{display:inline-block;animation:tick 48s linear infinite;font-family:var(--display);font-size:24px;letter-spacing:.08em;text-transform:uppercase}
+.ticker span{margin:0 22px}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* work */
+.whead{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:40px}
+.whead p{max-width:440px;color:#5a5448}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
+.filters button{min-height:44px;padding:0 18px;border:2px solid var(--ink);background:transparent;color:var(--ink);font:700 13px var(--body);letter-spacing:.14em;text-transform:uppercase;border-radius:var(--r);cursor:pointer;transition:background .2s,color .2s}
+.filters button:hover{background:var(--paper2)}
+.filters button.on{background:var(--ink);color:var(--paper)}
+.filters button i{font-style:normal;color:var(--red);margin-left:6px}
+.filters button.on i{color:var(--orange)}
+.grid{columns:4 240px;column-gap:16px}
+.tile{break-inside:avoid;margin:0 0 16px;position:relative;background:var(--ink);border-radius:2px;overflow:hidden;cursor:zoom-in;border:0;padding:0;width:100%;display:block}
+.tile img{width:100%;height:auto;transition:opacity .25s;background:#2a2722;min-height:120px}
+.tile figcaption,.tile .cap{position:absolute;inset:auto 0 0 0;padding:40px 14px 12px;background:linear-gradient(transparent,rgba(18,18,18,.92));color:var(--paper);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;text-align:left;opacity:0;transition:opacity .25s}
+.tile .cap small{display:block;color:var(--orange);font-size:11px;margin-bottom:2px}
+.tile:hover .cap,.tile:focus-visible .cap{opacity:1}
+.tile:hover img{opacity:.82}
+.tile:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.more{display:flex;justify-content:center;margin-top:32px}
+
+/* split sections */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.split.rev .ph{order:2}
+.ph{position:relative}
+.ph img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px}
+.ph::before{content:"";position:absolute;inset:18px -18px -18px 18px;border:2px solid var(--red);border-radius:2px;z-index:-1}
+.dark .ph::before{z-index:0;pointer-events:none;inset:18px -18px -18px 18px}
+.dark .ph img{position:relative;z-index:1}
+.txt h2{margin-bottom:28px;font-size:clamp(40px,5.6vw,80px)}
+.txt p{margin-bottom:18px;max-width:560px}
+.dark .txt p{color:#d9d0bd}
+.txt a{color:var(--red-d);font-weight:700}
+.dark .txt a{color:var(--orange)}
+.expect{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0 24px;margin:28px 0;max-width:560px}
+.expect li{padding:14px 0;border-top:1px solid rgba(18,18,18,.2);font-family:var(--display);font-size:22px;text-transform:uppercase;letter-spacing:.04em;display:flex;gap:12px}
+.expect li::before{content:"★";color:var(--red)}
+.expect li:last-child{grid-column:1/-1;border-bottom:1px solid rgba(18,18,18,.2)}
+
+/* experience */
+.xp{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+.xp a,.xp div{display:block;padding:28px 24px;border:1px solid rgba(239,230,211,.22);border-radius:var(--r);text-decoration:none;transition:background .2s,border-color .2s;min-height:190px}
+.xp a:hover{background:var(--ink2);border-color:var(--orange)}
+.xp small{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--orange)}
+.xp h3{margin:14px 0 10px}
+.xp p{font-size:15px;color:#b9b09c;line-height:1.5}
+
+/* why */
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:56px;border-top:2px solid var(--ink);border-left:2px solid var(--ink)}
+.why li{list-style:none;padding:32px 28px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transition:background .2s,color .2s}
+.why li:hover{background:var(--ink);color:var(--paper)}
+.why b{font-family:var(--display);font-weight:400;font-size:44px;color:var(--red);display:block;line-height:1;margin-bottom:16px}
+
+/* booking */
+.book{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.steps{list-style:none;counter-reset:s;margin:32px 0}
+.steps li{counter-increment:s;display:grid;grid-template-columns:56px 1fr;gap:16px;padding:18px 0;border-top:1px solid rgba(239,230,211,.18);color:#d9d0bd}
+.steps li::before{content:counter(s,decimal-leading-zero);font-family:var(--display);font-size:32px;color:var(--red);line-height:1}
+.steps li strong{color:var(--paper);display:block}
+.note{padding:20px 24px;border-left:3px solid var(--orange);background:var(--ink2);color:#d9d0bd;font-size:16px;margin-top:8px}
+.note strong{color:var(--paper)}
+form{background:var(--paper);color:var(--ink);padding:36px;border-radius:var(--r)}
+form h3{margin-bottom:6px;font-size:32px}
+form>p{font-size:15px;color:#5a5448;margin-bottom:24px}
+label{display:block;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin:16px 0 6px}
+input,textarea,select{width:100%;min-height:48px;padding:12px 14px;border:2px solid var(--ink);border-radius:var(--r);background:#fbf6ea;font:400 16px var(--body);color:var(--ink)}
+textarea{min-height:104px;resize:vertical}
+input:focus,textarea:focus,select:focus{outline:3px solid rgba(224,52,43,.35);border-color:var(--red)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+form .btn{width:100%;justify-content:center;margin-top:24px}
+form .alt{text-align:center;font-size:14px;margin-top:14px;color:#5a5448}
+
+/* healing */
+.heal{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px}
+.heal article{background:#fbf6ea;border:2px solid var(--ink);border-radius:var(--r);padding:28px 24px}
+.heal b{font-family:var(--display);font-weight:400;font-size:15px;letter-spacing:.18em;color:var(--red-d);text-transform:uppercase}
+.heal h3{margin:10px 0 14px}
+.heal p{font-size:15.5px;line-height:1.6;margin-bottom:10px;color:#3a362e}
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.dd div{padding:32px 28px;border-radius:var(--r)}
+.do{background:var(--navy);color:#fff}.dont{background:var(--red-d);color:#fff}
+.dd h3{font-size:40px;margin-bottom:16px}
+.dd ul{list-style:none}
+.dd li{padding:10px 0 10px 28px;border-top:1px solid rgba(255,255,255,.22);position:relative;font-size:16px}
+.do li::before{content:"✓";position:absolute;left:0;color:var(--orange);font-weight:700}
+.dont li::before{content:"✕";position:absolute;left:0;font-weight:700}
+.happy{text-align:center;font-family:var(--display);font-size:clamp(40px,6vw,80px);text-transform:uppercase;margin-top:64px;color:var(--ink)}
+.happy span{color:var(--red)}
+
+/* shop band */
+.shop{background:var(--red);color:#fff;padding:72px 0}
+.shop .wrap{display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap}
+.shop h2{font-size:clamp(40px,5.5vw,76px)}
+.shop p{max-width:460px;margin-top:10px}
+.shop .btn{background:var(--ink);border-color:var(--ink)}
+.shop .btn:hover{background:#000}
+
+/* contact */
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:stretch}
+.contact h2{margin-bottom:32px}
+.cinfo dl{display:grid;gap:0}
+.cinfo dt{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);padding-top:20px;border-top:1px solid rgba(239,230,211,.18)}
+.cinfo dd{font-size:20px;padding:6px 0 20px;color:var(--paper)}
+.cinfo dd a{text-decoration:none;border-bottom:2px solid var(--red)}
+.cinfo dd a:hover{color:var(--orange)}
+.map{min-height:460px;border-radius:var(--r);overflow:hidden;border:2px solid rgba(239,230,211,.22)}
+.map iframe{width:100%;height:100%;min-height:460px;border:0;filter:grayscale(1) contrast(1.1)}
+footer{background:#0b0b0b;color:#8d8677;padding:36px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:#d9d0bd;text-decoration:none}footer a:hover{color:var(--orange)}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(10,10,10,.96);display:none;align-items:center;justify-content:center;padding:24px}
+.lb.open{display:flex}
+.lb img{max-height:88vh;max-width:min(92vw,1000px);border:8px solid var(--paper);border-radius:2px}
+.lb button{position:absolute;width:52px;height:52px;border-radius:var(--r);border:0;background:var(--navy);color:#fff;font-size:22px;cursor:pointer;border-bottom:3px solid var(--orange)}
+.lb button:hover{background:#1f3160}
+.lb .x{top:20px;right:20px}.lb .p{left:20px;top:50%}.lb .n{right:20px;top:50%}
+.lb .c{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#b9b09c;font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+
+.rv{opacity:0;transform:translateY(12px);transition:opacity .5s,transform .5s}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.sheet{animation:none;opacity:1}.ticker div{animation:none}html{scroll-behavior:auto}}
+
+@media (max-width:1020px){
+ .hgrid,.split,.book,.contact{grid-template-columns:1fr;gap:48px}
+ .split.rev .ph{order:0}
+ .xp,.heal{grid-template-columns:1fr 1fr}
+ .why{grid-template-columns:1fr 1fr}
+ .sheets{height:520px;max-width:560px}
+ .ph{max-width:520px}
+}
+@media (max-width:767px){
+ body{font-size:16px}
+ section{padding:80px 0}
+ html{scroll-padding-top:128px}
+ .wrap{width:calc(100% - 36px)}
+ header{background:rgba(18,18,18,.96);padding:10px 0}
+ .hbar{flex-direction:column;align-items:stretch;gap:8px}
+ .brand{font-size:24px}
+ nav{flex-wrap:wrap;gap:6px}
+ nav a.cta{display:none}
+ nav a{flex-basis:30%}
+ nav a{flex:1 1 auto;justify-content:center;padding:0 10px;font-size:11px;min-height:44px}
+ .hmeta{gap:20px;margin-top:40px}.hmeta strong{font-size:22px}
+ .hero{padding-top:190px}
+ html{scroll-padding-top:170px}
+ .sheets{height:420px}
+ .grid{columns:2;column-gap:10px}.tile{margin-bottom:10px}
+ .tile .cap{opacity:1;font-size:10px;padding:28px 8px 8px}
+ .xp,.heal,.why,.dd,.row,.expect{grid-template-columns:1fr}
+ .ph::before{inset:12px -10px -12px 10px}
+ form{padding:24px}
+ .lb .p{left:8px}.lb .n{right:8px}
+}
+/* admin / mini cms */
+.adm{position:fixed;inset:0;z-index:90;background:#f4efe3;color:var(--ink);display:none;overflow-y:auto}
+.adm.open{display:block}
+.abar{position:sticky;top:0;z-index:2;background:var(--navy);color:#fff;border-bottom:3px solid var(--orange)}
+.abar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;flex-wrap:wrap;padding:8px 0}
+.abar b{font-family:var(--display);font-weight:400;font-size:24px;letter-spacing:.06em;text-transform:uppercase}
+.abar b em{font-style:normal;color:var(--orange)}
+.abar div{display:flex;gap:8px;flex-wrap:wrap}
+.abtn{min-height:44px;padding:0 16px;border-radius:var(--r);border:2px solid currentColor;background:transparent;color:inherit;font:700 12px var(--body);letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:background .2s,color .2s}
+.abtn:hover{background:rgba(255,255,255,.14)}
+.abtn.solid{background:var(--red);border-color:var(--red);color:#fff}.abtn.solid:hover{background:var(--red-d);border-color:var(--red-d)}
+.abtn.dark{color:var(--ink)}.abtn.dark:hover{background:var(--ink);color:#fff}
+.abody{padding:32px 0 96px}
+.demo{background:#fff6d8;border:2px solid var(--orange);border-radius:var(--r);padding:14px 18px;font-size:15px;margin-bottom:24px}
+.login{max-width:420px;margin:12vh auto 0;background:#fff;border:2px solid var(--ink);border-radius:var(--r);padding:36px}
+.login h3{font-size:36px;margin-bottom:8px}.login p{font-size:15px;color:#5a5448;margin-bottom:8px}
+.login .btn{width:100%;justify-content:center;margin-top:20px}
+.acols{display:grid;grid-template-columns:380px 1fr;gap:24px;align-items:start}
+.card{background:#fff;border:2px solid var(--ink);border-radius:var(--r);padding:24px;margin-bottom:24px}
+.card h3{font-size:26px;margin-bottom:6px}.card>p{font-size:14.5px;color:#5a5448;margin-bottom:16px;line-height:1.5}
+.drop{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;min-height:170px;border:2px dashed var(--ink);border-radius:var(--r);background:#fbf6ea;cursor:pointer;padding:20px;transition:background .2s,border-color .2s;margin:0;text-transform:none;letter-spacing:0;font-size:15px;font-weight:500}
+.drop:hover,.drop.over{background:#fde9d2;border-color:var(--red)}
+.drop strong{font-family:var(--display);font-weight:400;font-size:24px;letter-spacing:.05em;text-transform:uppercase}
+.drop input{position:absolute;opacity:0;width:1px;height:1px;min-height:0}
+.pend{display:grid;grid-template-columns:84px 1fr;gap:14px;padding:16px 0;border-top:1px solid #d8d0bd;margin-top:16px}
+.pend img{width:84px;height:104px;object-fit:cover;border-radius:2px;background:#ddd}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.chip{min-height:34px;padding:0 12px;border-radius:99px;border:1.5px solid var(--ink);background:#fff;font:700 11px var(--body);letter-spacing:.1em;text-transform:uppercase;cursor:pointer;color:var(--ink);transition:background .15s,color .15s}
+.chip:not(.on):hover{background:var(--paper2)}
+.chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.chip.del{border-color:var(--red-d);color:var(--red-d)}.chip.del:hover{background:var(--red-d);color:#fff}
+.adm input[type=text]{min-height:44px;padding:8px 12px;font-size:15px}
+.tagrow{display:flex;gap:8px;margin-top:12px}.tagrow input{flex:1}
+.taglist{list-style:none}.taglist li{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 0;border-top:1px solid #e4dcc8;font-weight:700;font-size:14px}
+.taglist small{color:var(--muted);font-weight:500;margin-left:6px}
+.taglist button{width:36px;height:36px;border-radius:var(--r);border:1.5px solid var(--red-d);background:#fff;color:var(--red-d);cursor:pointer;font-weight:700}
+.taglist button:hover{background:var(--red-d);color:#fff}
+.ahead{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.ahead input{max-width:260px}
+.alist{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin-top:16px}
+.arow{border:1.5px solid #cfc6b0;border-radius:var(--r);padding:10px;display:grid;grid-template-columns:72px 1fr;gap:12px;background:#fbf6ea}
+.arow.hid{opacity:.5}
+.arow img{width:72px;height:92px;object-fit:cover;border-radius:2px;background:#ddd}
+.arow input[type=text]{min-height:36px;padding:4px 8px;font-size:14px;font-weight:700;border-width:1.5px}
+.arow .chip{min-height:26px;padding:0 8px;font-size:9.5px;white-space:nowrap}
+.arow .chips{gap:4px}
+.arow .acts{display:flex;gap:6px;margin-top:8px}
+.badge{display:inline-block;background:var(--orange);color:var(--ink);font-size:10px;font-weight:700;letter-spacing:.12em;padding:2px 6px;border-radius:2px;text-transform:uppercase;margin-bottom:4px}
+.toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:14px 22px;border-radius:var(--r);border-bottom:3px solid var(--orange);font-weight:700;font-size:14px;z-index:120;opacity:0;pointer-events:none;transition:opacity .25s}
+.toast.on{opacity:1}
+@media (max-width:1020px){.acols{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap hbar">
+    <a class="brand" href="#top">Tattoo <b>Tobias</b></a>
+    <nav aria-label="Main">
+      <a href="#work">Tattoos</a>
+      <a href="#about">About</a>
+      <a href="#booking">Booking</a>
+      <a href="#healing">Healing</a>
+      <a href="https://tobiasdebruyn.bigcartel.com/" target="_blank" rel="noopener">Shop</a>
+      <a href="#contact">Contact</a>
+      <a class="cta" href="mailto:hello@tattootobias.com">Book now</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hgrid">
+    <div>
+      <p class="eyebrow">Traditional tattoo artist · Antwerp</p>
+      <h1>Powerful.<br>Timeless.<br><span>Personal.</span></h1>
+      <p class="lead">Modern &amp; aesthetic traditional tattooing from a private studio in Borgerhout, by appointment only. Rooted in traditional western tattooing, with a bit of new imagery and creativity. Classic and bold — made to withstand time, fading and trendyness.</p>
+      <div class="hbtns">
+        <a class="btn" href="#booking">Book an appointment</a>
+        <a class="btn ghost" href="#work">See the work</a>
+      </div>
+      <div class="hmeta">
+        <div><strong>10+ years</strong>of experience</div>
+        <div><strong>One-on-one</strong>private studio</div>
+        <div><strong>Borgerhout</strong>Antwerp</div>
+      </div>
+    </div>
+    <div class="sheets" aria-hidden="false">
+      <figure class="sheet s1" data-cap="Traditional woman"><img src="https://tattootobias.com/wp-content/uploads/2020/11/traditional-tattoo-woman.jpg" alt="Traditional tattoo of a woman's head by Tattoo Tobias"></figure>
+      <figure class="sheet s2" data-cap="Back piece · ship"><img src="https://tattootobias.com/wp-content/uploads/2020/11/traditional-tattoo-back-piece-ship-1.jpg" alt="Traditional full back piece tattoo of a ship"></figure>
+      <figure class="sheet s3" data-cap="Tiger woman"><img src="https://tattootobias.com/wp-content/uploads/2020/10/traditional-tattoo-tiger-woman-1.jpg" alt="Traditional tattoo of a woman with a tiger"></figure>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div id="tick"></div></div>
+
+<section id="work" class="paper">
+  <div class="wrap">
+    <div class="whead rv">
+      <div><p class="eyebrow">The work</p><h2>Tattoos</h2></div>
+      <p>Clean lines, solid colour and strong contrasts. Designs that follow the shape of the body and stay readable for many years. Click any piece to see it large.</p>
+    </div>
+    <div class="filters rv" id="filters" role="group" aria-label="Filter tattoos by category"></div>
+    <div class="grid" id="grid"></div>
+    <div class="more"><button class="btn ghost" id="more" type="button">Show more work</button></div>
+  </div>
+</section>
+
+<section id="about" class="dark">
+  <div class="wrap split">
+    <div class="ph rv"><img loading="lazy" src="https://tattootobias.com/wp-content/uploads/2025/12/tattoo-tobias-de-bruyn-traditional-tattoo-artist-studio-who-i-am.jpg" alt="Tobias De Bruyn, traditional tattoo artist, in his private studio in Antwerp"></div>
+    <div class="txt rv">
+      <p class="eyebrow">Who I am</p>
+      <h2>I'm Tobias.</h2>
+      <p>A tattoo artist with more than 10 years of experience, and a creative background that started long before I entered the tattoo world.</p>
+      <p>I have been drawing my entire life, from art classes as a child to painting courses and a long graffiti history. It all shaped my sense of line, rhythm and contrast.</p>
+      <p>As an adult, I founded the graphic design studio <a href="https://afreux.be/web/" target="_blank" rel="noopener">afreux.be</a> with two friends. We worked in music, the cultural sector, NGOs and personal artistic projects. My years in design taught me to think in composition, balance, typography and visual clarity. These elements now flow naturally into my tattoo work.</p>
+      <p>My background is not a collection of unrelated experiences. It is one continuous path of drawing, shaping, observing and refining.</p>
+    </div>
+  </div>
+</section>
+
+<section id="style" class="paper">
+  <div class="wrap split rev">
+    <div class="ph rv"><img loading="lazy" src="https://tattootobias.com/wp-content/uploads/2025/12/tattoo-tobias-de-bruyn-traditional-tattoo-artist-studio-design.jpg" alt="Tattoo designs and line drawings in the studio of Tattoo Tobias"></div>
+    <div class="txt rv">
+      <p class="eyebrow">My style</p>
+      <h2>Timeless, bold &amp; designed for the body</h2>
+      <p>I work within classic Western and American Traditional tattooing and combine this with a modern, graphic approach. A traditional base, on which a layer of personal influence and style is added. More modern imagery, objects and influences are mixed into the subtle outcome. I consciously remain very loyal stylewise through time — away from trends and fashion.</p>
+      <ul class="expect" aria-label="What to expect">
+        <li>Clean lines</li><li>Solid colour</li><li>Strong contrasts</li><li>Long-term readability</li><li>Designs that follow the shape of the body</li>
+      </ul>
+      <p>I always design with the healing process in mind. Lines and shapes are chosen because they hold up well on the skin, both today and many years from now. The pigments and my colour palette are chosen through years of experience to stay saturated and bright.</p>
+      <p>I do not follow fast-fading trends. I focus on craftsmanship that lasts. Placement — for both now and future plans — is always carefully taken into account, as well as making my work blend with that of other artists.</p>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="dark">
+  <div class="wrap">
+    <div class="split">
+      <div class="ph rv"><img loading="lazy" src="https://tattootobias.com/wp-content/uploads/2025/12/tattoo-tobias-de-bruyn-traditional-tattoo-artist-studio.jpg" alt="The calm private tattoo studio of Tattoo Tobias in Borgerhout"></div>
+      <div class="txt rv">
+        <p class="eyebrow">How I work</p>
+        <h2>Honest, focused &amp; one-on-one</h2>
+        <p>In my private studio, I work with one client at a time. This gives us time to talk through your idea and space to refine it.</p>
+        <p>You can expect a calm and professional atmosphere, honest advice and clear communication without sales talk.</p>
+        <p>I see a tattoo as a collaboration. It is your idea combined with my experience, and we work together in a direct and open way. If it doesn't feel right, both me and the client can agree not to go further — luckily that rarely happens.</p>
+      </div>
+    </div>
+    <div class="rv" style="margin-top:112px">
+      <p class="eyebrow">Experience &amp; projects</p>
+      <h2>Where I've worked</h2>
+      <div class="xp">
+        <div><small>Antwerp · for years</small><h3>Brabo's Hand</h3><p>One of Belgium's best-known tattoo studios. This is where I continued to sharpen my technique and my classical influences.</p></div>
+        <div><small>Eindhoven</small><h3>True Blue Tattoo</h3><p>Worked at True Blue Tattoo in Eindhoven, next to guest trips in other studios.</p></div>
+        <a href="https://www.nuitnoiretattoo.com/" target="_blank" rel="noopener"><small>Geneva · guest</small><h3>Nuit Noire Tattoo</h3><p>Guest trips and conventions, such as Nuit Noire Tattoo in Geneva. ↗</p></a>
+        <a href="https://www.usbynight.be/" target="_blank" rel="noopener"><small>Antwerp · convention</small><h3>Us by Night</h3><p>Tattooing at Us by Night in Antwerp, etcetera. ↗</p></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="paper">
+  <div class="wrap">
+    <div class="rv"><p class="eyebrow">Why clients choose Tattoo Tobias</p><h2>No unnecessary fuss.</h2></div>
+    <ul class="why rv">
+      <li><b>01</b>A combination of craftsmanship and graphic design, resulting in clear and strong artwork.</li>
+      <li><b>02</b>A quiet private studio with full focus and no distractions — safe and respectful for all.</li>
+      <li><b>03</b>Honest and direct communication, so you always know what works and what does not.</li>
+      <li><b>04</b>Solid experience in traditional tattooing.</li>
+      <li><b>05</b>A strong focus on healing and long-term readability.</li>
+      <li><b>06</b>An artistic yet down-to-earth approach.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="booking" class="dark">
+  <div class="wrap book">
+    <div class="rv">
+      <p class="eyebrow">Booking</p>
+      <h2>Book an appointment</h2>
+      <p style="margin-top:24px;color:#d9d0bd;max-width:540px">Thanks a lot for showing interest in my work! Booking goes preferably by email. Give me the info you know in one email — you will receive a personal reply with practical information, pricing and available dates.</p>
+      <ol class="steps">
+        <li><div><strong>Send your idea</strong>Your general idea, placement, approximate size, black or colour. If you have reference material, include it. Questions? Ask me. Prefer to talk in person? Let's meet.</div></li>
+        <li><div><strong>We shape the design</strong>I can draw your idea out on your appointment, or sketch in advance and send it the week before for feedback. Mostly we get the details right together and make the final drawing on the appointment. There are a lot of line drawings ready to go as well.</div></li>
+        <li><div><strong>Price &amp; date</strong>I can give you an estimated price if I have enough information. Once we set an appointment, I may ask you to pay a €50 deposit.</div></li>
+        <li><div><strong>Tattoo day</strong>One client at a time, in a calm private studio. A piece you can wear with pride.</div></li>
+      </ol>
+      <p class="note"><strong>Tip:</strong> give me your phone number for any short-notice communication.</p>
+    </div>
+    <form id="bform" class="rv" novalidate>
+      <h3>Tell me your idea</h3>
+      <p>Fills in an email to hello@tattootobias.com — add your reference pictures before sending.</p>
+      <label for="f-name">Name</label><input id="f-name" autocomplete="name">
+      <label for="f-idea">Your general idea</label><textarea id="f-idea"></textarea>
+      <div class="row">
+        <div><label for="f-place">Placement</label><input id="f-place" placeholder="e.g. upper arm"></div>
+        <div><label for="f-size">Approximate size</label><input id="f-size" placeholder="e.g. 15 cm"></div>
+      </div>
+      <div class="row">
+        <div><label for="f-col">Black or colour</label><select id="f-col"><option>Not sure yet</option><option>Black</option><option>Colour</option></select></div>
+        <div><label for="f-tel">Phone number</label><input id="f-tel" type="tel" autocomplete="tel"></div>
+      </div>
+      <button class="btn" type="submit">Open email with my idea →</button>
+      <p class="alt">or mail directly: <a href="mailto:hello@tattootobias.com"><strong>hello@tattootobias.com</strong></a></p>
+    </form>
+  </div>
+</section>
+
+<section id="healing" class="paper">
+  <div class="wrap">
+    <div class="whead rv">
+      <div><p class="eyebrow">Aftercare</p><h2>Healing</h2></div>
+      <p>Keep in mind: good aftercare is part of a good end result. Four phases, a few do's and don'ts.</p>
+    </div>
+    <div class="heal rv">
+      <article><b>First hours</b><h3>Foil &amp; first wash</h3>
+        <p>Keep the foil for at least three hours or overnight. Wash your hands with soap before handling your new tattoo.</p>
+        <p>Remove the foil and wash the tattoo carefully with your hands to remove all surface blood, sweat and ink. To avoid irritation from the tape, remove the foil after a few minutes of showering.</p>
+        <p>Clean with just water — pH-neutral soap can be used, but no normal soap. Rinse, then let it dry in open air or pat dry with a clean towel.</p></article>
+      <article><b>Day 1 – 14</b><h3>Thin layer of cream</h3>
+        <p>We advise Cicaplast B5 or Easy Tattoo. Always apply a thin layer of ointment, 3 to 6 times a day for at least 14 days to maintain hydration.</p>
+        <p>It helps the tattoo settle nicely if you keep going for an extra 2 weeks.</p>
+        <p>You may refilm for two nights to avoid stains in your bed — also if you have a dirty job. Keep your tattoo open for the rest of the time.</p></article>
+      <article><b>Day 3 – 7 and on</b><h3>Peeling &amp; scabbing</h3>
+        <p>The tattoo may start to peel and scab. Don't pick or peel the skin away — let it fall off naturally during washing or applying cream. Fresh skin will soon replace the dead skin.</p>
+        <p>The ink may fade during the process, but will return when healing is completed. Too dry skin will crust and push ink out. With a real crust, increase cream frequency — but always apply slightly: too much prevents the skin from breathing.</p></article>
+      <article><b>After a few months</b><h3>Sun</h3>
+        <p>After a few months you may sunbathe in moderation.</p>
+        <p>Use sun cream, factor 50, to prevent early fading. Exposure to the sun is the major cause of tattoo fading.</p></article>
+    </div>
+    <div class="dd rv">
+      <div class="do"><h3>Do</h3><ul>
+        <li>Change your bed sheets if you have pets entering the bedroom.</li>
+        <li>Continue applying cream as long as the tattoo feels sensitive.</li>
+        <li>Keep in mind good aftercare is part of a good end result!</li>
+        <li>Get in touch if your tattoo needs a touch-up.</li>
+        <li>Get in touch if you're worried about the healing process or have an infection.</li></ul></div>
+      <div class="dont"><h3>Don't</h3><ul>
+        <li>Apply Vaseline or petroleum-based products.</li>
+        <li>Apply alcohol.</li>
+        <li>Rub, scratch or pick at the tattoo.</li>
+        <li>Expose the tattoo to direct sunlight.</li>
+        <li>Swim — no sauna, no steam bath or bathtub for 3 to 4 weeks.</li></ul></div>
+    </div>
+    <p class="happy rv">Happy <span>healing!</span></p>
+  </div>
+</section>
+
+<div class="shop">
+  <div class="wrap">
+    <div><h2>The shop</h2><p>Prints and goods by Tobias De Bruyn, available in the online shop.</p></div>
+    <a class="btn" href="https://tobiasdebruyn.bigcartel.com/" target="_blank" rel="noopener">Visit the shop ↗</a>
+  </div>
+</div>
+
+<section id="contact" class="dark">
+  <div class="wrap contact">
+    <div class="cinfo rv">
+      <p class="eyebrow">Contact</p>
+      <h2>Come by — by appointment</h2>
+      <dl>
+        <dt>Email · preferred for booking</dt><dd><a href="mailto:hello@tattootobias.com">hello@tattootobias.com</a></dd>
+        <dt>Tattoo studio</dt><dd>Godtsstraat 19<br>2140 Borgerhout, Antwerp</dd>
+        <dt>Opening</dt><dd>Private studio · only by appointment</dd>
+      </dl>
+      <a class="btn" style="margin-top:12px" href="https://maps.app.goo.gl/qszgDNs98pjSEMK36" target="_blank" rel="noopener">Route via Google Maps</a>
+    </div>
+    <div class="map rv"><iframe src="https://www.google.com/maps?q=Tattoo+Tobias,+Godtsstraat+19,+2140+Borgerhout&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Location of Tattoo Tobias, Godtsstraat 19, Borgerhout"></iframe></div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">
+  <span>© 2026 Tattoo Tobias · Godtsstraat 19, 2140 Borgerhout · <a href="mailto:hello@tattootobias.com">hello@tattootobias.com</a></span>
+  <span>Photography by Jannis Bachard · <a href="#admin" data-admin>Studio login</a></span>
+</div></footer>
+
+<div class="adm" id="adm" role="dialog" aria-modal="true" aria-label="Studio admin">
+  <div class="abar"><div class="wrap">
+    <b>Tattoo Tobias <em>· Studio admin</em></b>
+    <div><button class="abtn" id="a-reset" type="button">Reset demo</button><button class="abtn solid" id="a-close" type="button">← Back to website</button></div>
+  </div></div>
+  <div class="wrap abody">
+    <div class="login" id="a-login">
+      <h3>Studio login</h3>
+      <p>Only Tobias gets in here. Upload new work, tag it, done.</p>
+      <label for="a-user">Email</label><input id="a-user" type="text" value="hello@tattootobias.com">
+      <label for="a-pass">Password</label><input id="a-pass" type="password" value="demo-demo">
+      <button class="btn" id="a-go" type="button">Log in</button>
+      <p style="margin-top:14px;font-size:13px">Demo: any password works.</p>
+    </div>
+    <div id="a-main" hidden>
+      <p class="demo"><strong>Working demo.</strong> Upload a photo, give it tags, and check the gallery on the website — it updates instantly. In this concept everything is stored in this browser only; on the real website it is saved online behind a secure login.</p>
+      <div class="acols">
+        <div>
+          <div class="card">
+            <h3>1 · Upload photos</h3>
+            <p>Drag photos in from your phone or computer — several at once is fine. They are resized automatically.</p>
+            <label class="drop" id="a-drop"><input id="a-file" type="file" accept="image/*" multiple><strong>Drop photos here</strong><span>or click to choose files</span></label>
+            <div id="a-pend"></div>
+          </div>
+          <div class="card">
+            <h3>Tags</h3>
+            <p>Tags become the filter buttons above the gallery. A photo can have several tags.</p>
+            <ul class="taglist" id="a-tags"></ul>
+            <div class="tagrow"><input id="a-newtag" type="text" placeholder="New tag, e.g. Panthers" aria-label="New tag"><button class="abtn dark" id="a-addtag" type="button">Add</button></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="ahead"><h3>2 · All photos <span id="a-count" style="color:var(--red-d)"></span></h3><input id="a-search" type="text" placeholder="Search title or tag…" aria-label="Search photos"></div>
+          <p>Change a title, click tags on or off, hide a photo or delete it. Newest uploads appear first on the website.</p>
+          <div class="alist" id="a-list"></div>
+          <div class="more"><button class="abtn dark" id="a-more" type="button">Show more</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Tattoo enlarged">
+  <button class="x" aria-label="Close">✕</button><button class="p" aria-label="Previous">←</button><button class="n" aria-label="Next">→</button>
+  <img id="lbimg" alt=""><div class="c" id="lbc"></div>
+</div>
+
+<script>
+(function(){
+var U='https://tattootobias.com/wp-content/uploads/',KEY='tattootobias-cms-v2';
+var $=function(i){return document.getElementById(i)};
+function defaults(){
+ var tags=[['ladies','Ladies & faces'],['large','Back pieces'],['classics','Classics & flash'],['y2020','2020 · latest'],['y2019','2019'],['y2018','2018'],['early','Early work']].map(function(t){return{id:t[0],label:t[1]}});
+ var named=[['ladies','2020/11/traditional-tattoo-woman.jpg','Traditional woman'],['large','2020/11/traditional-tattoo-back-piece-ship-1.jpg','Back piece · ship'],['classics','2020/10/traditional-tattoos-1.jpg','Traditional tattoos'],['ladies','2020/10/traditional-tattoo-woman-pantera.jpg','Woman · pantera'],['large','2020/11/traditional-tattoo-back-piece-ship-2.jpg','Back piece · ship, detail'],['ladies','2020/10/traditional-tattoo-tiger-woman-1.jpg','Tiger woman'],['classics','2020/10/traditional-tattoos-2.jpg','Traditional tattoos'],['ladies','2020/10/traditional-tattoo-tiger-woman-2.jpg','Tiger woman, detail'],['ladies','2020/10/traditional-tattoo-woman-leaf.jpg','Woman · leaf'],['classics','2020/10/traditional-tattoos-3.jpg','Traditional tattoos'],['ladies','2020/10/traditional-tattoo-man-book.jpg','Man · book'],['ladies','2020/10/traditional-tattoo-man-book-2.jpg','Man · book, detail']];
+ var G={"y2020":["IMG_0444-768x1024","IMG_0439-704x1024","IMG_0436-642x1024","IMG_0437-694x1024","IMG_0460-656x1024","IMG_0461-1024x582","IMG_0445-1024x793","IMG_0434-826x1024","IMG_0433-893x1024","IMG_0435-766x1024","IMG_0431-681x1024","IMG_0430-768x1024","IMG_0432-768x1024","IMG_0429-978x1024","IMG_0427-755x1024","IMG_0428-768x1024","IMG_0422-736x1024","IMG_0418-801x1024","IMG_0425-828x1024","IMG_0426-851x1024","IMG_0423-866x1024","IMG_0421-922x1024","IMG_0420-1024x1024","IMG_0424-710x1024","IMG_0416","IMG_0417-676x1024","IMG_0414-687x1024","IMG_0412-668x1024","IMG_0411-768x1024","IMG_0413-792x1024","IMG_0410-768x1024","IMG_0409-798x1024","IMG_0362-571x1024","IMG_0050-673x1024","IMG_0380-779x1024","IMG_0406-652x1024","IMG_0407-772x1024","IMG_0374-639x1024","IMG_0378-935x1024","IMG_0381-612x1024","IMG_0408-768x1024","IMG_0375-921x1024","IMG_0372-910x1024","IMG_0376-590x1024","IMG_0373-848x1024","IMG_0385-674x1024","IMG_0383-787x1024","IMG_0367-905x1024","IMG_0370-849x1024","IMG_0368-831x1024","IMG_0388-784x1024","IMG_0351-808x1024","IMG_0355-774x1024","IMG_0342-715x1024","IMG_0364-768x1024","IMG_0341-752x1024","IMG_0394-1024x838","IMG_0415-1024x724","IMG_0346-576x1024","IMG_0344-576x1024","IMG_0345-576x1024","IMG_0352-576x1024","IMG_0354-576x1024","IMG_0338-648x1024","IMG_0339-616x1024","IMG_0340-1024x1000","2020/09/IMG_0210-768x1024","Schermafbeelding-2020-12-28-om-14.08.09.png","Schermafbeelding-2020-12-28-om-14.24.13.png","IMG_0447-680x1024","IMG_0366-768x1024","IMG_0331-1024x736","IMG_0377-768x1024","IMG_0332-768x1024","Snapseed-19-603x1024","IMG_0330-664x1024","Snapseed-18-768x1024","IMG_0329-945x1024","IMG_0343-540x1024","IMG_0334-700x1024","Snapseed-17-768x1024","Schermafbeelding-2020-12-28-om-14.25.20.png","Snapseed-16-589x1024","IMG_0328-768x1024","IMG_0384-614x1024","Schermafbeelding-2020-12-28-om-14.26.36-1.png","Schermafbeelding-2020-12-28-om-15.02.45-1.png","Schermafbeelding-2020-12-28-om-15.02.50-1.png","IMG_0327-809x1024","IMG_0353-1-701x1024","Schermafbeelding-2020-12-28-om-14.26.03.png","Schermafbeelding-2020-12-28-om-14.26.10.png","IMG_0317-768x1024","IMG_0109-983x1024","Snapseed-4-1-1-858x1024","IMG_0324-860x1024","IMG_0399-807x1024"],"y2019":["Schermafbeelding-2020-12-28-om-14.27.02.png","IMG_0064-735x1024","IMG_0047-895x1024","IMG_0035-749x1024","IMG_0323-768x1024","Snapseed-15-978x1024","IMG_0128-696x1024","Schermafbeelding-2020-12-28-om-14.27.11.png","Snapseed-3-1-1-1024x978","72643450_576648893066201_9113576304648650752_o-1-1024x1024","78216649_576648836399540_9142421627131133952_o-1-1024x1024","78291574_575918333139257_5351630122417913856_o-1024x1024","76640172_573219080075849_7958206784647200768_o-1004x1024","IMG_0403-1024x887","IMG_0363-781x1024","77220828_571038843627206_6554104691943276544_o-1024x1024","78191098_571038756960548_8921610971827404800_o-1024x1024","78194665_570143280383429_4698933258228858880_o-1024x1024","75210229_569404633790627_8545358092802457600_o-1024x1024","IMG_0382-682x1024","78235930_566639534067137_3163798233084329984_o-910x1024","IMG_0319-768x1024","IMG_0393-768x1024","75561545_563935047670919_3103725504767721472_o-1024x1024","IMG_0400-715x1024","Schermafbeelding-2020-12-28-om-14.29.08.png","IMG_0401-919x1024","IMG_0318-813x1024","IMG_0325-643x1024","IMG_0181-801x1024","IMG_0232-768x1024","IMG_7914-647x1024","IMG_0002-825x1024","IMG_0322-668x1024","IMG_0389-807x1024","Snapseed-12-654x1024","Schermafbeelding-2020-12-28-om-14.29.37.png","IMG_0320-768x1024","IMG_0402-936x1024","IMG_0312-768x1024","IMG_0308-811x1024","IMG_0315-768x1024","IMG_0280-768x1024","IMG_0368-1-1024x1024","IMG_0270-951x1024","IMG_0390-994x1024","IMG_0267-833x1024","IMG_0255-688x1024","IMG_0250-848x1024","IMG_0252-684x1024","IMG_0246-1017x1024","2020/09/IMG_0264-768x1024","IMG_0242-692x1024","IMG_0238-768x1024","IMG_0202-1-725x1024","IMG_0211-1-896x1024","IMG_0211-896x1024","IMG_0209-878x1024","IMG_0404-718x1024","IMG_0197-1-884x1024","IMG_0335-739x1024","IMG_0336-619x1024","IMG_0188-1024x1017","IMG_0163-885x1024","IMG_0164-976x1024","IMG_0357-754x1024","IMG_0161-886x1024","IMG_0214-2-797x1024","IMG_0214-797x1024","IMG_0154-665x1024","IMG_0149-642x1024","IMG_0173-668x1024","IMG_0135-745x1024","IMG_0170-704x1024","IMG_0129-1024x776","IMG_0132-641x1024","IMG_0125-819x1024","IMG_0121-755x1024","IMG_0134-768x1024","IMG_0186-768x1024","IMG_0225-1-768x1024","IMG_0227-768x1024","IMG_0228-782x1024","IMG_0229-768x1024","2019/05/IMG_1658-1-768x1024","2019/05/IMG_1661-768x1024","2019/05/IMG_1664-768x1024","2019/05/IMG_1666-768x1024","2019/05/IMG_1618-1-1024x768","2019/05/IMG_1582-1024x768","2019/05/IMG_1559-1024x768","2019/05/IMG_1476-e1558515425969-768x1024","2019/05/IMG_1433-2-1024x768","2019/05/IMG_1339-1024x768","2019/05/IMG_1332-2-768x1024","2019/05/FullSizeRender-2-768x1024","60028423_443917196339372_5602015235327131648_o-1024x1024","60153678_443917139672711_2780128984921276416_o-1024x1024","IMG_0106-730x1024","IMG_0166-798x1024","IMG_0076-1-749x1024","IMG_0316-989x1024","IMG_0116-656x1024","IMG_0058-879x1024","IMG_0056-705x1024","56601039_424554164942342_8786826557252435968_o-972x1024","IMG_0061-1024x931","IMG_0066-684x1024","56564629_421217761942649_4644371625788047360_o-932x1024","IMG_0391","56679317_420557688675323_2376962187257184256_o-1024x1024","IMG_0054-886x1024","IMG_0052-1-768x1024","55606183_412729889458103_5567246169395953664_o-940x1024","55495955_411452869585805_366420960150028288_o-819x1024","IMG_0296-768x1024","IMG_0298-754x1024","IMG_0044-768x1024","IMG_0042-733x1024","IMG_0046-737x1024","IMG_0048-929x1024","IMG_0049-768x1024","IMG_0041-874x1024","IMG_0034-997x1024","Snapseed-92-scaled-e1607947008630-871x1024","52973971_400535450677547_5348742508530630656_o-1024x1024","IMG_0320-1-740x1024","IMG_0322-1-744x1024","IMG_0321-831x1024","Snapseed-91-1024x768","IMG_0016-768x1024","52666695_394162104648215_8805979229469540352_o-974x1024","Snapseed-90-scaled-e1607946632750-1024x1020","IMG_0017-658x1024","52861307_392487244815701_5090834988035735552_o-1024x1024","Snapseed-89-768x1024","51714883_391742334890192_1564198793958653952_o-912x1024","51794112_391742374890188_5251272928737099776_o-915x1024","IMG_0295-794x1024","IMG_0294-596x1024","51675133_390342485030177_707377346964881408_o-1024x1024","IMG_0269-768x1024","51872889_387499691981123_424180547930030080_o-1024x1024","IMG_0268-822x1024","Snapseed-87-768x1024","51284376_386139145450511_7344263444729692160_o-1024x1024","51451683_384770735587352_7828605437820796928_o-954x1024","51496014_382119975852428_7621550720952565760_o-902x1024","50648344_379362989461460_7545977601693581312_o-819x1024","Snapseed-86-768x1024","51051986_378006712930421_4791536567061577728_o-826x1024","IMG_0291-876x1024","Snapseed-85-768x1024","49622916_373213876743038_7868902294165651456_o-1024x1024","2019/07/IMG_3451-1024x1024","IMG_0014-913x1024","50301936_372032920194467_2037077081250070528_o-1024x1024","Snapseed-84-768x1024","IMG_0010-766x1024","Snapseed-82-768x1024"],"y2018":["IMG_0013-768x1024","49192893_365855520812207_5172388247958978560_o-1024x1024","Snapseed-33-1024x925","48395822_359843001413459_7431032375498244096_o-1024x1024","Snapseed-2-1-1-624x1024","Snapseed-3-2-655x1024","Snapseed-24-1-716x1024","48397911_354957341902025_6680589408636239872_o-909x1024","IMG_0004-533x1024","48166670_351299518934474_7068546266816315392_o-1024x1024","IMG_0003-1-934x1024","47467706_348377622559997_4729263642963345408_o-860x1024","47363340_347780419286384_5820655218454429696_o-1024x1024","47377674_346357282762031_8835938425950437376_o-1024x1024","46845807_343832733014486_8315664049266229248_o-1024x1024","46479496_338617673535992_7032090047536955392_o-819x1024","IMG_0002-1-825x1024","45776603_335500620514364_248791254840639488_o-1024x1024","IMG_0190-610x1024","45005979_331081747622918_5778280426866999296_o-832x1024","45111364_330729020991524_3555846902312337408_o-1024x1024","44524470_327868157944277_2763472779624841216_o-1024x1024","44486082_327288618002231_1764967847664025600_o-819x1024","44140259_325039398227153_653038863844900864_o-1024x1024","IMG_0324-1-1024x1024","43951827_323948938336199_5709178143990874112_o-819x1024","43378472_319303958800697_7449025320646082560_o-819x1024","43467014_319304025467357_7983950444957270016_o-822x1024","IMG_0405-975x1024","43237899_318100305587729_6830766994590007296_o-837x1024","43286449_318100338921059_7605380031644172288_o-837x1024","43294896_317857328945360_2446289681038442496_o-1006x1024","43086316_316292742435152_6199031997461954560_o-819x1024","43104991_317103092354117_4344024060267593728_o-894x1024","43159203_317502952314131_867524999416643584_o-890x1024","IMG_0323-1-1024x1024","42878852_315066322557794_9167146495428788224_o-1-1014x1024","42854465_314593945938365_1540744321152581632_o-1024x1024","42716142_313160509415042_3210982035128582144_o-1017x1024","IMG_0313-768x1024","42101615_308354306562329_7127369937038868480_o-1024x1024","42059550_307982989932794_2322453052201631744_o-1024x1024","Snapseed-45-1-1-935x1024","Snapseed-44-1-768x1024","41572257_305687283495698_6539350504323940352_o-1024x1024","41552575_305195656878194_1186026962200559616_o-1024x1024","41430949_304692173595209_7301905764291969024_o-1024x1024","41420242_304284260302667_2177239610923417600_o-819x1024","41443951_303671500363943_4010142184668921856_o-1024x1024","40059090_297164624347964_706727544182800384_o-1024x1024","40036479_294981497899610_6095974197064892416_o-1003x1024","Snapseed-41-1-1024x1024","Snapseed-42-1-768x1024","39221337_284840118913748_6307535227979825152_o-950x1024","39072471_283665082364585_1356677248505085952_o-1024x1024","38708169_278675472863546_369346077691740160_o-1024x1024","38614759_275691456495281_1961614694837911552_o-1024x1017","38132226_271299800267780_6613030045516562432_o-1024x1024","37918571_268220520575708_6510497541094637568_o-1024x1024","37830510_265228414208252_453390800898752512_o-819x1024","37399824_257510691646691_8460612349328359424_o-1024x1024","37236195_256665048397922_8530401646583218176_o-1024x1024","37268356_254875461910214_3635595262358978560_o-1024x1024","37000449_252313452166415_3307614160723902464_o-1024x1024","36828589_249586009105826_3661924073308422144_o-819x1024","36781659_248752742522486_4015276916855537664_o-1024x1024","36522075_244557459608681_3553512643421536256_o-1024x1024","33178164_218367845560976_909986815631425536_o-1024x1024","Snapseed-39-1-768x1024","IMG_0008-753x1024","35268112_227341707996923_4475104168628977664_o-1024x1024","34962157_224746521589775_498171873683570688_o-1024x1024","Snapseed-38-1-723x1024","Snapseed-44-768x1024","Snapseed-37-1-966x1024","Snapseed-36-1-734x1024","Snapseed-35-1-656x1024","Snapseed-2-1-832x1024","Snapseed-42-768x1024","30707121_206143213450106_4326238411716296704_o-1024x1024","Snapseed-33-1-584x1024","Snapseed-32-1-733x1024","Snapseed-31-1-850x1024","Snapseed-40-768x1024","Snapseed-39-768x1024","Snapseed-29-1-874x1024","Snapseed-27-1-846x1024","31577851_209746303089797_7050868512138461184_o-819x1024","31682484_210111276386633_6669968624528130048_o-1024x1024","Snapseed-38-768x1024","Snapseed-26-1-940x1024","Snapseed-37-704x1024","Snapseed-25-1-576x1024","Snapseed-36-706x1024","Snapseed-35-775x1024","30051650_200851557312605_4598082852539158944_o-1024x1024","Snapseed-23-1-676x1024","IMG_0319-2-792x1024","Snapseed-34-1024x915"],"early":["Snapseed-22-1-684x1024","Snapseed-55-768x1024","29472667_196272201103874_3207264869782913024_n","29511965_196272657770495_3420329388359548928_n","Snapseed-32-830x1024","Snapseed-18-1-686x1024","Snapseed-31-726x1024","Snapseed-17-1-681x1024","Snapseed-16-1-686x1024","Snapseed-15-1-725x1024","Snapseed-14-1-666x1024","Snapseed-13-1-852x1024","Snapseed-12-1-637x1024","Snapseed-768x1024","Snapseed-10-1-792x1024","Snapseed-27-580x1024","Snapseed-8-1-649x1024","Snapseed-26-704x1024","Snapseed-24-735x1024","Snapseed-6-1-691x1024","IMG_0374-1-819x1024","Snapseed-5-1-847x1024","Snapseed-22-692x1024","Snapseed-21-768x1024","Snapseed-4-1-1024x1014","Snapseed-20-1001x1024","Snapseed-3-1-769x1024","Snapseed-14-869x1024","Snapseed-13-657x1024","IMG_0277-1024x1021","Snapseed-11-641x1024","Snapseed-9-936x1024","Snapseed-8-616x1024","Snapseed-6-806x1024","Snapseed-4-740x1024","Snapseed-3-610x1024","Snapseed-2-871x1024","IMG_8468-769x1024","IMG_8457-970x1024","IMG_8001-673x1024","IMG_7072-683x1024"]};
+ var items=[],n=0;function add(tg,s,t){items.push({id:'p'+(n++),s:s,t:t,tags:tg})}
+ function url(f){var d=f.indexOf('/')>-1?'':'2020/12/';return U+d+f+(/\.png$/.test(f)?'':'.jpg')}
+ named.forEach(function(x){add([x[0],'y2020'],U+x[1],x[2])});
+ [['y2020','Traditional tattoo · 2020'],['y2019','Traditional tattoo · 2019'],['y2018','Traditional tattoo · 2018'],['early','Early work']].forEach(function(g){G[g[0]].forEach(function(f){add([g[0]],url(f),g[1])})});
+ return{tags:tags,items:items};
+}
+var S;try{S=JSON.parse(localStorage.getItem(KEY))}catch(e){}
+if(!S||!S.items||!S.tags)S=defaults();
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));return true}catch(e){toast('Browser storage is full — demo limit. On the real site photos are stored online.');return false}}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function tagLabel(id){for(var i=0;i<S.tags.length;i++)if(S.tags[i].id===id)return S.tags[i].label;return''}
+var tt;function toast(m){var t=$('toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){t.classList.remove('on')},2600)}
+
+/* ---------- public gallery ---------- */
+var grid=$('grid'),fl=$('filters'),more=$('more'),cur='all',shown=36,view=[];
+function renderFilters(){
+ fl.innerHTML='';var vis=S.items.filter(function(i){return!i.hidden});
+ [{id:'all',label:'All work'}].concat(S.tags).forEach(function(c){
+  var n=c.id==='all'?vis.length:vis.filter(function(i){return i.tags.indexOf(c.id)>-1}).length;
+  if(!n&&c.id!=='all')return;
+  var b=document.createElement('button');b.type='button';b.innerHTML=esc(c.label)+'<i>'+n+'</i>';if(c.id===cur)b.className='on';
+  b.onclick=function(){cur=c.id;shown=36;renderFilters();render()};fl.appendChild(b);
+ });
+}
+function render(){
+ view=S.items.filter(function(i){return!i.hidden&&(cur==='all'||i.tags.indexOf(cur)>-1)});
+ grid.innerHTML='';
+ view.slice(0,shown).forEach(function(it,ix){
+  var b=document.createElement('button');b.className='tile';b.type='button';b.setAttribute('aria-label','Enlarge: '+it.t);
+  var im=new Image();im.loading='lazy';im.alt=it.t+' — tattoo by Tattoo Tobias, Antwerp';im.src=it.s;im.onerror=function(){b.remove()};
+  var c=document.createElement('span');c.className='cap';c.innerHTML='<small>'+esc(it.tags.map(tagLabel).filter(Boolean).join(' · '))+'</small>'+esc(it.t);
+  b.appendChild(im);b.appendChild(c);b.onclick=function(){openLb(ix)};grid.appendChild(b);
+ });
+ more.parentNode.style.display=view.length>shown?'flex':'none';
+ more.textContent='Show more work ('+Math.max(0,view.length-shown)+')';
+}
+more.onclick=function(){shown+=36;render()};
+function refresh(){if(cur!=='all'&&!tagLabel(cur))cur='all';renderFilters();render()}
+refresh();
+
+/* ---------- lightbox ---------- */
+var lb=$('lb'),li=$('lbimg'),lc=$('lbc'),pos=0,last;
+function show(){var it=view[pos];li.onerror=function(){li.onerror=null;li.src=it.s};li.src=it.s.indexOf('data:')===0?it.s:it.s.replace(/-\d+x\d+(\.jpg)$/,'$1');li.alt=it.t;lc.textContent=it.t+' · '+(pos+1)+' / '+view.length}
+function openLb(i){last=document.activeElement;pos=i;show();lb.classList.add('open');lb.querySelector('.x').focus()}
+function closeLb(){lb.classList.remove('open');li.removeAttribute('src');if(last)last.focus()}
+function step(d){pos=(pos+d+view.length)%view.length;show()}
+lb.querySelector('.x').onclick=closeLb;lb.querySelector('.p').onclick=function(){step(-1)};lb.querySelector('.n').onclick=function(){step(1)};
+lb.onclick=function(e){if(e.target===lb)closeLb()};
+document.addEventListener('keydown',function(e){if(lb.classList.contains('open')){if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft')step(-1);if(e.key==='ArrowRight')step(1)}else if(e.key==='Escape'&&adm.classList.contains('open'))closeAdm()});
+
+/* ---------- admin / mini cms ---------- */
+var adm=$('adm'),pending=[],ashown=24,logged=false;
+function openAdm(e){if(e)e.preventDefault();adm.classList.add('open');document.body.style.overflow='hidden';if(logged)renderAdm()}
+function closeAdm(){adm.classList.remove('open');document.body.style.overflow='';refresh();if(location.hash==='#admin')history.replaceState(null,'',location.pathname+location.search)}
+[].forEach.call(document.querySelectorAll('[data-admin]'),function(a){a.onclick=openAdm});
+$('a-close').onclick=closeAdm;
+$('a-go').onclick=function(){logged=true;$('a-login').hidden=true;$('a-main').hidden=false;renderAdm()};
+$('a-reset').onclick=function(){if(confirm('Reset the demo? Uploaded photos and tag changes in this browser are removed.')){localStorage.removeItem(KEY);S=defaults();pending=[];renderAdm();refresh();toast('Demo reset')}};
+if(location.hash==='#admin')openAdm();
+
+function chips(sel,onToggle){
+ var d=document.createElement('div');d.className='chips';
+ S.tags.forEach(function(t){var c=document.createElement('button');c.type='button';c.className='chip'+(sel.indexOf(t.id)>-1?' on':'');c.textContent=t.label;c.setAttribute('aria-pressed',sel.indexOf(t.id)>-1);
+  c.onclick=function(){var i=sel.indexOf(t.id);if(i>-1)sel.splice(i,1);else sel.push(t.id);c.classList.toggle('on');c.setAttribute('aria-pressed',i===-1);if(onToggle)onToggle()};d.appendChild(c)});
+ return d;
+}
+function renderTags(){
+ var ul=$('a-tags');ul.innerHTML='';
+ S.tags.forEach(function(t){var n=S.items.filter(function(i){return i.tags.indexOf(t.id)>-1}).length;
+  var li=document.createElement('li');li.innerHTML='<span>'+esc(t.label)+'<small>'+n+' photos</small></span>';
+  var b=document.createElement('button');b.type='button';b.textContent='✕';b.setAttribute('aria-label','Delete tag '+t.label);
+  b.onclick=function(){if(!confirm('Delete tag "'+t.label+'"? Photos stay, only the tag is removed.'))return;S.tags=S.tags.filter(function(x){return x.id!==t.id});S.items.forEach(function(i){i.tags=i.tags.filter(function(x){return x!==t.id})});save();renderAdm();toast('Tag deleted')};
+  li.appendChild(b);ul.appendChild(li)});
+}
+function addTag(){var v=$('a-newtag').value.trim();if(!v)return;var id='t'+Date.now().toString(36);
+ if(S.tags.some(function(t){return t.label.toLowerCase()===v.toLowerCase()})){toast('That tag already exists');return}
+ S.tags.push({id:id,label:v});$('a-newtag').value='';save();renderAdm();toast('Tag "'+v+'" added')}
+$('a-addtag').onclick=addTag;$('a-newtag').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();addTag()}});
+
+function renderPending(){
+ var box=$('a-pend');box.innerHTML='';
+ pending.forEach(function(p,ix){
+  var r=document.createElement('div');r.className='pend';
+  var im=new Image();im.src=p.s;im.alt='Preview of upload';r.appendChild(im);
+  var c=document.createElement('div');
+  var ti=document.createElement('input');ti.type='text';ti.value=p.t;ti.placeholder='Title, e.g. Panther head';ti.setAttribute('aria-label','Title');ti.oninput=function(){p.t=ti.value};
+  c.appendChild(ti);c.appendChild(chips(p.tags));
+  var acts=document.createElement('div');acts.className='chips';
+  var pub=document.createElement('button');pub.type='button';pub.className='abtn solid';pub.textContent='Publish';
+  pub.onclick=function(){S.items.unshift({id:'u'+Date.now().toString(36)+ix,s:p.s,t:p.t.trim()||'New work',tags:p.tags.slice(),up:1});
+   if(!save()){S.items.shift();return}pending.splice(ix,1);renderAdm();refresh();toast('Published — it is live in the gallery')};
+  var can=document.createElement('button');can.type='button';can.className='chip del';can.textContent='Cancel';can.onclick=function(){pending.splice(ix,1);renderPending()};
+  acts.appendChild(pub);acts.appendChild(can);c.appendChild(acts);r.appendChild(c);box.appendChild(r);
+ });
+}
+function handleFiles(files){
+ [].forEach.call(files,function(f){if(!/^image\//.test(f.type))return;
+  var rd=new FileReader();rd.onload=function(){var im=new Image();im.onload=function(){
+    var m=1100,k=Math.min(1,m/Math.max(im.width,im.height)),cv=document.createElement('canvas');cv.width=Math.round(im.width*k);cv.height=Math.round(im.height*k);
+    cv.getContext('2d').drawImage(im,0,0,cv.width,cv.height);
+    pending.push({s:cv.toDataURL('image/jpeg',.8),t:f.name.replace(/\.[^.]+$/,'').replace(/[-_]+/g,' '),tags:[]});renderPending()};im.src=rd.result};rd.readAsDataURL(f)});
+}
+var drop=$('a-drop');$('a-file').onchange=function(){handleFiles(this.files);this.value=''};
+['dragenter','dragover'].forEach(function(ev){drop.addEventListener(ev,function(e){e.preventDefault();drop.classList.add('over')})});
+['dragleave','drop'].forEach(function(ev){drop.addEventListener(ev,function(e){e.preventDefault();drop.classList.remove('over')})});
+drop.addEventListener('drop',function(e){handleFiles(e.dataTransfer.files)});
+
+function renderList(){
+ var q=$('a-search').value.trim().toLowerCase(),box=$('a-list');box.innerHTML='';
+ var list=S.items.filter(function(i){return!q||i.t.toLowerCase().indexOf(q)>-1||i.tags.map(tagLabel).join(' ').toLowerCase().indexOf(q)>-1});
+ $('a-count').textContent='('+S.items.length+')';
+ list.slice(0,ashown).forEach(function(it){
+  var r=document.createElement('div');r.className='arow'+(it.hidden?' hid':'');
+  var im=new Image();im.loading='lazy';im.src=it.s;im.alt=it.t;r.appendChild(im);
+  var c=document.createElement('div');
+  if(it.up){var bd=document.createElement('span');bd.className='badge';bd.textContent='New upload';c.appendChild(bd)}
+  var ti=document.createElement('input');ti.type='text';ti.value=it.t;ti.setAttribute('aria-label','Title');ti.onchange=function(){it.t=ti.value.trim()||'Untitled';save();toast('Title saved')};
+  c.appendChild(ti);c.appendChild(chips(it.tags,function(){save();renderTags()}));
+  var a=document.createElement('div');a.className='acts';
+  var h=document.createElement('button');h.type='button';h.className='chip';h.textContent=it.hidden?'Show':'Hide';h.onclick=function(){it.hidden=!it.hidden;save();renderList()};
+  var d=document.createElement('button');d.type='button';d.className='chip del';d.textContent='Delete';d.onclick=function(){if(!confirm('Delete "'+it.t+'"?'))return;S.items=S.items.filter(function(x){return x!==it});save();renderAdm();toast('Photo deleted')};
+  a.appendChild(h);a.appendChild(d);c.appendChild(a);r.appendChild(c);box.appendChild(r);
+ });
+ $('a-more').parentNode.style.display=list.length>ashown?'flex':'none';
+}
+$('a-search').oninput=function(){ashown=24;renderList()};$('a-more').onclick=function(){ashown+=24;renderList()};
+function renderAdm(){renderTags();renderPending();renderList()}
+
+/* ---------- ticker, header, reveal, booking ---------- */
+var words=['Clean lines','Solid colour','Strong contrasts','Designs that follow the body','Long-term readability','Classic & bold','By appointment only'],h='';
+for(var r=0;r<4;r++)words.forEach(function(w){h+='<span>'+w+'</span><span>★</span>'});$('tick').innerHTML=h;
+var hd=$('hdr');function sc(){hd.classList.toggle('scrolled',window.scrollY>40)}sc();window.addEventListener('scroll',sc,{passive:true});
+var rv=document.querySelectorAll('.rv');
+if('IntersectionObserver'in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08});rv.forEach(function(e){io.observe(e)})}
+else rv.forEach(function(e){e.classList.add('in')});
+$('bform').addEventListener('submit',function(e){e.preventDefault();var v=function(i){return $(i).value.trim()};
+ var body='Hi Tobias,\n\nGeneral idea: '+v('f-idea')+'\nPlacement: '+v('f-place')+'\nApproximate size: '+v('f-size')+'\nBlack or colour: '+v('f-col')+'\nPhone: '+v('f-tel')+'\n\n(Reference material attached)\n\n'+v('f-name');
+ location.href='mailto:hello@tattootobias.com?subject='+encodeURIComponent('Tattoo idea'+(v('f-name')?' — '+v('f-name'):''))+'&body='+encodeURIComponent(body)});
+})();
+</script>
+</body>
+</html>
