@@ -1,1 +1,657 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rayjo — Juwelier en diamantair in de Antwerpse diamantwijk</title>
+<meta name="description" content="Rayjo is een familiejuwelier in de Antwerpse diamantwijk sinds 1967. Verlovingsringen, juwelen op maat en gecertificeerde diamanten, ontworpen en gezet in eigen atelier aan de Rijfstraat.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta property="og:title" content="Rayjo — Juwelier en diamantair in de Antwerpse diamantwijk">
+<meta property="og:description" content="Familiebedrijf sinds 1967. Diamanten, juwelen op maat en een eigen atelier, vlak bij het Centraal Station van Antwerpen.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_BE">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230E2A24'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='36' fill='%23C8AA6E' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Mulish:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"JewelryStore","@id":"#business","name":"Rayjo","description":"Familiejuwelier in de Antwerpse diamantwijk sinds 1967, gespecialiseerd in diamanten, verlovingsringen en juwelen op maat, met een eigen atelier.","telephone":"+32 3 232 31 95","email":"info@rayjo.be","address":{"@type":"PostalAddress","streetAddress":"Rijfstraat 6","postalCode":"2018","addressLocality":"Antwerpen","addressCountry":"BE"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Wednesday"],"opens":"10:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"10:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"12:30"}],"currenciesAccepted":"EUR","areaServed":{"@type":"City","name":"Antwerpen"},"sameAs":["https://www.instagram.com/rayjojuwelen/","https://www.facebook.com/people/Rayjo-juwelen/100057416771015/"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Juwelen","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Product","name":"Verlovingsringen"}},{"@type":"Offer","itemOffered":{"@type":"Product","name":"Ringen"}},{"@type":"Offer","itemOffered":{"@type":"Product","name":"Trouwringen"}},{"@type":"Offer","itemOffered":{"@type":"Product","name":"Broches"}},{"@type":"Offer","itemOffered":{"@type":"Product","name":"Armbanden"}},{"@type":"Offer","itemOffered":{"@type":"Product","name":"Kettingen"}},{"@type":"Offer","itemOffered":{"@type":"Product","name":"Hangers"}},{"@type":"Offer","itemOffered":{"@type":"Product","name":"Oorringen"}},{"@type":"Offer","itemOffered":{"@type":"Product","name":"Asjuwelen"}}]}},{"@type":"WebSite","@id":"#website","name":"Rayjo","inLanguage":"nl-BE","publisher":{"@id":"#business"}}]}
+</script>
+<style>
+  :root{
+    --velvet:#0E2A24;--velvet-2:#123430;--rail:#0A1F1B;--tray:#174139;--tray-2:#1C4A41;
+    --cream:#EDE4D3;--cream-70:rgba(237,228,211,.7);--cream-45:rgba(237,228,211,.45);--line:rgba(237,228,211,.16);
+    --champagne:#C8AA6E;
+    --display:'Marcellus','Cinzel','Trajan Pro',Georgia,serif;
+    --text:'Mulish','Segoe UI','Helvetica Neue',Arial,sans-serif;
+    --pad:clamp(24px,5vw,80px);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--velvet);color:var(--cream);font-family:var(--text);font-size:17px;line-height:1.6;font-weight:300;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--champagne);outline-offset:4px;}
+  h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.08;letter-spacing:.015em;}
+  h2{font-size:clamp(34px,4.2vw,58px);}
+  h3{font-size:clamp(21px,2vw,26px);}
+  p{max-width:62ch;}
+  .lede{font-size:clamp(18px,1.5vw,21px);color:var(--cream-70);line-height:1.6;}
+  .wrap{max-width:1400px;margin:0 auto;}
 
+  /* Header — always visible, on top */
+  .site-header{position:sticky;top:0;z-index:40;background:var(--rail);border-bottom:1px solid rgba(200,170,110,.28);}
+  .site-header .bar{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:32px;padding:0 var(--pad);height:78px;max-width:1400px;margin:0 auto;}
+  .brand{font-family:var(--display);font-size:30px;letter-spacing:.14em;line-height:1;}
+  .brand small{display:block;font-family:var(--text);font-size:11px;letter-spacing:.06em;color:var(--champagne);margin-top:6px;font-weight:500;}
+  .nav{display:flex;justify-content:center;gap:28px;}
+  .nav a{font-family:var(--display);font-size:17px;color:var(--cream-70);padding:6px 0;border-bottom:1px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap;}
+  .nav a:hover,.nav a.active{color:var(--cream);border-bottom-color:var(--champagne);}
+  .tel{font-family:var(--display);font-size:17px;color:var(--cream);border:1px solid var(--champagne);border-radius:3px;padding:9px 16px;white-space:nowrap;transition:background .2s,color .2s;}
+  .tel:hover{background:var(--champagne);color:var(--rail);}
+  @media(max-width:1000px){
+    .site-header .bar{grid-template-columns:1fr auto;height:auto;padding-top:14px;gap:6px 16px;}
+    .brand{font-size:24px;}.brand small{display:none;}
+    .nav{grid-column:1/-1;justify-content:flex-start;gap:22px;overflow-x:auto;scrollbar-width:none;padding:6px 0 12px;}
+    .nav::-webkit-scrollbar{display:none;}
+    .tel{grid-row:1;grid-column:2;justify-self:end;font-size:15px;padding:8px 14px;}
+  }
+
+  /* Hero */
+  .hero{position:relative;overflow:hidden;min-height:86vh;display:flex;align-items:flex-end;padding:calc(var(--pad) + 40px) var(--pad) var(--pad);}
+  .hero .light{position:absolute;inset:-30%;pointer-events:none;background:radial-gradient(closest-side, rgba(200,170,110,.22), rgba(200,170,110,.06) 45%, transparent 70%);animation:drift 26s ease-in-out infinite alternate;transform:translate(20%,-25%);}
+  @keyframes drift{from{transform:translate(20%,-25%) scale(1);}to{transform:translate(-5%,-5%) scale(1.15);}}
+  .hero-body{position:relative;max-width:1400px;margin:0 auto;width:100%;}
+  .hero h1{font-size:clamp(40px,6.2vw,92px);max-width:16ch;text-wrap:balance;}
+  .hero .under{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end;margin-top:clamp(28px,4vw,48px);padding-top:28px;border-top:1px solid var(--line);}
+  @media(max-width:700px){.hero .under{grid-template-columns:1fr;}}
+  .hero .under p{font-size:18px;color:var(--cream-70);max-width:52ch;}
+  .btn{display:inline-block;padding:16px 28px;border-radius:3px;font-size:15px;font-weight:600;letter-spacing:.02em;transition:background .2s,color .2s,border-color .2s;}
+  .btn.gold{background:var(--champagne);color:var(--rail);border:1px solid var(--champagne);}
+  .btn.gold:hover{background:#D8BC82;}
+  .btn.ghost{border:1px solid var(--cream-45);color:var(--cream);}
+  .btn.ghost:hover{border-color:var(--champagne);color:var(--champagne);}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;}
+
+  section.block{padding:clamp(72px,9vw,120px) var(--pad);border-top:1px solid var(--line);scroll-margin-top:80px;}
+  .head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:40px;align-items:end;margin-bottom:clamp(36px,4vw,56px);}
+  @media(max-width:900px){.head{grid-template-columns:1fr;}}
+
+  /* Category tiles with the site's own photos */
+  .cats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  @media(max-width:1000px){.cats{grid-template-columns:repeat(2,1fr);}}
+  .cat{position:relative;border-radius:4px;overflow:hidden;aspect-ratio:4/3;border:1px solid rgba(237,228,211,.08);background:var(--tray);transition:border-color .25s;}
+  .cat img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.85);}
+  .cat span{position:absolute;left:0;right:0;bottom:0;padding:18px 20px;font-family:var(--display);font-size:clamp(20px,1.8vw,26px);background:linear-gradient(transparent, rgba(10,31,27,.92));}
+  .cat:hover{border-color:var(--champagne);}
+
+  /* Catalogue */
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;}
+  .tab{font-family:var(--text);font-size:14px;font-weight:500;color:var(--cream-70);background:transparent;border:1px solid var(--line);border-radius:999px;padding:9px 16px;cursor:pointer;transition:all .2s;}
+  .tab:hover{color:var(--cream);border-color:var(--cream-45);}
+  .tab.on{background:var(--champagne);color:var(--rail);border-color:var(--champagne);}
+  .tools{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:20px;font-size:14px;color:var(--cream-70);}
+  .tools select{background:var(--velvet-2);color:var(--cream);border:1px solid var(--line);border-radius:3px;padding:8px 12px;font-family:var(--text);font-size:14px;}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  @media(max-width:1200px){.grid{grid-template-columns:repeat(3,1fr);}}
+  @media(max-width:760px){.grid{grid-template-columns:repeat(2,1fr);gap:10px;}}
+  .card{background:var(--velvet-2);border:1px solid var(--line);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .25s;}
+  .card:hover{border-color:var(--champagne);}
+  .card .ph{background:var(--cream);aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;padding:10px;}
+  .card img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;display:block;}
+  .card .body{padding:14px 16px 18px;display:flex;flex-direction:column;gap:6px;flex:1;}
+  .card .name{font-size:14.5px;line-height:1.45;color:var(--cream);font-weight:400;}
+  .card .price{margin-top:auto;font-family:var(--display);font-size:18px;color:var(--champagne);}
+  .card .price small{font-family:var(--text);font-size:12px;color:var(--cream-45);margin-left:6px;}
+  .more{display:flex;justify-content:center;margin-top:28px;}
+  .note{margin-top:24px;font-size:15px;color:var(--cream-70);}
+
+  /* Process */
+  .process{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;counter-reset:step;}
+  @media(max-width:1100px){.process{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:560px){.process{grid-template-columns:1fr;}}
+  .stage{padding-top:22px;border-top:1px solid var(--champagne);}
+  .stage::before{counter-increment:step;content:counter(step);font-family:var(--display);font-size:15px;color:var(--champagne);letter-spacing:.1em;display:block;margin-bottom:14px;}
+  .stage h3{font-size:24px;}
+  .stage p{font-size:15px;color:var(--cream-70);margin-top:10px;}
+
+  /* Family */
+  .family{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(40px,6vw,96px);}
+  @media(max-width:900px){.family{grid-template-columns:1fr;}}
+  .family p + p{margin-top:16px;} .family p{color:var(--cream-70);}
+  .quote{font-family:var(--display);font-size:clamp(24px,2.6vw,36px);line-height:1.3;color:var(--cream);max-width:20ch;}
+  .quote-by{margin-top:14px;color:var(--cream-45);font-size:15px;}
+  .years{margin-top:36px;border-top:1px solid var(--line);}
+  .years div{display:grid;grid-template-columns:96px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:16px;color:var(--cream-70);}
+  .years div span:first-child{font-family:var(--display);font-size:22px;color:var(--champagne);}
+
+  /* Six C */
+  .cs{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;}
+  @media(max-width:1100px){.cs{grid-template-columns:repeat(3,1fr);}}
+  @media(max-width:560px){.cs{grid-template-columns:repeat(2,1fr);}}
+  .cc{background:var(--velvet-2);border:1px solid var(--line);border-radius:4px;padding:26px 20px 28px;}
+  .cc .big{font-family:var(--display);font-size:64px;line-height:.9;color:var(--champagne);}
+  .cc h3{font-size:20px;margin-top:14px;} .cc p{font-size:14.5px;color:var(--cream-70);margin-top:8px;}
+  .cc.ours{background:var(--tray);border-color:rgba(200,170,110,.5);}
+  .certs{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:clamp(40px,5vw,64px);padding-top:32px;border-top:1px solid var(--line);}
+  @media(max-width:900px){.certs{grid-template-columns:1fr;}}
+  .certs p{font-size:15px;color:var(--cream-70);margin-top:8px;}
+
+  .statement{background:var(--rail);}
+  .statement h2{font-size:clamp(30px,4.4vw,64px);max-width:22ch;text-wrap:balance;}
+  .reasons{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:clamp(40px,5vw,64px);}
+  @media(max-width:1100px){.reasons{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:560px){.reasons{grid-template-columns:1fr;}}
+  .reasons h3{font-size:22px;} .reasons p{font-size:15px;color:var(--cream-70);margin-top:8px;}
+
+  .team{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,96px);align-items:start;}
+  @media(max-width:900px){.team{grid-template-columns:1fr;}}
+  .roster{border-top:1px solid var(--line);margin-top:28px;}
+  .roster div{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:13px 0;border-bottom:1px solid var(--line);font-size:16px;}
+  .roster div span:first-child{font-family:var(--display);font-size:20px;} .roster div span:last-child{color:var(--cream-70);}
+  .pro{background:var(--velvet-2);border:1px solid var(--line);border-radius:4px;padding:36px;}
+  .pro h3{font-size:26px;} .pro p{color:var(--cream-70);margin-top:14px;font-size:16px;}
+  .pro ul{list-style:none;margin-top:20px;} .pro li{padding:10px 0;border-top:1px solid var(--line);font-size:16px;}
+
+  .visit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,96px);align-items:start;}
+  @media(max-width:900px){.visit{grid-template-columns:1fr;}}
+  .bigtel{font-family:var(--display);font-size:clamp(32px,4vw,56px);display:inline-block;margin-top:18px;border-bottom:1px solid var(--champagne);}
+  .bigtel:hover{color:var(--champagne);}
+  .hours{margin-top:30px;border-top:1px solid var(--line);}
+  .hours div{display:grid;grid-template-columns:1fr auto;padding:11px 0;border-bottom:1px solid var(--line);font-size:16px;}
+  .hours .closed span:last-child{color:var(--cream-45);}
+  .pnote{margin-top:22px;font-size:15px;color:var(--cream-70);}
+  address{font-style:normal;margin-top:22px;font-size:16px;line-height:1.7;} address a:hover{color:var(--champagne);}
+  .map{border:1px solid var(--line);border-radius:4px;overflow:hidden;min-height:440px;height:100%;background:var(--velvet-2);}
+  .map iframe{width:100%;height:100%;min-height:440px;border:0;display:block;filter:invert(.92) hue-rotate(160deg) saturate(.4) brightness(.9);}
+  footer{padding:36px var(--pad);border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13.5px;color:var(--cream-45);}
+
+  .hdr-right{display:flex;align-items:center;gap:12px;}
+  .wish-btn{font-family:var(--text);font-size:14px;font-weight:500;color:var(--cream-70);background:transparent;border:1px solid var(--line);border-radius:3px;padding:9px 14px;cursor:pointer;white-space:nowrap;}
+  .wish-btn span{display:inline-block;min-width:20px;padding:1px 6px;border-radius:999px;background:var(--champagne);color:var(--rail);font-weight:600;margin-left:6px;}
+  .wish-btn:hover{color:var(--cream);border-color:var(--champagne);}
+  @media(max-width:1000px){.hdr-right{grid-row:1;grid-column:2;justify-self:end;}.tel{grid-row:auto;grid-column:auto;}.wish-btn{padding:8px 10px;font-size:13px;}}
+  .filters{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:10px;margin-bottom:14px;}
+  @media(max-width:900px){.filters{grid-template-columns:1fr 1fr;}}
+  .filters input,.filters select{background:var(--velvet-2);color:var(--cream);border:1px solid var(--line);border-radius:3px;padding:12px 14px;font-family:var(--text);font-size:15px;width:100%;}
+  .filters input::placeholder{color:var(--cream-45);}
+  .filters input:focus,.filters select:focus{outline:none;border-color:var(--champagne);}
+  .linkbtn{background:none;border:0;color:var(--champagne);font-family:var(--text);font-size:14px;cursor:pointer;text-decoration:underline;text-underline-offset:3px;}
+  .card{cursor:pointer;position:relative;}
+  .card .ph{position:relative;}
+  .card .fav{position:absolute;top:10px;right:10px;width:34px;height:34px;border-radius:50%;border:1px solid rgba(10,31,27,.15);background:rgba(237,228,211,.9);color:var(--rail);font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+  .card .fav.on{background:var(--champagne);border-color:var(--champagne);}
+  .card .meta{font-size:12.5px;color:var(--cream-45);}
+  .card .quick{font-size:13px;color:var(--champagne);margin-top:2px;opacity:0;transition:opacity .2s;}
+  .card:hover .quick{opacity:1;}
+  .empty{padding:40px 0;color:var(--cream-70);}
+  .grid.mini{grid-template-columns:repeat(6,1fr);}
+  @media(max-width:1200px){.grid.mini{grid-template-columns:repeat(3,1fr);}}
+  @media(max-width:760px){.grid.mini{grid-template-columns:repeat(2,1fr);}}
+  .grid.mini .card .name{font-size:13px;} .grid.mini .card .price{font-size:15px;}
+
+  .scrim{position:fixed;inset:0;background:rgba(6,18,15,.72);opacity:0;pointer-events:none;transition:opacity .25s;z-index:60;}
+  body.open .scrim{opacity:1;pointer-events:auto;}
+  .drawer{position:fixed;top:0;right:0;bottom:0;width:min(1040px,100vw);background:var(--velvet);border-left:1px solid var(--line);z-index:70;transform:translateX(100%);transition:transform .32s cubic-bezier(.2,.7,.2,1);display:flex;flex-direction:column;overflow-y:auto;}
+  .drawer.form,.drawer.wish{width:min(520px,100vw);}
+  .drawer.show{transform:none;}
+  .drawer-bar{position:sticky;top:0;z-index:2;display:flex;align-items:center;gap:14px;padding:14px 22px;background:var(--rail);border-bottom:1px solid var(--line);}
+  .crumb{flex:1;font-size:14px;color:var(--cream-70);text-align:center;}
+  .nav-btn{background:none;border:1px solid var(--line);color:var(--cream);font-family:var(--text);font-size:14px;padding:8px 12px;border-radius:3px;cursor:pointer;}
+  .nav-btn:hover{border-color:var(--champagne);}
+  .close{background:none;border:0;color:var(--cream);font-size:30px;line-height:1;cursor:pointer;padding:0 4px;}
+  .drawer-body{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,44px);padding:clamp(20px,3vw,40px);}
+  @media(max-width:860px){.drawer-body{grid-template-columns:1fr;}}
+  .pd-photo{position:relative;background:var(--cream);border-radius:4px;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;padding:18px;align-self:start;}
+  .pd-photo img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;}
+  .zoom{position:absolute;right:12px;bottom:12px;background:rgba(10,31,27,.85);color:var(--cream);border:0;border-radius:3px;padding:8px 12px;font-family:var(--text);font-size:13px;cursor:pointer;}
+  .pd-info h2{font-size:clamp(24px,2.4vw,32px);line-height:1.2;}
+  .specs{display:grid;grid-template-columns:130px 1fr;gap:8px 16px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line);font-size:15px;}
+  .specs dt{color:var(--cream-45);} .specs dd{color:var(--cream);}
+  .pd-price{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);font-size:15px;color:var(--cream-70);}
+  .pd-price strong{font-family:var(--display);font-weight:400;font-size:34px;color:var(--champagne);margin:0 6px;}
+  .colors{margin-top:22px;} .lbl{font-size:14px;color:var(--cream-70);}
+  .swatches{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+  .swatches button{display:flex;align-items:center;gap:8px;background:var(--velvet-2);border:1px solid var(--line);color:var(--cream);border-radius:999px;padding:7px 14px 7px 8px;font-family:var(--text);font-size:14px;cursor:pointer;}
+  .swatches button i{width:18px;height:18px;border-radius:50%;display:inline-block;border:1px solid rgba(0,0,0,.2);}
+  .swatches button.on{border-color:var(--champagne);background:var(--tray);}
+  .chosen{margin-top:10px;font-size:13.5px;color:var(--champagne);min-height:18px;}
+  .pd-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;}
+  .pd-cta .btn{padding:14px 20px;font-size:14px;cursor:pointer;font-family:var(--text);}
+  button.btn.ghost{background:transparent;}
+  .heart.on{border-color:var(--champagne);color:var(--champagne);}
+  .trust{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;margin-top:26px;padding-top:18px;border-top:1px solid var(--line);font-size:14px;color:var(--cream-70);}
+  .trust li::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--champagne);margin-right:10px;vertical-align:middle;}
+  .pd-note{margin-top:18px;font-size:13px;color:var(--cream-45);}
+  .related{padding:0 clamp(20px,3vw,40px) 40px;}
+  .related h3{font-size:22px;margin-bottom:14px;}
+  .rel-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+  @media(max-width:860px){.rel-row{grid-template-columns:repeat(2,1fr);}}
+  .rel{background:var(--velvet-2);border:1px solid var(--line);border-radius:4px;overflow:hidden;cursor:pointer;}
+  .rel:hover{border-color:var(--champagne);}
+  .rel .ph{background:var(--cream);aspect-ratio:1/1;padding:8px;} .rel img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;}
+  .rel p{font-size:12.5px;padding:10px 12px;color:var(--cream-70);line-height:1.4;} .rel p b{display:block;color:var(--champagne);font-weight:500;margin-top:4px;}
+
+  .form-body{display:block;}
+  .fd-about{font-size:15px;color:var(--cream-70);margin-bottom:18px;}
+  .fld{margin-top:14px;} .fld.two{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .fld label{display:block;font-size:13.5px;color:var(--cream-70);margin-bottom:6px;}
+  .fld input,.fld textarea{width:100%;background:var(--velvet-2);color:var(--cream);border:1px solid var(--line);border-radius:3px;padding:12px 14px;font-family:var(--text);font-size:15px;}
+  .fld input:focus,.fld textarea:focus{outline:none;border-color:var(--champagne);}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;}
+  .chips button{background:transparent;border:1px solid var(--line);color:var(--cream-70);border-radius:999px;padding:7px 14px;font-family:var(--text);font-size:14px;cursor:pointer;}
+  .chips button.on{background:var(--champagne);border-color:var(--champagne);color:var(--rail);}
+  #fdSend{margin-top:20px;cursor:pointer;font-family:var(--text);}
+  .fd-ok{margin-top:16px;color:var(--champagne);font-size:15px;}
+  .wish-list{display:grid;gap:10px;}
+  .wl{display:grid;grid-template-columns:72px 1fr auto;gap:12px;align-items:center;background:var(--velvet-2);border:1px solid var(--line);border-radius:4px;padding:8px;cursor:pointer;}
+  .wl .ph{background:var(--cream);border-radius:3px;aspect-ratio:1/1;padding:4px;} .wl img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;}
+  .wl p{font-size:13.5px;line-height:1.4;} .wl p b{display:block;color:var(--champagne);font-weight:500;}
+  .wl button{background:none;border:0;color:var(--cream-45);font-size:20px;cursor:pointer;}
+  .lightbox{position:fixed;inset:0;background:rgba(6,18,15,.96);z-index:90;display:none;align-items:center;justify-content:center;padding:24px;}
+  .lightbox.show{display:flex;} .lightbox img{max-width:100%;max-height:100%;background:var(--cream);border-radius:4px;mix-blend-mode:normal;}
+  .lightbox .close{position:absolute;top:16px;right:22px;font-size:40px;}
+  body.open{overflow:hidden;}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;}.hero .light{animation:none;}.drawer{transition:none;}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="bar">
+    <a href="#top" class="brand">RAYJO<small>Juwelier en diamantair, Antwerpen</small></a>
+    <nav class="nav" aria-label="Hoofdnavigatie">
+      <a href="#collectie">Collectie</a>
+      <a href="#catalogus">Catalogus</a>
+      <a href="#atelier">Atelier</a>
+      <a href="#familie">Familie</a>
+      <a href="#diamant">Diamanten</a>
+      <a href="#team">Team</a>
+      <a href="#bezoek">Bezoek</a>
+    </nav>
+    <div class="hdr-right"><button class="wish-btn" id="wishBtn" aria-label="Verlanglijst">Verlanglijst <span id="wishCount">0</span></button><a href="tel:+3232323195" class="tel">03 232 31 95</a></div>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="light"></div>
+    <div class="hero-body">
+      <h1>Diamanten en juwelen, sinds 1967 met de hand gezet in ons atelier in de diamantwijk.</h1>
+      <div class="under">
+        <p>Rayjo is een familiezaak van drie generaties Van Camp, lid van de drie Antwerpse diamantbeurzen. Wij verkopen niet online. U kiest uw juweel in de toonzaal, in gesprek met de mensen die het maken.</p>
+        <div class="cta-row">
+          <a href="#bezoek" class="btn gold">Kom langs in de winkel</a>
+          <a href="#catalogus" class="btn ghost">Bekijk de catalogus</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="collectie" class="block"><div class="wrap">
+    <div class="head">
+      <h2>Wat wij voor u maken</h2>
+      <p class="lede">Elk stuk vertrekt van een tekening. Kies uit een archief van ruim zevenduizend ontwerpen, pas er een aan of begin van nul: het juweel bestaat uiteindelijk maar één keer.</p>
+    </div>
+    <div class="cats">
+      <a href="#catalogus" class="cat" data-go="verloving"><img src="https://rayjo.be/wp-content/uploads/2022/01/rayjo-home-2.jpg" alt="Verlovingsringen van Rayjo" loading="lazy"><span>Verlovingsringen</span></a>
+      <a href="#catalogus" class="cat" data-go="dr"><img src="https://rayjo.be/wp-content/uploads/2022/01/rayjo-home-3.jpg" alt="Ringen van Rayjo" loading="lazy"><span>Ringen</span></a>
+      <a href="#catalogus" class="cat" data-go="br"><img src="https://rayjo.be/wp-content/uploads/2022/01/rayjo-home-4.jpg" alt="Broches van Rayjo" loading="lazy"><span>Broches</span></a>
+      <a href="#catalogus" class="cat" data-go="ar"><img src="https://rayjo.be/wp-content/uploads/2022/01/rayjo-home-5.jpg" alt="Armbanden van Rayjo" loading="lazy"><span>Armbanden</span></a>
+      <a href="#catalogus" class="cat" data-go="ke"><img src="https://rayjo.be/wp-content/uploads/2022/01/rayjo-home-6.jpg" alt="Kettingen van Rayjo" loading="lazy"><span>Kettingen</span></a>
+      <a href="#catalogus" class="cat" data-go="ha"><img src="https://rayjo.be/wp-content/uploads/2022/01/rayjo-home-7.jpg" alt="Hangers van Rayjo" loading="lazy"><span>Hangers</span></a>
+      <a href="#catalogus" class="cat" data-go="oo"><img src="https://rayjo.be/wp-content/uploads/2022/01/rayjo-home-8.jpg" alt="Oorringen van Rayjo" loading="lazy"><span>Oorringen</span></a>
+      <a href="#catalogus" class="cat" data-go="as"><img src="https://rayjo.be/wp-content/uploads/2022/01/rayjo-home-9.jpg" alt="Asjuwelen van Rayjo" loading="lazy"><span>Asjuwelen</span></a>
+    </div>
+  </div></section>
+
+  <section id="catalogus" class="block"><div class="wrap">
+    <div class="head">
+      <h2>De volledige catalogus</h2>
+      <p class="lede">Alle modellen uit onze huidige collectie, met richtprijs. Elk stuk maken we in de goudkleur van uw keuze — geel, wit, rood, rosé of champagne — en met de diamant die bij uw budget past. De definitieve prijs bespreken we in de winkel.</p>
+    </div>
+    <div class="tabs" id="tabs"><button class="tab" data-g="alle">Alles</button><button class="tab" data-g="verloving">Verlovingsringen</button><button class="tab" data-g="dr">Ringen</button><button class="tab" data-g="tr">Trouwringen</button><button class="tab" data-g="hr">Herenringen</button><button class="tab" data-g="ar">Armbanden</button><button class="tab" data-g="ke">Kettingen</button><button class="tab" data-g="ha">Hangers</button><button class="tab" data-g="oo">Oorringen</button><button class="tab" data-g="br">Broches</button><button class="tab" data-g="as">Asjuwelen</button></div>
+    <div class="filters">
+      <input type="search" id="q" placeholder="Zoek op naam, bv. solitaire, saffier, milgrain…" aria-label="Zoeken in de catalogus">
+      <select id="price" aria-label="Prijsklasse"><option value="">Elke prijs</option><option value="0-2500">tot € 2.500</option><option value="2500-7500">€ 2.500 – 7.500</option><option value="7500-15000">€ 7.500 – 15.000</option><option value="15000-">vanaf € 15.000</option></select>
+      <select id="stone" aria-label="Edelsteen"><option value="">Elke steen</option><option value="diamant">diamant</option><option value="saffier">saffier</option><option value="parel">parel</option></select>
+      <select id="sort" aria-label="Sorteren"><option value="name">op naam</option><option value="asc">prijs oplopend</option><option value="desc">prijs aflopend</option></select>
+    </div>
+    <div class="tools"><span id="count"></span><button class="linkbtn" id="reset">Filters wissen</button></div>
+    <div class="grid" id="grid"></div>
+    <div class="more"><button class="btn ghost" id="moreBtn">Toon meer</button></div>
+    <p class="note">Prijzen zijn "vanaf"-prijzen inclusief 21% btw, afhankelijk van gewicht, karaat en kwaliteit van de steen. Ook na aankoop blijft u welkom: vergroten, verkleinen, steentjes toevoegen of vervangen, herstellen.</p>
+  </div></section>
+
+  <section id="atelier" class="block"><div class="wrap">
+    <div class="head">
+      <h2>Hoe een juweel bij ons ontstaat</h2>
+      <p class="lede">Traditioneel ambacht en hedendaagse techniek in één werkplaats. De software tekent tot in het kleinste detail, de printer maakt de mal, en het belangrijkste werk gebeurt nog altijd met de hand.</p>
+    </div>
+    <div class="process">
+      <div class="stage"><h3>Gesprek</h3><p>In de toonzaal bespreken we wat u zoekt, met het archief als vertrekpunt.</p></div>
+      <div class="stage"><h3>Ontwerp</h3><p>Onze designer werkt het juweel in 3D-software uit, tot elke zetting en elk profiel klopt.</p></div>
+      <div class="stage"><h3>Mal</h3><p>De 3D-printer maakt het wasmodel, dat in onze eigen wasspuiterij wordt klaargemaakt voor het gieten.</p></div>
+      <div class="stage"><h3>Zetting</h3><p>De diamantzetter zet elke steen met de hand. Hier beslist de ervaring over het resultaat.</p></div>
+      <div class="stage"><h3>Certificaat</h3><p>Een huiscertificaat met beschrijving en waardering; boven 1 karaat een HRD-, IGI- of GIA-certificaat.</p></div>
+    </div>
+  </div></section>
+
+  <section id="familie" class="block"><div class="wrap">
+    <div class="family">
+      <div>
+        <h2>Van Raymond en Jozef tot vandaag</h2>
+        <p style="margin-top:24px">De naam Rayjo is samengesteld uit Raymond en Jozef Van Camp, de broers die de zaak oprichtten. Ze begonnen als hecht familiebedrijf met een passie voor diamanten, en dat is het een halve eeuw later nog steeds.</p>
+        <p>Vandaag staan hun kinderen aan het roer. Johan is zaakvoerder, zijn zus Marleen bestuurder en broer Mark diamantzetter. Bij het vijftigjarig bestaan kreeg de zaak het Antwerp's Most Brilliant-label, een erkenning die om de twee jaar opnieuw wordt gecontroleerd.</p>
+        <div class="years">
+          <div><span>1967</span><span>Raymond en Jozef Van Camp openen de juwelierszaak in de diamantwijk.</span></div>
+          <div><span>2017</span><span>Vijftig jaar Rayjo en toekenning van het Antwerp's Most Brilliant-label.</span></div>
+          <div><span>Nu</span><span>Johan, Marleen en Mark Van Camp leiden de zaak, met een team van acht vakmensen.</span></div>
+        </div>
+      </div>
+      <div>
+        <p class="quote">"Een diamant staat voor zuiverheid en licht. Een symbool van liefde, gedragen als teken van toewijding."</p>
+        <p class="quote-by">Peter Singer</p>
+      </div>
+    </div>
+  </div></section>
+
+  <section id="diamant" class="block"><div class="wrap">
+    <div class="head">
+      <h2>Zes C's voor één steen</h2>
+      <p class="lede">Vier bepalen wereldwijd de waarde van een geslepen diamant. Twee voegen wij toe, uit ervaring op de Antwerpse beurzen.</p>
+    </div>
+    <div class="cs">
+      <div class="cc"><span class="big">C</span><h3>Carat</h3><p>Het gewicht, en dus de schijnbare grootte.</p></div>
+      <div class="cc"><span class="big">C</span><h3>Colour</h3><p>De kleur, of juist de afwezigheid ervan.</p></div>
+      <div class="cc"><span class="big">C</span><h3>Clarity</h3><p>Hoe zuiver de steen is, van binnen en van buiten.</p></div>
+      <div class="cc"><span class="big">C</span><h3>Cut</h3><p>Hoe de slijping het licht vangt en teruggeeft.</p></div>
+      <div class="cc ours"><span class="big">C</span><h3>Confidentiality</h3><p>U weet precies wat u koopt, en van wie.</p></div>
+      <div class="cc ours"><span class="big">C</span><h3>Category</h3><p>Tussen 1 en 0,95 karaat ziet u geen verschil. Op het prijskaartje wel.</p></div>
+    </div>
+    <div class="certs">
+      <div><h3>Huiscertificaat</h3><p>Bij elke aankoop een uitgebreide beschrijving en waardering van uw juweel.</p></div>
+      <div><h3>HRD, IGI of GIA</h3><p>Voor elke geslepen diamant boven 1 karaat een gemmologisch certificaat, met de zekerheid dat de steen natuurlijk is en niet uit een conflictgebied komt.</p></div>
+      <div><h3>Antwerp's Most Brilliant</h3><p>Kwaliteitslabel van de Stad Antwerpen en het Antwerp World Diamond Centre, dertig strenge voorwaarden, om de twee jaar gecontroleerd.</p></div>
+    </div>
+  </div></section>
+
+  <section class="block statement"><div class="wrap">
+    <h2>Kostbare juwelen koopt u niet met een muisklik. Daarom hebben wij geen webshop.</h2>
+    <div class="reasons">
+      <div><h3>Bekijken, voelen, dragen</h3><p>U past het juweel in de toonzaal voor u beslist.</p></div>
+      <div><h3>Persoonlijk advies</h3><p>Een ervaren juwelier denkt mee, ook als u nog niet weet wat u zoekt.</p></div>
+      <div><h3>Meteen mee naar huis</h3><p>Een stuk uit de collectie neemt u dezelfde dag mee.</p></div>
+      <div><h3>Midden in de stad</h3><p>Vlak bij het Centraal Station, te combineren met een dag in Antwerpen.</p></div>
+    </div>
+  </div></section>
+
+  <section id="team" class="block"><div class="wrap">
+    <div class="team">
+      <div>
+        <h2>Acht vakmensen</h2>
+        <div class="roster">
+          <div><span>Johan Van Camp</span><span>Zaakvoerder</span></div>
+          <div><span>Marleen Van Camp</span><span>Bestuurder</span></div>
+          <div><span>Mark Van Camp</span><span>Diamantzetter</span></div>
+          <div><span>Natasja</span><span>Productieverantwoordelijke</span></div>
+          <div><span>Dirk</span><span>Salesmanager</span></div>
+          <div><span>José</span><span>Goudsmid</span></div>
+          <div><span>Ann</span><span>Verantwoordelijke wasspuiterij</span></div>
+          <div><span>Shaho</span><span>3D-verantwoordelijke en designer</span></div>
+        </div>
+      </div>
+      <div class="pro">
+        <h3>Voor vakgenoten en kunstenaars</h3>
+        <p>Actief in de diamantsector en op zoek naar een onderaannemer? Ons atelier werkt ook voor collega's en realiseert kunstobjecten op maat.</p>
+        <ul><li>3D-ontwerp</li><li>Printen van wasmodellen</li><li>Gietwerk en halffabricaten</li><li>Herstellingen met laser</li></ul>
+      </div>
+    </div>
+  </div></section>
+
+  <section id="bezoek" class="block"><div class="wrap">
+    <div class="visit">
+      <div>
+        <h2>Kom langs in de Rijfstraat</h2>
+        <a href="tel:+3232323195" class="bigtel">03 232 31 95</a>
+        <div class="hours">
+          <div><span>Maandag</span><span>10 tot 17 u</span></div>
+          <div class="closed"><span>Dinsdag</span><span>gesloten</span></div>
+          <div><span>Woensdag</span><span>10 tot 17 u</span></div>
+          <div class="closed"><span>Donderdag</span><span>gesloten</span></div>
+          <div><span>Vrijdag</span><span>10 tot 14 u</span></div>
+          <div><span>Zaterdag</span><span>10 tot 12.30 u</span></div>
+          <div class="closed"><span>Zondag</span><span>gesloten</span></div>
+        </div>
+        <p class="pnote">U parkeert een uur gratis in Parking Vesting, Vestingstraat 30, op wandelafstand.</p>
+        <address>
+          Juwelen Rayjo nv<br>Rijfstraat 6, 2018 Antwerpen<br>
+          <a href="mailto:info@rayjo.be">info@rayjo.be</a><br>
+          <a href="https://www.instagram.com/rayjojuwelen/" target="_blank" rel="noopener">Instagram</a> en
+          <a href="https://www.facebook.com/people/Rayjo-juwelen/100057416771015/" target="_blank" rel="noopener">Facebook</a>
+        </address>
+      </div>
+      <div class="map">
+        <iframe src="https://www.google.com/maps?q=Rijfstraat+6,+2018+Antwerpen&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Locatie van Rayjo, Rijfstraat 6, Antwerpen"></iframe>
+      </div>
+    </div>
+  </div></section>
+
+  <section id="recent" class="block" hidden><div class="wrap">
+    <h2 style="font-size:clamp(26px,3vw,40px)">Onlangs bekeken</h2>
+    <div class="grid mini" id="recentGrid"></div>
+  </div></section>
+
+  <footer>
+    <span>© 2026 Rayjo nv, BTW BE 0453 178 357, RPR Antwerpen</span>
+    <span>Algemene voorwaarden, privacy- en cookieverklaring</span>
+  </footer>
+</main>
+
+<div class="scrim" id="scrim"></div>
+
+<aside class="drawer product" id="pd" aria-hidden="true" role="dialog" aria-label="Productdetails">
+  <div class="drawer-bar">
+    <button class="nav-btn" id="pdPrev" aria-label="Vorig juweel">‹ Vorige</button>
+    <span class="crumb" id="pdCrumb"></span>
+    <button class="nav-btn" id="pdNext" aria-label="Volgend juweel">Volgende ›</button>
+    <button class="close" id="pdClose" aria-label="Sluiten">×</button>
+  </div>
+  <div class="drawer-body">
+    <div class="pd-photo"><img id="pdImg" src="" alt=""><button class="zoom" id="pdZoom">Vergroot</button></div>
+    <div class="pd-info">
+      <h2 id="pdName"></h2>
+      <dl class="specs" id="pdSpecs"></dl>
+      <div class="pd-price"><span>vanaf</span> <strong id="pdPrice"></strong> <small>incl. 21% btw</small></div>
+      <div class="colors">
+        <p class="lbl">Dit juweel maken we voor u in:</p>
+        <div class="swatches" id="swatches">
+          <button data-c="wit goud"><i style="background:#D9D9D6"></i>wit goud</button>
+          <button data-c="geel goud"><i style="background:#D4B45A"></i>geel goud</button>
+          <button data-c="rood goud"><i style="background:#D48A5E"></i>rood goud</button>
+          <button data-c="platina"><i style="background:#A9ACAF"></i>platina</button>
+        </div>
+        <p class="chosen" id="chosen"></p>
+      </div>
+      <div class="pd-cta">
+        <button class="btn gold" id="pdAppt">Maak een afspraak</button>
+        <button class="btn ghost" id="pdAsk">Stel een vraag</button>
+        <button class="btn ghost heart" id="pdWish">♡ Bewaren</button>
+      </div>
+      <ul class="trust">
+        <li>Traditioneel vakmanschap</li><li>Familiebedrijf sinds 1967</li><li>Exclusieve collectie</li>
+        <li>Antwerp's Most Brilliant label</li><li>Echtheidscertificaat</li><li>Volledig op maat</li>
+      </ul>
+      <p class="pd-note">Richtprijs voor het getoonde model. Gewicht, karaat en kwaliteit van de stenen bepalen de definitieve prijs; die bespreken we samen in de winkel.</p>
+    </div>
+  </div>
+  <div class="related"><h3>Ook mooi</h3><div class="rel-row" id="pdRel"></div></div>
+</aside>
+
+<aside class="drawer form" id="fd" aria-hidden="true" role="dialog" aria-label="Afspraak of vraag">
+  <div class="drawer-bar"><span class="crumb" id="fdTitle">Maak een afspraak</span><button class="close" id="fdClose" aria-label="Sluiten">×</button></div>
+  <div class="drawer-body form-body">
+    <p class="fd-about" id="fdAbout"></p>
+    <div class="fld"><label>Uw naam</label><input type="text" placeholder="Voornaam en naam"></div>
+    <div class="fld two"><div><label>E-mail</label><input type="email" placeholder="naam@voorbeeld.be"></div><div><label>Telefoon</label><input type="tel" placeholder="04.."></div></div>
+    <div class="fld" id="fdWhen"><label>Wanneer past het u?</label>
+      <div class="chips"><button type="button">Maandag</button><button type="button">Woensdag</button><button type="button">Vrijdag</button><button type="button">Zaterdag</button></div>
+      <div class="chips"><button type="button">Voormiddag</button><button type="button">Namiddag</button></div>
+    </div>
+    <div class="fld"><label id="fdMsgLbl">Wat mogen we voor u klaarleggen?</label><textarea rows="4" placeholder="Ringmaat, gewenste goudkleur, budget, een idee dat u zelf hebt…"></textarea></div>
+    <button class="btn gold" id="fdSend">Verstuur</button>
+    <p class="fd-ok" id="fdOk" hidden>Bedankt. We bevestigen uw afspraak binnen één werkdag per e-mail of telefoon.</p>
+  </div>
+</aside>
+
+<aside class="drawer wish" id="wd" aria-hidden="true" role="dialog" aria-label="Verlanglijst">
+  <div class="drawer-bar"><span class="crumb">Uw verlanglijst</span><button class="close" id="wdClose" aria-label="Sluiten">×</button></div>
+  <div class="drawer-body">
+    <p class="fd-about">Bewaar de juwelen die u wilt passen. Toon deze lijst in de winkel, dan leggen we alles voor u klaar.</p>
+    <div id="wishList" class="wish-list"></div>
+    <div class="pd-cta" style="margin-top:20px"><button class="btn gold" id="wishAppt">Afspraak met deze lijst</button><button class="btn ghost" id="wishClear">Lijst leegmaken</button></div>
+  </div>
+</aside>
+
+<div class="lightbox" id="lb"><img id="lbImg" src="" alt=""><button class="close" id="lbClose" aria-label="Sluiten">×</button></div>
+
+<script>
+var PRODUCTS=[{"c":"dv","i":"a-07","p":6456.95,"n":"Alliance in wit goud met railzetting volledig gezet met diamanten","g":"verloving","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"a 07"},{"c":"dv","i":"a-280907","p":3811.75,"n":"Alliance ring in wit goud met griffenzetting half rondom gezet met 9 diamanten en blokjes tussenin","g":"verloving","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"a 280907"},{"c":"dv","i":"a-041702","p":2370.13,"n":"Alliance ring in wit goud met griffenzetting half rondom gezet met diamanten","g":"verloving","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"a 041702"},{"c":"dv","i":"a-84","p":2650.49,"n":"Alliancering in tijdloze uitvoering in goud met dubbele rij diamanten in pavézetting halfrond","g":"verloving","l":"18 kt goud","s":"diamant","v":"briljant","a":"a 84"},{"c":"dv","i":"a-73","p":5938.11,"n":"Alliancering in wit goud met diamanten in griffenzetting in wervelend ontwerp met vintage look","g":"verloving","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"a 73"},{"c":"dv","i":"a-69","p":3695.0,"n":"Alliancering in wit goud met dubbele rij ronde witte diamanten half gezet in pavé","g":"verloving","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"a 69"},{"c":"dv","i":"a-81","p":7840.1,"n":"Alliancering in wit goud met ronde diamanten in klauwzetting in uniek ontwerp","g":"verloving","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"a 81"},{"c":"dv","i":"a-83","p":2988.41,"n":"Alliancering met diamanten rozetjes in halfronde griffenzetting","g":"verloving","l":"18 kt goud","s":"diamant","v":"briljant","a":"a 83"},{"c":"dv","i":"a-85","p":2154.21,"n":"Alliancering met kleine witte diamanten in halfronde potjeszetting afgewerkt met milgrain","g":"verloving","l":"18 kt goud","s":"diamant","v":"briljant","a":"a 85"},{"c":"dv","i":"dr-2261","p":5283.6,"n":"Damesring in wit goud met asymmetrische opbouw met diamanten in griffenzetting","g":"verloving","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"dr 2261"},{"c":"dv","i":"a-71","p":2568.69,"n":"Eternityring in golvende vorm met ronde diamanten in griffenzetting","g":"verloving","l":"18 kt goud","s":"diamant","v":"briljant","a":"a 71"},{"c":"dv","i":"a-61","p":2413.73,"n":"Eternityring in wit goud half rondom gezet met kleine ronde diamanten in klauwzetting","g":"verloving","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"a 61"},{"c":"dv","i":"dr-2271","p":7025.31,"n":"Eternityring met 5 rijen ronde diamanten in klauwzetting","g":"verloving","l":"18 kt goud","s":"diamant","v":"briljant","a":"dr 2271"},{"c":"dv","i":"a-46","p":9026.79,"n":"Eternityring volledig rondom gezet met witte ronde diamanten in griffenzetting","g":"verloving","l":"18 kt goud","s":"diamant","v":"briljant","a":"a 46"},{"c":"dv","i":"dr-2498","p":6665.61,"n":"Gouden ring met 1 grote diamant en 2 rijen kleine diamantjes","g":"verloving","l":"18 kt goud","s":"diamant","v":"briljant","a":"dr 2498"},{"c":"sv","i":"sd-609","p":7685.45,"n":"Klassieke schitterende solitair en half rondom gezette kleinere diamanten in wit gouden ring","g":"verloving","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"sd 609"},{"c":"sv","i":"sd-602","p":12844.69,"n":"Klassieke solitair in wit gouden ring","g":"verloving","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"sd 602"},{"c":"sv","i":"sd-605","p":12817.91,"n":"Klassieke solitaire diamant in wit gouden ring","g":"verloving","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"sd 605"},{"c":"sv","i":"sd-588","p":7868.01,"n":"Klassieke solitaire diamant in witgouden ring met kleine diamanten","g":"verloving","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"sd 588"},{"c":"sv","i":"sd-615","p":19009.93,"n":"Klassieke solitaire ring in geel goud met prachtige diamant en half rondom gezette kleinere diamanten","g":"verloving","l":"18 kt geel goud","s":"diamant","v":"briljant","a":"sd 615"},{"c":"sv","i":"sd-601","p":7812.61,"n":"Klassieke solitaire ring in wit goud met diamant in dubbele griffenzetting","g":"verloving","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"sd 601"},{"c":"sv","i":"sd-613","p":5012.73,"n":"Klassieke solitaire ring in wit goud met diamant in fantasiekroon bezet met kleine diamantjes","g":"verloving","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"sd 613"},{"c":"sv","i":"sd-614","p":4859.43,"n":"Klassieke solitaire ring in wit goud met prachtige diamant en half rondom gezette kleinere diamanten","g":"verloving","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"sd 614"},{"c":"sv","i":"sd-603","p":7797.58,"n":"Klassieke solitaire ring in wit goud met schitterende diamant en half rondom gezette kleinere diamanten","g":"verloving","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"sd 603"},{"c":"sv","i":"sd-554","p":9852.59,"n":"Klassieke solitaire ring in wit goud met schitterende diamant en half rondom gezette kleinere diamanten","g":"verloving","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"sd 554"},{"c":"sv","i":"sd-604","p":10257.39,"n":"Klassieke verlovingsring in wit goud met solitaire diamant","g":"verloving","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"sd 604"},{"c":"sv","i":"sd-568","p":14419.65,"n":"Klassieke verlovingsring in wit goud met solitaire diamant in griffenzetting","g":"verloving","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"sd 568"},{"c":"sv","i":"sd-597","p":3574.8,"n":"Moderne solitair in spanzetting in geel gouden ring met brede gesatineerde band","g":"verloving","l":"18 kt geel goud","s":"diamant","v":"briljant","a":"sd 597"},{"c":"sv","i":"sd-561","p":2444.84,"n":"Originele verlovingsring in wit goud en roze goud met solitaire diamant in tensionzetting","g":"verloving","l":"18 kt wit en rosé goud","s":"diamant","v":"briljant","a":"sd 561"},{"c":"sv","i":"dr-2504","p":1933.39,"n":"Ring met 2 symmetrische bogen in geel goud, wit goud en rij diamanten","g":"verloving","l":"18 kt wit en geel goud","s":"diamant","v":"briljant","a":"dr 2504"},{"c":"sv","i":"sd-556","p":4461.89,"n":"Robuuste verlovingsring in wit goud met vierkante solitaire diamant","g":"verloving","l":"18 kt wit goud","s":"diamant","v":"carré","a":"sd 556"},{"c":"sv","i":"sd-600","p":1184.43,"n":"Solitair in geel gouden ring met bloem","g":"verloving","l":"18 kt geel goud","s":"diamant","v":"briljant","a":"sd 600"},{"c":"sv","i":"sd-599","p":1122.16,"n":"Solitair in wit gouden ring met bloemvorm","g":"verloving","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"sd 599"},{"c":"sv","i":"sd-592","p":9980.58,"n":"Solitaire diamant in witgouden ring bezet met kleine diamanten","g":"verloving","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"sd 592"},{"c":"sv","i":"sd-617","p":8097.28,"n":"Solitaire princessdiamant in wit goud met kleine diamantjes rondom en in de ringband","g":"verloving","l":"18 kt wit goud","s":"diamant","v":"princess","a":"sd 617"},{"c":"br","i":"bro-261","p":7438.75,"n":"Broche in wit goud in kokervorm en bezet met diamantjes","g":"br","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"bro 261"},{"c":"br","i":"bro-259","p":5421.63,"n":"Broche in wit goud met diamantjes in golvende vorm","g":"br","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"bro 259"},{"c":"ar","i":"bra-535","p":1703.66,"n":"Armband in goud met diamantjes gezet met interval in potjes","g":"ar","l":"18 kt goud","s":"diamant","v":"briljant","a":"bra 535"},{"c":"ar","i":"bra-553","p":15231.29,"n":"Armband in goud met witte diamanten in arabesque ontwerp","g":"ar","l":"18 kt goud","s":"diamant","v":"briljant","a":"bra 553"},{"c":"ar","i":"bra-557","p":8688.49,"n":"Armband in ronde draad gezet met dubbele rij diamantjes in pavé","g":"ar","l":"18 kt goud","s":"diamant","v":"briljant","a":"bra 557"},{"c":"ar","i":"bra-564","p":14483.23,"n":"Armband in wit en rood goud met dubbele rij diamantjes in pavé tot in de helft","g":"ar","l":"18 kt rood goud","s":"diamant","v":"briljant","a":"bra 564"},{"c":"ar","i":"bra-528","p":12702.53,"n":"Armband in wit goud met dubbele rij diamantjes in open zetting","g":"ar","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"bra 528"},{"c":"ar","i":"bra-562","p":1090.86,"n":"Losse armband in wit goud met in het midden diamantjes met milgrain","g":"ar","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"bra 562"},{"c":"ar","i":"bra-489","p":16418.18,"n":"Originele schakelarmband met vlakken gevuld met witte ronde diamanten in kastzetting","g":"ar","l":"18 kt goud","s":"diamant","v":"briljant","a":"bra 489"},{"c":"ar","i":"bra-500","p":14099.76,"n":"Ronde schakelarmband met kleine en grotere ringen in rood goud met ingezette diamanten","g":"ar","l":"18 kt rood goud","s":"diamant","v":"briljant","a":"bra 500"},{"c":"ar","i":"bra-476","p":6339.81,"n":"Schakelarmband in wit goud deels bezet met dubbele rij kleine witte diamanten","g":"ar","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"bra 476"},{"c":"ar","i":"bra-496","p":18337.38,"n":"Schakelarmband in wit goud met asymmetrische zetting van kleine ronde diamanten","g":"ar","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"bra 496"},{"c":"ar","i":"bra-480","p":9447.64,"n":"Schakelarmband in wit goud met kleine diamanten in griffenzetting","g":"ar","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"bra 480"},{"c":"ar","i":"bra-566","p":2460.94,"n":"Slavenarmband in geel goud met diamantjes gezet in aparte pavézettingen","g":"ar","l":"18 kt geel goud","s":"diamant","v":"briljant","a":"bra 566"},{"c":"ar","i":"bra-565","p":2347.36,"n":"Slavenarmband in geel goud met twee rijen diamantjes gezet in aparte pavézettingen","g":"ar","l":"18 kt geel goud","s":"diamant","v":"briljant","a":"bra 565"},{"c":"ar","i":"bra-569","p":4643.69,"n":"Slavenarmband in goud met diamantjes in milgrain","g":"ar","l":"18 kt goud","s":"diamant","v":"briljant","a":"bra 569"},{"c":"ar","i":"bra-537","p":6092.99,"n":"Slavenarmband in goud tot in de helft gezet met witte diamanten","g":"ar","l":"18 kt goud","s":"diamant","v":"briljant","a":"bra 537"},{"c":"ar","i":"bra-563","p":5608.46,"n":"Slavenarmband in wit goud gezet met diamantjes in griffenzettingen","g":"ar","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"bra 563"},{"c":"ar","i":"bra-567","p":4883.46,"n":"Slavenarmband in wit goud met diamantjes gezet in aparte open zettingen","g":"ar","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"bra 567"},{"c":"ar","i":"bra-560","p":6481.31,"n":"Spiraalarmband met centraal gezette diamantjes in blokzetting","g":"ar","l":"18 kt goud","s":"diamant","v":"briljant","a":"bra 560"},{"c":"ar","i":"bra-561","p":14953.08,"n":"Tennisarmband in wit goud met witte diamanten rondom gezet in konische blokzetting","g":"ar","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"bra 561"},{"c":"ar","i":"bra-501","p":10600.99,"n":"Tennisarmband in witgoud volledig bezet met witte diamanten in klauwzetting","g":"ar","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"bra 501"},{"c":"ke","i":"col-386","p":3193.49,"n":"Collier in wit goud met asymmetrische losse helften in een origineel en strak design","g":"ke","l":"18 kt wit goud","s":"","v":"","a":"col 386"},{"c":"ke","i":"col-408","p":3493.2,"n":"Halsketting met fijne schakeltjes in wit goud en 13 diamanten in kastzetting","g":"ke","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"col 408"},{"c":"ke","i":"col-381","p":23840.21,"n":"Halsketting met grove schakels in wit goud en geel goud en bezet met diamanten","g":"ke","l":"18 kt wit en geel goud","s":"diamant","v":"briljant","a":"col 381"},{"c":"ke","i":"col-411","p":15905.39,"n":"Ketting in wit goud met witte diamantjes in blokjeszetting","g":"ke","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"col 411"},{"c":"ke","i":"col-226","p":12883.76,"n":"Knoopcollier gezet met zwarte en witte diamantjes in pavé","g":"ke","l":"18 kt goud","s":"diamant","v":"briljant","a":"col 226"},{"c":"ke","i":"col-413","p":6888.79,"n":"Moderne collier in wit en geel goud met diamantjes in griffen","g":"ke","l":"18 kt geel goud","s":"diamant","v":"briljant","a":"col 413"},{"c":"ke","i":"col-227","p":13373.13,"n":"Schakelketting in wit goud met afwisselend schakels met diamanten in modern design","g":"ke","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"col 227"},{"c":"ke","i":"col-414","p":10542.98,"n":"Voorgevormde collier in wit goud met verschillende diamantjes in griffen","g":"ke","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"col 414"},{"c":"ke","i":"col-416","p":6249.88,"n":"Voorgevormde ketting in wit goud gezet met diamantjes milgrainpotjes in het midden","g":"ke","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"col 416"},{"c":"ke","i":"col-410","p":11456.36,"n":"Voorgevormde ronde halsketting deels bezet met kleine diamanten in railzetting","g":"ke","l":"18 kt goud","s":"diamant","v":"briljant","a":"col 410"},{"c":"ha","i":"p-1174","p":6992.16,"n":"Arabesque hanger in wit goud volledig gezet met diamantjes","g":"ha","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"p 1174"},{"c":"ha","i":"p-1072","p":12669.39,"n":"Arabesque hanger in wit goud volledig gezet met diamantjes in kasteelzetting","g":"ha","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"p 1072"},{"c":"ha","i":"p-1102","p":4161.6,"n":"Asjuweel hanger in goud en ingewerkt diamanten hart","g":"ha","l":"18 kt goud","s":"diamant","v":"briljant","a":"p 1102"},{"c":"ha","i":"p-1228","p":2443.95,"n":"Bloemvormige hanger in geel en rood goud volledig bezet met diamantjes","g":"ha","l":"18 kt rood goud","s":"diamant","v":"briljant","a":"p 1228"},{"c":"ha","i":"p-1157","p":1740.49,"n":"Cirkelvormige gouden hanger volledig gezet met diamantjes","g":"ha","l":"18 kt goud","s":"diamant","v":"briljant","a":"p 1157"},{"c":"ha","i":"p-1237","p":4490.83,"n":"Cirkelvormige hanger in wit goud gevuld met diamanten en pastelkleurige saffieren","g":"ha","l":"18 kt wit goud","s":"diamant, saffier","v":"briljant","a":"p 1237"},{"c":"ha","i":"p-1230","p":5083.94,"n":"Druppelvormige arabesque hanger in geel goud en diamanten","g":"ha","l":"18 kt geel goud","s":"diamant","v":"briljant","a":"p 1230"},{"c":"ha","i":"p-1120","p":6286.69,"n":"Druppelvormige hanger in goud volledig bezet met diamantjes","g":"ha","l":"18 kt goud","s":"diamant","v":"briljant","a":"p 1120"},{"c":"ha","i":"p-1236","p":3678.39,"n":"Gouden hanger in de vorm van een visje gezet met witte en fancy colour diamantjes","g":"ha","l":"18 kt goud","s":"diamant","v":"briljant","a":"p 1236"},{"c":"ha","i":"p-1232","p":4738.91,"n":"Gouden hanger met solitaire diamant en entourage van kleine diamanten","g":"ha","l":"18 kt goud","s":"diamant","v":"briljant","a":"p 1232"},{"c":"ha","i":"p-1253","p":2005.14,"n":"Hanger in de vorm van een hart in wit goud en ijswitte diamanten","g":"ha","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"p 1253"},{"c":"ha","i":"p-1040","p":6193.8,"n":"Hanger in knoopvorm gemaakt uit zwart goud en witte diamanten","g":"ha","l":"18 kt zwart goud","s":"diamant","v":"briljant","a":"p 1040"},{"c":"ha","i":"p-1167","p":2570.56,"n":"Hanger in wit goud gezet met grote solitaire diamant en diverse kleine diamantjes","g":"ha","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"p 1167"},{"c":"ha","i":"p-1032","p":2377.66,"n":"Hanger in wit goud in hartjesvorm met ingezette diamanten","g":"ha","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"p 1032"},{"c":"ha","i":"p-1286","p":8043.44,"n":"Hanger in wit goud met bloem en sterren volledig gezet met diamantjes","g":"ha","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"p 1286"},{"c":"ha","i":"p-976","p":1754.44,"n":"Hanger in wit goud met rij kleine diamanten en parel aan het uiteinde","g":"ha","l":"18 kt wit goud","s":"diamant, parel","v":"briljant","a":"p 976"},{"c":"ha","i":"p-1178","p":3922.21,"n":"Hanger in wit goud met sierlijke krullen bezet met diamantjes","g":"ha","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"p 1178"},{"c":"ha","i":"p-1256","p":2774.21,"n":"Hanger in wit goud met solitaire diamant in serti clos","g":"ha","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"p 1256"},{"c":"ha","i":"p-1259","p":3042.06,"n":"Hanger met 2 cirkels in wit goud en centrale spiraal gevuld met witte diamantjes","g":"ha","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"p 1259"},{"c":"ha","i":"p-1264","p":4181.28,"n":"Klassieke dubbele ovalen hanger in wit goud volledig gezet met diamantjes","g":"ha","l":"18 kt wit goud","s":"diamant","v":"ovaal","a":"p 1264"},{"c":"ha","i":"p-1247","p":4397.39,"n":"Klassieke hanger in rood goud met zoetwaterparel, witte en roze-paarse diamantjes","g":"ha","l":"18 kt rood goud","s":"diamant, parel","v":"briljant","a":"p 1247"},{"c":"ha","i":"p-1268","p":3962.03,"n":"Klassieke hanger in wit goud met carré van 4 prinsesdiamanten en entourage van briljanten","g":"ha","l":"18 kt wit goud","s":"diamant","v":"princess","a":"p 1268"},{"c":"ha","i":"p-1260","p":1731.26,"n":"Klassieke hanger in wit goud met diamantjes in milgrain","g":"ha","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"p 1260"},{"c":"ha","i":"p-975","p":5058.94,"n":"Klassieke hanger in wit goud met kleine diamanten in 5 rijen","g":"ha","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"p 975"},{"c":"ha","i":"p-1272","p":2909.4,"n":"Klassieke hanger in wit goud met rozet van overlappende diamantjes","g":"ha","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"p 1272"},{"c":"ha","i":"p-1266","p":2164.56,"n":"Klassieke rasterhanger in rood goud met zoetwaterparel en mix van roze en witte diamantjes","g":"ha","l":"18 kt rood goud","s":"diamant, parel","v":"briljant","a":"p 1266"},{"c":"ha","i":"p-1226","p":3731.04,"n":"Klassieke ronde hanger in wit goud met witte en blauwe diamanten","g":"ha","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"p 1226"},{"c":"ha","i":"p-1207","p":2101.28,"n":"Kussenvormige hanger in wit goud volledig gevuld met diamantjes","g":"ha","l":"18 kt wit goud","s":"diamant","v":"cushion","a":"p 1207"},{"c":"ha","i":"p-1144","p":1500.31,"n":"Minimalistische hanger in wit en rood goud met 1 rij diamantjes","g":"ha","l":"18 kt rood goud","s":"diamant","v":"briljant","a":"p 1144"},{"c":"ha","i":"p-774","p":1541.2,"n":"Minimalistische hanger in wit goud met vierkante diamant in tensionzetting","g":"ha","l":"18 kt wit goud","s":"diamant","v":"carré","a":"p 774"},{"c":"ha","i":"p-1204","p":4089.7,"n":"Minimalistische hanger met 4 cirkels waarvan 1 volledig bezet met diamantjes","g":"ha","l":"18 kt goud","s":"diamant","v":"briljant","a":"p 1204"},{"c":"ha","i":"p-1257","p":4182.5,"n":"Moderne hanger in wit en rood goud met dubbele rij diamantjes","g":"ha","l":"18 kt rood goud","s":"diamant","v":"briljant","a":"p 1257"},{"c":"ha","i":"p-1112","p":3012.25,"n":"Moderne hanger in wit goud afgezoomd met 2 rijtjes diamanten","g":"ha","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"p 1112"},{"c":"ha","i":"p-1019","p":2952.06,"n":"Moderne hanger in wit goud met asymmetrische rijen diamanten","g":"ha","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"p 1019"},{"c":"ha","i":"p-1274","p":2585.41,"n":"Pavé schijfje in wit goud met diamantjes","g":"ha","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"p 1274"},{"c":"ha","i":"p-1181","p":1649.66,"n":"Peervormige gouden hanger met blauwe saffier omgeven door witte diamantjes","g":"ha","l":"18 kt goud","s":"diamant, saffier","v":"peer","a":"p 1181"},{"c":"ha","i":"p-1223","p":3627.54,"n":"Rechthoekige wit gouden hanger met arabesque figuur met diamanten","g":"ha","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"p 1223"},{"c":"ha","i":"p-1109","p":2876.08,"n":"Ronde hanger met solitaire diamant omgeven door kleinere diamanten","g":"ha","l":"18 kt goud","s":"diamant","v":"briljant","a":"p 1109"},{"c":"ha","i":"p-1267","p":2989.2,"n":"Uiltjeshanger in goud met cognackleurige diamantjes in de oogjes","g":"ha","l":"18 kt goud","s":"diamant","v":"briljant","a":"p 1267"},{"c":"oo","i":"ob-778","p":4994.86,"n":"Arabesque hangende gouden oorbellen bezet met witte diamantjes","g":"oo","l":"18 kt goud","s":"diamant","v":"briljant","a":"ob 778"},{"c":"oo","i":"ob-677","p":8777.86,"n":"Diamanten hangers in wit goud","g":"oo","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"ob 677"},{"c":"oo","i":"ob-618","p":2379.76,"n":"Elegante oorringen met zwarte parel en enkele rij witte diamanten","g":"oo","l":"18 kt goud","s":"diamant, parel","v":"briljant","a":"ob 618"},{"c":"oo","i":"ob-733","p":2864.8,"n":"Geel gouden hangertjes met diamant in wit goud gezet","g":"oo","l":"18 kt wit en geel goud","s":"diamant","v":"briljant","a":"ob 733"},{"c":"oo","i":"ob-740","p":10224.86,"n":"Gouden arabesque oorbellen met diamanten","g":"oo","l":"18 kt goud","s":"diamant","v":"briljant","a":"ob 740"},{"c":"oo","i":"ob-798","p":3689.2,"n":"Gouden bolletjes oorringen met witte diamantjes","g":"oo","l":"18 kt goud","s":"diamant","v":"briljant","a":"ob 798"},{"c":"oo","i":"ob-765","p":2157.39,"n":"Gouden creolen met witte diamantjes","g":"oo","l":"18 kt goud","s":"diamant","v":"briljant","a":"ob 765"},{"c":"oo","i":"ob-799","p":1849.66,"n":"Gouden creool oorbellen met diamantjes in milgrain","g":"oo","l":"18 kt goud","s":"diamant","v":"briljant","a":"ob 799"},{"c":"oo","i":"ob-810","p":2178.58,"n":"Gouden creool oorbellen met witte diamanten","g":"oo","l":"18 kt goud","s":"diamant","v":"briljant","a":"ob 810"},{"c":"oo","i":"ob-791","p":3782.34,"n":"Gouden hangers met grote en kleine diamanten in milgrain","g":"oo","l":"18 kt goud","s":"diamant","v":"briljant","a":"ob 791"},{"c":"oo","i":"ob-767","p":9986.43,"n":"Gouden oorhangers met witte en bruine diamanten","g":"oo","l":"18 kt goud","s":"diamant","v":"briljant","a":"ob 767"},{"c":"oo","i":"ob-741","p":5256.81,"n":"Gouden oorstekers met solitaire diamant","g":"oo","l":"18 kt goud","s":"diamant","v":"briljant","a":"ob 741"},{"c":"oo","i":"ob-704","p":4296.08,"n":"Gouden solitair diamantoorbellen","g":"oo","l":"18 kt goud","s":"diamant","v":"briljant","a":"ob 704"},{"c":"oo","i":"ob-720","p":575.39,"n":"Hangende gouden diamanten oorbellen met parel","g":"oo","l":"18 kt goud","s":"diamant, parel","v":"briljant","a":"ob 720"},{"c":"oo","i":"ob-779","p":1726.94,"n":"Hangende gouden oorbellen met diamanten","g":"oo","l":"18 kt goud","s":"diamant","v":"briljant","a":"ob 779"},{"c":"oo","i":"ob-672","p":12022.45,"n":"Hangers in wit goud met diamanten in krullen en ovalen","g":"oo","l":"18 kt wit goud","s":"diamant","v":"ovaal","a":"ob 672"},{"c":"oo","i":"ob-653","p":5981.25,"n":"Knoopoorbellen in zwart en wit goud met diamantjes","g":"oo","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"ob 653"},{"c":"oo","i":"ob-784","p":2755.74,"n":"Oorbellen in bladvorm in geel goud met in het midden rij diamantjes","g":"oo","l":"18 kt geel goud","s":"diamant","v":"briljant","a":"ob 784"},{"c":"oo","i":"ob-807","p":8471.0,"n":"Oorbellen in goud met diamantjes in de vorm van druiventrosjes","g":"oo","l":"18 kt goud","s":"diamant","v":"briljant","a":"ob 807"},{"c":"oo","i":"ob-583","p":4292.53,"n":"Oorbellen in wit goud bezet met rijen ronde witte diamantjes","g":"oo","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"ob 583"},{"c":"oo","i":"ob-772","p":2638.49,"n":"Oorbellen in wit goud gezet met diamantjes in haaks kruis","g":"oo","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"ob 772"},{"c":"oo","i":"ob-788","p":3798.08,"n":"Oorbellen in wit goud met diamanten blaadjes","g":"oo","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"ob 788"},{"c":"oo","i":"ob-401","p":1492.44,"n":"Oorbellen in wit goud met diamanten in tensionzettingen","g":"oo","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"ob 401"},{"c":"oo","i":"ob-777","p":11292.06,"n":"Oorbellen met grote centrale diamant omringd door kleinere diamanten","g":"oo","l":"18 kt goud","s":"diamant","v":"briljant","a":"ob 777"},{"c":"oo","i":"ob-658","p":2112.78,"n":"Oorringen in wit goud gezet met diamantjes op een rij","g":"oo","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"ob 658"},{"c":"oo","i":"ob-639","p":2967.29,"n":"Originele oorringen in geel goud met ronde solitaire diamant in tensionzetting","g":"oo","l":"18 kt geel goud","s":"diamant","v":"briljant","a":"ob 639"},{"c":"oo","i":"ob-804","p":7898.85,"n":"Rechthoekige wit gouden oorbellen met diamanten","g":"oo","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"ob 804"},{"c":"oo","i":"ob-488","p":2719.03,"n":"Ronde oorringen in wit goud bezet met ronde diamanten","g":"oo","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"ob 488"},{"c":"oo","i":"ob-762","p":7384.66,"n":"Rood gouden oorbellen met witte en fancy brown diamantjes","g":"oo","l":"18 kt rood goud","s":"diamant","v":"briljant","a":"ob 762"},{"c":"oo","i":"ob-801","p":4200.76,"n":"Vierkante gouden oorstekers met vierkante prinsesdiamantjes","g":"oo","l":"18 kt goud","s":"diamant","v":"princess","a":"ob 801"},{"c":"oo","i":"ob-747","p":5607.01,"n":"Wit gouden arabesque diamanten oorbellen","g":"oo","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"ob 747"},{"c":"as","i":"aj-2","p":895.13,"n":"Asjuweel in geel goud in de vorm van een envelop","g":"as","l":"18 kt geel goud","s":"","v":"","a":"aj 2"},{"c":"as","i":"aj-4","p":900.63,"n":"Asjuweel in geel goud in hartvorm met vingerafdruk","g":"as","l":"18 kt geel goud","s":"","v":"","a":"aj 4"},{"c":"dr","i":"dr-2442","p":4773.76,"n":"Moderne ring in wit en geel goud met dubbele rij diamanten gezet in pavé","g":"dr","l":"18 kt geel goud","s":"diamant","v":"briljant","a":"dr 2442"},{"c":"dr","i":"dr-2570","p":937.39,"n":"Ring in geel goud met 3 diamanten in milgrain","g":"dr","l":"18 kt geel goud","s":"diamant","v":"briljant","a":"dr 2570"},{"c":"dr","i":"dr-2495","p":5231.91,"n":"Ring in geel goud met 5 banden en 1 rij diamantjes in open zetting en 5 diamantjes in potjes","g":"dr","l":"18 kt geel goud","s":"diamant","v":"briljant","a":"dr 2495"},{"c":"dr","i":"dr-2515","p":11307.31,"n":"Ring in geel goud met arabesque motief en witte diamantjes","g":"dr","l":"18 kt geel goud","s":"diamant","v":"briljant","a":"dr 2515"},{"c":"dr","i":"dr-2386","p":12439.79,"n":"Ring in geel goud met arabesquemotief en witte diamantjes","g":"dr","l":"18 kt geel goud","s":"diamant","v":"briljant","a":"dr 2386"},{"c":"dr","i":"dr-2503","p":978.43,"n":"Ring in geel goud met boog diamantjes gezet in wit goud","g":"dr","l":"18 kt wit en geel goud","s":"diamant","v":"briljant","a":"dr 2503"},{"c":"ed","i":"dr-2553","p":2763.88,"n":"Ring in geel goud met centrale roze saffier geflankeerd door 6 witte diamantjes","g":"verloving","l":"18 kt geel goud","s":"diamant, saffier","v":"briljant","a":"dr 2553"},{"c":"dr","i":"dr-2486","p":15173.4,"n":"Ring in goud met 5 diamanten in griffenzetting","g":"dr","l":"18 kt goud","s":"diamant","v":"briljant","a":"dr 2486"},{"c":"dr","i":"dr-2530","p":18619.05,"n":"Ring in goud gezet met 1 grote diamant in griffen en kleine diamantjes in pavé","g":"dr","l":"18 kt goud","s":"diamant","v":"briljant","a":"dr 2530"},{"c":"dr","i":"dr-2527","p":3163.41,"n":"Ring in goud gezet met diamanten in de vorm van 3 blaadjes","g":"dr","l":"18 kt goud","s":"diamant","v":"briljant","a":"dr 2527"},{"c":"dr","i":"dr-2529","p":11126.58,"n":"Ring in goud gezet met grote diamant en entourage van kleine diamanten","g":"dr","l":"18 kt goud","s":"diamant","v":"briljant","a":"dr 2529"},{"c":"ed","i":"dr-2523","p":10012.8,"n":"Ring in goud met 3 banden met 3 gekleurde diamanten en 3 rijen kleine diamantjes","g":"verloving","l":"18 kt goud","s":"diamant","v":"briljant","a":"dr 2523"},{"c":"dr","i":"dr-2559","p":3952.56,"n":"Ring in goud met 6 diamanten in bijzonder ontwerp","g":"dr","l":"18 kt goud","s":"diamant","v":"briljant","a":"dr 2559"},{"c":"dr","i":"dr-2363","p":14895.54,"n":"Ring in goud met 7 rijen diamantjes rondom gezet in pavé","g":"dr","l":"18 kt goud","s":"diamant","v":"briljant","a":"dr 2363"},{"c":"dr","i":"dr-2521","p":35402.24,"n":"Ring in goud met centrale diamant omringd door kleine diamantjes in milgrain","g":"dr","l":"18 kt goud","s":"diamant","v":"briljant","a":"dr 2521"},{"c":"dr","i":"dr-2561","p":4562.64,"n":"Ring in goud met diamantjes in sierlijke krullen","g":"dr","l":"18 kt goud","s":"diamant","v":"briljant","a":"dr 2561"},{"c":"dr","i":"dr-2537","p":4006.75,"n":"Ring in goud met grote diamant in het midden en entourage van kleinere diamanten en band met diamantjes","g":"dr","l":"18 kt goud","s":"diamant","v":"briljant","a":"dr 2537"},{"c":"dr","i":"dr-2548","p":18050.04,"n":"Ring in goud met kleine markiesdiamanten in verschillende rijen","g":"dr","l":"18 kt goud","s":"diamant","v":"markies","a":"dr 2548"},{"c":"dr","i":"dr-2516","p":6575.35,"n":"Ring in wit en geel goud en 2 bogen met kleine diamanten en 2 grote diamanten","g":"dr","l":"18 kt geel goud","s":"diamant","v":"briljant","a":"dr 2516"},{"c":"dr","i":"dr-2577","p":5920.73,"n":"Ring in wit en rood goud bezet met witte diamantjes","g":"dr","l":"18 kt rood goud","s":"diamant","v":"briljant","a":"dr 2577"},{"c":"dr","i":"dr-2560","p":3572.83,"n":"Ring in wit goud met 8 diamantjes in blokjes","g":"dr","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"dr 2560"},{"c":"ed","i":"dr-2531","p":2898.26,"n":"Ring in wit goud met blauwe saffier te midden van kleine witte diamantjes","g":"verloving","l":"18 kt wit goud","s":"diamant, saffier","v":"briljant","a":"dr 2531"},{"c":"dr","i":"dr-2576","p":7558.1,"n":"Ring in wit goud met carrémotief met diamantjes","g":"dr","l":"18 kt wit goud","s":"diamant","v":"carré","a":"dr 2576"},{"c":"dr","i":"dr-2547","p":6820.38,"n":"Ring in wit goud met diamanten blaadjes","g":"dr","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"dr 2547"},{"c":"dr","i":"dr-2535","p":31021.54,"n":"Ring in wit goud met grote diamant, entouragesteentjes en diamantjes in de ringband","g":"dr","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"dr 2535"},{"c":"ed","i":"dr-2340","p":17769.06,"n":"Ring in wit goud met kleine witte diamanten in drie rijen en solitaire turquoise diamant","g":"verloving","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"dr 2340"},{"c":"ed","i":"dr-2477","p":8553.31,"n":"Ring in wit goud met kussen vol witte en gekleurde diamantjes","g":"verloving","l":"18 kt wit goud","s":"diamant","v":"cushion","a":"dr 2477"},{"c":"dr","i":"dr-2096","p":2984.46,"n":"Ring in wit goud met scheve inzet van ongelijke diamanten van klein naar groot","g":"dr","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"dr 2096"},{"c":"dr","i":"dr-2462","p":4216.48,"n":"Ring in wit goud met schuine rijen diamantjes","g":"dr","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"dr 2462"},{"c":"dr","i":"dr-2240","p":7744.8,"n":"Ring in wit goud met solitaire diamant en kleine diamantjes","g":"dr","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"dr 2240"},{"c":"dr","i":"dr-2496","p":5640.66,"n":"Ring in wit goud met witte of gekleurde diamanten in 2 bogen","g":"dr","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"dr 2496"},{"c":"dr","i":"dr-2508","p":1860.36,"n":"Ring in wit of geel goud met rozet witte of gekleurde diamantjes","g":"dr","l":"18 kt geel goud","s":"diamant","v":"briljant","a":"dr 2508"},{"c":"dr","i":"dr-2259","p":8577.65,"n":"Ring met asymmetrische banden en kleine ronde diamanten","g":"dr","l":"18 kt goud","s":"diamant","v":"briljant","a":"dr 2259"},{"c":"dr","i":"dr-2575","p":11148.63,"n":"Ring met bloemmotief in goud met witte diamantjes","g":"dr","l":"18 kt goud","s":"diamant","v":"briljant","a":"dr 2575"},{"c":"dr","i":"dr-2199","p":22580.55,"n":"Ring met drie rijen diamanten in railzetting en solitaire diamant in originele strik","g":"dr","l":"18 kt goud","s":"diamant","v":"briljant","a":"dr 2199"},{"c":"dr","i":"dr-2458","p":10861.96,"n":"Ring met overlappende laagjes in wit goud gezet met diamantjes","g":"dr","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"dr 2458"},{"c":"dr","i":"dr-2451","p":3424.95,"n":"Ring met verschillende lagen in wit en geel goud met losse diamanten in spanzetting","g":"dr","l":"18 kt geel goud","s":"diamant","v":"briljant","a":"dr 2451"},{"c":"dr","i":"dr-2502","p":1458.31,"n":"Ring met wit gouden rechte band diamanten en boog in geel goud","g":"dr","l":"18 kt wit en geel goud","s":"diamant","v":"briljant","a":"dr 2502"},{"c":"dr","i":"dr-2301","p":11226.06,"n":"Ring met witte diamanten en buitengewoon design met uitvliegende banden","g":"dr","l":"18 kt goud","s":"diamant","v":"briljant","a":"dr 2301"},{"c":"dr","i":"dr-2573","p":13049.39,"n":"Ring in goud met centrale prinsesdiamant en dubbele entourage van diamanten en zijstenen","g":"dr","l":"18 kt goud","s":"diamant","v":"princess","a":"dr 2573"},{"c":"dr","i":"dr-2567","p":2635.91,"n":"Ring in wit en geel goud met 1 rij diamanten van groot naar klein","g":"dr","l":"18 kt geel goud","s":"diamant","v":"briljant","a":"dr 2567"},{"c":"sv","i":"sd-530","p":2635.5,"n":"Solitaire verlovingsring in goud met schitterende diamant met 3 griffen","g":"verloving","l":"18 kt goud","s":"diamant","v":"briljant","a":"sd 530"},{"c":"sv","i":"sd-616","p":1286.89,"n":"Solitaire verlovingsring in wit goud met diamant in millegrainzetting","g":"verloving","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"sd 616"},{"c":"tr","i":"a-80","p":1581.98,"n":"Trouwring in wit goud met ronde en ovalen diamanten in kastzetting","g":"tr","l":"18 kt wit goud","s":"diamant","v":"ovaal","a":"a 80"},{"c":"tr","i":"a-55","p":4994.81,"n":"Trouwring in wit goud met vierkante princess diamanten in railzetting","g":"tr","l":"18 kt wit goud","s":"diamant","v":"princess","a":"a 55"},{"c":"tr","i":"a-34","p":3335.8,"n":"Trouwring in wit goud met vierkante princess diamanten in strakke en moderne uitvoering","g":"tr","l":"18 kt wit goud","s":"diamant","v":"princess","a":"a 34"},{"c":"tr","i":"a-35","p":9649.38,"n":"Trouwring met 5 witte diamanten in griffenzetting","g":"tr","l":"18 kt goud","s":"diamant","v":"briljant","a":"a 35"},{"c":"tr","i":"a-82","p":6821.31,"n":"Trouwring met klassiek design van witte ronde diamanten in klauwzetting","g":"tr","l":"18 kt goud","s":"diamant","v":"briljant","a":"a 82"},{"c":"sv","i":"sd-585","p":46398.53,"n":"Verlovingsring in rood goud met solitaire diamant in peervorm","g":"verloving","l":"18 kt rood goud","s":"diamant","v":"peer","a":"sd 585"},{"c":"sv","i":"sd-514","p":12973.55,"n":"Verlovingsring met brede band in wit goud met solitaire diamant in tensionzetting","g":"verloving","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"sd 514"},{"c":"sv","i":"sd-538","p":4049.95,"n":"Verlovingsring met solitaire diamant in 4 griffen en half rondom gezet met diamantjes","g":"verloving","l":"18 kt goud","s":"diamant","v":"briljant","a":"sd 538"},{"c":"hr","i":"hr-271","p":4661.25,"n":"Herenring in geel goud mat en blinkend gescheiden door dubbele rij diamantjes","g":"hr","l":"18 kt geel goud","s":"diamant","v":"briljant","a":"hr 271"},{"c":"hr","i":"hr-276","p":4523.75,"n":"Herenring in wit goud mat in het midden en blinkende zijkanten met ingelegde email","g":"hr","l":"18 kt wit goud","s":"email","v":"","a":"hr 276"},{"c":"tr","i":"tr-draad","p":2847.35,"n":"Bolle gouden trouwring in draadvorm","g":"tr","l":"18 kt goud","s":"","v":"","a":"tr draad"},{"c":"tr","i":"t-274","p":2247.44,"n":"Eenvoudige trouwring in wit goud","g":"tr","l":"18 kt wit goud","s":"","v":"","a":"t 274"},{"c":"tr","i":"t-bol","p":647.45,"n":"Klassieke bolvormige trouwring in wit goud en half gezet met kleine diamanten","g":"tr","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"t bol"},{"c":"tr","i":"t-624","p":2717.56,"n":"Moderne rough surface trouwring met brede band in goud en enkele diamantjes","g":"tr","l":"18 kt goud","s":"diamant","v":"briljant","a":"t 624"},{"c":"tr","i":"t-620","p":2346.21,"n":"Moderne trouwring in wit goud met ingewerkt diamantje en open gleufje","g":"tr","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"t 620"},{"c":"tr","i":"t-610","p":1184.16,"n":"Moderne trouwring met gelijnd motief in iced goud","g":"tr","l":"18 kt iced goud","s":"","v":"","a":"t 610"},{"c":"tr","i":"t-611","p":1216.13,"n":"Moderne trouwring met gesatineerd gleufje in blinkend goud","g":"tr","l":"18 kt goud","s":"","v":"","a":"t 611"},{"c":"tr","i":"t-130","p":1289.88,"n":"Set trouwringen in wit goud in hedendaags design","g":"tr","l":"18 kt wit goud","s":"","v":"","a":"t 130"},{"c":"tr","i":"t-61","p":2129.19,"n":"Trouwring in wit goud half bezet met ronde diamanten in griffenzetting","g":"tr","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"t 61"},{"c":"tr","i":"t-174","p":2367.94,"n":"Trouwringen in mat geelgoud met sierlijke rand in blinkend goud","g":"tr","l":"18 kt geel goud","s":"","v":"","a":"t 174"},{"c":"tr","i":"t-140","p":1475.6,"n":"Trouwringen in wit goud en geel goud met moderne look","g":"tr","l":"18 kt wit en geel goud","s":"","v":"","a":"t 140"},{"c":"tr","i":"t-75","p":579.98,"n":"Trouwringen in wit goud in klassiek, eenvoudig ontwerp","g":"tr","l":"18 kt wit goud","s":"","v":"","a":"t 75"},{"c":"tr","i":"t-141","p":1406.64,"n":"Trouwringen in wit goud met ingewerkte kleine diamanten","g":"tr","l":"18 kt wit goud","s":"diamant","v":"briljant","a":"t 141"},{"c":"tr","i":"t-142","p":1205.28,"n":"Trouwringen met heel eigen look en ingewerkte diamant","g":"tr","l":"18 kt goud","s":"diamant","v":"briljant","a":"t 142"},{"c":"tr","i":"t-100","p":2275.94,"n":"Unieke trouwringen in wit goud met oneffen oppervlak","g":"tr","l":"18 kt wit goud","s":"","v":"","a":"t 100"}];
+var IMG='https://rayjo.be/wp-content/uploads/2022/10/';
+var CATN={verloving:'Verlovingsringen',dr:'Ringen',tr:'Trouwringen',hr:'Herenringen',ar:'Armbanden',ke:'Kettingen',ha:'Hangers',oo:'Oorringen',br:'Broches',as:'Asjuwelen'};
+var byId={};PRODUCTS.forEach(function(p){byId[p.i]=p;});
+var state={g:'alle',sort:'name',shown:24,q:'',price:'',stone:''};
+var grid=document.getElementById('grid'),count=document.getElementById('count'),moreBtn=document.getElementById('moreBtn');
+function fmt(n){return '€ '+n.toLocaleString('nl-BE',{minimumFractionDigits:0,maximumFractionDigits:0});}
+function ls(k,d){try{return JSON.parse(localStorage.getItem(k))||d;}catch(e){return d;}}
+function lsSet(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+var wish=ls('rj_wish',[]),recent=ls('rj_recent',[]);
+function list(){
+  var q=state.q.toLowerCase();
+  var l=PRODUCTS.filter(function(p){
+    if(state.g!=='alle'&&p.g!==state.g)return false;
+    if(q&&p.n.toLowerCase().indexOf(q)<0&&p.a.indexOf(q)<0)return false;
+    if(state.stone&&p.s.indexOf(state.stone)<0)return false;
+    if(state.price){var r=state.price.split('-');if(p.p<+r[0])return false;if(r[1]&&p.p>=+r[1])return false;}
+    return true;
+  });
+  if(state.sort==='asc')l.sort(function(a,b){return a.p-b.p;});
+  else if(state.sort==='desc')l.sort(function(a,b){return b.p-a.p;});
+  else l.sort(function(a,b){return a.n.localeCompare(b.n,'nl');});
+  return l;
+}
+function cardHTML(p){
+  var on=wish.indexOf(p.i)>=0;
+  return '<article class="card" data-id="'+p.i+'"><div class="ph"><img src="'+IMG+p.i+'.jpg" alt="'+p.n+'" loading="lazy"><button class="fav'+(on?' on':'')+'" data-fav="'+p.i+'" aria-label="Bewaren">'+(on?'♥':'♡')+'</button></div><div class="body"><div class="name">'+p.n+'</div><div class="meta">'+p.l+(p.s?' · '+p.s:'')+'</div><div class="price">vanaf '+fmt(p.p)+'<small>incl. btw</small></div><div class="quick">Bekijk details ›</div></div></article>';
+}
+var current=[];
+function render(){
+  var l=list();current=l;
+  grid.innerHTML=l.length?l.slice(0,state.shown).map(cardHTML).join(''):'<p class="empty">Geen modellen gevonden. Probeer een ander woord of wis de filters — of kom langs: in ons archief zitten ruim 7000 ontwerpen.</p>';
+  count.textContent=Math.min(state.shown,l.length)+' van '+l.length+' modellen';
+  moreBtn.style.display=l.length>state.shown?'inline-block':'none';
+}
+document.querySelectorAll('.tab').forEach(function(b){b.addEventListener('click',function(){setCat(b.dataset.g);});});
+function setCat(g){document.querySelectorAll('.tab').forEach(function(x){x.classList.toggle('on',x.dataset.g===g);});state.g=g;state.shown=24;render();}
+document.querySelector('.tab').classList.add('on');
+document.getElementById('sort').addEventListener('change',function(e){state.sort=e.target.value;render();});
+document.getElementById('price').addEventListener('change',function(e){state.price=e.target.value;state.shown=24;render();});
+document.getElementById('stone').addEventListener('change',function(e){state.stone=e.target.value;state.shown=24;render();});
+var qEl=document.getElementById('q');qEl.addEventListener('input',function(e){state.q=e.target.value.trim();state.shown=24;render();});
+document.getElementById('reset').addEventListener('click',function(){state.q='';state.price='';state.stone='';qEl.value='';document.getElementById('price').value='';document.getElementById('stone').value='';setCat('alle');});
+moreBtn.addEventListener('click',function(){state.shown+=24;render();});
+document.querySelectorAll('.cat').forEach(function(c){c.addEventListener('click',function(){setCat(c.dataset.go);});});
+document.addEventListener('click',function(e){
+  var f=e.target.closest('[data-fav]');if(f){e.stopPropagation();toggleWish(f.dataset.fav);return;}
+  var c=e.target.closest('.card,.rel,.wl');if(c&&c.dataset.id){openProduct(c.dataset.id);}
+});
+
+/* wishlist */
+function toggleWish(id){var i=wish.indexOf(id);if(i>=0)wish.splice(i,1);else wish.push(id);lsSet('rj_wish',wish);syncWish();}
+function syncWish(){
+  document.getElementById('wishCount').textContent=wish.length;
+  document.querySelectorAll('[data-fav]').forEach(function(b){var on=wish.indexOf(b.dataset.fav)>=0;b.classList.toggle('on',on);b.textContent=on?'♥':'♡';});
+  var h=document.getElementById('pdWish');if(pdId){var on=wish.indexOf(pdId)>=0;h.classList.toggle('on',on);h.textContent=on?'♥ Bewaard':'♡ Bewaren';}
+  var wl=document.getElementById('wishList');
+  wl.innerHTML=wish.length?wish.map(function(id){var p=byId[id];return '<div class="wl" data-id="'+id+'"><div class="ph"><img src="'+IMG+id+'.jpg" alt=""></div><p>'+p.n+'<b>vanaf '+fmt(p.p)+'</b></p><button data-fav="'+id+'" aria-label="Verwijderen">×</button></div>';}).join(''):'<p class="empty">Nog niets bewaard. Tik op het hartje bij een juweel.</p>';
+}
+document.getElementById('wishBtn').addEventListener('click',function(){open('wd');});
+document.getElementById('wishClear').addEventListener('click',function(){wish=[];lsSet('rj_wish',wish);syncWish();});
+document.getElementById('wishAppt').addEventListener('click',function(){openForm('Afspraak',null,true);});
+
+/* drawers */
+var openId=null;
+function open(id){document.body.classList.add('open');document.getElementById(id).classList.add('show');document.getElementById(id).setAttribute('aria-hidden','false');openId=id;}
+function closeAll(){['pd','fd','wd'].forEach(function(id){var d=document.getElementById(id);d.classList.remove('show');d.setAttribute('aria-hidden','true');});document.body.classList.remove('open');openId=null;if(location.hash.indexOf('#p=')===0)history.replaceState(null,'',location.pathname+'#catalogus');}
+document.getElementById('scrim').addEventListener('click',closeAll);
+['pdClose','fdClose','wdClose'].forEach(function(id){document.getElementById(id).addEventListener('click',function(){if(id==='fdClose'&&pdId){document.getElementById('fd').classList.remove('show');open('pd');}else closeAll();});});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll();if(openId==='pd'){if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1);}});
+
+/* product detail */
+var pdId=null,color='';
+function openProduct(id){
+  var p=byId[id];if(!p)return;pdId=id;color='';
+  document.getElementById('pdImg').src=IMG+id+'.jpg';document.getElementById('pdImg').alt=p.n;
+  document.getElementById('pdName').textContent=p.n;
+  document.getElementById('pdCrumb').textContent=CATN[p.g]+' · '+p.a;
+  var sp=[['Legering',p.l]];if(p.s)sp.push(['Edelsteen',p.s]);if(p.v)sp.push(['Vorm',p.v]);sp.push(['Artikelcode',p.a]);
+  document.getElementById('pdSpecs').innerHTML=sp.map(function(r){return '<dt>'+r[0]+'</dt><dd>'+r[1]+'</dd>';}).join('');
+  document.getElementById('pdPrice').textContent=fmt(p.p);
+  document.querySelectorAll('#swatches button').forEach(function(b){b.classList.remove('on');});
+  document.getElementById('chosen').textContent='Getoond in '+p.l.replace('18 kt ','')+'. Kies uw voorkeur.';
+  var rel=PRODUCTS.filter(function(x){return x.g===p.g&&x.i!==id;}).sort(function(a,b){return Math.abs(a.p-p.p)-Math.abs(b.p-p.p);}).slice(0,4);
+  document.getElementById('pdRel').innerHTML=rel.map(function(x){return '<div class="rel" data-id="'+x.i+'"><div class="ph"><img src="'+IMG+x.i+'.jpg" alt="" loading="lazy"></div><p>'+x.n+'<b>vanaf '+fmt(x.p)+'</b></p></div>';}).join('');
+  var idx=current.map(function(x){return x.i;}).indexOf(id);
+  document.getElementById('pdPrev').disabled=idx<=0;document.getElementById('pdNext').disabled=idx<0||idx>=current.length-1;
+  document.getElementById('pd').scrollTop=0;
+  recent=[id].concat(recent.filter(function(x){return x!==id;})).slice(0,6);lsSet('rj_recent',recent);renderRecent();
+  history.replaceState(null,'',location.pathname+'#p='+id);
+  syncWish();open('pd');
+}
+function step(d){var ids=current.map(function(x){return x.i;}),i=ids.indexOf(pdId)+d;if(i>=0&&i<ids.length)openProduct(ids[i]);}
+document.getElementById('pdPrev').addEventListener('click',function(){step(-1);});
+document.getElementById('pdNext').addEventListener('click',function(){step(1);});
+document.querySelectorAll('#swatches button').forEach(function(b){b.addEventListener('click',function(){
+  document.querySelectorAll('#swatches button').forEach(function(x){x.classList.remove('on');});b.classList.add('on');color=b.dataset.c;
+  document.getElementById('chosen').textContent='Uw keuze: '+color+'. Wij maken dit model in die uitvoering voor u.';
+});});
+document.getElementById('pdWish').addEventListener('click',function(){toggleWish(pdId);});
+document.getElementById('pdZoom').addEventListener('click',function(){document.getElementById('lbImg').src=IMG+pdId+'.jpg';document.getElementById('lb').classList.add('show');});
+document.getElementById('lbClose').addEventListener('click',function(){document.getElementById('lb').classList.remove('show');});
+document.getElementById('lb').addEventListener('click',function(e){if(e.target.id==='lb')e.currentTarget.classList.remove('show');});
+document.getElementById('pdAppt').addEventListener('click',function(){openForm('Afspraak',byId[pdId],false);});
+document.getElementById('pdAsk').addEventListener('click',function(){openForm('Vraag',byId[pdId],false);});
+
+/* forms */
+function openForm(kind,p,fromWish){
+  var appt=kind==='Afspraak';
+  document.getElementById('fdTitle').textContent=appt?'Maak een afspraak':'Stel uw vraag';
+  document.getElementById('fdWhen').style.display=appt?'block':'none';
+  document.getElementById('fdMsgLbl').textContent=appt?'Wat mogen we voor u klaarleggen?':'Uw vraag';
+  var ab='';
+  if(fromWish)ab='Over uw verlanglijst met '+wish.length+' juwe'+(wish.length===1?'el':'len')+'. We leggen ze klaar in de toonzaal.';
+  else if(p)ab='Over: '+p.n+(color?' in '+color:'')+' (art. '+p.a+').';
+  document.getElementById('fdAbout').textContent=ab;
+  document.getElementById('fdOk').hidden=true;
+  document.getElementById('pd').classList.remove('show');document.getElementById('wd').classList.remove('show');
+  open('fd');
+}
+document.querySelectorAll('.chips button').forEach(function(b){b.addEventListener('click',function(){var sib=b.parentNode.querySelectorAll('button');sib.forEach(function(x){x.classList.remove('on');});b.classList.add('on');});});
+document.getElementById('fdSend').addEventListener('click',function(){document.getElementById('fdOk').hidden=false;});
+
+/* recently viewed */
+function renderRecent(){var s=document.getElementById('recent');if(!recent.length){s.hidden=true;return;}s.hidden=false;document.getElementById('recentGrid').innerHTML=recent.map(function(id){return byId[id]?cardHTML(byId[id]):'';}).join('');}
+
+render();syncWish();renderRecent();
+if(location.hash.indexOf('#p=')===0){var h=location.hash.slice(3);if(byId[h]){setTimeout(function(){document.getElementById('catalogus').scrollIntoView();openProduct(h);},50);}}
+
+// highlight active nav item
+var links=document.querySelectorAll('.nav a'),map={};
+links.forEach(function(a){var s=document.querySelector(a.getAttribute('href'));if(s)map[s.id]=a;});
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('active');});map[e.target.id].classList.add('active');}});},{rootMargin:'-40% 0px -55% 0px'});
+  Object.keys(map).forEach(function(id){io.observe(document.getElementById(id));});
+}
+</script>
+</body>
+</html>
