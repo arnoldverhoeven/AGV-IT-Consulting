@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-3nEWxgg8+w9O9q7xofeyZWW163h5vX5Go9rDeqpyehg='; style-src 'sha256-troql0KO+yp+4a3nwk5MhVPzOGET5DTg4PHzniWvZ8I=' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src data: https://coppejansgallery.be; frame-src https://www.google.com; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
-<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-MVQ4th08XS3xFG+O1uQfNxsBT/25hos746WPa6kuddc='; style-src 'sha256-troql0KO+yp+4a3nwk5MhVPzOGET5DTg4PHzniWvZ8I=' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src data: https://coppejansgallery.be; frame-src https://www.google.com; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
 <title>Coppejans Gallery — Art is research · Kunstgalerie in Antwerpen</title>
 <meta name="description" content="Kunstgalerie voor hedendaagse kunst aan het Falconplein in Antwerpen. Nu te zien: Be My Guest IV — It’s in my nature, samengesteld door Antoinette De Stigter. Open do–zo, 13.00–17.30.">
 <meta name="theme-color" content="#232325">
@@ -728,7 +728,7 @@ dialog::backdrop{background:rgba(9,14,30,.72)}
       <div class="wallside swap" id="heroWall">
         <div class="frame">
           <div class="ph" id="heroPh" data-label="Be My Guest IV — It’s in my nature">
-            <img id="heroImg" src="https://coppejansgallery.be/wp-content/uploads/2026/08/campagnebeeld-1024x512.jpg" width="1024" height="512" alt="Campagnebeeld van de tentoonstelling Be My Guest IV — It’s in my nature" fetchpriority="high">
+            <img id="heroImg" src="https://coppejansgallery.be/wp-content/uploads/2026/08/campagnebeeld-1024x512.jpg" width="1024" height="512" alt="Campagnebeeld van de tentoonstelling Be My Guest IV — It’s in my nature" fetchpriority="high" referrerpolicy="no-referrer">
           </div>
         </div>
         <div class="wall-label" id="heroLabel" aria-live="polite">
@@ -1273,7 +1273,7 @@ function today0(){var n=new Date();return new Date(n.getFullYear(),n.getMonth(),
 function days(a,b){return Math.round((b-a)/864e5)}
 var TINT=['','t5','t3','t2','t4'];
 function ph(img,label,alt,cls,i,eager){
-  return '<div class="ph '+(cls||'')+' '+TINT[(i||0)%5]+(img?'':' noimg')+'" data-label="'+esc(label)+'">'+(img?'<img src="'+UP+img+'" alt="'+esc(alt||label)+'"'+(eager?'':' loading="lazy"')+' decoding="async">':'')+'</div>';
+  return '<div class="ph '+(cls||'')+' '+TINT[(i||0)%5]+(img?'':' noimg')+'" data-label="'+esc(label)+'">'+(img?'<img src="'+UP+img+'" alt="'+esc(alt||label)+'"'+(eager?'':' loading="lazy"')+' decoding="async" referrerpolicy="no-referrer">':'')+'</div>';
 }
 var TYPE={g:['In de galerie','In the gallery'],b:['Beurs','Art fair'],x:['Extra muros','Extra muros'],o:['Online','Online']};
 function state(e){var n=today0(),s=pd(e[0]),f=pd(e[1]);return n<s?'soon':(n>f?'past':'now')}
