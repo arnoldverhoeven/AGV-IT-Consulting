@@ -186,9 +186,9 @@
   .pnote{margin-top:22px;font-size:15px;color:var(--cream-70);}
   address{font-style:normal;margin-top:22px;font-size:16px;line-height:1.7;} address a:hover{color:var(--champagne);}
   .map{position:relative;border:1px solid var(--line);border-radius:4px;overflow:hidden;min-height:440px;height:100%;background:var(--velvet-2);}
+  .map img{width:100%;height:100%;min-height:440px;object-fit:cover;display:block;filter:invert(.92) hue-rotate(160deg) saturate(.4) brightness(.9);}
   .maplink{position:absolute;right:14px;bottom:14px;background:var(--rail);border:1px solid var(--champagne);color:var(--cream);font-family:var(--text);font-size:13.5px;font-weight:500;padding:9px 14px;border-radius:3px;transition:background .2s,color .2s;}
   .maplink:hover{background:var(--champagne);color:var(--rail);}
-  .map iframe{width:100%;height:100%;min-height:440px;border:0;display:block;filter:invert(.92) hue-rotate(160deg) saturate(.4) brightness(.9);}
   footer{padding:36px var(--pad);border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13.5px;color:var(--cream-45);}
 
   .hdr-right{display:flex;align-items:center;gap:12px;}
@@ -495,7 +495,7 @@
         <div class="moved i18n" data-en-html="<strong>We moved in 2026.</strong> Our shop at Rijfstraat 6 in Antwerp closed its doors for good at the end of March. Since September you'll find us at Turnhoutsebaan 177 in Schilde. Your house certificates, repairs and ongoing orders follow us."><strong>Verhuisd in 2026.</strong> Onze winkel aan de Rijfstraat 6 in Antwerpen sloot eind maart definitief de deuren. Sinds september vindt u ons op de Turnhoutsebaan 177 in Schilde. Uw huiscertificaten, herstellingen en lopende bestellingen volgen ons mee.</div>
       </div>
       <div class="map">
-        <iframe src="https://maps.google.com/maps?q=Turnhoutsebaan%20177%2C%202970%20Schilde&output=embed" loading="lazy" title="Locatie van Rayjo, Turnhoutsebaan 177, Schilde"></iframe>
+        <img src="https://staticmap.openstreetmap.de/staticmap.php?center=51.2571,4.5955&zoom=16&size=1000x760&markers=51.2571,4.5955,red-pushpin" alt="Locatie van Rayjo, Turnhoutsebaan 177, Schilde" loading="lazy">
         <a class="maplink i18n" href="https://www.google.com/maps/search/?api=1&query=Turnhoutsebaan+177%2C+2970+Schilde" target="_blank" rel="noopener" data-en="Open in Google Maps ↗">Open in Google Maps ↗</a>
       </div>
     </div>
