@@ -1,5 +1,28 @@
 /*
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://image.thum.io; media-src 'self'; connect-src 'self' https://api.github.com; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'
+  # ---------------------------------------------------------------
+  # Content-Security-Policy — let op bij nieuwe subprojecten!
+  #
+  # Deze policy geldt voor de HELE site, inclusief alle submappen
+  # (zoals /loamliving/). Elk subproject dat naar een extern domein
+  # verbindt (fetch/XHR) of daar een afbeelding/lettertype van laadt,
+  # moet dat domein hieronder expliciet toevoegen, anders blokkeert
+  # de browser het stil — de rest van de pagina werkt dan gewoon
+  # door, enkel die ene aanroep faalt.
+  #
+  # connect-src  = domeinen waar deze site JS-aanroepen naar mag doen
+  #                (fetch, XHR) — bv. api.shopzo.be voor Shopzo-winkels
+  # img-src      = domeinen waar afbeeldingen van mogen komen
+  #                (Supabase Storage host hieronder = Shopzo product-
+  #                foto's; deze verandert enkel als het Shopzo
+  #                Supabase-project ooit opnieuw wordt aangemaakt)
+  #
+  # Checklist bij een nieuw subproject (bv. shop.agv-it.be/nieuweklant):
+  #   1. Roept de pagina een externe API aan via fetch()? -> connect-src
+  #   2. Laadt de pagina afbeeldingen van een extern domein? -> img-src
+  #   3. Test na deploy met de browserconsole (F12) of er geen
+  #      "Content-Security-Policy" foutmeldingen verschijnen.
+  # ---------------------------------------------------------------
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://image.thum.io https://jbzdingkkqbmpyhrloux.supabase.co; media-src 'self'; connect-src 'self' https://api.github.com https://api.shopzo.be; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
