@@ -58,6 +58,10 @@
 }
 .pf-card.pf-featured{grid-column:span 2;}
 .pf-card.pf-wide{grid-column:1 / -1;}          /* closing card: full width */
+.pf-card.pf-wide2{grid-column:span 2;}          /* closing card: two columns */
+.pf-wide2 .pf-shot{aspect-ratio:16/7.2;}
+.pf-wide2 .pf-shot img{object-position:center 38%;}
+.pf-wide2 h3{font-size:24px;}
 .pf-wide .pf-shot{aspect-ratio:16/5.2;}
 .pf-wide .pf-shot img{object-position:center 38%;}
 .pf-wide h3{font-size:26px;}
@@ -235,8 +239,13 @@
 }
 .pf-card:hover .pf-cta{color:var(--amber);}
 
-/* Staggered entrance (subtle) */
-.pf-grid .reveal{transition-delay:calc(var(--i, 0) * 60ms);}
+/* Staggered entrance -- pure CSS, so the cards are always visible even if
+   a script fails to load. Respects prefers-reduced-motion via style.css. */
+@keyframes pf-in{
+  from{opacity:0; transform:translateY(16px);}
+  to{opacity:1; transform:none;}
+}
+.pf-card{animation:pf-in .55s ease backwards; animation-delay:calc(var(--i, 0) * 60ms);}
 
 /* Closing CTA band */
 .pf-cta-band{
@@ -263,6 +272,9 @@
   .pf-featured .pf-shot{aspect-ratio:16/10;}
   .pf-wide .pf-shot{aspect-ratio:16/10;}
   .pf-wide h3{font-size:22px;}
+  .pf-card.pf-wide2{grid-column:span 1;}
+  .pf-wide2 .pf-shot{aspect-ratio:16/10;}
+  .pf-wide2 h3{font-size:22px;}
   .pf-featured h3{font-size:22px;}
   .pf-hero{padding:64px 0 104px;}
   .pf-section{margin-top:-56px;}
