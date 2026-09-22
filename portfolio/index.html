@@ -2,22 +2,27 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+
+<!-- Microsoft Clarity -->
+<script src="/assets/clarity.js"></script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio — AGV IT Consulting</title>
-<meta name="description" content="Selected work by Arnold Verhoeven — platforms and client concepts built end-to-end, from architecture to launch.">
+<meta name="description" content="Selected work by Arnold Verhoeven — live sites and client concepts built end-to-end, from architecture to launch.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMwRTIyNDAiLz48dGV4dCB4PSIzMiIgeT0iNDUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjM2IiBmaWxsPSIjRkZGRkZGIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5BPC90ZXh0Pjwvc3ZnPg==">
 <meta name="theme-color" content="#2563EB">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="AGV IT Consulting">
 <meta property="og:title" content="Portfolio — AGV IT Consulting">
-<meta property="og:description" content="Platforms and client concepts built end-to-end, from architecture to launch.">
+<meta property="og:description" content="Live sites and client concepts built end-to-end, from architecture to launch.">
 <meta property="og:url" content="https://agv-it.be/portfolio/">
-<meta property="og:image" content="https://image.thum.io/get/width/1200/crop/630/noanimate/https://agv-it.be/portfolio/">
+<meta property="og:image" content="https://agv-it.be/portfolio/assets/og-portfolio.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./assets/style.css">
+<link rel="stylesheet" href="./assets/portfolio.css">
 </head>
 <body>
 
@@ -37,221 +42,303 @@
 
 <main>
 
-  <section class="page-hero" style="border-top:none;">
+  <!-- Showcase hero -->
+  <section class="pf-hero">
     <div class="wrap">
       <div class="eyebrow">Portfolio</div>
       <h1>Every project, from architecture to launch.</h1>
-      <p class="lead">A selection of platforms and client concepts built end-to-end — design, development, hosting and everything that keeps them running afterwards.</p>
+      <p class="lead">Live sites and client concepts — designed, built and hosted end-to-end. Every card opens the real thing: click through and have a look around.</p>
+      <div class="stats">
+        <div><strong>12</strong> projects</div>
+        <div><strong>Live sites</strong> &amp; concepts</div>
+        <div>Antwerp, Belgium</div>
+      </div>
     </div>
   </section>
 
-  <section>
+  <!-- Grid -->
+  <section class="pf-section">
     <div class="wrap">
-      <div class="port-grid reveal">
+      <div class="pf-grid">
 
-        <div class="port-card">
-          <a class="card-link" href="./hansi-ombregt-architectuur/" aria-label="View hansi-ombregt-architectuur project"></a>
-          <div class="port-shot">
-            <img src="https://image.thum.io/get/width/1200/crop/750/noanimate/https://agv-it.be/bni/hansi-ombregt-architectuur/" alt="hansi ombregt architectuur homepage screenshot" loading="lazy">
+        <!-- 1 · Hansi Ombregt (featured) -->
+        <a class="pf-card pf-featured reveal" style="--i:0" href="https://agv-it.be/hansi-ombregt-architectuur/" target="_blank" rel="noopener">
+          <div class="pf-frame">
+            <div class="pf-chrome">
+              <div class="pf-dots"><span></span><span></span><span></span></div>
+              <div class="pf-url">agv-it.be/hansi-ombregt-architectuur</div>
+              <div class="pf-badge">Concept</div>
+            </div>
+            <div class="pf-shot">
+              <img src="./assets/hansi-ombregt-architectuur.jpg" width="1600" height="1000" alt="hansi ombregt architectuur homepage screenshot">
+              <div class="pf-overlay"><span>Open mock-up ↗</span></div>
+            </div>
           </div>
-          <div class="port-body">
-            <div class="work-label mono">Concept · Architecture studio</div>
-            <h3>hansi ombregt architectuur</h3>
+          <div class="pf-body">
+            <div class="pf-label">Concept · Architecture studio</div>
+            <h3>hansi ombregt architectuur <span class="arrow">↗</span></h3>
             <p>Contemporary architecture for new builds and renovations of homes, apartments and pavilions — Schoten, Antwerp.</p>
-            <div class="work-tags">
-              <span>Architecture</span><span>Concept</span>
-            </div>
-            <div class="port-links">
-              <div class="work-link">View project <span class="arrow">↗</span></div>
-              <a class="ext-link" href="https://agv-it.be/hansi-ombregt-architectuur/" target="_blank" rel="noopener">view concept</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="port-card">
-          <a class="card-link" href="./nives/" aria-label="View nives project"></a>
-          <div class="port-shot">
-            <img src="https://image.thum.io/get/width/1200/crop/750/noanimate/https://agv-it.be/nives/" alt="Nives concept site screenshot" loading="lazy">
-          </div>
-          <div class="port-body">
-            <div class="work-label mono">Concept · Breakfast &amp; bakery</div>
-            <h3>Nives</h3>
-            <p>A bright, bilingual NL/EN concept for a breakfast and lunch spot with its own sourdough bakery, on the edge of Harmoniepark.</p>
-            <div class="work-tags">
-              <span>NL / EN</span><span>Concept</span>
-            </div>
-            <div class="port-links">
-              <div class="work-link">View project <span class="arrow">↗</span></div>
-              <a class="ext-link" href="https://agv-it.be/nives/" target="_blank" rel="noopener">view concept</a>
-            </div>
-          </div>
-        </div>
-
-        <a class="port-card" href="https://shopzo.be" target="_blank" rel="noopener">
-          <div class="port-shot">
-            <img src="https://image.thum.io/get/width/1200/crop/750/noanimate/https://shopzo.be/" alt="Shopzo.be homepage screenshot" loading="lazy">
-          </div>
-          <div class="port-body">
-            <div class="work-label mono">Platform · Multi-tenant e-commerce</div>
-            <h3>Shopzo</h3>
-            <p>A white-label e-commerce platform built for small retailers — seller dashboard, multi-tenant architecture, and demo storefronts.</p>
-            <div class="work-tags">
-              <span>React</span><span>Supabase</span><span>Multi-tenant</span>
-            </div>
-            <div class="port-links">
-              <div class="work-link">Visit shopzo.be <span class="arrow">↗</span></div>
-            </div>
+            <div class="pf-tags"><span>Architecture</span><span>Concept</span></div>
+            <div class="pf-cta">Open mock-up →</div>
           </div>
         </a>
 
-        <div class="port-card">
-          <a class="card-link" href="./loam-living/" aria-label="View loam-living project"></a>
-          <div class="port-shot">
-            <img src="./assets/loam-living-shop-card.jpg" alt="Loam Living product page screenshot" loading="lazy">
-          </div>
-          <div class="port-body">
-            <div class="work-label mono">Demo · Shopzo storefront</div>
-            <h3>Loam Living</h3>
-            <p>A fictional Dutch-language home-decor shop, built to demonstrate Shopzo's webshop functionality — browsing, cart, wishlist and checkout.</p>
-            <div class="work-tags">
-              <span>Shopzo storefront</span><span>NL</span>
+        <!-- 2 · Paul Presents -->
+        <a class="pf-card reveal" style="--i:1" href="https://agv-it.be/paul-presents/" target="_blank" rel="noopener">
+          <div class="pf-frame">
+            <div class="pf-chrome">
+              <div class="pf-dots"><span></span><span></span><span></span></div>
+              <div class="pf-url">agv-it.be/paul-presents</div>
+              <div class="pf-badge">Concept</div>
             </div>
-            <div class="port-links">
-              <div class="work-link">View project <span class="arrow">↗</span></div>
-              <a class="ext-link" href="https://agv-it.be/loamliving/" target="_blank" rel="noopener">view concept</a>
+            <div class="pf-shot">
+              <img src="./assets/paul-presents.jpg" width="1600" height="1000" alt="Paul Presents concept site screenshot" loading="lazy">
+              <div class="pf-overlay"><span>Open mock-up ↗</span></div>
             </div>
           </div>
-        </div>
-
-        <div class="port-card">
-          <a class="card-link" href="./ryve/" aria-label="View ryve project"></a>
-          <div class="port-shot">
-            <img src="https://image.thum.io/get/width/1200/crop/750/noanimate/https://agv-it.be/ryve/" alt="Ryve homepage screenshot" loading="lazy">
-          </div>
-          <div class="port-body">
-            <div class="work-label mono">Demo · Shopzo storefront</div>
-            <h3>Ryve</h3>
-            <p>A demo shop on Shopzo, not a live business — used to walk prospects through the seller dashboard, checkout and payment setup.</p>
-            <div class="work-tags">
-              <span>Shopzo storefront</span><span>Concept</span>
-            </div>
-            <div class="port-links">
-              <div class="work-link">View project <span class="arrow">↗</span></div>
-              <a class="ext-link" href="https://agv-it.be/ryve/" target="_blank" rel="noopener">view concept</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="port-card">
-          <a class="card-link" href="./pmeb/" aria-label="View pmeb project"></a>
-          <div class="port-shot">
-            <img src="https://image.thum.io/get/width/1200/crop/750/noanimate/https://agv-it.be/pmeb/" alt="PMEB homepage screenshot" loading="lazy">
-          </div>
-          <div class="port-body">
-            <div class="work-label mono">Concept · Construction management</div>
-            <h3>PMEB</h3>
-            <p>Project management, expertise and safety coordination for construction projects — Vlimmeren, Antwerpse Kempen.</p>
-            <div class="work-tags">
-              <span>Bouw</span><span>Concept</span>
-            </div>
-            <div class="port-links">
-              <div class="work-link">View project <span class="arrow">↗</span></div>
-              <a class="ext-link" href="https://agv-it.be/pmeb/" target="_blank" rel="noopener">view concept</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="port-card">
-          <a class="card-link" href="./polette/" aria-label="View polette project"></a>
-          <div class="port-shot">
-            <img src="https://image.thum.io/get/width/1200/crop/750/noanimate/https://agv-it.be/polette/" alt="Polette concept site screenshot" loading="lazy">
-          </div>
-          <div class="port-body">
-            <div class="work-label mono">Concept · Coffee bar</div>
-            <h3>Polette</h3>
-            <p>A corner coffee bar concept in Antwerp's Markgravewijk, built around its founder's story, menu and real Google reviews.</p>
-            <div class="work-tags">
-              <span>Founder story</span><span>Concept</span>
-            </div>
-            <div class="port-links">
-              <div class="work-link">View project <span class="arrow">↗</span></div>
-              <a class="ext-link" href="https://agv-it.be/polette/" target="_blank" rel="noopener">view concept</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="port-card">
-          <a class="card-link" href="./souvenir-tattoo-parlour/" aria-label="View souvenir-tattoo-parlour project"></a>
-          <div class="port-shot">
-            <img src="https://image.thum.io/get/width/1200/crop/750/noanimate/https://agv-it.be/souvenirtattooparlour/" alt="Souvenir Tattoo Parlour concept site screenshot" loading="lazy">
-          </div>
-          <div class="port-body">
-            <div class="work-label mono">Concept · Tattoo studio</div>
-            <h3>Souvenir Tattoo Parlour</h3>
-            <p>A bold, gallery-first concept for a traditional tattoo studio — the work up front, artists profiled, phone-first booking.</p>
-            <div class="work-tags">
-              <span>Gallery</span><span>Concept</span>
-            </div>
-            <div class="port-links">
-              <div class="work-link">View project <span class="arrow">↗</span></div>
-              <a class="ext-link" href="https://agv-it.be/souvenirtattooparlour/" target="_blank" rel="noopener">view concept</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="port-card">
-          <a class="card-link" href="./antwerp-immo-support/" aria-label="View antwerp-immo-support project"></a>
-          <div class="port-shot">
-            <img src="https://image.thum.io/get/width/1200/crop/750/noanimate/https://agv-it.be/bni/antwerp-immo-support/" alt="Antwerp Immo Support homepage screenshot" loading="lazy">
-          </div>
-          <div class="port-body">
-            <div class="work-label mono">Concept · Property inspection</div>
-            <h3>Antwerp Immo Support</h3>
-            <p>Asbestos, EPC, electrical and oil-tank certificates, plus property reports — one certified inspector for Antwerp province.</p>
-            <div class="work-tags">
-              <span>Immo</span><span>Concept</span>
-            </div>
-            <div class="port-links">
-              <div class="work-link">View project <span class="arrow">↗</span></div>
-              <a class="ext-link" href="https://agv-it.be/antwerp-immo-support/" target="_blank" rel="noopener">view concept</a>
-            </div>
-          </div>
-        </div>
-
-        <a class="port-card" href="https://jessbeauty.be" target="_blank" rel="noopener">
-          <div class="port-shot">
-            <img src="https://image.thum.io/get/width/1200/crop/750/noanimate/https://jessbeauty.be/" alt="Jess Beauty homepage screenshot" loading="lazy">
-          </div>
-          <div class="port-body">
-            <div class="work-label mono">Client site · Hair salon</div>
-            <h3>Jess Beauty Antwerp</h3>
-            <p>A bilingual, appointment-only salon site — from brand direction to a working booking flow, delivered as a self-contained build.</p>
-            <div class="work-tags">
-              <span>EN / ES</span><span>Booking</span>
-            </div>
-            <div class="port-links">
-              <div class="work-link">Visit jessbeauty.be <span class="arrow">↗</span></div>
-            </div>
+          <div class="pf-body">
+            <div class="pf-label">Concept · Presentation coach</div>
+            <h3>Paul Presents <span class="arrow">↗</span></h3>
+            <p>"Saving good people from bad presentations" — a bold NL/EN concept for a presentation coach, built around his courses, talks and agenda.</p>
+            <div class="pf-tags"><span>NL / EN</span><span>Concept</span></div>
+            <div class="pf-cta">Open mock-up →</div>
           </div>
         </a>
 
-        <a class="port-card" href="https://www.leerpret.be" target="_blank" rel="noopener">
-          <div class="port-shot">
-            <img src="https://image.thum.io/get/width/1200/crop/750/noanimate/https://www.leerpret.be/" alt="Leerpret homepage screenshot" loading="lazy">
+        <!-- 3 · simplexIT -->
+        <a class="pf-card reveal" style="--i:2" href="https://agv-it.be/simplexit/" target="_blank" rel="noopener">
+          <div class="pf-frame">
+            <div class="pf-chrome">
+              <div class="pf-dots"><span></span><span></span><span></span></div>
+              <div class="pf-url">agv-it.be/simplexit</div>
+              <div class="pf-badge">Concept</div>
+            </div>
+            <div class="pf-shot">
+              <img src="./assets/simplexit.jpg" width="1600" height="1000" alt="simplexIT concept site screenshot" loading="lazy">
+              <div class="pf-overlay"><span>Open mock-up ↗</span></div>
+            </div>
           </div>
-          <div class="port-body">
-            <div class="work-label mono">Platform · Classroom quizzes</div>
-            <h3>Leerpret</h3>
+          <div class="pf-body">
+            <div class="pf-label">Concept · IT partner</div>
+            <h3>simplexIT <span class="arrow">↗</span></h3>
+            <p>"Making the complex simple" — one fixed IT contact for SMEs in Antwerp: servers, network, back-ups and firewall, with proactive monitoring before anything breaks.</p>
+            <div class="pf-tags"><span>IT</span><span>Concept</span></div>
+            <div class="pf-cta">Open mock-up →</div>
+          </div>
+        </a>
+
+        <!-- 4 · Leerpret (live) -->
+        <a class="pf-card reveal" style="--i:3" href="https://www.leerpret.be" target="_blank" rel="noopener">
+          <div class="pf-frame">
+            <div class="pf-chrome">
+              <div class="pf-dots"><span></span><span></span><span></span></div>
+              <div class="pf-url">leerpret.be</div>
+              <div class="pf-badge live">Live</div>
+            </div>
+            <div class="pf-shot">
+              <img src="./assets/leerpret.jpg" width="1600" height="1000" alt="Leerpret homepage screenshot" loading="lazy">
+              <div class="pf-overlay"><span>Visit site ↗</span></div>
+            </div>
+          </div>
+          <div class="pf-body">
+            <div class="pf-label">Platform · Classroom quizzes</div>
+            <h3>Leerpret <span class="arrow">↗</span></h3>
             <p>Interactive classroom quizzes for the 1st to 6th grade, built to run on the projector or smartboard at the front of the room.</p>
-            <div class="work-tags">
-              <span>Education</span><span>Interactive</span>
-            </div>
-            <div class="port-links">
-              <div class="work-link">Visit leerpret.be <span class="arrow">↗</span></div>
-            </div>
+            <div class="pf-tags"><span>Education</span><span>Interactive</span></div>
+            <div class="pf-cta">Visit leerpret.be →</div>
           </div>
         </a>
 
+        <!-- 5 · Nives -->
+        <a class="pf-card reveal" style="--i:4" href="https://agv-it.be/nives/" target="_blank" rel="noopener">
+          <div class="pf-frame">
+            <div class="pf-chrome">
+              <div class="pf-dots"><span></span><span></span><span></span></div>
+              <div class="pf-url">agv-it.be/nives</div>
+              <div class="pf-badge">Concept</div>
+            </div>
+            <div class="pf-shot">
+              <img src="./assets/nives.jpg" width="1600" height="1000" alt="Nives concept site screenshot" loading="lazy">
+              <div class="pf-overlay"><span>Open mock-up ↗</span></div>
+            </div>
+          </div>
+          <div class="pf-body">
+            <div class="pf-label">Concept · Breakfast &amp; bakery</div>
+            <h3>Nives <span class="arrow">↗</span></h3>
+            <p>A bright, bilingual NL/EN concept for a breakfast and lunch spot with its own sourdough bakery, on the edge of Harmoniepark.</p>
+            <div class="pf-tags"><span>NL / EN</span><span>Concept</span></div>
+            <div class="pf-cta">Open mock-up →</div>
+          </div>
+        </a>
+
+        <!-- 6 · Shopzo (live) -->
+        <a class="pf-card reveal" style="--i:5" href="https://shopzo.be" target="_blank" rel="noopener">
+          <div class="pf-frame">
+            <div class="pf-chrome">
+              <div class="pf-dots"><span></span><span></span><span></span></div>
+              <div class="pf-url">shopzo.be</div>
+              <div class="pf-badge live">Live</div>
+            </div>
+            <div class="pf-shot">
+              <img src="./assets/shopzo.jpg" width="1600" height="1000" alt="Shopzo.be homepage screenshot" loading="lazy">
+              <div class="pf-overlay"><span>Visit site ↗</span></div>
+            </div>
+          </div>
+          <div class="pf-body">
+            <div class="pf-label">Platform · Multi-tenant e-commerce</div>
+            <h3>Shopzo <span class="arrow">↗</span></h3>
+            <p>A white-label e-commerce platform built for small retailers — seller dashboard, multi-tenant architecture, and demo storefronts.</p>
+            <div class="pf-tags"><span>React</span><span>Supabase</span><span>Multi-tenant</span></div>
+            <div class="pf-cta">Visit shopzo.be →</div>
+          </div>
+        </a>
+
+        <!-- 7 · Loam Living -->
+        <a class="pf-card reveal" style="--i:6" href="https://agv-it.be/loamliving/" target="_blank" rel="noopener">
+          <div class="pf-frame">
+            <div class="pf-chrome">
+              <div class="pf-dots"><span></span><span></span><span></span></div>
+              <div class="pf-url">agv-it.be/loamliving</div>
+              <div class="pf-badge">Demo</div>
+            </div>
+            <div class="pf-shot">
+              <img src="./assets/loam-living.jpg" width="1600" height="1000" alt="Loam Living product page screenshot" loading="lazy">
+              <div class="pf-overlay"><span>Open demo shop ↗</span></div>
+            </div>
+          </div>
+          <div class="pf-body">
+            <div class="pf-label">Demo · Shopzo storefront</div>
+            <h3>Loam Living <span class="arrow">↗</span></h3>
+            <p>A fictional Dutch-language home-decor shop, built to demonstrate Shopzo's webshop functionality — browsing, cart, wishlist and checkout.</p>
+            <div class="pf-tags"><span>Shopzo storefront</span><span>NL</span></div>
+            <div class="pf-cta">Open demo shop →</div>
+          </div>
+        </a>
+
+        <!-- 8 · Ryve -->
+        <a class="pf-card reveal" style="--i:7" href="https://agv-it.be/ryve/" target="_blank" rel="noopener">
+          <div class="pf-frame">
+            <div class="pf-chrome">
+              <div class="pf-dots"><span></span><span></span><span></span></div>
+              <div class="pf-url">agv-it.be/ryve</div>
+              <div class="pf-badge">Demo</div>
+            </div>
+            <div class="pf-shot">
+              <img src="./assets/ryve.jpg" width="1600" height="1000" alt="Ryve homepage screenshot" loading="lazy">
+              <div class="pf-overlay"><span>Open demo shop ↗</span></div>
+            </div>
+          </div>
+          <div class="pf-body">
+            <div class="pf-label">Demo · Shopzo storefront</div>
+            <h3>Ryve <span class="arrow">↗</span></h3>
+            <p>A demo shop on Shopzo, not a live business — used to walk prospects through the seller dashboard, checkout and payment setup.</p>
+            <div class="pf-tags"><span>Shopzo storefront</span><span>Concept</span></div>
+            <div class="pf-cta">Open demo shop →</div>
+          </div>
+        </a>
+
+        <!-- 9 · Polette -->
+        <a class="pf-card reveal" style="--i:8" href="https://agv-it.be/polette/" target="_blank" rel="noopener">
+          <div class="pf-frame">
+            <div class="pf-chrome">
+              <div class="pf-dots"><span></span><span></span><span></span></div>
+              <div class="pf-url">agv-it.be/polette</div>
+              <div class="pf-badge">Concept</div>
+            </div>
+            <div class="pf-shot">
+              <img src="./assets/polette.jpg" width="1600" height="1000" alt="Polette concept site screenshot" loading="lazy">
+              <div class="pf-overlay"><span>Open mock-up ↗</span></div>
+            </div>
+          </div>
+          <div class="pf-body">
+            <div class="pf-label">Concept · Coffee bar</div>
+            <h3>Polette <span class="arrow">↗</span></h3>
+            <p>A corner coffee bar concept in Antwerp's Markgravewijk, built around its founder's story, menu and real Google reviews.</p>
+            <div class="pf-tags"><span>Founder story</span><span>Concept</span></div>
+            <div class="pf-cta">Open mock-up →</div>
+          </div>
+        </a>
+
+        <!-- 10 · Coppejans Gallery -->
+        
+        <a class="pf-card reveal" style="--i:9" href="https://agv-it.be/coppejans-gallery/" target="_blank" rel="noopener">
+          <div class="pf-frame">
+            <div class="pf-chrome">
+              <div class="pf-dots"><span></span><span></span><span></span></div>
+              <div class="pf-url">agv-it.be/coppejans-gallery</div>
+              <div class="pf-badge">Concept</div>
+            </div>
+            <div class="pf-shot">
+              <img src="./assets/coppejans-gallery.jpg" width="1600" height="1000" alt="Coppejans Gallery concept site screenshot" loading="lazy">
+              <div class="pf-overlay"><span>Open mock-up ↗</span></div>
+            </div>
+          </div>
+          <div class="pf-body">
+            <div class="pf-label">Concept · Contemporary art gallery</div>
+            <h3>Coppejans Gallery <span class="arrow">↗</span></h3>
+            <p>A gallery-first concept for a contemporary art space in Antwerp's Schipperskwartier — exhibitions, artists and projects at the crossroads of art, philosophy and science.</p>
+            <div class="pf-tags"><span>Art</span><span>Concept</span></div>
+            <div class="pf-cta">Open mock-up →</div>
+          </div>
+        </a>
+
+        <!-- 11 · PMEB -->
+        <a class="pf-card reveal" style="--i:10" href="https://agv-it.be/pmeb/" target="_blank" rel="noopener">
+          <div class="pf-frame">
+            <div class="pf-chrome">
+              <div class="pf-dots"><span></span><span></span><span></span></div>
+              <div class="pf-url">agv-it.be/pmeb</div>
+              <div class="pf-badge">Concept</div>
+            </div>
+            <div class="pf-shot">
+              <img src="./assets/pmeb.jpg" width="1600" height="1000" alt="PMEB homepage screenshot" loading="lazy">
+              <div class="pf-overlay"><span>Open mock-up ↗</span></div>
+            </div>
+          </div>
+          <div class="pf-body">
+            <div class="pf-label">Concept · Construction management</div>
+            <h3>PMEB <span class="arrow">↗</span></h3>
+            <p>Project management, expertise and safety coordination for construction projects — Vlimmeren, Antwerpse Kempen.</p>
+            <div class="pf-tags"><span>Bouw</span><span>Concept</span></div>
+            <div class="pf-cta">Open mock-up →</div>
+          </div>
+        </a>
+
+        <!-- 12 · Jess Beauty (live) -->
+        <a class="pf-card pf-wide reveal" style="--i:11" href="https://jessbeauty.be" target="_blank" rel="noopener">
+          <div class="pf-frame">
+            <div class="pf-chrome">
+              <div class="pf-dots"><span></span><span></span><span></span></div>
+              <div class="pf-url">jessbeauty.be</div>
+              <div class="pf-badge live">Live</div>
+            </div>
+            <div class="pf-shot">
+              <img src="./assets/jess-beauty.jpg" width="1600" height="1000" alt="Jess Beauty homepage screenshot" loading="lazy">
+              <div class="pf-overlay"><span>Visit site ↗</span></div>
+            </div>
+          </div>
+          <div class="pf-body">
+            <div class="pf-label">Client site · Hair salon</div>
+            <h3>Jess Beauty Antwerp <span class="arrow">↗</span></h3>
+            <p>A bilingual, appointment-only salon site — from brand direction to a working booking flow, delivered as a self-contained build.</p>
+            <div class="pf-tags"><span>EN / ES</span><span>Booking</span></div>
+            <div class="pf-cta">Visit jessbeauty.be →</div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing CTA -->
+  <section class="pf-cta-band">
+    <div class="wrap">
+      <div class="inner">
+        <div>
+          <h2>Want something like this for your own business?</h2>
+          <p>Affordable websites, webshops and booking systems — built and hosted for you.</p>
+        </div>
+        <a class="btn btn-primary" href="/#quote">Request a quote →</a>
       </div>
     </div>
   </section>
@@ -265,17 +352,7 @@
   </div>
 </footer>
 
-<script>
-  const revealEls = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); }
-      });
-    }, { threshold: 0.1 });
-    revealEls.forEach(el => io.observe(el));
-  } else { revealEls.forEach(el => el.classList.add('in')); }
-</script>
+<script src="/assets/main.js"></script>
 
 </body>
 </html>
