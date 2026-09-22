@@ -72,11 +72,53 @@ function renderCartCount() {
 
 /* ---------- Communicatie met api.shopzo.be ---------- */
 
+// Producten worden zowel door de navigatiebalk (categorieën) als door de
+// productgrid opgevraagd — zonder cache gebeurt dat dubbel op elke pagina.
+// Deze cache lost twee dingen op:
+// 1. Dedup: als twee delen van de pagina tegelijk aanroepen, wacht de tweede
+//    gewoon op dezelfde lopende aanvraag i.p.v. een nieuwe te starten.
+// 2. Korte hergebruik-periode (5 min) via sessionStorage, zodat doorklikken
+//    naar een andere pagina binnen dezelfde bezoeksessie niet telkens
+//    opnieuw naar de API moet — vooral voelbaar na een "cold start" van de
+//    Netlify Function, wanneer de allereerste aanvraag trager is.
+const PRODUCTS_CACHE_TTL_MS = 5 * 60 * 1000; // 5 minuten
+const PRODUCTS_CACHE_KEY = `shopzo_products_cache_${SHOPZO_SELLER}`;
+let _productsFetchPromise = null;
+
 async function shopzoFetchProducts() {
-  const res = await fetch(`${SHOPZO_API_BASE}/products?seller=${SHOPZO_SELLER}`);
-  if (!res.ok) throw new Error('Producten konden niet geladen worden');
-  const data = await res.json();
-  return data.products;
+  if (_productsFetchPromise) return _productsFetchPromise;
+
+  try {
+    const cached = JSON.parse(sessionStorage.getItem(PRODUCTS_CACHE_KEY));
+    if (cached && Date.now() - cached.timestamp < PRODUCTS_CACHE_TTL_MS) {
+      return cached.products;
+    }
+  } catch {
+    // Corrupte of ontbrekende cache-entry — gewoon vers ophalen hieronder.
+  }
+
+  _productsFetchPromise = fetch(`${SHOPZO_API_BASE}/products?seller=${SHOPZO_SELLER}`)
+    .then((res) => {
+      if (!res.ok) throw new Error('Producten konden niet geladen worden');
+      return res.json();
+    })
+    .then((data) => {
+      try {
+        sessionStorage.setItem(
+          PRODUCTS_CACHE_KEY,
+          JSON.stringify({ products: data.products, timestamp: Date.now() })
+        );
+      } catch {
+        // sessionStorage kan uitzonderlijk falen (privénavigatie, vol) —
+        // geen probleem, dan wordt er gewoon niet gecachet.
+      }
+      return data.products;
+    })
+    .finally(() => {
+      _productsFetchPromise = null;
+    });
+
+  return _productsFetchPromise;
 }
 
 async function shopzoFetchProduct(productId) {
@@ -122,6 +164,44 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 
+// Zelfde kleursysteem als het dashboard, zodat een tag er overal
+// hetzelfde uitziet zonder dat de verkoper zelf kleuren moet kiezen.
+const TAG_PALETTE = [
+  { bg: '#FDE7C8', text: '#8A5A1E' },
+  { bg: '#FCE79A', text: '#8A6D0E' },
+  { bg: '#D7F0D2', text: '#2C6B2F' },
+  { bg: '#CDEDE6', text: '#1D6B5F' },
+  { bg: '#1E9D49', text: '#FFFFFF' },
+  { bg: '#F5D2D9', text: '#8A2E43' },
+  { bg: '#E4D3C4', text: '#5C4530' },
+  { bg: '#D6E4F5', text: '#2C4F7C' },
+  { bg: '#E6D6F5', text: '#5C2C7C' }
+];
+
+function tagColor(tag) {
+  const sum = [...tag.toLowerCase()].reduce((acc, ch) => acc + ch.charCodeAt(0), 0);
+  return TAG_PALETTE[sum % TAG_PALETTE.length];
+}
+
+// Rendert tags als gekleurde pilletjes, met een "+N" bolletje voor de rest
+// als er meer dan `max` tags zijn (zoals het Shopify-voorbeeld).
+function renderTagPills(tags, max = 2) {
+  if (!tags || tags.length === 0) return '';
+  const visible = tags.slice(0, max);
+  const extra = tags.length - visible.length;
+
+  const pills = visible.map((tag) => {
+    const c = tagColor(tag);
+    return `<span style="display:inline-block; padding:4px 11px; border-radius:999px; font-size:0.72rem; font-weight:600; background:${c.bg}; color:${c.text};">${escapeHtml(tag)}</span>`;
+  }).join('');
+
+  const more = extra > 0
+    ? `<span style="display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:999px; background:#EDEAE2; color:var(--ink); font-size:0.72rem; font-weight:700;" title="${tags.slice(max).map(escapeHtml).join(', ')}">+${extra}</span>`
+    : '';
+
+  return `<div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px;">${pills}${more}</div>`;
+}
+
 // Rendert één product als de bestaande "hangertje"-kaart, zodat dynamische
 // producten er identiek uitzien als de originele statische kaarten.
 function renderProductCard(product, { linkToDetail = true } = {}) {
@@ -136,6 +216,7 @@ function renderProductCard(product, { linkToDetail = true } = {}) {
 
   const badge = onSale ? '<span class="badge badge-mustard">Sale</span>' : '';
   const subLabel = product.subcategory || product.category || '';
+  const tagsHtml = renderTagPills(product.tags);
 
   const inner = `
     <div class="string"></div>
@@ -143,6 +224,7 @@ function renderProductCard(product, { linkToDetail = true } = {}) {
       ${badge}
       <div class="tag-hole-top"></div>
       ${thumbHtml}
+      ${tagsHtml}
       <h4>${escapeHtml(product.name)}</h4>
       <div class="price-row">${priceHtml}</div>
       <div class="approved">${escapeHtml(subLabel)}</div>
