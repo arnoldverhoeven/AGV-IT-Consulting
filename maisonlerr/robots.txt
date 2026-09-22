@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://maisonlerr.com/sitemap.xml
