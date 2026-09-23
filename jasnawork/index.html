@@ -81,6 +81,7 @@
   .kicker{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-deep);margin-bottom:16px}
   .kicker::before{content:"";width:28px;height:3px;background:var(--accent);border-radius:2px}
   .lead{font-size:1.15rem;color:var(--ink-2);max-width:60ch}
+  .hero-slogan{font-style:italic;font-weight:600;color:var(--accent-deep);font-size:1.05rem;margin:-4px 0 16px}
 
   /* brand wordmark — @ glyph in a rounded badge */
   .brand{display:inline-flex;align-items:center;gap:11px;font-family:var(--font-display);font-weight:800;font-size:1.4rem;letter-spacing:-.03em;line-height:1}
@@ -346,8 +347,9 @@
     <div class="hero-blob" aria-hidden="true"></div>
     <div class="wrap hero-grid">
       <div>
-        <span class="kicker" data-i18n="hero.kicker">Administratieve ondersteuning · regio Antwerpen</span>
+        <span class="kicker" data-i18n="hero.kicker">Admin, backoffice &amp; structuur · regio Antwerpen</span>
         <h1 data-i18n="hero.h1">Laat los.<br>Pak vast.<br><span class="hl">Vertrouw toe.</span></h1>
+        <p class="hero-slogan" data-i18n="hero.slogan">"Chill, it's only chaos."</p>
         <p class="lead" data-i18n="hero.lead">Jij onderneemt. Jasna houdt je administratie, planning en backoffice op orde — zodat jij je tijd terug hebt voor wat écht relevant is voor je bedrijf.</p>
         <div class="actions">
           <a href="#contact" class="btn btn-primary" data-i18n="hero.ctaPrimary">Plan een vrijblijvend gesprek</a>
@@ -377,7 +379,7 @@
       <div class="reveal">
         <span class="kicker" data-i18n="herken.kicker">Herken je dit?</span>
         <h2 data-i18n="herken.h2">De administratie groeit sneller dan je agenda toelaat.</h2>
-        <p class="big" data-i18n="herken.big">Je bent gestart om te ondernemen, niet om 's avonds facturen te sorteren. Toch stapelt het zich op: mails die blijven liggen, offertes die te laat vertrekken, een planning die je in je hoofd bijhoudt.</p>
+        <p class="big" data-i18n="herken.big">Jouw tijd gaat natuurlijk het liefst naar ondernemen, niet naar administratie. Toch stapelt het zich op: mails die blijven liggen, offertes die te laat vertrekken, een planning die je in je hoofd bijhoudt.</p>
         <blockquote class="quote"><span data-i18n="herken.quote">"Als administratieve chaos coördinator help ik jou om los te laten en wat voor je bedrijf relevant is, terug vast te pakken — of toe te vertrouwen aan ons."</span>
           <small>Jasna Hellemans, Jasna@Work</small>
         </blockquote>
@@ -404,18 +406,18 @@
           <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#2B2B2B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></div>
           <h3 data-i18n="svc1.h3">Administratie &amp; opvolging</h3>
           <p data-i18n="svc1.p">Je administratie wordt opgezet, bijgehouden en opgevolgd — zodat niets blijft liggen.</p>
-          <ul data-i18n="svc1.ul"><li>Inkomende en uitgaande documenten ordenen</li><li>Facturatie en betalingsopvolging</li><li>Dossiers klaar voor je boekhouder</li></ul>
+          <ul data-i18n="svc1.ul"><li>Inkomende en uitgaande administratie verwerken</li><li>Facturatie, betalingen &amp; bijhorende opvolging</li><li>Boekhoudvoorbereiding inclusief afstemming met je boekhouder</li></ul>
         </article>
         <article class="card reveal">
           <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#2B2B2B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 15h3M13 15h3M8 19h3"/></svg></div>
           <h3 data-i18n="svc2.h3">Planning &amp; backoffice</h3>
-          <p data-i18n="svc2.p">Meer dan zes jaar planningbeheer in de praktijk: een agenda die klopt en een team dat weet wat er wanneer gebeurt.</p>
+          <p data-i18n="svc2.p">Een planning die klopt, opdrachten die opgevolgd worden en een team dat weet wat er wanneer moet gebeuren.</p>
           <ul data-i18n="svc2.ul"><li>Werk- en afsprakenplanning</li><li>Opvolging van lopende opdrachten</li><li>Structuur in je dagelijkse processen</li></ul>
         </article>
         <article class="card reveal">
           <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#2B2B2B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></div>
-          <h3 data-i18n="svc3.h3">Offertes &amp; sales support</h3>
-          <p data-i18n="svc3.p">Vlotte, correcte offertes en een opvolging die geen kans laat liggen — met ervaring als planning- en salesmedewerker.</p>
+          <h3 data-i18n="svc3.h3">Offertes &amp; klantopvolging</h3>
+          <p data-i18n="svc3.p">Van aanvraag tot offerte en verdere opvolging: klanten krijgen tijdig antwoord en niets blijft onnodig liggen.</p>
           <ul data-i18n="svc3.ul"><li>Offertes opmaken en versturen</li><li>Opvolging van aanvragen en klanten</li><li>Klantencontact in jouw naam</li></ul>
         </article>
         <article class="card reveal">
@@ -457,7 +459,7 @@
         <div class="step reveal">
           <div class="n">2</div>
           <h3 data-i18n="step2.h3">Vastpakken</h3>
-          <p data-i18n="step2.p">Jasna neemt de afgesproken taken over, werkt achterstand weg en zet een duidelijke werkwijze op die past bij hoe jij werkt.</p>
+          <p data-i18n="step2.p">Jasna neemt de afgesproken taken over, brengt waar nodig structuur en zet een duidelijke werkwijze op die past bij hoe jij werkt.</p>
         </div>
         <div class="step reveal">
           <div class="n">3</div>
@@ -480,18 +482,12 @@
             <div class="role" data-i18n="portrait.role">Zaakvoerder Jasna@Work · Schoten</div>
           </div>
         </div>
-        <div class="badge"><b>2021</b><span data-i18n="badge.label">zelfstandig sinds</span></div>
       </div>
       <div class="reveal">
         <span class="kicker" data-i18n="over.kicker">Over Jasna</span>
         <h2 data-i18n="over.h2">Iemand die weet hoe een backoffice écht draait.</h2>
-        <p class="lead" style="margin-top:16px" data-i18n="over.lead">Voor ze in 2021 zelfstandig werd, stond Jasna meer dan zes jaar in de backoffice en het planningbeheer van een productiebedrijf, en daarna in planning en sales. Ze kent de drukte van een KMO van binnenuit — en weet welke administratie wél en niet je aandacht verdient.</p>
-        <p style="color:var(--ink-2);margin-top:14px" data-i18n="over.p2">Met Jasna@Work zet ze die ervaring in voor ondernemers in de regio Antwerpen: nuchter, gestructureerd en met oog voor wat relevant is voor jouw bedrijf.</p>
-        <div class="timeline">
-          <div><strong data-i18n="tl1.strong">Jasna@Work — zelfstandig</strong><span data-i18n="tl1.span">Oktober 2021 – heden · Antwerpse regio</span></div>
-          <div><strong data-i18n="tl2.strong">Planning en sales representative — Profalco nv</strong><span data-i18n="tl2.span">2021 · voltijds</span></div>
-          <div><strong data-i18n="tl3.strong">Backoffice en planningbeheer — Glas Van Lent</strong><span data-i18n="tl3.span">2014 – 2021 · Antwerpen</span></div>
-        </div>
+        <p class="lead" style="margin-top:16px" data-i18n="over.lead">Jasna is praktisch, gestructureerd en no-nonsense — met een scherp oog voor wat écht relevant is voor jouw bedrijf. Voor ze zelfstandig werd, bouwde ze jarenlange ervaring op in backoffice, planning en sales bij KMO's, en die achtergrond neemt ze mee in elke samenwerking.</p>
+        <p style="color:var(--ink-2);margin-top:14px" data-i18n="over.p2">Betrokken, en altijd no-judgement: of je bureau nu een rommeltje is of piekfijn georganiseerd, daar maakt Jasna geen punt van. Ze brengt structuur waar nodig, of stapt vlot mee in een bedrijf waar alles al goed draait.</p>
         <a href="https://www.linkedin.com/in/jasna-hellemans-45b66b215/" target="_blank" rel="noopener" class="btn btn-ghost" style="margin-top:28px">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
           <span data-i18n="over.linkedin">Bekijk LinkedIn-profiel</span>
@@ -505,7 +501,7 @@
     <div class="wrap reveal">
       <span class="kicker" data-i18n="voorwie.kicker">Voor wie</span>
       <h2 data-i18n="voorwie.h2">Voor ondernemers die liever ondernemen.</h2>
-      <p class="lead" style="margin-top:16px" data-i18n="voorwie.lead">Jasna@Work werkt voor zelfstandigen en KMO's die geen voltijdse administratieve kracht nodig hebben, maar wél iemand die het overzicht bewaakt.</p>
+      <p class="lead" style="margin-top:16px" data-i18n="voorwie.lead">Jasna@Work werkt voor zelfstandigen en KMO's die ondersteuning kunnen gebruiken in hun administratie en backoffice, en iemand zoeken die mee het overzicht bewaakt.</p>
       <div class="chips">
         <span class="chip" data-i18n="chip1">Zelfstandigen &amp; eenmanszaken</span>
         <span class="chip" data-i18n="chip2">Vakmensen en bouwprofessionals</span>
@@ -535,7 +531,7 @@
           </div>
           <div>
             <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#2B2B2B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-            <div><strong data-i18n="info.responseLabel">Antwoord binnen 1 werkdag</strong><span data-i18n="info.responseSub">Op elke aanvraag via het formulier</span></div>
+            <div><strong data-i18n="info.responseLabel">Snel persoonlijk antwoord</strong><span data-i18n="info.responseSub">Op elke aanvraag via het formulier</span></div>
           </div>
         </div>
       </div>
@@ -644,7 +640,7 @@
     "metaDesc":"Jasna@Work takes administrative chaos off entrepreneurs' hands: administration, planning, backoffice and follow-up. Self-employed since 2021, based in Schoten for the whole Antwerp area.",
     "nav.diensten":"Services","nav.aanpak":"Approach","nav.over":"About Jasna","nav.voorwie":"Who it's for","nav.contact":"Contact",
     "cta.header":"Book an intro call",
-    "hero.kicker":"Administrative support · Antwerp area",
+    "hero.kicker":"Admin, backoffice &amp; structure · Antwerp area",
     "hero.h1":"Let go.<br>Take hold.<br><span class=\"hl\">Trust it.</span>",
     "hero.lead":"You run the business. Jasna keeps your administration, planning and backoffice in order — so you get your time back for what truly matters to your business.",
     "hero.ctaPrimary":"Book a free consultation","hero.ctaGhost":"See the services",
@@ -654,7 +650,7 @@
     "hero.cardText":"What you let go of, Jasna picks up. What matters to your business comes back to you, clear and simple.",
     "herken.kicker":"Sound familiar?",
     "herken.h2":"Your admin grows faster than your schedule allows.",
-    "herken.big":"You started this to run a business, not to sort invoices at night. Yet it piles up: emails left unanswered, quotes sent too late, a schedule you only keep in your head.",
+    "herken.big":"Naturally, you'd rather spend your time running your business than on admin. Yet it piles up: emails left unanswered, quotes sent too late, a schedule you only keep in your head.",
     "herken.quote":"“As an administrative chaos coordinator, I help you let go — and take back, or hand over to us, what really matters for your business.”",
     "chaos.1":"An inbox with hundreds of unread messages that still hide the important questions.",
     "chaos.2":"A schedule that exists only in your head — and grinds to a halt the moment you're unreachable.",
@@ -664,10 +660,10 @@
     "diensten.h2":"Everything that keeps your business running,<br>without you having to chase it.",
     "diensten.lead":"From a few hours a week to a full backoffice: Jasna works to fit your business, remotely or on-site.",
     "svc1.h3":"Administration &amp; follow-up","svc1.p":"Your administration gets set up, maintained and followed up — so nothing falls through the cracks.",
-    "svc1.ul":"<li>Organising incoming and outgoing documents</li><li>Invoicing and payment follow-up</li><li>Files ready for your accountant</li>",
-    "svc2.h3":"Planning &amp; backoffice","svc2.p":"More than six years of hands-on planning management: a schedule that's accurate and a team that knows what happens when.",
+    "svc1.ul":"<li>Processing incoming and outgoing administration</li><li>Invoicing, payments &amp; related follow-up</li><li>Bookkeeping preparation, aligned with your accountant</li>",
+    "svc2.h3":"Planning &amp; backoffice","svc2.p":"A schedule that's accurate, assignments that get followed up, and a team that knows what needs to happen when.",
     "svc2.ul":"<li>Work and appointment scheduling</li><li>Follow-up of ongoing assignments</li><li>Structure in your daily processes</li>",
-    "svc3.h3":"Quotes &amp; sales support","svc3.p":"Smooth, accurate quotes and follow-up that doesn't let opportunities slip — backed by experience in planning and sales.",
+    "svc3.h3":"Quotes &amp; client follow-up","svc3.p":"From request to quote and further follow-up: clients get a timely answer and nothing is left hanging.",
     "svc3.ul":"<li>Drafting and sending quotes</li><li>Following up on enquiries and clients</li><li>Client contact on your behalf</li>",
     "svc4.h3":"Inbox &amp; calendar management","svc4.p":"A tidy inbox and a calendar that works for you instead of against you.",
     "svc4.ul":"<li>Sorting, answering and forwarding emails</li><li>Scheduling and confirming appointments</li><li>A weekly overview of what needs your attention</li>",
@@ -677,24 +673,21 @@
     "svc6.ul":"<li>Remote or at your office</li><li>Scales with your workload</li><li>No staffing cost, but a fixed point of contact</li>",
     "aanpak.kicker":"Approach","aanpak.h2":"Here's how working with Jasna goes","aanpak.lead":"No complicated process. Three steps, at your pace.",
     "step1.h3":"Let go","step1.p":"Together we look at where your time goes today and what you can safely hand over. No obligation, in person or online.",
-    "step2.h3":"Take hold","step2.p":"Jasna takes over the agreed tasks, clears any backlog, and sets up a clear way of working that fits how you operate.",
+    "step2.h3":"Take hold","step2.p":"Jasna takes over the agreed tasks, brings structure where needed, and sets up a clear way of working that fits how you operate.",
     "step3.h3":"Trust it","step3.p":"Your administration runs smoothly, you get a clear overview of what matters — and you leave the rest, with peace of mind, to Jasna@Work.",
     "portrait.role":"Owner, Jasna@Work · Schoten","portrait.alt":"Jasna Hellemans, owner of Jasna@Work","badge.label":"self-employed since",
     "over.kicker":"About Jasna","over.h2":"Someone who knows how a backoffice really runs.",
-    "over.lead":"Before going self-employed in 2021, Jasna spent more than six years in the backoffice and planning management of a manufacturing company, followed by a role in planning and sales. She knows the pressures of an SME from the inside — and which administration truly deserves your attention.",
-    "over.p2":"With Jasna@Work, she puts that experience to work for entrepreneurs in the Antwerp area: down-to-earth, structured, and focused on what really matters for your business.",
-    "tl1.strong":"Jasna@Work — self-employed","tl1.span":"October 2021 – present · Antwerp area",
-    "tl2.strong":"Planning and Sales Representative — Profalco nv","tl2.span":"2021 · full-time",
-    "tl3.strong":"Backoffice and Planning Management — Glas Van Lent","tl3.span":"2014 – 2021 · Antwerp",
+    "over.lead":"Jasna is practical, structured and no-nonsense — with a sharp eye for what truly matters for your business. Before going self-employed, she built years of experience in backoffice, planning and sales at SMEs, and she brings that background into every collaboration.",
+    "over.p2":"Engaged, and always no-judgement: whether your desk is a mess or perfectly organised, Jasna won't bat an eye. She brings structure where it's needed, or steps smoothly into a business that's already running well.",
     "over.linkedin":"View LinkedIn profile",
     "voorwie.kicker":"Who it's for","voorwie.h2":"For entrepreneurs who'd rather be entrepreneurs.",
-    "voorwie.lead":"Jasna@Work works with self-employed professionals and SMEs who don't need a full-time administrative hire, but do want someone keeping an eye on the bigger picture.",
+    "voorwie.lead":"Jasna@Work works with self-employed professionals and SMEs who could use support in their administration and backoffice, and want someone helping keep an eye on the bigger picture.",
     "chip1":"Sole traders &amp; freelancers","chip2":"Tradespeople &amp; construction pros","chip3":"Manufacturing &amp; installation companies",
     "chip4":"Independent professionals","chip5":"Growing SMEs","chip6":"Businesses facing a temporary peak or absence",
     "contact.kicker":"Contact","contact.h2":"Ready to let go?",
     "contact.lead":"A first conversation is always without obligation. Together we'll look at what's on your plate and what Jasna@Work can take off it.",
     "info.locationLabel":"Schoten, Antwerp area","info.locationSub":"Remote or at your office",
-    "info.responseLabel":"Reply within 1 business day","info.responseSub":"On every request submitted through the form",
+    "info.responseLabel":"A quick, personal reply","info.responseSub":"On every request submitted through the form",
     "form.h3":"Book an introduction call","form.p":"Tell us briefly what's on your plate. Jasna will get in touch for a no-obligation chat.",
     "form.labelNaam":"Name","form.labelBedrijf":"Company","form.labelEmail":"Email","form.labelTel":"Phone","form.labelOnderwerp":"What can Jasna help you with?","form.labelBericht":"Message",
     "form.phNaam":"First and last name","form.phBedrijf":"Name of your business","form.phEmail":"you@company.com","form.phTel":"+32 …",
@@ -715,7 +708,7 @@
     "metaDesc":"Jasna@Work prend en charge le chaos administratif des entrepreneurs : administration, planification, back-office et suivi. Indépendante depuis 2021, basée à Schoten pour toute la région d'Anvers.",
     "nav.diensten":"Services","nav.aanpak":"Approche","nav.over":"À propos","nav.voorwie":"Pour qui","nav.contact":"Contact",
     "cta.header":"Prise de contact",
-    "hero.kicker":"Support administratif · région d'Anvers",
+    "hero.kicker":"Admin, back-office &amp; structure · région d'Anvers",
     "hero.h1":"Lâchez prise.<br>Reprenez le contrôle.<br><span class=\"hl\">Faites confiance.</span>",
     "hero.lead":"Vous entreprenez. Jasna garde votre administration, votre planification et votre back-office en ordre — pour que vous retrouviez du temps pour ce qui compte vraiment dans votre entreprise.",
     "hero.ctaPrimary":"Planifiez un entretien gratuit","hero.ctaGhost":"Voir les services",
@@ -725,7 +718,7 @@
     "hero.cardText":"Ce que vous lâchez, Jasna le reprend. Ce qui compte pour votre entreprise vous revient, clair et net.",
     "herken.kicker":"Ça vous parle ?",
     "herken.h2":"Votre administratif grandit plus vite que votre agenda ne le permet.",
-    "herken.big":"Vous vous êtes lancé pour entreprendre, pas pour trier des factures le soir. Pourtant, tout s'accumule : des e-mails en attente, des devis envoyés trop tard, un planning que vous gardez uniquement en tête.",
+    "herken.big":"Vous préférez naturellement consacrer votre temps à entreprendre plutôt qu'à l'administration. Pourtant, tout s'accumule : des e-mails en attente, des devis envoyés trop tard, un planning que vous gardez uniquement en tête.",
     "herken.quote":"« En tant que coordinatrice du chaos administratif, je vous aide à lâcher prise — et à reprendre, ou à nous confier, ce qui compte vraiment pour votre entreprise. »",
     "chaos.1":"Une boîte mail avec des centaines de messages non lus, parmi lesquels se cachent des questions importantes.",
     "chaos.2":"Un planning qui n'existe que dans votre tête — et qui s'arrête dès que vous êtes injoignable.",
@@ -735,10 +728,10 @@
     "diensten.h2":"Tout ce qui fait tourner votre entreprise,<br>sans que vous deviez tout gérer vous-même.",
     "diensten.lead":"De quelques heures par semaine à un back-office complet : Jasna s'adapte à votre entreprise, à distance ou sur place.",
     "svc1.h3":"Administration et suivi","svc1.p":"Votre administration est mise en place, tenue à jour et suivie — pour que rien ne reste en suspens.",
-    "svc1.ul":"<li>Organisation des documents entrants et sortants</li><li>Facturation et suivi des paiements</li><li>Dossiers prêts pour votre comptable</li>",
-    "svc2.h3":"Planification et back-office","svc2.p":"Plus de six ans de gestion de planning sur le terrain : un agenda fiable et une équipe qui sait ce qui se passe et quand.",
+    "svc1.ul":"<li>Traitement de l'administration entrante et sortante</li><li>Facturation, paiements &amp; suivi associé</li><li>Préparation comptable, en concertation avec votre comptable</li>",
+    "svc2.h3":"Planification et back-office","svc2.p":"Un planning fiable, des missions suivies de près et une équipe qui sait ce qui doit se passer et quand.",
     "svc2.ul":"<li>Planification du travail et des rendez-vous</li><li>Suivi des missions en cours</li><li>Structuration de vos processus quotidiens</li>",
-    "svc3.h3":"Devis et support commercial","svc3.p":"Des devis fluides et corrects, et un suivi qui ne laisse passer aucune opportunité — fort d'une expérience en planification et en vente.",
+    "svc3.h3":"Devis et suivi client","svc3.p":"De la demande au devis, jusqu'au suivi : vos clients reçoivent une réponse rapide et rien ne reste en suspens.",
     "svc3.ul":"<li>Rédaction et envoi des devis</li><li>Suivi des demandes et des clients</li><li>Contact client en votre nom</li>",
     "svc4.h3":"Gestion de boîte mail et d'agenda","svc4.p":"Une boîte mail bien rangée et un agenda qui travaille pour vous plutôt que contre vous.",
     "svc4.ul":"<li>Tri, réponse et transfert des e-mails</li><li>Planification et confirmation des rendez-vous</li><li>Aperçu hebdomadaire de ce qui requiert votre attention</li>",
@@ -748,24 +741,21 @@
     "svc6.ul":"<li>À distance ou dans vos bureaux</li><li>Évolutif selon votre charge de travail</li><li>Aucun coût salarial, mais un interlocuteur fixe</li>",
     "aanpak.kicker":"Approche","aanpak.h2":"Voici comment se déroule la collaboration avec Jasna","aanpak.lead":"Pas de processus compliqué. Trois étapes, à votre rythme.",
     "step1.h3":"Lâcher prise","step1.p":"Nous regardons ensemble où passe votre temps aujourd'hui et ce que vous pouvez confier en toute confiance. Sans engagement, en personne ou en ligne.",
-    "step2.h3":"Reprendre en main","step2.p":"Jasna reprend les tâches convenues, rattrape le retard et met en place une méthode de travail claire, adaptée à votre façon de fonctionner.",
+    "step2.h3":"Reprendre en main","step2.p":"Jasna reprend les tâches convenues, apporte de la structure là où c'est nécessaire et met en place une méthode de travail claire, adaptée à votre façon de fonctionner.",
     "step3.h3":"Faire confiance","step3.p":"Votre administration tourne, vous avez une vue claire sur l'essentiel — et vous confiez le reste, l'esprit tranquille, à Jasna@Work.",
     "portrait.role":"Gérante, Jasna@Work · Schoten","portrait.alt":"Jasna Hellemans, gérante de Jasna@Work","badge.label":"indépendante depuis",
     "over.kicker":"À propos de Jasna","over.h2":"Quelqu'un qui sait vraiment comment fonctionne un back-office.",
-    "over.lead":"Avant de devenir indépendante en 2021, Jasna a passé plus de six ans dans le back-office et la gestion de la planification d'une entreprise de production, puis dans la planification et la vente. Elle connaît de l'intérieur le rythme d'une PME — et sait quelle administration mérite vraiment votre attention.",
-    "over.p2":"Avec Jasna@Work, elle met cette expérience au service des entrepreneurs de la région d'Anvers : pragmatique, structurée et attentive à ce qui compte vraiment pour votre entreprise.",
-    "tl1.strong":"Jasna@Work — indépendante","tl1.span":"Octobre 2021 – aujourd'hui · Région d'Anvers",
-    "tl2.strong":"Chargée de planification et représentante commerciale — Profalco nv","tl2.span":"2021 · temps plein",
-    "tl3.strong":"Back-office et gestion de la planification — Glas Van Lent","tl3.span":"2014 – 2021 · Anvers",
+    "over.lead":"Jasna est pragmatique, structurée et sans chichis — avec un regard aiguisé sur ce qui compte vraiment pour votre entreprise. Avant de devenir indépendante, elle a acquis des années d'expérience en back-office, planification et vente au sein de PME, une expérience qu'elle met à profit dans chaque collaboration.",
+    "over.p2":"Impliquée, et toujours sans jugement : que votre bureau soit en désordre ou parfaitement organisé, cela ne pose aucun problème à Jasna. Elle apporte de la structure là où c'est nécessaire, ou s'intègre facilement dans une entreprise qui tourne déjà bien.",
     "over.linkedin":"Voir le profil LinkedIn",
     "voorwie.kicker":"Pour qui","voorwie.h2":"Pour les entrepreneurs qui préfèrent entreprendre.",
-    "voorwie.lead":"Jasna@Work travaille avec des indépendants et des PME qui n'ont pas besoin d'un poste administratif à temps plein, mais bien de quelqu'un qui garde une vue d'ensemble.",
+    "voorwie.lead":"Jasna@Work travaille avec des indépendants et des PME qui ont besoin de soutien dans leur administration et leur back-office, et qui recherchent quelqu'un qui les aide à garder une vue d'ensemble.",
     "chip1":"Indépendants et micro-entreprises","chip2":"Artisans et professionnels du bâtiment","chip3":"Entreprises de production et d'installation",
     "chip4":"Professions libérales","chip5":"PME en croissance","chip6":"Entreprises confrontées à un pic ou une absence temporaire",
     "contact.kicker":"Contact","contact.h2":"Prêt(e) à lâcher prise ?",
     "contact.lead":"Un premier échange est toujours sans engagement. Nous examinons ensemble ce qui vous occupe et ce que Jasna@Work peut prendre en charge.",
     "info.locationLabel":"Schoten, région d'Anvers","info.locationSub":"À distance ou dans vos bureaux",
-    "info.responseLabel":"Réponse sous 1 jour ouvrable","info.responseSub":"Pour toute demande envoyée via le formulaire",
+    "info.responseLabel":"Une réponse rapide et personnalisée","info.responseSub":"Pour toute demande envoyée via le formulaire",
     "form.h3":"Planifiez une prise de contact","form.p":"Décrivez brièvement ce qui vous occupe. Jasna vous recontactera pour un échange sans engagement.",
     "form.labelNaam":"Nom","form.labelBedrijf":"Entreprise","form.labelEmail":"E-mail","form.labelTel":"Téléphone","form.labelOnderwerp":"Avec quoi Jasna peut-elle vous aider ?","form.labelBericht":"Message",
     "form.phNaam":"Prénom et nom","form.phBedrijf":"Nom de votre entreprise","form.phEmail":"vous@entreprise.be","form.phTel":"+32 …",
