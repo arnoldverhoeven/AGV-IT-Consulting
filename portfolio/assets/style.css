@@ -85,23 +85,9 @@ header{
   align-items:center;
   justify-content:space-between;
 }
-.logo{
-  font-family:'Space Grotesk', sans-serif;
-  font-weight:700;
-  font-size:15px;
-  letter-spacing:0.02em;
-  display:flex;
-  align-items:center;
-  gap:10px;
-  text-decoration:none;
-  color:var(--text);
-}
-.logo-mark{
-  width:9px;height:9px;
-  background:var(--amber);
-  border-radius:1px;
-  flex-shrink:0;
-}
+.logo{display:flex; align-items:center; text-decoration:none; color:var(--text);}
+.logo img{height:52px; width:auto; display:block;}
+@media (max-width:560px){ .logo img{height:38px;} }
 nav.links{
   display:flex;
   gap:36px;

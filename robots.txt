@@ -1,0 +1,41 @@
+# agv-it.be
+User-agent: *
+Allow: /
+
+# Internal tools
+Disallow: /previews/
+
+# Pitch mock-ups for real businesses: not meant to rank for those
+# businesses' names in Google. They stay reachable via direct links
+# and the portfolio page.
+Disallow: /bni/
+Disallow: /hansi-ombregt-architectuur/
+Disallow: /paul-presents/
+Disallow: /simplexit/
+Disallow: /nives/
+Disallow: /polette/
+Disallow: /coppejans-gallery/
+Disallow: /pmeb/
+Disallow: /rayjo/
+
+# AI assistants and AI search engines are explicitly welcome
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://agv-it.be/sitemap.xml

@@ -1,0 +1,23 @@
+# AGV IT Consulting
+
+> Affordable websites, webshops and booking systems for small businesses, freelancers and local shops — built fast with AI (such as Claude) and finished, tested and hosted by hand by Arnold Verhoeven, an IT consultant and web developer based in Antwerp, Belgium. A simple professional website costs a few hundred euros instead of a few thousand. Also: IT consultancy and IT project management (ISO 27001, NIS2, IAM/SSO, infrastructure).
+
+Key facts:
+- Business: AGV IT Consulting BV, Antwerpen, Belgium. Works across Flanders and online.
+- Contact: arnold.verhoeven@agv-it.be · +32 499 46 44 20
+- Languages: Dutch, English, French
+- Pricing: websites from a few hundred euros; clear quote up front; no page-builder subscription
+- Approach: a working mock-up of the client's own site first, then adjust together, then live on the client's own domain with hosting, SSL, basic SEO and social previews
+- Webshops via Shopzo.be (own multi-tenant e-commerce platform for small retailers)
+- Background: 13+ years of IT project management (pharma, logistics, healthcare, rail); PMP and PRINCE2 certified
+
+## Pages
+
+- [Home](https://agv-it.be/): services, affordable websites, IT consultancy, track record, quote form
+- [Betaalbare website laten maken (NL)](https://agv-it.be/betaalbare-website/): affordable websites explained in Dutch — pricing, what's included, process, FAQ
+- [Portfolio](https://agv-it.be/portfolio/): live client sites and concepts, e.g. Jasna@Work, Jess Beauty, Leerpret, Shopzo, Tattoo Tobias
+
+## Contact
+
+- [Request a quote](https://agv-it.be/#quote)
+- [LinkedIn — Arnold Verhoeven](https://www.linkedin.com/in/arnold-verhoeven)
