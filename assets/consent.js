@@ -9,8 +9,8 @@
   // Conversielabels uit Google Ads (het deel NA de schuine streep in send_to: 'AW-…/LABEL').
   // Zolang hier 'VERVANG' staat, wordt die conversie nog niet verstuurd.
   var LABELS = {
-    form: 'VERVANG_MET_LABEL_OFFERTEFORMULIER',
-    mail: 'VERVANG_MET_LABEL_EMAILKLIK'
+    form: '40alCMemp5UdEJGeue1E',
+    mail: '40alCMemp5UdEJGeue1E'
   };
   /* ------------------------------------------------------------------------ */
 
