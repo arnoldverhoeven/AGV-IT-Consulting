@@ -47,6 +47,7 @@ if (quoteForm) {
       + '?subject=' + encodeURIComponent(subject)
       + '&body=' + encodeURIComponent(bodyLines.join('\n'));
 
+    if (window.agvConversion) { window.agvConversion('form'); }
     window.location.href = mailto;
     status.textContent = 'Opening your email client with the request pre-filled…';
     status.className = 'qf-status ok';
