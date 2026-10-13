@@ -280,7 +280,7 @@ function renderProductCard(product) {
         ${photoContent}
         ${saleFlag}
         <button type="button" class="fav-btn${favActive}" aria-label="Toevoegen aan favorieten"
-          onclick="handleFavoriteClick(event, '${product.id}', this)">
+          data-fav-id="${product.id}">
           ${heartIconSvg()}
         </button>
       </div>
@@ -313,6 +313,13 @@ async function renderShopzoNav() {
     navEl.innerHTML = '<a href="shop.html">Shop</a>';
   }
 }
+
+// Hartjes op productkaarten: één click-listener voor de hele pagina
+// (geen inline onclick, zodat de CSP zonder 'unsafe-inline' werkt).
+document.addEventListener('click', (event) => {
+  const btn = event.target.closest('.fav-btn[data-fav-id]');
+  if (btn) handleFavoriteClick(event, btn.dataset.favId, btn);
+});
 
 document.addEventListener('DOMContentLoaded', () => {
   renderCartCount();
