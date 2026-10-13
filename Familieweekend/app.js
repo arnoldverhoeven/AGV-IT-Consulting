@@ -7,14 +7,14 @@ const END   = new Date(2026, 10, 22, 20, 0, 0); // zo 22 nov, vertrek voor 20u
 /* ========= DATA ========= */
 const GROUPS = [
   {id:'g1', nl:'Arnold, Jessica & George', es:'Arnold, Jessica y George', color:'var(--brick)', members:['arnold','jessica','george']},
-  {id:'g2', nl:'Katrien, Peter & Wout', es:'Katrien, Peter y Wout', color:'var(--oak)',   members:['katrien','peter','wout']},
+  {id:'g2', nl:'Katrien, Peter, Wout & Janne', es:'Katrien, Peter, Wout y Janne', color:'var(--oak)',   members:['katrien','peter','wout','janne']},
   {id:'g3', nl:'Emma, Yorick & Suzan', es:'Emma, Yorick y Suzan', color:'var(--rose)',  members:['emma','yorick','suzan']},
   {id:'g4', nl:'Marieke & Amelie', es:'Marieke y Amelie', color:'var(--sage)', members:['marieke','amelie']},
   {id:'g5', nl:'Mamy & Tati', es:'Mamy y Tati', color:'var(--lilac)', members:['mamy','tati']},
 ];
 const GUESTS = {
   arnold:{n:'Arnold'}, jessica:{n:'Jessica'}, george:{n:'George', tag:{nl:'8 j',es:'8 a'}},
-  katrien:{n:'Katrien', tag:{nl:'oma',es:'abuela'}}, peter:{n:'Peter'}, wout:{n:'Wout', tag:{nl:'16 j',es:'16 a'}},
+  katrien:{n:'Katrien', tag:{nl:'oma',es:'abuela'}}, peter:{n:'Peter'}, wout:{n:'Wout', tag:{nl:'16 j',es:'16 a'}}, janne:{n:'Janne', tag:{nl:'liefje van Wout',es:'novia de Wout'}},
   emma:{n:'Emma'}, yorick:{n:'Yorick'}, suzan:{n:'Suzan', tag:{nl:'3 j',es:'3 a'}},
   marieke:{n:'Marieke'}, amelie:{n:'Amelie', tag:{nl:'9 j',es:'9 a'}},
   mamy:{n:'Mamy'}, tati:{n:'Tati'},
@@ -289,7 +289,7 @@ function moveGuest(gid, roomId){
 }
 document.getElementById('resetRooms').addEventListener('click',()=>{ if(confirm(t('reset_q'))){ state.rooms={}; changed(); renderRooms(); } });
 document.getElementById('autoBtn').addEventListener('click',()=>{
-  state.rooms={ r1:['katrien','peter'], r2:['mamy','tati'], r3:['arnold','jessica'], r4:['emma','yorick','suzan'], r5:['marieke','amelie'], r6:['george','wout'] };
+  state.rooms={ r1:['katrien','peter'], r2:['mamy','tati'], r3:['arnold','jessica'], r4:['emma','yorick','suzan','george'], r5:['marieke','amelie'], r6:['wout','janne'] };
   changed(); renderRooms(); toast(t('auto_done'));
 });
 
