@@ -17,6 +17,7 @@ Disallow: /polette/
 Disallow: /coppejans-gallery/
 Disallow: /pmeb/
 Disallow: /rayjo/
+Disallow: /lapotteria/
 
 # AI assistants and AI search engines are explicitly welcome
 User-agent: GPTBot
