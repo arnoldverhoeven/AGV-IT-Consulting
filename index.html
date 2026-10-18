@@ -338,12 +338,15 @@
           <div class="widget"><div class="wbox" id="shop">
             <div class="wcap" aria-hidden="true"><span>Demo shop</span><span>try it</span></div>
             <div class="shop-row">
-              <div class="shop-thumb" aria-hidden="true"></div>
-              <div><div class="shop-name">Sample product</div><div class="shop-price">€ 24,00</div></div>
+              <img class="shop-thumb" src="/assets/demo-product.jpg" width="160" height="160" alt="Ceramic vase 'Terra'" loading="lazy">
+              <div><div class="shop-name">Ceramic vase 'Terra'</div><div class="shop-price">€ 34,00</div></div>
+              <button type="button" class="shop-like" id="shop-like" aria-pressed="false" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.2C1.2 8.5 3.3 5 6.8 5c2 0 3.3 1.1 5.2 3 1.9-1.9 3.2-3 5.2-3 3.5 0 5.6 3.5 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg></button>
               <div class="qty"><button type="button" data-q="-1" aria-label="Fewer">−</button><output id="shop-q" aria-live="polite">1</output><button type="button" data-q="1" aria-label="More">+</button></div>
             </div>
-            <div class="shop-total"><span>Total</span><b id="shop-t">€ 24,00</b></div>
+            <div class="shop-cart"><button type="button" id="shop-add"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 11.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 8H6.5"/><circle cx="9.5" cy="20" r="1.3"/><circle cx="17.5" cy="20" r="1.3"/></svg>Add to cart</button><span class="shop-cartn mono" id="shop-cartn" aria-live="polite">Cart: 0</span></div>
+            <div class="shop-total"><span>Total</span><b id="shop-t">€ 34,00</b></div>
             <div class="shop-go"><button type="button" id="shop-go">Place order</button><span class="shop-msg" id="shop-msg" role="status">✓ Order confirmed</span></div>
+            <a class="wquote" id="shop-quote" href="#quote" data-type="Webshop / e-commerce" hidden>Request a quote for a webshop <span aria-hidden="true">→</span></a>
           </div></div>
         </article>
 
@@ -355,6 +358,8 @@
             <div class="wcap" aria-hidden="true"><span>Pick a time</span><span>try it</span></div>
             <div class="cal" id="cal"></div>
             <div class="book-msg" id="book-msg" role="status">Select a slot.</div>
+            <div class="book-go"><button type="button" id="book-go">Book timeslot</button><span class="shop-msg" id="book-ok" role="status">✓ Booking confirmed</span></div>
+            <a class="wquote" id="book-quote" href="#quote" data-type="Booking / reservation system" hidden>Request a quote for a booking system <span aria-hidden="true">→</span></a>
           </div></div>
         </article>
 
@@ -500,27 +505,27 @@
 
       <div class="tl" id="tl">
         <span class="tl-fill" aria-hidden="true"></span>
-        <div class="tl-row reveal">
+        <div class="tl-row reveal now">
           <div class="years mono">2023 — Now</div>
           <div class="org">Katoen Natie<span>IT Project Manager</span></div>
           <div class="desc">ISO 27001 &amp; NIS2 lead for business unit IT, IAM and SSO projects, SaaS transitions, automation programmes, site start-ups &amp; M&amp;A, and global LAN/WAN renewals.</div>
         </div>
-        <div class="tl-row reveal">
+        <div class="tl-row reveal past">
           <div class="years mono">2023</div>
           <div class="org">Lonza<span>IT Project Manager, freelance</span></div>
           <div class="desc">Migration of 250 servers to a new domain as a security-audit remediation action — dependency mapping, timeline and project charter.</div>
         </div>
-        <div class="tl-row reveal">
+        <div class="tl-row reveal past">
           <div class="years mono">2022</div>
           <div class="org">CM — Christelijke Mutualiteit<span>Project Manager, freelance</span></div>
           <div class="desc">New monitoring programme (CMDB, ELK/OpenSearch), file system upgrade, data-centre relocation and telephony fallback projects.</div>
         </div>
-        <div class="tl-row reveal">
+        <div class="tl-row reveal past">
           <div class="years mono">2017 — 2021</div>
           <div class="org">Johnson &amp; Johnson (via NTT)<span>Project Manager</span></div>
           <div class="desc">SD-WAN migration across 30 sites, EOL hardware consolidation, and multi-year voice transformation across EMEA.</div>
         </div>
-        <div class="tl-row reveal">
+        <div class="tl-row reveal past">
           <div class="years mono">2014 — 2017</div>
           <div class="org">Ypto (NMBS)<span>Junior Project Manager</span></div>
           <div class="desc">IT-business alignment, demand management and lifecycle rollout programmes across 10,000+ devices nationwide.</div>
@@ -558,7 +563,7 @@
       <div class="quote-copy">
         <div class="tag reveal">Get a quote</div>
         <h2 class="reveal" style="--d:60">Tell me about your website, webshop or booking project.</h2>
-        <p class="sec-note reveal" style="--d:120">Fill this in and it opens a pre-filled email — no account or back-and-forth needed to get started.</p>
+        <p class="sec-note reveal" style="--d:120">Fill this in and it lands straight in my inbox — no account or back-and-forth needed to get started.</p>
         <ol class="flow reveal" style="--d:180">
           <li><b>You send the details.</b> A few lines about what you need and when.</li>
           <li><b>I build a working mock-up</b> of your own site, with your real content.</li>
@@ -598,6 +603,7 @@
           <label for="qf-message">Project details<span aria-hidden="true">*</span></label>
           <textarea id="qf-message" name="message" rows="5" required placeholder="What are you looking to build, and what timeline are you working with?"></textarea>
         </div>
+        <div class="qf-hp" aria-hidden="true"><label for="qf-website">Website</label><input type="text" id="qf-website" name="website" tabindex="-1" autocomplete="off"></div>
         <div class="qf-footer">
           <p id="qf-status" class="qf-status" role="status"></p>
           <button type="submit" class="btn btn-primary">Send quote request <span class="arr" aria-hidden="true">→</span></button>
