@@ -88,7 +88,7 @@ nav.links a:hover::after,nav.links a:focus-visible::after{transform:scaleX(1);}
 .eyebrow{display:inline-flex; align-items:flex-start; gap:10px; font:500 12px/1.7 'IBM Plex Mono',monospace; color:var(--sky); text-transform:uppercase; letter-spacing:.14em; margin-bottom:30px; max-width:64ch;}
 .eyebrow .prompt{color:var(--sky-2);}
 @keyframes blink{50%{opacity:0;}}
-.hero h1{font-size:clamp(36px,4.5vw,62px); font-weight:650; line-height:1.04; letter-spacing:-.04em; color:#fff;}
+.hero h1{font-size:clamp(34px,4vw,56px); font-weight:650; line-height:1.04; letter-spacing:-.04em; color:#fff;}
 .hero h1 em{font-style:normal; background:linear-gradient(100deg,#BFDBFE 0%,#60A5FA 30%,#3B82F6 55%,#93C5FD 85%,#60A5FA 100%); background-size:220% 100%; -webkit-background-clip:text; background-clip:text; color:transparent; -webkit-text-fill-color:transparent; animation:sheen 9s ease-in-out infinite alternate;}
 @keyframes sheen{to{background-position:100% 0;}}
 .hero .lead{margin-top:30px; font-size:18px; line-height:1.7; color:var(--mut-d); max-width:50ch;}
