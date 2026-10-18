@@ -78,7 +78,7 @@
     /* ---------- hero: portfolio-showcase (rustige crossfade) ---------- */
     var sc = $('#showcase');
     if (sc && !reduce) {
-      var imgs = $$('.sc-stage img', sc), urlEl = $('#sc-url'), tagEl = $('#sc-tag'), cur = 0;
+      var imgs = $$('.sc-stage img', sc), urlEl = $('#sc-url'), linkEl = $('#sc-link'), tagEl = $('#sc-tag'), cur = 0;
       whileVisible(sc, function (stop) {
         return wait(4800).then(function () {
           if (stop()) { return; }
@@ -86,6 +86,7 @@
           cur = (cur + 1) % imgs.length;
           imgs[cur].classList.add('on');
           urlEl.textContent = imgs[cur].getAttribute('data-url');
+          linkEl.setAttribute('href', imgs[cur].getAttribute('data-href'));
           tagEl.textContent = imgs[cur].getAttribute('data-tag');
         });
       }, 0.3);
