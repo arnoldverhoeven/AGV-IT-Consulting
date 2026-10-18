@@ -67,7 +67,7 @@ nav.links a:hover::after,nav.links a:focus-visible::after{transform:scaleX(1);}
 .sec.light{background:var(--paper); color:var(--txt-l); border-top-color:var(--hair-l);}
 .sec.light::before{content:""; position:absolute; inset:0; pointer-events:none; background-image:linear-gradient(rgba(14,34,64,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(14,34,64,.045) 1px,transparent 1px); background-size:64px 64px; -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 30%,transparent 100%); mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 30%,transparent 100%);}
 .tag{display:inline-flex; align-items:center; gap:12px; font:500 12px 'IBM Plex Mono',monospace; text-transform:uppercase; letter-spacing:.16em; color:var(--sky);}
-.tag::before{content:""; width:28px; height:1px; background:currentColor;}
+
 .light .tag{color:var(--blue);}
 .sec-head{display:flex; justify-content:space-between; align-items:flex-end; gap:32px; margin-bottom:72px; flex-wrap:wrap;}
 .sec-head h2{font-size:clamp(30px,3.7vw,50px); margin-top:18px; max-width:20ch; letter-spacing:-.035em; line-height:1.07;}
@@ -265,6 +265,10 @@ nav.links a:hover::after,nav.links a:focus-visible::after{transform:scaleX(1);}
 .pf-card p{font-size:14.5px; color:var(--mut-d); line-height:1.65;}
 .pf-tags{display:flex; flex-wrap:wrap; gap:6px; margin-top:auto; padding-top:8px;}
 .pf-tags span{font:400 10.5px 'IBM Plex Mono',monospace; color:var(--mut-d); border:1px solid var(--hair-d); border-radius:999px; padding:3px 10px;}
+.pf-split .pf-main{display:block; color:inherit; text-decoration:none;}
+.pf-split .pf-main::after{content:""; position:absolute; inset:0; z-index:1;}
+.pf-doc{position:relative; z-index:2; align-self:flex-start; font:500 11.5px 'IBM Plex Mono',monospace; letter-spacing:.04em; color:var(--sky-2); text-decoration:none; border:1px solid rgba(96,165,250,.4); border-radius:var(--radius); padding:7px 12px; margin-top:6px; transition:background .2s,color .2s;}
+.pf-doc:hover,.pf-doc:focus-visible{background:var(--blue); color:#fff; border-color:var(--blue); outline:none;}
 .pf-more{margin-top:48px; display:flex; justify-content:center;}
 @media (hover:none){.pf-overlay{display:none;}}
 
