@@ -14,42 +14,41 @@ if ('IntersectionObserver' in window) {
   revealEls.forEach(el => el.classList.add('in'));
 }
 
-// Quote request form -> pre-filled email (no backend required)
+// Quote request form -> sent server-side (/api/quote), no email client needed
 const quoteForm = document.getElementById('quote-form');
 if (quoteForm) {
-  quoteForm.addEventListener('submit', function (e) {
+  quoteForm.addEventListener('submit', async function (e) {
     e.preventDefault();
     const status = document.getElementById('qf-status');
-    const name = document.getElementById('qf-name').value.trim();
-    const email = document.getElementById('qf-email').value.trim();
-    const company = document.getElementById('qf-company').value.trim();
-    const type = document.getElementById('qf-type').value;
-    const message = document.getElementById('qf-message').value.trim();
-
-    if (!name || !email || !type || !message) {
+    const btn = quoteForm.querySelector('button[type="submit"]');
+    const data = {
+      name: document.getElementById('qf-name').value.trim(),
+      email: document.getElementById('qf-email').value.trim(),
+      company: document.getElementById('qf-company').value.trim(),
+      type: document.getElementById('qf-type').value,
+      message: document.getElementById('qf-message').value.trim(),
+      website: (document.getElementById('qf-website') || {}).value || ''
+    };
+    if (!data.name || !data.email || !data.type || !data.message) {
       status.textContent = 'Please fill in the required fields.';
       status.className = 'qf-status err';
       return;
     }
-
-    const subject = 'Website quote request — ' + type + (company ? ' — ' + company : '');
-    const bodyLines = [
-      'Name: ' + name,
-      'Email: ' + email,
-      company ? 'Company: ' + company : null,
-      'Project type: ' + type,
-      '',
-      'Project details:',
-      message
-    ].filter(Boolean);
-
-    const mailto = 'mailto:arnold.verhoeven@agv-it.be'
-      + '?subject=' + encodeURIComponent(subject)
-      + '&body=' + encodeURIComponent(bodyLines.join('\n'));
-
-    if (window.agvConversion) { window.agvConversion('form'); }
-    window.location.href = mailto;
-    status.textContent = 'Opening your email client with the request pre-filled…';
-    status.className = 'qf-status ok';
+    btn.disabled = true;
+    status.textContent = 'Sending…';
+    status.className = 'qf-status';
+    try {
+      const r = await fetch('/api/quote', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+      if (!r.ok) { throw new Error('send failed'); }
+      if (window.agvConversion) { window.agvConversion('form'); }
+      quoteForm.reset();
+      status.textContent = 'Thanks! Your request has been sent — I\'ll get back to you within one working day.';
+      status.className = 'qf-status ok';
+    } catch (err) {
+      status.textContent = 'Something went wrong. Please email arnold.verhoeven@agv-it.be directly.';
+      status.className = 'qf-status err';
+    } finally {
+      btn.disabled = false;
+    }
   });
 }

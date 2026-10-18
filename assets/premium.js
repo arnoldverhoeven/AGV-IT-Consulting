@@ -192,14 +192,26 @@
     var shop = $('#shop');
     if (shop) {
       var qEl = $('#shop-q'), tEl = $('#shop-t'), go = $('#shop-go'), msg = $('#shop-msg');
-      var qty = 1, lastShop = 0;
+      var like = $('#shop-like'), add = $('#shop-add'), cartN = $('#shop-cartn'), sq = $('#shop-quote');
+      var qty = 1, lastShop = 0, cart = 0;
       var fmt = function (n) { return '€ ' + n.toFixed(2).replace('.', ','); };
-      var paintShop = function () { qEl.textContent = qty; tEl.textContent = fmt(24 * qty); };
+      var paintShop = function () { qEl.textContent = qty; tEl.textContent = fmt(34 * qty); cartN.textContent = 'Cart: ' + cart; };
       var order = function () {
-        go.classList.add('press'); msg.classList.add('on');
+        go.classList.add('press'); msg.classList.add('on'); sq.hidden = false;
         setTimeout(function () { go.classList.remove('press'); }, 220);
         setTimeout(function () { msg.classList.remove('on'); }, 2600);
       };
+      var addCart = function () {
+        cart += qty; add.classList.add('press'); cartN.classList.add('bump'); paintShop();
+        setTimeout(function () { add.classList.remove('press'); cartN.classList.remove('bump'); }, 500);
+      };
+      like.addEventListener('click', function () {
+        lastShop = Date.now();
+        var on = like.getAttribute('aria-pressed') !== 'true';
+        like.setAttribute('aria-pressed', on ? 'true' : 'false'); like.classList.add('pop');
+        setTimeout(function () { like.classList.remove('pop'); }, 200);
+      });
+      add.addEventListener('click', function () { lastShop = Date.now(); addCart(); });
       $$('[data-q]', shop).forEach(function (b) {
         b.addEventListener('click', function () {
           lastShop = Date.now();
@@ -212,14 +224,16 @@
       if (!reduce) {
         whileVisible(shop, async function (stop) {
           if (Date.now() - lastShop < 9000) { await wait(1000); return; }
-          qty = 1; msg.classList.remove('on'); paintShop();
+          qty = 1; cart = 0; msg.classList.remove('on'); sq.hidden = true; like.setAttribute('aria-pressed', 'false'); paintShop();
           await wait(1500); if (stop() || Date.now() - lastShop < 9000) { return; }
+          like.setAttribute('aria-pressed', 'true');
+          await wait(900); if (stop() || Date.now() - lastShop < 9000) { return; }
           qty = 2; paintShop();
-          await wait(1000); if (stop() || Date.now() - lastShop < 9000) { return; }
-          qty = 3; paintShop();
-          await wait(1100); if (stop() || Date.now() - lastShop < 9000) { return; }
+          await wait(900); if (stop() || Date.now() - lastShop < 9000) { return; }
+          addCart();
+          await wait(1200); if (stop() || Date.now() - lastShop < 9000) { return; }
           order();
-          await wait(3400);
+          await wait(5000);
         }, 0.5);
       }
     }
@@ -230,6 +244,13 @@
       var days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'], times = ['09:00', '11:00', '14:00'];
       var taken = { '0-1': 1, '1-0': 1, '2-2': 1, '3-1': 1, '4-0': 1 };
       var bmsg = $('#book-msg'), slots = {}, selKey = null, lastBook = 0;
+      var bgo = $('#book-go'), bok = $('#book-ok'), bq = $('#book-quote');
+      var confirmBook = function () {
+        bgo.classList.add('press'); bok.classList.add('on'); bq.hidden = false;
+        setTimeout(function () { bgo.classList.remove('press'); }, 220);
+        setTimeout(function () { bok.classList.remove('on'); }, 2600);
+      };
+      bgo.addEventListener('click', function () { lastBook = Date.now(); confirmBook(); });
       days.forEach(function (d) { var h = document.createElement('div'); h.className = 'dh'; h.textContent = d; cal.appendChild(h); });
       times.forEach(function (t, ti) {
         days.forEach(function (d, di) {
@@ -245,7 +266,8 @@
         if (selKey) { slots[selKey].classList.remove('sel'); slots[selKey].setAttribute('aria-pressed', 'false'); }
         selKey = k; slots[k].classList.add('sel'); slots[k].setAttribute('aria-pressed', 'true');
         var p = k.split('-');
-        bmsg.innerHTML = 'Booked: <b>' + days[+p[0]] + ' · ' + times[+p[1]] + '</b> ✓';
+        bmsg.innerHTML = 'Selected: <b>' + days[+p[0]] + ' · ' + times[+p[1]] + '</b>';
+        bok.classList.remove('on');
       };
       var seq = ['1-1', '3-2', '2-0', '4-2', '0-2'], si = 0;
       pick('3-2');
@@ -254,9 +276,20 @@
           if (Date.now() - lastBook < 9000) { await wait(1000); return; }
           await wait(2300); if (stop() || Date.now() - lastBook < 9000) { return; }
           pick(seq[si++ % seq.length]);
+          await wait(1400); if (stop() || Date.now() - lastBook < 9000) { return; }
+          confirmBook();
+          await wait(3000);
         }, 0.5);
       }
     }
+
+    /* ---------- widget → offerte: projecttype vooraf kiezen ---------- */
+    $$('.wquote').forEach(function (a) {
+      a.addEventListener('click', function () {
+        var sel = $('#qf-type'), v = a.getAttribute('data-type');
+        if (sel && v) { sel.value = v; }
+      });
+    });
 
     /* ---------- portfolio: lichtgloed volgt de muis ---------- */
     if (fine && !reduce) {
