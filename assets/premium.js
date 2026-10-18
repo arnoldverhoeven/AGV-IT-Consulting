@@ -65,41 +65,31 @@
       window.addEventListener('resize', function () { if (window.innerWidth > 900) { setNav(false); } });
     }
 
-    /* ---------- hero: spotlight + parallax-chips ---------- */
+    /* ---------- hero: spotlight ---------- */
     var hero = $('.hero');
     if (hero && fine && !reduce) {
-      var chips = $$('.chip', hero);
       hero.addEventListener('pointermove', function (e) {
         var r = hero.getBoundingClientRect();
         hero.style.setProperty('--mx', (e.clientX - r.left) + 'px');
         hero.style.setProperty('--my', (e.clientY - r.top) + 'px');
-        var cx = e.clientX / window.innerWidth - 0.5, cy = e.clientY / window.innerHeight - 0.5;
-        chips.forEach(function (c) {
-          var d = parseFloat(c.getAttribute('data-depth')) || 0;
-          c.style.transform = 'translate3d(' + (cx * d * 2).toFixed(1) + 'px,' + (cy * d * 2).toFixed(1) + 'px,0)';
-        });
       });
     }
 
-    /* ---------- hero: programmavoortgang ---------- */
-    var rows = $$('#tracks li');
-    function fillRow(li, animate) {
-      var v = parseFloat(li.getAttribute('data-v')) || 0;
-      var bar = $('.bar i', li), val = $('.t-val', li);
-      bar.style.setProperty('--w', (v / 100).toFixed(3));
-      if (!animate) { val.textContent = v + '%'; return; }
-      var delay = (parseFloat(li.style.getPropertyValue('--i')) || 0) * 140, t0 = null, dur = 1800;
-      setTimeout(function () {
-        (function step(ts) {
-          if (t0 === null) { t0 = ts; }
-          var p = clamp((ts - t0) / dur, 0, 1), e = 1 - Math.pow(1 - p, 3);
-          val.textContent = Math.round(v * e) + '%';
-          if (p < 1) { requestAnimationFrame(step); }
-        })(performance.now());
-      }, delay);
+    /* ---------- hero: portfolio-showcase (rustige crossfade) ---------- */
+    var sc = $('#showcase');
+    if (sc && !reduce) {
+      var imgs = $$('.sc-stage img', sc), urlEl = $('#sc-url'), tagEl = $('#sc-tag'), cur = 0;
+      whileVisible(sc, function (stop) {
+        return wait(4800).then(function () {
+          if (stop()) { return; }
+          imgs[cur].classList.remove('on');
+          cur = (cur + 1) % imgs.length;
+          imgs[cur].classList.add('on');
+          urlEl.textContent = imgs[cur].getAttribute('data-url');
+          tagEl.textContent = imgs[cur].getAttribute('data-tag');
+        });
+      }, 0.3);
     }
-    rows.forEach(function (li) { if (!reduce) { $('.t-val', li).textContent = '0%'; } });
-    setTimeout(function () { rows.forEach(function (li) { fillRow(li, !reduce); }); }, reduce ? 0 : 650);
 
     /* ---------- tellers ---------- */
     $$('[data-count]').forEach(function (el) {
