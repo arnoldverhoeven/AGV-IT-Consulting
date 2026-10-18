@@ -6,6 +6,7 @@
 
   /* ---- INSTELLINGEN ------------------------------------------------------ */
   var AW_ID = 'AW-18483138321';
+  var GA_ID = 'G-96MQ11X78H';   // Google Analytics 4 (property www.agv-it.be)
   // Conversielabels uit Google Ads (het deel NA de schuine streep in send_to: 'AW-…/LABEL').
   // Zolang hier 'VERVANG' staat, wordt die conversie nog niet verstuurd.
   var LABELS = {
@@ -17,7 +18,7 @@
   var KEY = 'agv-consent-v1';
   var NL = (document.documentElement.lang || '').slice(0, 2) === 'nl';
   var T = NL ? {
-    text: 'Met jouw toestemming gebruiken we cookies van Google (meten van advertenties) en Microsoft Clarity (statistieken en sessieweergaven) om onze website en advertenties te verbeteren.',
+    text: 'Met jouw toestemming gebruiken we cookies van Google (Analytics en het meten van advertenties) en Microsoft Clarity (statistieken en sessieweergaven) om onze website en advertenties te verbeteren.',
     more: 'Privacyverklaring',
     yes: 'Accepteren',
     no: 'Weigeren',
@@ -25,7 +26,7 @@
     privacy: 'Privacy',
     cookies: 'Cookies'
   } : {
-    text: 'With your consent we use cookies from Google (ad measurement) and Microsoft Clarity (statistics and session replays) to improve our website and ads.',
+    text: 'With your consent we use cookies from Google (Analytics and ad measurement) and Microsoft Clarity (statistics and session replays) to improve our website and ads.',
     more: 'Privacy statement',
     yes: 'Accept',
     no: 'Decline',
@@ -63,8 +64,9 @@
       analytics_storage: 'granted'
     });
     window.gtag('js', new Date());
+    window.gtag('config', GA_ID);
     window.gtag('config', AW_ID);
-    loadScript('https://www.googletagmanager.com/gtag/js?id=' + AW_ID);
+    loadScript('https://www.googletagmanager.com/gtag/js?id=' + GA_ID);
 
     // Microsoft Clarity
     loadScript('/assets/clarity.js', function () {
