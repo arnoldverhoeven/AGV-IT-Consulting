@@ -78,7 +78,7 @@
     /* ---------- hero: portfolio-showcase (rustige crossfade) ---------- */
     var sc = $('#showcase');
     if (sc && !reduce) {
-      var imgs = $$('.sc-stage img', sc), urlEl = $('#sc-url'), linkEl = $('#sc-link'), tagEl = $('#sc-tag'), cur = 0;
+      var imgs = $$('.sc-stage > [data-url]', sc), urlEl = $('#sc-url'), linkEl = $('#sc-link'), tagEl = $('#sc-tag'), cur = 0;
       whileVisible(sc, function (stop) {
         return wait(4800).then(function () {
           if (stop()) { return; }
@@ -88,6 +88,9 @@
           urlEl.textContent = imgs[cur].getAttribute('data-url');
           linkEl.setAttribute('href', imgs[cur].getAttribute('data-href'));
           tagEl.textContent = imgs[cur].getAttribute('data-tag');
+          if (imgs[cur].hasAttribute('data-self')) { linkEl.removeAttribute('target'); linkEl.removeAttribute('rel'); linkEl.setAttribute('aria-label', 'See the full portfolio'); }
+          else { linkEl.setAttribute('target', '_blank'); linkEl.setAttribute('rel', 'noopener'); linkEl.setAttribute('aria-label', 'Open this website in a new tab'); }
+          imgs.forEach(function (el) { if (el.classList.contains('sc-all')) { el.setAttribute('tabindex', el === imgs[cur] ? '0' : '-1'); } });
         });
       }, 0.3);
     }
