@@ -7,14 +7,14 @@ const END   = new Date(2026, 10, 22, 20, 0, 0); // zo 22 nov, vertrek voor 20u
 /* ========= DATA ========= */
 const GROUPS = [
   {id:'g1', nl:'Arnold, Jessica & George', es:'Arnold, Jessica y George', color:'var(--brick)', members:['arnold','jessica','george']},
-  {id:'g2', nl:'Katrien, Peter, Wout & Janne', es:'Katrien, Peter, Wout y Janne', color:'var(--oak)',   members:['katrien','peter','wout','janne']},
+  {id:'g2', nl:'Katrien, Peter & Wout', es:'Katrien, Peter y Wout', color:'var(--oak)',   members:['katrien','peter','wout']},
   {id:'g3', nl:'Emma, Yorick & Suzan', es:'Emma, Yorick y Suzan', color:'var(--rose)',  members:['emma','yorick','suzan']},
   {id:'g4', nl:'Marieke & Amelie', es:'Marieke y Amelie', color:'var(--sage)', members:['marieke','amelie']},
   {id:'g5', nl:'Mamy & Tati', es:'Mamy y Tati', color:'var(--lilac)', members:['mamy','tati']},
 ];
 const GUESTS = {
   arnold:{n:'Arnold'}, jessica:{n:'Jessica'}, george:{n:'George', tag:{nl:'8 j',es:'8 a'}},
-  katrien:{n:'Katrien', tag:{nl:'oma',es:'abuela'}}, peter:{n:'Peter'}, wout:{n:'Wout', tag:{nl:'16 j',es:'16 a'}}, janne:{n:'Janne', tag:{nl:'liefje van Wout',es:'novia de Wout'}},
+  katrien:{n:'Katrien', tag:{nl:'oma',es:'abuela'}}, peter:{n:'Peter'}, wout:{n:'Wout', tag:{nl:'16 j',es:'16 a'}},
   emma:{n:'Emma'}, yorick:{n:'Yorick'}, suzan:{n:'Suzan', tag:{nl:'3 j',es:'3 a'}},
   marieke:{n:'Marieke'}, amelie:{n:'Amelie', tag:{nl:'9 j',es:'9 a'}},
   mamy:{n:'Mamy'}, tati:{n:'Tati'},
@@ -252,7 +252,7 @@ function renderNearby(){
 }
 
 /* ========= ROOMS ========= */
-function roomOf(gid){ for(const r in state.rooms){ if(state.rooms[r].includes(gid)) return r; } return null; }
+function roomOf(gid){ if(!GUESTS[gid]) return null; for(const r in state.rooms){ if(state.rooms[r].includes(gid)) return r; } return null; }
 function guestChip(gid){
   const g=GUESTS[gid], grp=groupOf(gid);
   const el=document.createElement('div'); el.className='guest'; el.dataset.guest=gid;
@@ -273,7 +273,7 @@ function renderRooms(){
     d.innerHTML=`<h3>${L(lg)} <small>${L(lg.note)}</small></h3><div class="rooms"></div>`;
     const rs=d.querySelector('.rooms');
     lg.rooms.forEach(r=>{
-      const occ=state.rooms[r.id]||[];
+      const occ=(state.rooms[r.id]||[]).filter(g=>GUESTS[g]);
       const rd=document.createElement('div'); rd.className='room'+(occ.length===r.cap?' full':occ.length>r.cap?' over':'');
       rd.innerHTML=`<div class="rh"><div><b>${L(r)}</b><div class="beds">${r.cap} × 1p</div></div><span class="cap tnum">${occ.length}/${r.cap}</span></div><div class="note">${L(r.note)}</div><div class="dropzone" data-room="${r.id}"></div>`;
       const dz=rd.querySelector('.dropzone'); occ.forEach(g=>dz.appendChild(guestChip(g)));
@@ -289,7 +289,7 @@ function moveGuest(gid, roomId){
 }
 document.getElementById('resetRooms').addEventListener('click',()=>{ if(confirm(t('reset_q'))){ state.rooms={}; changed(); renderRooms(); } });
 document.getElementById('autoBtn').addEventListener('click',()=>{
-  state.rooms={ r1:['katrien','peter'], r2:['mamy','tati'], r3:['arnold','jessica'], r4:['emma','yorick','suzan','george'], r5:['marieke','amelie'], r6:['wout','janne'] };
+  state.rooms={ r1:['katrien','peter'], r2:['mamy','tati'], r3:['arnold','jessica'], r4:['emma','yorick','suzan'], r5:['marieke','amelie'], r6:['george','wout'] };
   changed(); renderRooms(); toast(t('auto_done'));
 });
 
