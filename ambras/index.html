@@ -287,12 +287,6 @@ footer a:hover{color:#fff}
 footer .cols3{display:flex;flex-wrap:wrap;gap:12px 28px}
 @media(min-width:900px){footer{padding-bottom:34px}footer .wrap{grid-template-columns:auto 1fr auto;align-items:center}}
 
-/* sticky mobile cta */
-.sticky{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:50;display:flex;gap:8px;transform:translateY(130%);transition:transform .4s var(--ease)}
-.sticky.show{transform:none}
-.sticky .btn{flex:1;box-shadow:0 12px 34px rgba(0,0,0,.22)}
-.sticky .btn-o{background:var(--paper);border-color:var(--line)}
-@media(min-width:960px){.sticky{display:none}}
 /* booking */
 .reserve .hrs .today{margin-top:14px}
 .book{background:#fff;color:var(--ink);border-radius:var(--rl);padding:clamp(18px,3vw,28px);display:grid;gap:22px;box-shadow:0 30px 70px rgba(0,0,0,.25)}
@@ -559,7 +553,6 @@ footer .cols3{display:flex;flex-wrap:wrap;gap:12px 28px}
   <div>© 2026 Ambras · <a href="https://www.agv-it.be" target="_blank" rel="noopener">Website by AGV IT Consulting</a> · <a href="#admin">Admin</a></div>
 </div></footer>
 
-<div class="sticky" id="sticky"><a class="btn btn-dark" href="#reserveren">Reserveer</a><a class="btn btn-o" href="#kaart">De kaart</a></div>
 
 <script src="script.js" defer></script>
 </body>

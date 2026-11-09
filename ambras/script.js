@@ -72,12 +72,12 @@ tabs.addEventListener('click',e=>{const t=e.target.closest('.tab');if(!t)return;
 })();
 
 /* ---------- header / drawer / sticky ---------- */
-const hdr=document.getElementById('hdr'),btn=document.getElementById('menuBtn'),dr=document.getElementById('drawer'),st=document.getElementById('sticky');
+const hdr=document.getElementById('hdr'),btn=document.getElementById('menuBtn'),dr=document.getElementById('drawer');
 function closeDrawer(){dr.classList.remove('open');btn.setAttribute('aria-expanded','false');document.body.style.overflow=''}
 btn.addEventListener('click',()=>{const o=!dr.classList.contains('open');dr.classList.toggle('open',o);btn.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''});
 dr.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeDrawer));
 addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer()});
-addEventListener('scroll',()=>{hdr.classList.toggle('sc',scrollY>8);st.classList.toggle('show',scrollY>560&&!dr.classList.contains('open'))},{passive:true});
+addEventListener('scroll',()=>{hdr.classList.toggle('sc',scrollY>8)},{passive:true});
 
 /* ---------- reveal ---------- */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px',threshold:.08});
