@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ambras · lunch & dinner in Kontich · burgers, tacos, bowls & cocktails</title>
+<meta name="description" content="Zin in Ambras? Lunch van 11u tot 15u, avondkaart van 17.30u tot 22u, dinsdag tot zaterdag. Burgers, tacos, bowls en cocktails op de Mechelsesteenweg 45 in Kontich. Reserveer online.">
+<link rel="canonical" href="https://agv-it.be/ambras/">
+<meta property="og:type" content="restaurant">
+<meta property="og:locale" content="nl_BE">
+<meta property="og:site_name" content="Ambras">
+<meta property="og:title" content="Ambras · lunch & dinner in Kontich">
+<meta property="og:description" content="Burgers, tacos, bowls en cocktails. Di–za, lunch 11–15u en avond 17.30–22u. Mechelsesteenweg 45, Kontich.">
+<meta property="og:url" content="https://agv-it.be/ambras/">
+<meta property="og:image" content="https://agv-it.be/ambras/img/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#2A7050">
+<link rel="icon" href="img/ambras-profiel.webp" type="image/webp"><link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Hanken+Grotesk:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Restaurant","name":"Ambras","url":"https://agv-it.be/ambras/","image":"https://agv-it.be/ambras/img/og.jpg","servesCuisine":["Burgers","Tacos","Bowls","Cocktails"],"priceRange":"€20–30","acceptsReservations":"https://mylightspeed.app/reservation/ac2331d1-7685-4c31-a699-40ecfa666ace/reservation","address":{"@type":"PostalAddress","streetAddress":"Mechelsesteenweg 45","postalCode":"2550","addressLocality":"Kontich","addressCountry":"BE"},"geo":{"@type":"GeoCoordinates","latitude":51.1331281,"longitude":4.446038},"sameAs":["https://www.instagram.com/ambras.kontich/"],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"11:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"17:30","closes":"22:00"}]}
+</script>
+<style>
+:root{
+  --green:#2A7050;--green-d:#1E5A3E;--green-x:#163F2D;--green-t:#E6F0EA;
+  --paper:#F6F3EC;--white:#fff;--ink:#141414;--black:#0B0B0B;--mute:#5E6660;
+  --honey:#E9A93D;
+  --line:rgba(20,20,20,.12);
+  --fd:'Bebas Neue','Oswald',Impact,sans-serif;--fb:'Hanken Grotesk',system-ui,-apple-system,sans-serif;
+  --hh:64px;--r:8px;--rl:18px;--pad:clamp(18px,4vw,40px);
+  --ease:cubic-bezier(.22,.8,.26,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:var(--hh)}
+body{background:var(--paper);color:var(--ink);font-family:var(--fb);font-size:16.5px;line-height:1.55;overflow-x:hidden;padding-top:var(--hh)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.wrap{width:min(100% - 2*var(--pad),1200px);margin-inline:auto}
+h1,h2,h3,.disp{font-family:var(--fd);font-weight:400;line-height:.92;letter-spacing:.01em;text-transform:uppercase}
+h2{font-size:clamp(2rem,4.2vw,3rem)}
+.kicker{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--green)}
+section{padding:clamp(44px,7vw,88px) 0;scroll-margin-top:var(--hh)}
+.sec-h{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:10px 24px;margin-bottom:clamp(18px,3vw,30px)}
+.sec-h p{color:var(--mute);max-width:46ch}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}*{animation:none!important}}
+
+/* header */
+header{position:fixed;top:0;left:0;right:0;height:var(--hh);z-index:60;background:var(--green);color:#fff;transition:box-shadow .3s}
+header.sc{box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-family:var(--fd);font-size:1.9rem;letter-spacing:.06em;line-height:1;display:flex;align-items:baseline;gap:10px}
+.brand small{font-family:var(--fb);font-size:.68rem;letter-spacing:.18em;font-weight:600;opacity:.75;display:none}
+.links{display:none;gap:30px;font-weight:600;font-size:.95rem}
+.links a{position:relative;padding:6px 0;opacity:.9}
+.links a:after{content:'';position:absolute;left:0;right:100%;bottom:0;height:2px;background:var(--honey);transition:right .3s var(--ease)}
+.links a:hover:after{right:0}
+.menu-btn{display:inline-flex;align-items:center;gap:10px;background:var(--black);color:#fff;border-radius:999px;padding:11px 16px 11px 14px;font-weight:700;font-size:.92rem;letter-spacing:.02em}
+.menu-btn .bars{display:inline-flex;flex-direction:column;gap:3.5px}
+.menu-btn .bars i{display:block;width:17px;height:2px;background:#fff;border-radius:2px;transition:transform .3s var(--ease),opacity .2s}
+.menu-btn[aria-expanded=true] .bars i:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
+.menu-btn[aria-expanded=true] .bars i:nth-child(2){opacity:0}
+.menu-btn[aria-expanded=true] .bars i:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
+.menu-btn b{width:7px;height:7px;border-radius:50%;background:var(--honey)}
+.btn.hdr-cta{display:none}
+@media(min-width:960px){.links{display:flex}.brand small{display:inline}.btn.hdr-cta{display:inline-flex}}
+
+/* drawer */
+.drawer{position:fixed;inset:var(--hh) 0 0 0;background:var(--green-d);color:#fff;z-index:55;transform:translateY(-8px);opacity:0;visibility:hidden;transition:opacity .3s,transform .4s var(--ease),visibility 0s .4s;overflow:auto;padding:28px var(--pad) 40px}
+.drawer.open{opacity:1;transform:none;visibility:visible;transition:opacity .3s,transform .4s var(--ease)}
+.drawer nav a{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.16);font-family:var(--fd);font-size:clamp(2.2rem,8vw,3.4rem);line-height:1;letter-spacing:.02em}
+.drawer nav a span{font-family:var(--fb);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;opacity:.65}
+.drawer .d-foot{margin-top:26px;display:grid;gap:10px}
+.drawer .d-hours{margin-top:26px;font-size:.95rem;opacity:.85;line-height:1.7}
+@media(min-width:960px){.drawer{left:auto;width:420px;border-left:1px solid rgba(255,255,255,.15)}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 24px;border-radius:999px;font-weight:700;font-size:1rem;min-height:50px;border:1.5px solid transparent;transition:transform .2s var(--ease),background .25s,color .25s,border-color .25s;white-space:nowrap}
+.btn:active{transform:scale(.97)}
+.btn-dark{background:var(--black);color:#fff}
+.btn-dark:hover{background:#222}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover{background:var(--green-d)}
+.btn-white{background:#fff;color:var(--green-d)}
+.btn-white:hover{background:var(--green-t)}
+.btn-o{background:transparent;border-color:currentColor}
+.btn-o:hover{background:rgba(0,0,0,.06)}
+.on-dark .btn-o:hover{background:rgba(255,255,255,.12)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-row{display:flex;gap:10px;flex-wrap:wrap}
+
+/* status chip */
+.chip{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px 7px 10px;font-size:.84rem;font-weight:600}
+.chip i{width:9px;height:9px;border-radius:50%;background:#2FB46B;box-shadow:0 0 0 4px rgba(47,180,107,.2)}
+.chip.closed i{background:#D9534F;box-shadow:0 0 0 4px rgba(217,83,79,.18)}
+
+/* hero */
+.hero{padding:clamp(22px,4vw,56px) 0 0;position:relative}
+.hero .wrap{display:grid;gap:26px}
+.hero h1{font-size:clamp(4.2rem,17vw,9.5rem);line-height:.86;letter-spacing:.005em}
+.hero h1 em{font-style:normal;color:var(--green)}
+.hero .lead{font-size:clamp(1.05rem,1.6vw,1.25rem);color:var(--mute);max-width:44ch;margin:18px 0 22px;font-weight:400}
+.hero .lead strong{color:var(--ink);font-weight:600}
+.hero .chip{margin-bottom:16px}
+.collage{position:relative;display:grid;grid-template-columns:1.25fr .9fr;grid-template-rows:auto auto;gap:10px;margin-top:6px}
+.ph{overflow:hidden;background:#dfe6e1;border-radius:var(--r);position:relative}
+.ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.collage .p1{grid-column:1/2;grid-row:1/3;aspect-ratio:4/5}
+.collage .p2{aspect-ratio:1/1}
+.collage .p3{aspect-ratio:1/1}
+.collage .p1 img{animation:kb 18s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07)}}
+.collage .badge{position:absolute;left:12px;bottom:12px;background:rgba(11,11,11,.78);color:#fff;backdrop-filter:blur(6px);border-radius:999px;padding:7px 12px;font-size:.78rem;font-weight:700;letter-spacing:.04em;display:flex;align-items:center;gap:7px}
+.collage .badge svg{width:14px;height:14px;fill:var(--honey)}
+.hero-foot{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:28px;padding-top:22px;border-top:1px solid var(--line)}
+.hero-foot div{font-size:.82rem;color:var(--mute);line-height:1.35}
+.hero-foot b{display:block;font-family:var(--fd);font-size:clamp(1.25rem,4.4vw,1.6rem);color:var(--ink);letter-spacing:.02em;line-height:1;margin-bottom:4px;white-space:nowrap}
+@media(min-width:960px){
+  .hero .wrap{grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .hero h1{font-size:clamp(6rem,9.4vw,10.5rem)}
+  .collage{grid-template-columns:1.25fr 1fr;grid-template-rows:1fr 1fr;gap:14px;height:min(76svh,720px)}
+  .collage .p1,.collage .p2,.collage .p3{aspect-ratio:auto;height:100%}
+  .hero-foot{grid-template-columns:repeat(3,auto);justify-content:start;gap:40px}
+}
+
+/* ticker */
+.ticker{background:var(--green);color:#fff;overflow:hidden;padding:14px 0;margin-top:clamp(36px,6vw,70px);font-family:var(--fd);font-size:clamp(1.15rem,2vw,1.5rem);letter-spacing:.06em;white-space:nowrap;-webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.ticker div{display:inline-flex;gap:0;animation:tick 42s linear infinite}
+.ticker span{padding-right:34px;display:inline-flex;align-items:center;gap:34px}
+.ticker span:after{content:'';width:7px;height:7px;border-radius:50%;background:var(--honey)}
+
+/* favorites */
+.favs{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px var(--pad) 18px;margin:0 calc(-1*var(--pad));scrollbar-width:none}
+.favs::-webkit-scrollbar{display:none}
+.fav{flex:0 0 min(78vw,300px);scroll-snap-align:start;background:#fff;border-radius:var(--rl);overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column}
+.fav .ph{aspect-ratio:4/4.4;border-radius:0}
+.fav:hover .ph img{transform:scale(1.05)}
+.fav .t{padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.fav .n{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-family:var(--fd);font-size:1.55rem;letter-spacing:.03em;line-height:1}
+.fav .n .pr{color:var(--green);white-space:nowrap}
+.fav .d{color:var(--mute);font-size:.92rem;line-height:1.45}
+.fav .tag{align-self:flex-start;margin-top:auto;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--green);background:var(--green-t);border-radius:999px;padding:5px 10px}
+.fav .tag.star{color:#8a5a00;background:#FBEFD3}
+.fav .tag.star:before{content:'★ '}
+@media(min-width:960px){
+  .favs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;overflow:visible;padding:0;margin:0}
+  .fav{flex:none}
+}
+@media(min-width:1200px){.favs{grid-template-columns:repeat(6,1fr)}.fav .n{font-size:1.35rem}.fav .ph{aspect-ratio:4/5}}
+
+/* menu */
+.menu-sec{background:#fff;border-block:1px solid var(--line)}
+.tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:4px 0 10px;margin-bottom:6px;position:sticky;top:var(--hh);z-index:5;background:#fff}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;border:1.5px solid var(--line);border-radius:999px;padding:11px 18px;font-weight:700;font-size:.95rem;white-space:nowrap;display:flex;align-items:center;gap:8px;transition:background .25s,color .25s,border-color .25s}
+.tab small{font-weight:600;font-size:.74rem;opacity:.6;letter-spacing:.02em}
+.tab[aria-selected=true]{background:var(--green);color:#fff;border-color:var(--green)}
+.tab[aria-selected=true] small{opacity:.8}
+.tab:hover:not([aria-selected=true]){border-color:var(--green);color:var(--green)}
+.panel{display:none;animation:fade .45s var(--ease)}
+.panel.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.pnote{display:flex;flex-wrap:wrap;gap:8px 18px;color:var(--mute);font-size:.9rem;margin:8px 0 18px}
+.pnote span{display:inline-flex;align-items:center;gap:7px}
+.pnote span:before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green)}
+.cols{columns:1;column-gap:18px}
+@media(min-width:760px){.cols{columns:2}}
+@media(min-width:1100px){.cols{columns:3}}
+.cat{break-inside:avoid;background:var(--paper);border-radius:var(--rl);padding:clamp(16px,2.5vw,22px) clamp(16px,2.5vw,22px) 14px;margin:0 0 14px;border:1px solid var(--line)}
+.cat.green{background:var(--green);color:#fff;border-color:transparent}
+.cat.black{background:var(--black);color:#fff;border-color:transparent}
+.cat h3{font-size:1.85rem;letter-spacing:.03em;margin-bottom:4px}
+.cat .sub{font-size:.84rem;color:var(--mute);margin-bottom:12px;line-height:1.4}
+.cat.green .sub,.cat.black .sub{color:rgba(255,255,255,.7)}
+.it{padding:10px 0;border-top:1px solid var(--line)}
+.cat.green .it,.cat.black .it{border-color:rgba(255,255,255,.14)}
+.it:first-of-type{border-top:0}
+.it .row{display:flex;align-items:baseline;gap:10px}
+.it .nm{font-weight:700;font-size:1.02rem;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.it .dots{flex:1;border-bottom:1.5px dotted currentColor;opacity:.3;transform:translateY(-4px)}
+.it .pr{font-family:var(--fd);font-size:1.3rem;letter-spacing:.03em;white-space:nowrap}
+.it .ds{font-size:.86rem;color:var(--mute);margin-top:3px;line-height:1.4}
+.cat.green .ds,.cat.black .ds{color:rgba(255,255,255,.72)}
+.it .ex{font-size:.82rem;color:var(--mute);display:flex;justify-content:space-between;margin-top:3px}
+.cat.green .ex,.cat.black .ex{color:rgba(255,255,255,.72)}
+.star{color:var(--honey);font-size:.9em}
+.vg{font-size:.62rem;font-weight:800;letter-spacing:.08em;border:1.5px solid currentColor;border-radius:4px;padding:1px 4px;opacity:.75}
+.menu-foot{margin-top:6px;display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between;color:var(--mute);font-size:.9rem}
+
+/* facts */
+.facts{background:var(--black);color:#fff;padding:clamp(40px,6vw,72px) 0}
+.facts .grid{display:grid;grid-template-columns:1fr 1fr;gap:28px 18px}
+.facts .f b{display:block;font-family:var(--fd);font-size:clamp(3.4rem,8vw,5.6rem);line-height:.9;color:var(--honey);letter-spacing:.01em}
+.facts .f b small{font-size:.5em;color:#fff;margin-left:4px}
+.facts .f p{margin-top:8px;color:rgba(255,255,255,.75);font-size:.95rem;max-width:26ch}
+@media(min-width:900px){.facts .grid{grid-template-columns:repeat(4,1fr);gap:24px}}
+
+/* about */
+.about .wrap{display:grid;gap:26px}
+.about .ph{aspect-ratio:4/5;border-radius:var(--rl)}
+.about .ph.sm{aspect-ratio:4/3;display:none}
+.about h2{font-size:clamp(2.6rem,6vw,4.4rem)}
+.about .txt p{margin-top:14px;color:var(--mute);font-size:1.02rem}
+.about .txt p.big{color:var(--ink);font-size:clamp(1.15rem,1.7vw,1.35rem);font-weight:500;margin-top:18px;line-height:1.4}
+.about .pull{margin-top:22px;background:var(--green);color:#fff;border-radius:var(--rl);padding:22px 24px;display:flex;gap:16px;align-items:flex-start}
+.about .pull .q{font-family:var(--fd);font-size:clamp(1.5rem,3vw,2.1rem);line-height:1;letter-spacing:.02em}
+.about .pull small{display:block;margin-top:8px;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
+@media(min-width:960px){
+  .about .wrap{grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+  .about .pics{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:end}
+  .about .ph{grid-column:1/-1}
+  .about .ph.sm{display:block;grid-column:2;margin-top:-30%;margin-right:-10%;box-shadow:0 20px 50px rgba(0,0,0,.18);border:6px solid var(--paper)}
+}
+
+/* reviews */
+.reviews{background:#fff;border-block:1px solid var(--line)}
+.score{display:flex;align-items:center;gap:18px;margin-bottom:22px}
+.score b{font-family:var(--fd);font-size:clamp(4rem,10vw,6rem);line-height:.9;color:var(--green)}
+.score .stars{color:var(--honey);font-size:1.3rem;letter-spacing:.1em}
+.score p{color:var(--mute);font-size:.95rem}
+.rgrid{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px var(--pad) 14px;margin:0 calc(-1*var(--pad));scrollbar-width:none}
+.rgrid::-webkit-scrollbar{display:none}
+.rgrid .rev{flex:0 0 min(82vw,340px);scroll-snap-align:start}
+.rev{background:var(--paper);border:1px solid var(--line);border-radius:var(--rl);padding:22px;display:flex;flex-direction:column;gap:12px}
+.rev .stars{color:var(--honey);letter-spacing:.08em}
+.rev p{font-size:1rem;line-height:1.55}
+.rev .who{margin-top:auto;font-size:.84rem;color:var(--mute);font-weight:600;display:flex;justify-content:space-between}
+@media(min-width:900px){.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;overflow:visible;padding:0;margin:0}.rgrid .rev{flex:none}.rev p{font-size:1.05rem}}
+
+/* reserve */
+.reserve{background:var(--green);color:#fff;position:relative;overflow:hidden}
+.reserve .wrap{display:grid;gap:26px;position:relative}
+.reserve h2{font-size:clamp(3rem,8vw,6rem);line-height:.9}
+.reserve p{color:rgba(255,255,255,.82);font-size:1.05rem;max-width:46ch}
+.reserve .hrs{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:var(--rl);padding:22px;backdrop-filter:blur(4px)}
+.reserve .hrs dl{display:grid;grid-template-columns:auto 1fr;gap:10px 22px;font-size:1rem}
+.reserve .hrs dt{font-weight:700}
+.reserve .hrs dd{text-align:right;color:rgba(255,255,255,.85)}
+.reserve .hrs h3{font-size:1.7rem;letter-spacing:.04em;margin-bottom:14px}
+.reserve .hrs .today{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.2);font-size:.92rem;display:flex;gap:9px;align-items:center}
+.reserve .hrs .today i{width:9px;height:9px;border-radius:50%;background:#7BE3A5;flex:none}
+.reserve .hrs .today.closed i{background:#FF8A80}
+@media(min-width:960px){.reserve .wrap{grid-template-columns:1.2fr .8fr;gap:60px;align-items:center}}
+
+/* practical */
+.prac{display:grid;gap:14px}
+.pcard{background:#fff;border:1px solid var(--line);border-radius:var(--rl);padding:22px}
+.pcard h3{font-family:var(--fb);text-transform:uppercase;font-size:.76rem;letter-spacing:.16em;color:var(--green);margin-bottom:10px;font-weight:800}
+.pcard .big{font-family:var(--fd);font-size:1.7rem;line-height:1;letter-spacing:.03em}
+.pcard p{margin-top:8px;color:var(--mute);font-size:.95rem}
+.pcard a.lnk{color:var(--green);font-weight:700;display:inline-flex;align-items:center;gap:6px;margin-top:10px}
+.map{grid-column:1/-1;border-radius:var(--rl);overflow:hidden;border:1px solid var(--line);background:#dfe6e1;aspect-ratio:16/10;position:relative;color:#fff}
+.map img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 12%}
+.map .cover{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:14px;text-align:center;padding:22px;background:linear-gradient(180deg,rgba(0,0,0,0) 35%,rgba(0,0,0,.65))}
+.map .cover p{font-size:.95rem;font-weight:600;text-shadow:0 1px 8px rgba(0,0,0,.4)}
+.map .cover .btn-o{color:#fff;border-color:rgba(255,255,255,.7)}
+@media(min-width:900px){.prac{grid-template-columns:repeat(3,1fr)}.map{aspect-ratio:21/8}.map .cover{flex-direction:row;justify-content:space-between;align-items:flex-end;text-align:left;padding:28px}}
+
+/* ig */
+.ig{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.ig .ph{aspect-ratio:1/1}
+.ig .ph:hover img{transform:scale(1.05)}
+@media(min-width:900px){.ig{grid-template-columns:repeat(6,1fr)}}
+
+footer{background:var(--green-x);color:rgba(255,255,255,.75);padding:34px 0 calc(90px + env(safe-area-inset-bottom));font-size:.9rem}
+footer .wrap{display:grid;gap:18px}
+footer .brand{color:#fff;font-size:2.4rem}
+footer a:hover{color:#fff}
+footer .cols3{display:flex;flex-wrap:wrap;gap:12px 28px}
+@media(min-width:900px){footer{padding-bottom:34px}footer .wrap{grid-template-columns:auto 1fr auto;align-items:center}}
+
+/* sticky mobile cta */
+.sticky{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:50;display:flex;gap:8px;transform:translateY(130%);transition:transform .4s var(--ease)}
+.sticky.show{transform:none}
+.sticky .btn{flex:1;box-shadow:0 12px 34px rgba(0,0,0,.22)}
+.sticky .btn-o{background:var(--paper);border-color:var(--line)}
+@media(min-width:960px){.sticky{display:none}}
+</style>
+</head>
+<body>
+
+<header id="hdr"><div class="wrap nav">
+  <a class="brand" href="#top">Ambras <small>Kontich</small></a>
+  <nav class="links" aria-label="Hoofdmenu"><a href="#kaart">De kaart</a><a href="#favorieten">Favorieten</a><a href="#over">Over ons</a><a href="#reviews">Reviews</a><a href="#praktisch">Praktisch</a></nav>
+  <div style="display:flex;gap:10px;align-items:center">
+    <a class="btn btn-white hdr-cta" style="min-height:44px;padding:10px 18px;font-size:.92rem" href="https://mylightspeed.app/reservation/ac2331d1-7685-4c31-a699-40ecfa666ace/reservation" target="_blank" rel="noopener">Reserveer</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="drawer"><span class="bars"><i></i><i></i><i></i></span><span>Menu</span><b></b></button>
+  </div>
+</div></header>
+
+<div class="drawer on-dark" id="drawer">
+  <nav aria-label="Menu">
+    <a href="#kaart">De kaart <span>lunch · avond · drinks</span></a>
+    <a href="#favorieten">Favorieten <span>onze ★</span></a>
+    <a href="#over">Over ons <span>Aiko &amp; Nicho</span></a>
+    <a href="#reviews">Reviews <span>4.9 op Google</span></a>
+    <a href="#praktisch">Praktisch <span>adres &amp; uren</span></a>
+  </nav>
+  <div class="d-foot">
+    <a class="btn btn-white" href="https://mylightspeed.app/reservation/ac2331d1-7685-4c31-a699-40ecfa666ace/reservation" target="_blank" rel="noopener">Reserveer een tafel</a>
+    <a class="btn btn-o" href="https://www.instagram.com/ambras.kontich/" target="_blank" rel="noopener">Volg @ambras.kontich</a>
+  </div>
+  <div class="d-hours">Open dinsdag – zaterdag<br>Lunch 11u – 15u · Avond 17.30u – 22u<br>Mechelsesteenweg 45, 2550 Kontich</div>
+</div>
+
+<main id="top">
+<section class="hero"><div class="wrap">
+  <div>
+    <div class="chip rv" id="chipTop"><i></i><span>Open di – za · lunch &amp; avond</span></div>
+    <h1 class="rv d1">Zin in<br><em>Ambras?</em></h1>
+    <p class="lead rv d2"><strong>Lunch &amp; dinner in hartje Kontich.</strong> Burgers van de bakplaat, tacos, bowls en cocktails met een eigen draai. Van dinsdag tot zaterdag, 's middags én 's avonds.</p>
+    <div class="btn-row rv d3">
+      <a class="btn btn-dark" href="https://mylightspeed.app/reservation/ac2331d1-7685-4c31-a699-40ecfa666ace/reservation" target="_blank" rel="noopener">Reserveer een tafel <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-o" href="#kaart">Bekijk de kaart</a>
+    </div>
+    <div class="hero-foot rv d4">
+      <div><b>11 – 15u</b>Lunch, di – za</div>
+      <div><b>17.30 – 22u</b>Avond, di – za</div>
+      <div><b>4.9 ★</b>102 Google-reviews</div>
+    </div>
+  </div>
+  <div class="collage rv d2">
+    <div class="ph p1" data-par="0.06"><img src="img/ambras-bacon-cheese.webp" alt="Bacon Cheese burger met frietjes en een pint bij Ambras" width="1200" height="1200" fetchpriority="high"><span class="badge"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>Bacon Cheese · avondkaart</span></div>
+    <div class="ph p2" data-par="-0.05"><img src="img/ambras-gevulde-tafels.webp" alt="Gevulde tafels in het restaurant van Ambras in Kontich" width="1200" height="800" loading="eager"></div>
+    <div class="ph p3" data-par="0.09"><img src="img/ambras-pink-gin-tonic.webp" alt="Aiko schenkt een gin tonic in" width="900" height="1200" loading="eager"></div>
+  </div>
+</div></section>
+
+<div class="ticker" aria-hidden="true"><div id="tick"><span>Lunch 11u – 15u</span><span>Avond 17.30u – 22u</span><span>Dinsdag – zaterdag</span><span>Burgers</span><span>Tacos</span><span>Bowls</span><span>Cocktails &amp; mocktails</span><span>Mechelsesteenweg 45, Kontich</span></div></div>
+
+<section id="favorieten"><div class="wrap">
+  <div class="sec-h rv"><div><p class="kicker">Onze favorieten</p><h2>Dit moet je proeven</h2></div><p>Burgers met een ★ zijn onze eigen favorieten. Meer dan de helft van de kaart is ook vegetarisch te krijgen.</p></div>
+  <div class="favs">
+    <article class="fav rv"><div class="ph"><img src="img/ambras-bakplaat.webp" alt="Fancy Pants burger" loading="lazy"></div><div class="t"><div class="n"><span>Fancy Pants</span><span class="pr">€ 24</span></div><p class="d">Beefburger, truffelmayonaise, baconjam, provolone en gekarameliseerde ui.</p><span class="tag star">Favoriet · avond</span></div></article>
+    <article class="fav rv d1"><div class="ph"><img src="img/ambras-bacon-cheese.webp" alt="Bacon Cheese burger" loading="lazy"></div><div class="t"><div class="n"><span>Bacon Cheese</span><span class="pr">€ 23</span></div><p class="d">Spicy burgersaus, cheddar, bacon en gekarameliseerde ui. Met frietjes en koolsla.</p><span class="tag">Avondkaart</span></div></article>
+    <article class="fav rv d2"><div class="ph"><img src="img/ambras-nachos-carnitas.webp" alt="Nachos carnitas" loading="lazy"></div><div class="t"><div class="n"><span>Nachos Carnitas</span><span class="pr">€ 15</span></div><p class="d">Kaassaus, pork carnitas, pico de gallo, jalapeño en zure room. Om te delen.</p><span class="tag">Sharing</span></div></article>
+    <article class="fav rv d3"><div class="ph"><img src="img/ambras-tacos-pulled-chicken.webp" alt="Tacos pulled chicken" loading="lazy"></div><div class="t"><div class="n"><span>Tacos Pulled Chicken</span><span class="pr">€ 21</span></div><p class="d">Mozzarella, avocado en pico de gallo. Met slaatje, limoen, zure room en salsa verde.</p><span class="tag">Lunch &amp; avond</span></div></article>
+    <article class="fav rv d1"><div class="ph"><img src="img/ambras-fluffy-pancakes.webp" alt="Fluffy pancakes" loading="lazy"></div><div class="t"><div class="n"><span>Pancakes</span><span class="pr">€ 16</span></div><p class="d">Fluffy American pancakes met maple syrup, mascarpone, blauwe bessen, banaan en pecannoten.</p><span class="tag">Lunch</span></div></article>
+    <article class="fav rv d2"><div class="ph"><img src="img/ambras-coupe-ambras.webp" alt="Coupe Ambras" loading="lazy"></div><div class="t"><div class="n"><span>Coupe Ambras</span><span class="pr">€ 12</span></div><p class="d">Churros, vanille-ijs, chocoladesaus en slagroom, met een finishing touch van Chocolaterie Soetkin.</p><span class="tag">Zoete kaart</span></div></article>
+  </div>
+</div></section>
+
+<section class="menu-sec" id="kaart"><div class="wrap">
+  <div class="sec-h rv"><div><p class="kicker">De kaart</p><h2>Wat eten we?</h2></div><p>Prijzen in euro, incl. btw. Allergenen? Laat het ons weten. Glutenvrij broodje: supplement € 3.</p></div>
+  <div class="tabs" role="tablist" id="tabs"></div>
+  <div id="panels"></div>
+  <div class="menu-foot"><span>Keuken open tot 14u (lunch) · 1 rekening per tafel · afrekenen gaat het snelst aan de toog.</span><a class="btn btn-green" href="https://mylightspeed.app/reservation/ac2331d1-7685-4c31-a699-40ecfa666ace/reservation" target="_blank" rel="noopener">Reserveer een tafel</a></div>
+</div></section>
+
+<div class="facts"><div class="wrap grid">
+  <div class="f rv"><b data-count="7">0<small>+</small></b><p>jaar bouwt Nicho al aan de perfecte burger.</p></div>
+  <div class="f rv d1"><b data-count="45">0</b><p>Ons huisnummer én de naam van onze chipotle-BBQ-burger: de Vijfenveertig.</p></div>
+  <div class="f rv d2"><b data-count="50">0<small>%</small></b><p>Meer dan de helft van de kaart kan je ook veggie bestellen.</p></div>
+  <div class="f rv d3"><b data-count="4.9" data-dec="1">0</b><p>op 5 bij Google, na meer dan honderd reviews.</p></div>
+</div></div>
+
+<section class="about" id="over"><div class="wrap">
+  <div class="pics rv">
+    <div class="ph"><img src="img/aiko-nicho.jpg" alt="Aiko en Nicho van Ambras" loading="lazy" width="472" height="820"></div>
+    <div class="ph sm"><img src="img/ambras-nicho.webp" alt="Nicho serveert twee borden aan de toog" loading="lazy"></div>
+  </div>
+  <div class="txt rv d1">
+    <p class="kicker">Over ons</p>
+    <h2>Aiko &amp; Nicho</h2>
+    <p class="big">Ambras is Antwerps voor "gedoe". Bij ons is dat vooral: gevulde tafels, gezellig kletsen en lekker eten.</p>
+    <p>Sinds een jaar zijn wij, Aiko en Nicho, de gezichten achter Ambras op de Mechelsesteenweg in Kontich. Nicho staat aan de bakplaat en steekt zijn voorliefde voor burgers niet onder stoelen of banken, maar over alles op de kaart heeft hij lang en diep nagedacht. Aiko zorgt ervoor dat je je meteen thuis voelt, of je nu komt lunchen met collega's, op een eerste date of met het hele gezin.</p>
+    <p>Overdag een frisse lunchkaart met buns, toast avocado, bowls en tacos. 's Avonds schuift alles op naar sticky fingers, nachos, burgers en een goede cocktail. Kom je met vrienden, familie of een eerste date? Welgekomen!</p>
+    <div class="pull"><div><div class="q">"Met wie schuif jij aan tafel?"</div><small>Aiko &amp; Nicho</small></div></div>
+  </div>
+</div></section>
+
+<section class="reviews" id="reviews"><div class="wrap">
+  <div class="sec-h rv"><div><p class="kicker">Wat onze gasten zeggen</p><h2>4.9 op Google</h2></div><a class="btn btn-o" href="https://www.google.com/maps/place/Ambras/@51.1331281,4.446038,17z/data=!4m8!3m7!1s0x47c3f19bcfdeb2b3:0x373133e039e0371e!8m2!3d51.1331281!4d4.446038!9m1!1b1!16s%2Fg%2F11xt9cthdx" target="_blank" rel="noopener">Alle 102 reviews</a></div>
+  <div class="rgrid">
+    <article class="rev rv"><div class="stars">★★★★★</div><p>"Niet alleen het eten is zalig, de mensen ook. Ik kwam hier helemaal gestrest en gehaast binnen en ging snel en ontspannen buiten. Super lieve mensen, met een special touch zoals je naam op een kaartje."</p><div class="who"><span>Sabje</span><span>2 weken geleden</span></div></article>
+    <article class="rev rv d1"><div class="stars">★★★★★</div><p>"Een heel aangename ervaring! Het eten was heerlijk, het personeel sympathiek en de sfeer bijzonder gezellig. Leuke extra: op tafel stond een potje met vragen, wat voor boeiende gesprekken zorgde met mijn collega's."</p><div class="who"><span>Flore</span><span>2 maanden geleden</span></div></article>
+    <article class="rev rv d2"><div class="stars">★★★★★</div><p>"Zeer fijne zaak met supervriendelijke bediening en lekker eten. Kan de taco's zeker aanraden. Leuke moderne menukaart, dat maakte het moeilijk om te kiezen!"</p><div class="who"><span>Wim &amp; Anouk</span><span>Google-reviews</span></div></article>
+  </div>
+</div></section>
+
+<section class="reserve on-dark" id="reserveren"><div class="wrap">
+  <div class="rv">
+    <p class="kicker" style="color:var(--honey)">Reserveren</p>
+    <h2>Met wie schuif jij aan tafel?</h2>
+    <p style="margin-top:16px">Reserveer je tafel online in een paar tikken, voor de lunch of 's avonds. Met een grotere groep of een feestje in gedachten? Stuur ons een berichtje op Instagram, dan bekijken we het samen.</p>
+    <div class="btn-row" style="margin-top:24px">
+      <a class="btn btn-white" href="https://mylightspeed.app/reservation/ac2331d1-7685-4c31-a699-40ecfa666ace/reservation" target="_blank" rel="noopener">Reserveer online</a>
+      <a class="btn btn-o" href="https://www.instagram.com/ambras.kontich/" target="_blank" rel="noopener">Stuur een DM</a>
+    </div>
+  </div>
+  <div class="hrs rv d2">
+    <h3>Openingsuren</h3>
+    <dl><dt>Di – za</dt><dd>Lunch 11u – 15u</dd><dt>Di – za</dt><dd>Avond 17.30u – 22u</dd><dt>Zo &amp; ma</dt><dd>Gesloten</dd></dl>
+    <div class="today" id="todayLine"><i></i><span>Open dinsdag tot zaterdag</span></div>
+  </div>
+</div></section>
+
+<section id="praktisch"><div class="wrap">
+  <div class="sec-h rv"><div><p class="kicker">Praktisch</p><h2>Kom je langs?</h2></div></div>
+  <div class="prac">
+    <div class="pcard rv"><h3>Adres</h3><div class="big">Mechelsesteenweg 45<br>2550 Kontich</div><p>In het centrum van Kontich. Bij mooi weer ook plaatsjes in ons tuintje.</p><a class="lnk" href="https://www.google.com/maps/dir/?api=1&destination=Mechelsesteenweg+45+2550+Kontich" target="_blank" rel="noopener">Route via Google Maps →</a></div>
+    <div class="pcard rv d1"><h3>Openingsuren</h3><div class="big">Di – za</div><p>Lunch 11u – 15u (keuken tot 14u)<br>Avond 17.30u – 22u<br>Zondag en maandag gesloten.</p></div>
+    <div class="pcard rv d2"><h3>Contact</h3><div class="big">@ambras.kontich</div><p>Vragen, groepen of feestjes? Stuur ons een DM op Instagram of spring gewoon binnen.</p><a class="lnk" href="https://www.instagram.com/ambras.kontich/" target="_blank" rel="noopener">Instagram →</a></div>
+    <div class="map rv" id="map"><img src="img/ambras-wachten-op-vrienden.webp" alt="De gevel van Ambras op de Mechelsesteenweg in Kontich" loading="lazy" width="1200" height="1004">
+      <div class="cover"><p>Mechelsesteenweg 45 · in het centrum van Kontich</p><div class="btn-row" style="justify-content:center"><a class="btn btn-white" href="https://www.google.com/maps/place/Ambras/@51.1331281,4.446038,17z/data=!3m1!4b1!4m6!3m5!1s0x47c3f19bcfdeb2b3:0x373133e039e0371e!8m2!3d51.1331281!4d4.446038!16s%2Fg%2F11xt9cthdx" target="_blank" rel="noopener">Open in Google Maps</a><a class="btn btn-o" href="https://www.google.com/maps/dir/?api=1&destination=Mechelsesteenweg+45+2550+Kontich" target="_blank" rel="noopener">Route</a></div></div>
+    </div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="sec-h rv" style="margin-bottom:14px"><div><p class="kicker">Volg ons</p><h2 style="font-size:clamp(1.6rem,3vw,2.2rem)">@ambras.kontich</h2></div><a class="btn btn-o" href="https://www.instagram.com/ambras.kontich/" target="_blank" rel="noopener">Volgen op Instagram</a></div>
+  <div class="ig rv">
+    <a class="ph" href="https://www.instagram.com/ambras.kontich/" target="_blank" rel="noopener"><img src="img/ambras-on-fire.webp" alt="" loading="lazy"></a>
+    <a class="ph" href="https://www.instagram.com/ambras.kontich/" target="_blank" rel="noopener"><img src="img/ambras-salade-geitenkaas.webp" alt="" loading="lazy"></a>
+    <a class="ph" href="https://www.instagram.com/ambras.kontich/" target="_blank" rel="noopener"><img src="img/ambras-aperohapjes.webp" alt="" loading="lazy"></a>
+    <a class="ph" href="https://www.instagram.com/ambras.kontich/" target="_blank" rel="noopener"><img src="img/ambras-boho-flessen.webp" alt="" loading="lazy"></a>
+    <a class="ph" href="https://www.instagram.com/ambras.kontich/" target="_blank" rel="noopener"><img src="img/ambras-falafel-bowl.webp" alt="" loading="lazy"></a>
+    <a class="ph" href="https://www.instagram.com/ambras.kontich/" target="_blank" rel="noopener"><img src="img/ambras-berloumi-bun.webp" alt="" loading="lazy"></a>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <a class="brand" href="#top">Ambras</a>
+  <div class="cols3"><span>Mechelsesteenweg 45, 2550 Kontich</span><span>Di – za · lunch 11–15u · avond 17.30–22u</span><a href="https://www.instagram.com/ambras.kontich/" target="_blank" rel="noopener">@ambras.kontich</a></div>
+  <div>© 2026 Ambras · <a href="https://www.agv-it.be" target="_blank" rel="noopener">Website by AGV IT Consulting</a></div>
+</div></footer>
+
+<div class="sticky" id="sticky"><a class="btn btn-green" href="https://mylightspeed.app/reservation/ac2331d1-7685-4c31-a699-40ecfa666ace/reservation" target="_blank" rel="noopener">Reserveer</a><a class="btn btn-o" href="#kaart">De kaart</a></div>
+
+<script src="script.js" defer></script>
+</body>
+</html>

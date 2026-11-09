@@ -19,6 +19,7 @@ Disallow: /pmeb/
 Disallow: /rayjo/
 Disallow: /lapotteria/
 Disallow: /off-on/
+Disallow: /ambras/
 
 # AI assistants and AI search engines are explicitly welcome
 User-agent: GPTBot
