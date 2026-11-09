@@ -94,9 +94,6 @@ if(matchMedia('(min-width:960px) and (prefers-reduced-motion:no-preference)').ma
   addEventListener('scroll',()=>{const y=scrollY;if(y>900)return;ps.forEach(p=>p.style.transform=`translateY(${(y*parseFloat(p.dataset.par)).toFixed(1)}px)`)},{passive:true});
 }
 
-/* ---------- ticker duplicate ---------- */
-const tk=document.getElementById('tick');tk.innerHTML+=tk.innerHTML;
-
 
 /* =====================================================================
    Reservaties — Supabase (project General, prefix ambras_)

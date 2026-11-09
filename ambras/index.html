@@ -69,7 +69,6 @@ header.sc{box-shadow:0 10px 30px rgba(0,0,0,.18)}
 .menu-btn[aria-expanded=true] .bars i:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
 .menu-btn[aria-expanded=true] .bars i:nth-child(2){opacity:0}
 .menu-btn[aria-expanded=true] .bars i:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
-.menu-btn b{width:7px;height:7px;border-radius:50%;background:var(--honey)}
 .btn.hdr-cta{display:none}
 @media(min-width:960px){.links{display:flex}.brand small{display:inline}.btn.hdr-cta{display:inline-flex}}
 
@@ -103,7 +102,7 @@ header.sc{box-shadow:0 10px 30px rgba(0,0,0,.18)}
 .chip.closed i{background:#D9534F;box-shadow:0 0 0 4px rgba(217,83,79,.18)}
 
 /* hero */
-.hero{padding:clamp(22px,4vw,56px) 0 0;position:relative}
+.hero{padding:clamp(22px,4vw,56px) 0 clamp(40px,6vw,76px);position:relative}
 .hero .wrap{display:grid;gap:26px}
 .hero h1{font-size:clamp(4.2rem,17vw,9.5rem);line-height:.86;letter-spacing:.005em}
 .hero h1 em{font-style:normal;color:var(--green)}
@@ -131,13 +130,24 @@ header.sc{box-shadow:0 10px 30px rgba(0,0,0,.18)}
   .hero-foot{grid-template-columns:repeat(3,auto);justify-content:start;gap:40px}
 }
 
-/* ticker */
-.ticker{background:var(--green);color:#fff;overflow:hidden;padding:14px 0;margin-top:clamp(36px,6vw,70px);font-family:var(--fd);font-size:clamp(1.15rem,2vw,1.5rem);letter-spacing:.06em;white-space:nowrap;-webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.ticker div{display:inline-flex;gap:0;animation:tick 42s linear infinite}
-.ticker span{padding-right:34px;display:inline-flex;align-items:center;gap:34px}
-.ticker span:after{content:'';width:7px;height:7px;border-radius:50%;background:var(--honey)}
+/* review-link in hero */
+.hero-foot .hf-rev{display:block;font-size:.82rem;color:var(--mute);line-height:1.35;border-radius:var(--r);transition:color .25s}
+.hero-foot .hf-rev b{transition:color .25s}
+.hero-foot .hf-rev span{display:inline-block;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:3px;transition:text-decoration-color .25s}
+.hero-foot .hf-rev em{font-style:normal;white-space:nowrap}
+.hero-foot .hf-rev em:after{content:' ↗';font-size:.9em}
+.hero-foot .hf-rev:hover b,.hero-foot .hf-rev:focus-visible b{color:var(--green)}
+.hero-foot .hf-rev:hover span,.hero-foot .hf-rev:focus-visible span{text-decoration-color:currentColor;color:var(--ink)}
+.hero-foot .hf-rev:focus-visible{outline:2px solid var(--green);outline-offset:4px}
 
-/* favorites */
+/* favorites (groene sectie) */
+#favorieten{background:var(--green);color:#fff}
+#favorieten .kicker{color:#fff;opacity:.85}
+#favorieten .sec-h p{color:rgba(255,255,255,.88)}
+#favorieten .fav{color:var(--ink);border-color:transparent;box-shadow:0 16px 34px rgba(0,0,0,.2)}
+#favorieten .favs{scroll-padding-inline:var(--pad)}
+@media(min-width:960px){#favorieten .favs{scroll-padding-inline:0}}
+#favorieten .fav .d{color:#4B534D}
 .favs{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px var(--pad) 18px;margin:0 calc(-1*var(--pad));scrollbar-width:none}
 .favs::-webkit-scrollbar{display:none}
 .fav{flex:0 0 min(78vw,300px);scroll-snap-align:start;background:#fff;border-radius:var(--rl);overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column}
@@ -376,7 +386,7 @@ footer .cols3{display:flex;flex-wrap:wrap;gap:12px 28px}
   <nav class="links" aria-label="Hoofdmenu"><a href="#kaart">De kaart</a><a href="#favorieten">Favorieten</a><a href="#over">Over ons</a><a href="#reviews">Reviews</a><a href="#praktisch">Praktisch</a></nav>
   <div style="display:flex;gap:10px;align-items:center">
     <a class="btn btn-white hdr-cta" style="min-height:44px;padding:10px 18px;font-size:.92rem" href="#reserveren">Reserveer</a>
-    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="drawer"><span class="bars"><i></i><i></i><i></i></span><span>Menu</span><b></b></button>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="drawer"><span class="bars"><i></i><i></i><i></i></span><span>Menu</span></button>
   </div>
 </div></header>
 
@@ -408,7 +418,7 @@ footer .cols3{display:flex;flex-wrap:wrap;gap:12px 28px}
     <div class="hero-foot rv d4">
       <div><b>11 – 15u</b>Lunch, di – za</div>
       <div><b>17.30 – 22u</b>Avond, di – za</div>
-      <div><b>4.9 ★</b>102 Google-reviews</div>
+      <a class="hf-rev" href="https://www.google.com/maps/place/Ambras/@51.1331314,4.4434631,17z/data=!4m8!3m7!1s0x47c3f19bcfdeb2b3:0x373133e039e0371e!8m2!3d51.1331281!4d4.446038!9m1!1b1!16s%2Fg%2F11xt9cthdx?entry=ttu&amp;g_ep=EgoyMDI2MTEwMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" aria-label="4,9 sterren: lees de 102 Google-reviews van Ambras (opent in een nieuw tabblad)"><b>4.9 ★</b><span>102 <em>Google-reviews</em></span></a>
     </div>
   </div>
   <div class="collage rv d2">
@@ -417,8 +427,6 @@ footer .cols3{display:flex;flex-wrap:wrap;gap:12px 28px}
     <div class="ph p3" data-par="0.09"><img src="img/ambras-pink-gin-tonic.webp" alt="Aiko schenkt een gin tonic in" width="900" height="1200" loading="eager"></div>
   </div>
 </div></section>
-
-<div class="ticker" aria-hidden="true"><div id="tick"><span>Lunch 11u – 15u</span><span>Avond 17.30u – 22u</span><span>Dinsdag – zaterdag</span><span>Burgers</span><span>Tacos</span><span>Bowls</span><span>Cocktails &amp; mocktails</span><span>Mechelsesteenweg 45, Kontich</span></div></div>
 
 <section id="favorieten"><div class="wrap">
   <div class="sec-h rv"><div><p class="kicker">Onze favorieten</p><h2>Dit moet je proeven</h2></div><p>Burgers met een ★ zijn onze eigen favorieten. Meer dan de helft van de kaart is ook vegetarisch te krijgen.</p></div>
@@ -551,7 +559,7 @@ footer .cols3{display:flex;flex-wrap:wrap;gap:12px 28px}
   <div>© 2026 Ambras · <a href="https://www.agv-it.be" target="_blank" rel="noopener">Website by AGV IT Consulting</a> · <a href="#admin">Admin</a></div>
 </div></footer>
 
-<div class="sticky" id="sticky"><a class="btn btn-green" href="#reserveren">Reserveer</a><a class="btn btn-o" href="#kaart">De kaart</a></div>
+<div class="sticky" id="sticky"><a class="btn btn-dark" href="#reserveren">Reserveer</a><a class="btn btn-o" href="#kaart">De kaart</a></div>
 
 <script src="script.js" defer></script>
 </body>
