@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Hanken+Grotesk:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Restaurant","name":"Ambras","url":"https://agv-it.be/ambras/","image":"https://agv-it.be/ambras/img/og.jpg","servesCuisine":["Burgers","Tacos","Bowls","Cocktails"],"priceRange":"€20–30","acceptsReservations":"https://mylightspeed.app/reservation/ac2331d1-7685-4c31-a699-40ecfa666ace/reservation","address":{"@type":"PostalAddress","streetAddress":"Mechelsesteenweg 45","postalCode":"2550","addressLocality":"Kontich","addressCountry":"BE"},"geo":{"@type":"GeoCoordinates","latitude":51.1331281,"longitude":4.446038},"sameAs":["https://www.instagram.com/ambras.kontich/"],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"11:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"17:30","closes":"22:00"}]}
+{"@context":"https://schema.org","@type":"Restaurant","name":"Ambras","url":"https://agv-it.be/ambras/","image":"https://agv-it.be/ambras/img/og.jpg","servesCuisine":["Burgers","Tacos","Bowls","Cocktails"],"priceRange":"€20–30","acceptsReservations":"https://agv-it.be/ambras/#reserveren","address":{"@type":"PostalAddress","streetAddress":"Mechelsesteenweg 45","postalCode":"2550","addressLocality":"Kontich","addressCountry":"BE"},"geo":{"@type":"GeoCoordinates","latitude":51.1331281,"longitude":4.446038},"sameAs":["https://www.instagram.com/ambras.kontich/"],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"11:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"17:30","closes":"22:00"}]}
 </script>
 <style>
 :root{
@@ -33,6 +33,7 @@
   --ease:cubic-bezier(.22,.8,.26,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:var(--hh)}
 body{background:var(--paper);color:var(--ink);font-family:var(--fb);font-size:16.5px;line-height:1.55;overflow-x:hidden;padding-top:var(--hh)}
 img{display:block;max-width:100%;height:auto}
@@ -282,6 +283,90 @@ footer .cols3{display:flex;flex-wrap:wrap;gap:12px 28px}
 .sticky .btn{flex:1;box-shadow:0 12px 34px rgba(0,0,0,.22)}
 .sticky .btn-o{background:var(--paper);border-color:var(--line)}
 @media(min-width:960px){.sticky{display:none}}
+/* booking */
+.reserve .hrs .today{margin-top:14px}
+.book{background:#fff;color:var(--ink);border-radius:var(--rl);padding:clamp(18px,3vw,28px);display:grid;gap:22px;box-shadow:0 30px 70px rgba(0,0,0,.25)}
+.bk-h{display:flex;align-items:center;gap:10px;font-family:var(--fd);font-size:1.35rem;letter-spacing:.03em;margin-bottom:12px}
+.bk-n{width:26px;height:26px;border-radius:50%;background:var(--green);color:#fff;font-family:var(--fb);font-weight:800;font-size:.8rem;display:grid;place-items:center}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.seg button{border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;text-align:left;display:flex;flex-direction:column;gap:2px;transition:border-color .2s,background .2s,color .2s}
+.seg button b{font-size:1.05rem}.seg button small{color:var(--mute);font-size:.82rem}
+.seg button[aria-pressed=true]{background:var(--green);border-color:var(--green);color:#fff}
+.seg button[aria-pressed=true] small{color:rgba(255,255,255,.8)}
+.bk-row{display:grid;gap:12px}
+@media(min-width:560px){.bk-row{grid-template-columns:1fr 1fr}}
+.fld{display:flex;flex-direction:column;gap:6px}
+.fld>span{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--mute)}
+.fld>span em{text-transform:none;letter-spacing:0;font-weight:500;font-style:normal}
+.fld input{border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;font:inherit;font-size:1rem;background:#fff;color:var(--ink);min-height:48px;width:100%}
+.fld input:focus{outline:2px solid var(--green);outline-offset:1px;border-color:var(--green)}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.pills button{min-width:44px;height:48px;padding:0 12px;border:1.5px solid var(--line);border-radius:10px;font-weight:700;transition:background .2s,color .2s,border-color .2s}
+.pills button[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.slots button{height:46px;border:1.5px solid var(--line);border-radius:10px;font-weight:700;font-size:.98rem;transition:background .2s,color .2s,border-color .2s,transform .15s}
+.slots button:hover{border-color:var(--green);color:var(--green)}
+.slots button[aria-pressed=true]{background:var(--green);border-color:var(--green);color:#fff}
+.slots button.low:after{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--honey);margin-left:6px;vertical-align:middle}
+.slots .bk-hint,.slots .bk-msg{grid-column:1/-1}
+.slots .svc-lbl{grid-column:1/-1;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--mute);margin-top:4px}
+@media(min-width:560px){.slots{grid-template-columns:repeat(6,1fr)}}
+.bk-hint{color:var(--mute);font-size:.95rem}
+.bk-msg{color:#B3261E;font-size:.92rem;font-weight:600}
+.bk-group{background:var(--green-t);border-radius:10px;padding:12px 14px;font-size:.95rem;margin-top:10px}
+.bk-group a{color:var(--green);font-weight:700;text-decoration:underline}
+#bkForm{display:grid;gap:12px}
+.bk-sum{background:var(--paper);border-radius:10px;padding:12px 14px;font-weight:600;display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.95rem}
+.bk-sum span:before{content:'·';margin-right:10px;color:var(--green)}
+.bk-sum span:first-child:before{content:''}
+#bkForm .btn{background:var(--green);color:#fff}
+#bkForm .btn[disabled]{opacity:.6;cursor:wait}
+.bk-done{text-align:center;padding:12px 0 6px;display:grid;gap:10px;justify-items:center}
+.bk-check{width:64px;height:64px;border-radius:50%;background:var(--green);color:#fff;font-size:2rem;display:grid;place-items:center;animation:pop .5s var(--ease)}
+@keyframes pop{from{transform:scale(.4);opacity:0}to{transform:none;opacity:1}}
+.bk-done h3{font-size:2.2rem}
+.bk-done p{font-size:1.02rem}
+.bk-small{color:var(--mute);font-size:.9rem}
+.skel{height:46px;border-radius:10px;background:linear-gradient(90deg,#eee 25%,#f6f6f6 50%,#eee 75%);background-size:200% 100%;animation:sk 1.2s infinite}
+@keyframes sk{to{background-position:-200% 0}}
+@media(min-width:960px){.reserve .wrap{grid-template-columns:.9fr 1.1fr;align-items:start}}
+
+/* admin */
+.adm{position:fixed;inset:0;z-index:80;background:var(--paper);color:var(--ink);overflow:auto;font-size:15px}
+.adm .bar{position:sticky;top:0;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px var(--pad);z-index:2}
+.adm .bar b{font-family:var(--fd);font-size:1.5rem;letter-spacing:.05em}
+.adm .bar .btn{min-height:38px;padding:8px 14px;font-size:.88rem}
+.adm .in{width:min(100% - 2*var(--pad),1000px);margin:20px auto 60px;display:grid;gap:18px}
+.adm .card{background:#fff;border:1px solid var(--line);border-radius:var(--rl);padding:18px}
+.adm .tabs2{display:flex;gap:8px;flex-wrap:wrap}
+.adm .tabs2 button{border:1.5px solid var(--line);border-radius:999px;padding:9px 16px;font-weight:700}
+.adm .tabs2 button[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.adm .day{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.adm .day h3{font-size:1.6rem;flex:1;min-width:200px}
+.adm .ico{width:40px;height:40px;border:1.5px solid var(--line);border-radius:10px;font-weight:800}
+.adm table{width:100%;border-collapse:collapse;font-size:.92rem}
+.adm th,.adm td{text-align:left;padding:9px 8px;border-top:1px solid var(--line);vertical-align:top}
+.adm th{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);border-top:0}
+.adm tr.cancelled td{opacity:.45;text-decoration:line-through}
+.adm tr.noshow td{opacity:.6}
+.adm .st{display:inline-block;padding:2px 8px;border-radius:999px;font-size:.74rem;font-weight:700;background:var(--green-t);color:var(--green)}
+.adm .act button{font-size:.8rem;font-weight:700;color:var(--green);margin-right:8px}
+.adm .act button.danger{color:#B3261E}
+.adm .svc-h{font-family:var(--fd);font-size:1.3rem;letter-spacing:.03em;margin:14px 0 4px;display:flex;justify-content:space-between}
+.adm .svc-h small{font-family:var(--fb);color:var(--mute);font-size:.85rem}
+.adm .grid3{display:grid;gap:12px}
+@media(min-width:700px){.adm .grid3{grid-template-columns:1fr 1fr 1fr}}
+.adm .fld input,.adm .fld select{border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;font:inherit;min-height:44px;background:#fff;width:100%}
+.adm .closed-list{display:grid;gap:6px}
+.adm .closed-list div{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 10px;background:var(--paper);border-radius:8px;font-size:.9rem}
+.adm .login{max-width:380px;margin:60px auto;display:grid;gap:12px}
+.adm .login h2{font-size:2.2rem}
+.adm .ok{color:var(--green);font-weight:700;font-size:.9rem}
+.adm .week{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.adm .week button{border:1.5px solid var(--line);border-radius:10px;padding:8px 4px;display:grid;gap:2px;font-size:.78rem}
+.adm .week button b{font-size:1.05rem}
+.adm .week button[aria-pressed=true]{background:var(--green);color:#fff;border-color:var(--green)}
+.adm .week button.off{opacity:.4}
 </style>
 </head>
 <body>
@@ -290,7 +375,7 @@ footer .cols3{display:flex;flex-wrap:wrap;gap:12px 28px}
   <a class="brand" href="#top">Ambras <small>Kontich</small></a>
   <nav class="links" aria-label="Hoofdmenu"><a href="#kaart">De kaart</a><a href="#favorieten">Favorieten</a><a href="#over">Over ons</a><a href="#reviews">Reviews</a><a href="#praktisch">Praktisch</a></nav>
   <div style="display:flex;gap:10px;align-items:center">
-    <a class="btn btn-white hdr-cta" style="min-height:44px;padding:10px 18px;font-size:.92rem" href="https://mylightspeed.app/reservation/ac2331d1-7685-4c31-a699-40ecfa666ace/reservation" target="_blank" rel="noopener">Reserveer</a>
+    <a class="btn btn-white hdr-cta" style="min-height:44px;padding:10px 18px;font-size:.92rem" href="#reserveren">Reserveer</a>
     <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="drawer"><span class="bars"><i></i><i></i><i></i></span><span>Menu</span><b></b></button>
   </div>
 </div></header>
@@ -304,7 +389,7 @@ footer .cols3{display:flex;flex-wrap:wrap;gap:12px 28px}
     <a href="#praktisch">Praktisch <span>adres &amp; uren</span></a>
   </nav>
   <div class="d-foot">
-    <a class="btn btn-white" href="https://mylightspeed.app/reservation/ac2331d1-7685-4c31-a699-40ecfa666ace/reservation" target="_blank" rel="noopener">Reserveer een tafel</a>
+    <a class="btn btn-white" href="#reserveren">Reserveer een tafel</a>
     <a class="btn btn-o" href="https://www.instagram.com/ambras.kontich/" target="_blank" rel="noopener">Volg @ambras.kontich</a>
   </div>
   <div class="d-hours">Open dinsdag – zaterdag<br>Lunch 11u – 15u · Avond 17.30u – 22u<br>Mechelsesteenweg 45, 2550 Kontich</div>
@@ -317,7 +402,7 @@ footer .cols3{display:flex;flex-wrap:wrap;gap:12px 28px}
     <h1 class="rv d1">Zin in<br><em>Ambras?</em></h1>
     <p class="lead rv d2"><strong>Lunch &amp; dinner in hartje Kontich.</strong> Burgers van de bakplaat, tacos, bowls en cocktails met een eigen draai. Van dinsdag tot zaterdag, 's middags én 's avonds.</p>
     <div class="btn-row rv d3">
-      <a class="btn btn-dark" href="https://mylightspeed.app/reservation/ac2331d1-7685-4c31-a699-40ecfa666ace/reservation" target="_blank" rel="noopener">Reserveer een tafel <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-dark" href="#reserveren">Reserveer een tafel <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a class="btn btn-o" href="#kaart">Bekijk de kaart</a>
     </div>
     <div class="hero-foot rv d4">
@@ -351,7 +436,7 @@ footer .cols3{display:flex;flex-wrap:wrap;gap:12px 28px}
   <div class="sec-h rv"><div><p class="kicker">De kaart</p><h2>Wat eten we?</h2></div><p>Prijzen in euro, incl. btw. Allergenen? Laat het ons weten. Glutenvrij broodje: supplement € 3.</p></div>
   <div class="tabs" role="tablist" id="tabs"></div>
   <div id="panels"></div>
-  <div class="menu-foot"><span>Keuken open tot 14u (lunch) · 1 rekening per tafel · afrekenen gaat het snelst aan de toog.</span><a class="btn btn-green" href="https://mylightspeed.app/reservation/ac2331d1-7685-4c31-a699-40ecfa666ace/reservation" target="_blank" rel="noopener">Reserveer een tafel</a></div>
+  <div class="menu-foot"><span>Keuken open tot 14u (lunch) · 1 rekening per tafel · afrekenen gaat het snelst aan de toog.</span><a class="btn btn-green" href="#reserveren">Reserveer een tafel</a></div>
 </div></section>
 
 <div class="facts"><div class="wrap grid">
@@ -389,18 +474,51 @@ footer .cols3{display:flex;flex-wrap:wrap;gap:12px 28px}
   <div class="rv">
     <p class="kicker" style="color:var(--honey)">Reserveren</p>
     <h2>Met wie schuif jij aan tafel?</h2>
-    <p style="margin-top:16px">Reserveer je tafel online in een paar tikken, voor de lunch of 's avonds. Met een grotere groep of een feestje in gedachten? Stuur ons een berichtje op Instagram, dan bekijken we het samen.</p>
-    <div class="btn-row" style="margin-top:24px">
-      <a class="btn btn-white" href="https://mylightspeed.app/reservation/ac2331d1-7685-4c31-a699-40ecfa666ace/reservation" target="_blank" rel="noopener">Reserveer online</a>
-      <a class="btn btn-o" href="https://www.instagram.com/ambras.kontich/" target="_blank" rel="noopener">Stuur een DM</a>
+    <p style="margin-top:16px">Kies lunch of diner, een dag en een uur: je tafel staat meteen vast. Tot 6 personen reserveer je hier online; met een grotere groep of een feestje in gedachten stuur je ons een berichtje op Instagram.</p>
+    <div class="hrs" style="margin-top:26px">
+      <h3>Openingsuren</h3>
+      <dl><dt>Di – za</dt><dd>Lunch 11u – 15u</dd><dt>Di – za</dt><dd>Avond 17.30u – 22u</dd><dt>Zo &amp; ma</dt><dd>Gesloten</dd></dl>
+      <div class="today" id="todayLine"><i></i><span>Open dinsdag tot zaterdag</span></div>
     </div>
   </div>
-  <div class="hrs rv d2">
-    <h3>Openingsuren</h3>
-    <dl><dt>Di – za</dt><dd>Lunch 11u – 15u</dd><dt>Di – za</dt><dd>Avond 17.30u – 22u</dd><dt>Zo &amp; ma</dt><dd>Gesloten</dd></dl>
-    <div class="today" id="todayLine"><i></i><span>Open dinsdag tot zaterdag</span></div>
+  <div class="book rv d2" id="book">
+    <div class="bk-step" data-step="1">
+      <div class="bk-h"><span class="bk-n">1</span><span>Lunch of diner?</span></div>
+      <div class="seg" id="bkService"><button type="button" data-v="lunch" aria-pressed="true"><b>Lunch</b><small>11u – 15u</small></button><button type="button" data-v="dinner" aria-pressed="false"><b>Diner</b><small>17.30u – 22u</small></button></div>
+    </div>
+    <div class="bk-step" data-step="2">
+      <div class="bk-h"><span class="bk-n">2</span><span>Wanneer en met hoeveel?</span></div>
+      <div class="bk-row">
+        <label class="fld"><span>Datum</span><input type="date" id="bkDate" required></label>
+        <div class="fld"><span>Gasten</span><div class="pills" id="bkGuests"><button type="button" data-v="1">1</button><button type="button" data-v="2" aria-pressed="true">2</button><button type="button" data-v="3">3</button><button type="button" data-v="4">4</button><button type="button" data-v="5">5</button><button type="button" data-v="6">6</button><button type="button" data-v="7">7+</button></div></div>
+      </div>
+      <p class="bk-msg" id="bkDateMsg" hidden></p>
+      <div class="bk-group" id="bkGroup" hidden><b>Met 7 of meer?</b> Dat regelen we graag persoonlijk. <a href="https://www.instagram.com/ambras.kontich/" target="_blank" rel="noopener">Stuur ons een DM op Instagram</a> met je datum, uur en aantal.</div>
+    </div>
+    <div class="bk-step" data-step="3" id="bkStep3">
+      <div class="bk-h"><span class="bk-n">3</span><span>Kies een uur</span></div>
+      <div class="slots" id="bkSlots"><p class="bk-hint">Kies eerst een datum.</p></div>
+    </div>
+    <form class="bk-step" data-step="4" id="bkForm" hidden novalidate>
+      <div class="bk-h"><span class="bk-n">4</span><span>Je gegevens</span></div>
+      <div class="bk-row"><label class="fld"><span>Naam</span><input type="text" name="name" autocomplete="name" required minlength="2"></label><label class="fld"><span>Telefoon</span><input type="tel" name="phone" autocomplete="tel" required></label></div>
+      <label class="fld"><span>E-mail</span><input type="email" name="email" autocomplete="email" required></label>
+      <label class="fld"><span>Opmerking <em>(optioneel)</em></span><input type="text" name="note" placeholder="Allergie, kinderstoel, verjaardag…" maxlength="300"></label>
+      <div class="bk-sum" id="bkSum"></div>
+      <button class="btn btn-white" type="submit" id="bkSubmit">Bevestig reservatie</button>
+      <p class="bk-msg" id="bkErr" hidden></p>
+    </form>
+    <div class="bk-done" id="bkDone" hidden>
+      <div class="bk-check">✓</div>
+      <h3>Je tafel staat vast!</h3>
+      <p id="bkDoneTxt"></p>
+      <p class="bk-small">Iets gewijzigd? Stuur ons een berichtje op Instagram of spring binnen. Tot dan!</p>
+      <button class="btn btn-o" type="button" id="bkAgain">Nog een reservatie</button>
+    </div>
   </div>
 </div></section>
+<form name="ambras-reservatie" method="POST" data-netlify="true" netlify-honeypot="website" hidden><input name="dienst"><input name="datum"><input name="uur"><input name="gasten"><input name="naam"><input name="email"><input name="telefoon"><input name="opmerking"><input name="website"></form>
+<div class="adm" id="adm" hidden></div>
 
 <section id="praktisch"><div class="wrap">
   <div class="sec-h rv"><div><p class="kicker">Praktisch</p><h2>Kom je langs?</h2></div></div>
@@ -430,10 +548,10 @@ footer .cols3{display:flex;flex-wrap:wrap;gap:12px 28px}
 <footer><div class="wrap">
   <a class="brand" href="#top">Ambras</a>
   <div class="cols3"><span>Mechelsesteenweg 45, 2550 Kontich</span><span>Di – za · lunch 11–15u · avond 17.30–22u</span><a href="https://www.instagram.com/ambras.kontich/" target="_blank" rel="noopener">@ambras.kontich</a></div>
-  <div>© 2026 Ambras · <a href="https://www.agv-it.be" target="_blank" rel="noopener">Website by AGV IT Consulting</a></div>
+  <div>© 2026 Ambras · <a href="https://www.agv-it.be" target="_blank" rel="noopener">Website by AGV IT Consulting</a> · <a href="#admin">Admin</a></div>
 </div></footer>
 
-<div class="sticky" id="sticky"><a class="btn btn-green" href="https://mylightspeed.app/reservation/ac2331d1-7685-4c31-a699-40ecfa666ace/reservation" target="_blank" rel="noopener">Reserveer</a><a class="btn btn-o" href="#kaart">De kaart</a></div>
+<div class="sticky" id="sticky"><a class="btn btn-green" href="#reserveren">Reserveer</a><a class="btn btn-o" href="#kaart">De kaart</a></div>
 
 <script src="script.js" defer></script>
 </body>
