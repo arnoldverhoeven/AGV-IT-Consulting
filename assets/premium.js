@@ -65,16 +65,6 @@
       window.addEventListener('resize', function () { if (window.innerWidth > 900) { setNav(false); } });
     }
 
-    /* ---------- hero: spotlight ---------- */
-    var hero = $('.hero');
-    if (hero && fine && !reduce) {
-      hero.addEventListener('pointermove', function (e) {
-        var r = hero.getBoundingClientRect();
-        hero.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-        hero.style.setProperty('--my', (e.clientY - r.top) + 'px');
-      });
-    }
-
     /* ---------- hero: portfolio-showcase (rustige crossfade) ---------- */
     var sc = $('#showcase');
     if (sc && !reduce) {
