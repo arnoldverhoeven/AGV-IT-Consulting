@@ -99,7 +99,6 @@ var P={scanKind:'start',pkg:'ritme',term:1,type:'pt',date:null,time:null,lessonI
 function renderStatic(){
   var s=S.settings;
   $('#facts').innerHTML=['Eén op één','InBody-scan','Groepslessen tot '+s.groupMax+' personen','Antwerpsebaan 143, Berendrecht'].map(function(x){return '<li>'+x+'</li>'}).join('');
-  $('#bandN').textContent=hrsTxt(s.minNoticeH);$('#bandNs').textContent='Online boeken tot '+hrsTxt(s.minNoticeH)+' vooraf';
   $('#bookIntro').textContent='Boeken kan tot '+hrsTxt(s.minNoticeH)+' voor de start, en tot '+Math.round(s.horizonDays/7)+' weken vooruit.';
   $('#faqNotice').textContent='Je kan online boeken tot '+hrsTxt(s.minNoticeH)+' voor de start van de sessie. Zo kan elke training goed voorbereid worden. Momenten die dichterbij liggen, verschijnen niet meer in de agenda.';
   $('#faqApproval').textContent=s.approval?'Na je aanvraag krijg je meteen een ontvangstbevestiging per e-mail. Je coach bekijkt elke aanvraag persoonlijk en bevestigt ze zo snel mogelijk. Pas dan is je plaats definitief.':'Ja. Zodra je boekt, is je plaats gereserveerd en krijg je een bevestiging per e-mail.';
