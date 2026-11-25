@@ -1,7 +1,9 @@
 (function(){
 'use strict';
-var LOGO_W='img/logo.png', KEY='aurix_pt_v4', DOW=['zo','ma','di','wo','do','vr','za'], DOWL=['Zondag','Maandag','Dinsdag','Woensdag','Donderdag','Vrijdag','Zaterdag'], MON=['jan','feb','mrt','apr','mei','jun','jul','aug','sep','okt','nov','dec'];
+var LOGO_W='img/logo.png', KEY='aurix_pt_v5', DOW=['zo','ma','di','wo','do','vr','za'], DOWL=['Zondag','Maandag','Dinsdag','Woensdag','Donderdag','Vrijdag','Zaterdag'], MON=['jan','feb','mrt','apr','mei','jun','jul','aug','sep','okt','nov','dec'];
 var TYPES={pt:{name:'PT-sessie'},group:{name:'Groepsles'},scan:{name:'InBody-scan'},intro:{name:'Kennismaking'}};
+var PKG={ritme:{name:'Ritme',price:300,sub:'4 PT-sessies per maand'},ritmeplus:{name:'Ritme+',price:560,sub:'8 PT-sessies per maand'}};
+function scanLabel(b){return b.scanKind==='start'?'InBody-nulmeting | '+PKG[b.pkg].name+', '+b.term+(b.term===1?' maand':' maanden'):'Losse InBody-scan'}
 var ST={pending:'Te bevestigen',confirmed:'Bevestigd',declined:'Geweigerd',cancelled:'Geannuleerd'};
 function $(s,r){return (r||document).querySelector(s)}
 function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))}
@@ -47,7 +49,7 @@ function seed(){
   [0,4,9,13,18,24].forEach(function(ix,k){var f=free[ix];if(!f)return;var n=names[k],x=person(n,k);
     S.bookings.push({id:'s'+k,type:n[2],date:f[0],time:f[1],first:x.first,last:x.last,email:x.email,tel:x.tel,note:k===1?'Herstart na knieblessure, graag rustig opbouwen.':'',status:(k===2||k===4)?'pending':'confirmed',created:Date.now()-k*36e5});
   });
-  [[['Hanne','Smets'],3],[['Kobe','Lambrechts'],7]].forEach(function(p,k){for(var i3=p[1];i3<p[1]+6;i3++){var ds3=ymd(addDays(t,i3)),fs=freeStarts(ds3,'scan');if(fs.length){var x=person(p[0],k+6);S.bookings.push({id:'sc'+k,type:'scan',date:ds3,time:fs[0],first:x.first,last:x.last,email:x.email,tel:x.tel,note:k?'Eerste meting, wil vetpercentage opvolgen.':'',status:'confirmed',created:Date.now()});break}}});
+  [[['Hanne','Smets'],3],[['Kobe','Lambrechts'],7]].forEach(function(p,k){for(var i3=p[1];i3<p[1]+6;i3++){var ds3=ymd(addDays(t,i3)),fs=freeStarts(ds3,'scan');if(fs.length){var x=person(p[0],k+6);S.bookings.push({id:'sc'+k,type:'scan',scanKind:k?'start':'los',pkg:'ritmeplus',term:3,date:ds3,time:fs[0],first:x.first,last:x.last,email:x.email,tel:x.tel,note:k?'Eerste meting, wil vetpercentage opvolgen.':'',status:'confirmed',created:Date.now()});break}}});
   S.seeded=true;save();
 }
 /* availability: every booking has a duration, slots are free when nothing overlaps */
@@ -93,7 +95,7 @@ function hoursSummary(){
 function toast(msg){var o=$('.toast');if(o)o.remove();var t=document.createElement('div');t.className='toast';t.setAttribute('role','status');t.textContent=msg;document.body.appendChild(t);setTimeout(function(){t.remove()},3200)}
 
 /* ---------- public site ---------- */
-var P={type:'pt',date:null,time:null,lessonId:null,page:0,done:null,form:{}};
+var P={scanKind:'start',pkg:'ritme',term:1,type:'pt',date:null,time:null,lessonId:null,page:0,done:null,form:{}};
 function renderStatic(){
   var s=S.settings;
   $('#facts').innerHTML=['Eén op één','InBody-scan','Groepslessen tot '+s.groupMax+' personen','Antwerpsebaan 143, Berendrecht'].map(function(x){return '<li>'+x+'</li>'}).join('');
@@ -118,14 +120,14 @@ function renderStatic(){
   $('#groupList').innerHTML=L.length?L.map(function(l){var sp=spotsLine(l);return '<div class="gl"><div class="gl-when"><b>'+l.time+'</b><span>'+short(l.date)+'</span></div><div class="gl-what"><b>'+esc(l.title)+'</b>'+spotsBar(l)+'<span class="sp-'+sp.cls+'">'+sp.txt+'</span></div><button type="button" class="btn btn-sm '+(sp.cls==='full'?'btn-line" disabled':'btn-gold"')+' data-lesson="'+l.id+'">'+(sp.cls==='full'?'Volzet':'Inschrijven')+'</button></div>'}).join(''):'<div class="empty">Momenteel geen groepslessen gepland.</div>';
 }
 function dayList(){var out=[],d=today();for(var i=0;i<=S.settings.horizonDays;i++)out.push(ymd(addDays(d,i)));return out}
-function typeSub(k){var s=S.settings;return k==='pt'?s.slotMin+' min, € '+s.ptPrice:k==='group'?'Max. '+s.groupMax+' pers., € '+s.groupPrice:k==='scan'?s.scanMin+' min, € '+s.scanPrice:'Gratis, incl. InBody-nulmeting'}
+function typeSub(k){var s=S.settings;return k==='pt'?s.slotMin+' min, € '+s.ptPrice:k==='group'?'Max. '+s.groupMax+' pers., € '+s.groupPrice:k==='scan'?'Nulmeting of losse scan':'30 min, gratis en vrijblijvend'}
 function renderBook(){
   var main=$('#bookMain'),sum=$('#bookSum'),s=S.settings;
   if(P.done){
     var b=P.done,w=b.status==='pending',g=b.type==='group',l=g&&lessonById(b.lessonId),extra='';
     if(g){var c=lessonCount(l);extra='<p>'+(c>=s.groupMin?'Goed nieuws: deze les gaat door ('+c+' van '+s.groupMax+' plaatsen bezet).':'Nu '+c+' van '+s.groupMax+' plaatsen bezet. De les gaat door vanaf '+s.groupMin+' deelnemers; je hoort uiterlijk '+hrsTxt(s.minNoticeH)+' vooraf of ze doorgaat.')+'</p>'}
     main.innerHTML='<div class="done'+(w?' wait':'')+'"><div class="big">'+(w?'…':'✓')+'</div><h3>'+(w?'Aanvraag ontvangen, '+esc(b.first):(g?'Je bent ingeschreven, ':'Je afspraak is geboekt, ')+esc(b.first))+'</h3>'+
-      '<div class="recap"><span>'+(g?esc(l.title)+' (groepsles)':TYPES[b.type].name)+'</span><span>'+nice(b.date)+' om '+b.time+'</span></div>'+extra+
+      '<div class="recap"><span>'+(g?esc(l.title)+' (groepsles)':b.type==='scan'?scanLabel(b):TYPES[b.type].name)+'</span><span>'+nice(b.date)+' om '+b.time+'</span></div>'+extra+
       '<p>'+(w?'Je coach bekijkt je aanvraag en bevestigt ze zo snel mogelijk. Je krijgt bericht op '+esc(b.email)+'.':'Een bevestiging is onderweg naar '+esc(b.email)+'.')+'</p>'+
       '<div class="cta-row" style="justify-content:center"><button class="btn btn-line" id="again">Nog iets boeken</button></div>'+
       '<div class="demo-note"><b>Demo:</b> deze boeking staat nu in de beheermodule'+(w?' met status "Te bevestigen"':'')+'. Open ze via de knop rechtsonder. In de live versie vertrekken de e-mails automatisch.</div></div>';
@@ -140,6 +142,13 @@ function renderBook(){
     h+=L.length?'<div class="lessons">'+L.map(function(l){var sp=spotsLine(l),full=sp.cls==='full';return '<button type="button" class="lesson'+(P.lessonId===l.id?' on':'')+'" data-lesson="'+l.id+'"'+(full?' disabled':'')+' aria-pressed="'+(P.lessonId===l.id)+'"><span class="ls-top"><b>'+short(l.date)+' | '+l.time+'</b><span>'+esc(l.title)+'</span></span>'+spotsBar(l)+'<span class="sp-'+sp.cls+'">'+sp.txt+'</span></button>'}).join('')+'</div>':'<div class="empty">Momenteel geen groepslessen gepland.</div>';
     ready=!!P.lessonId;
   }else{
+    if(P.type==='scan'){
+      h+='<p class="step-t">Welke scan?</p><div class="types">'+[['start','Nulmeting bij Ritme of Ritme+','Inbegrepen als je start voor 1 of 3 maanden'],['los','Losse scan','€ '+s.scanPrice+', zonder pakket']].map(function(o){return '<button type="button" class="pick'+(P.scanKind===o[0]?' on':'')+'" data-sk="'+o[0]+'" aria-pressed="'+(P.scanKind===o[0])+'"><b>'+o[1]+'</b><span>'+o[2]+'</span></button>'}).join('')+'</div>';
+      if(P.scanKind==='start'){
+        h+='<p class="step-t">Met welk pakket start je?</p><div class="types">'+Object.keys(PKG).map(function(k){return '<button type="button" class="pick'+(P.pkg===k?' on':'')+'" data-pkg="'+k+'" aria-pressed="'+(P.pkg===k)+'"><b>'+PKG[k].name+'</b><span>€ '+PKG[k].price+' per maand, '+PKG[k].sub+'</span></button>'}).join('')+'</div>';
+        h+='<p class="step-t">Voor hoe lang?</p><div class="types">'+[[1,'1 maand'],[3,'3 maanden']].map(function(o){return '<button type="button" class="pick'+(P.term===o[0]?' on':'')+'" data-term="'+o[0]+'" aria-pressed="'+(P.term===o[0])+'"><b>'+o[1]+'</b><span>'+(o[0]===1?'Maandelijks verlengbaar':'Vaste start voor een kwartaal')+'</span></button>'}).join('')+'</div>';
+      }
+    }
     var days=dayList(),pages=Math.ceil(days.length/7);if(P.page>=pages)P.page=pages-1;
     var slice=days.slice(P.page*7,P.page*7+7);
     if(P.date&&publicFree(P.date,P.type).indexOf(P.time)<0)P.time=null;
@@ -157,14 +166,14 @@ function renderBook(){
     h+='<p class="step-t" style="margin-top:22px">Je gegevens</p><form class="form" id="bookForm" novalidate>'+
     fld('first','Voornaam','text','given-name',f)+fld('last','Naam','text','family-name',f)+fld('email','E-mail','email','email',f)+fld('tel','Telefoon','tel','tel',f)+
     '<label class="f full">Opmerking (optioneel)<textarea name="note" rows="2" placeholder="Blessures, doel, iets wat je coach moet weten">'+esc(f.note||'')+'</textarea></label>'+
-    '<label class="chk"><input type="checkbox" name="ok"><span>Ik ga akkoord dat Aurix mijn gegevens gebruikt om deze boeking te verwerken.</span></label>'+
+    (P.type==='scan'&&P.scanKind==='start'?'<label class="chk"><input type="checkbox" name="commit"><span>Ik start met <b>'+PKG[P.pkg].name+'</b> voor <b>'+P.term+(P.term===1?' maand':' maanden')+'</b> (€ '+PKG[P.pkg].price+' per maand). De InBody-nulmeting is de eerste afspraak van mijn pakket.</span></label>':'')+'<label class="chk"><input type="checkbox" name="ok"><span>Ik ga akkoord dat Aurix mijn gegevens gebruikt om deze boeking te verwerken.</span></label>'+
     '<div class="full"><button class="btn btn-gold" type="submit">'+(P.type==='group'?(s.approval?'Inschrijving aanvragen':'Inschrijven'):(s.approval?'Boeking aanvragen':'Boeking bevestigen'))+'</button> <span class="e" id="formErr" style="font-weight:600;font-size:.86rem;margin-left:8px"></span></div></form>';
   }
   main.innerHTML=h;
   var dd,tt,price,rule;
   if(P.type==='group'){var l=P.lessonId&&lessonById(P.lessonId);dd=l?nice(l.date):'Nog te kiezen';tt=l?l.time+' ('+l.dur+' min)':'Nog te kiezen';price='€ '+s.groupPrice+' per les';rule='Gaat door vanaf '+s.groupMin+' deelnemers.'+(l?' Nu '+lessonCount(l)+' van '+s.groupMax+'.':'')}
-  else{dd=P.date?nice(P.date):'Nog te kiezen';tt=P.time?P.time+' ('+typeDur(P.type)+' min)':'Nog te kiezen';price=P.type==='intro'?'Gratis':'€ '+(P.type==='scan'?s.scanPrice:s.ptPrice)+', te betalen ter plaatse';rule=P.type==='intro'?'Inclusief gratis InBody-nulmeting.':P.type==='scan'?'Resultaten meteen besproken met Kevin.':''}
-  sum.innerHTML='<h3>Jouw boeking</h3><dl><div><dt>Type</dt><dd>'+TYPES[P.type].name+'</dd></div><div><dt>Dag</dt><dd>'+dd+'</dd></div><div><dt>Uur</dt><dd>'+tt+'</dd></div><div><dt>Prijs</dt><dd>'+price+'</dd></div></dl><div class="rule">'+(rule?rule+' ':'')+(s.approval?'Je coach bevestigt elke aanvraag persoonlijk.':'Je boeking is meteen definitief.')+'</div>';
+  else{dd=P.date?nice(P.date):'Nog te kiezen';tt=P.time?P.time+' ('+typeDur(P.type)+' min)':'Nog te kiezen';price=P.type==='intro'?'Gratis':P.type==='scan'&&P.scanKind==='start'?'Inbegrepen in '+PKG[P.pkg].name+' (€ '+PKG[P.pkg].price+' per maand, '+P.term+(P.term===1?' maand':' maanden')+')':'€ '+(P.type==='scan'?s.scanPrice:s.ptPrice)+', te betalen ter plaatse';rule=P.type==='intro'?'Vrijblijvend gesprek over je doel.':P.type==='scan'?(P.scanKind==='start'?'De nulmeting is de start van je pakket.':'Resultaten meteen besproken met Kevin.'):''}
+  sum.innerHTML='<h3>Jouw boeking</h3><dl><div><dt>Type</dt><dd>'+(P.type==='scan'?(P.scanKind==='start'?'InBody-nulmeting':'Losse InBody-scan'):TYPES[P.type].name)+'</dd></div><div><dt>Dag</dt><dd>'+dd+'</dd></div><div><dt>Uur</dt><dd>'+tt+'</dd></div><div><dt>Prijs</dt><dd>'+price+'</dd></div></dl><div class="rule">'+(rule?rule+' ':'')+(s.approval?'Je coach bevestigt elke aanvraag persoonlijk.':'Je boeking is meteen definitief.')+'</div>';
 }
 function fld(n,l,t,ac,f){return '<label class="f" data-f="'+n+'">'+l+'<input name="'+n+'" type="'+t+'" autocomplete="'+ac+'" value="'+esc(f[n]||'')+'"><span class="e"></span></label>'}
 function keepForm(){var fm=$('#bookForm');if(!fm)return;['first','last','email','tel','note'].forEach(function(n){P.form[n]=fm.elements[n].value})}
@@ -174,6 +183,7 @@ function submitBook(fm){
   Object.keys(rules).forEach(function(k){var el=$('[data-f="'+k+'"]',fm);el.classList.toggle('bad',!rules[k]);$('.e',el).textContent=rules[k]?'':msg[k];if(!rules[k])ok=false});
   var err=$('#formErr');err.textContent='';
   if(!ok){var b=$('.bad input',fm);if(b)b.focus();return}
+  if(fm.elements.commit&&!fm.elements.commit.checked){err.textContent='De nulmeting is inbegrepen bij Ritme of Ritme+. Bevestig je pakket om verder te gaan, of kies een losse scan.';return}
   if(!fm.elements.ok.checked){err.textContent='Vink het akkoord aan om verder te gaan.';return}
   var bk={id:uid('b'),type:P.type,first:f.first.trim(),last:f.last.trim(),email:f.email.trim(),tel:f.tel.trim(),note:(f.note||'').trim(),status:S.settings.approval?'pending':'confirmed',created:Date.now()};
   if(P.type==='group'){var l=lessonById(P.lessonId);
@@ -183,6 +193,7 @@ function submitBook(fm){
   }else{
     if(publicFree(P.date,P.type).indexOf(P.time)<0){toast('Dit moment is net ingenomen. Kies een ander uur.');P.time=null;renderBook();return}
     bk.date=P.date;bk.time=P.time;
+    if(P.type==='scan'){bk.scanKind=P.scanKind;if(P.scanKind==='start'){bk.pkg=P.pkg;bk.term=P.term}}
   }
   S.bookings.push(bk);save();P.done=bk;P.date=P.time=P.lessonId=null;P.form={};renderAll();
   $('#boeken').scrollIntoView();
@@ -192,7 +203,9 @@ function renderAll(){renderStatic();renderBook();if(A.open)renderAdmin()}
 document.addEventListener('click',function(e){
   if(e.target.closest('#admin,#modalHost'))return;
   var t=e.target.closest('[data-type]');
-  if(t){var nt=t.getAttribute('data-type');if(nt!==P.type){P.date=P.time=P.lessonId=null}P.type=nt;P.done=null;keepForm();renderBook();return}
+  if(t){var nt=t.getAttribute('data-type');if(t.dataset.skind)P.scanKind=t.dataset.skind;if(t.dataset.spkg)P.pkg=t.dataset.spkg;if(nt!==P.type){P.date=P.time=P.lessonId=null}P.type=nt;P.done=null;keepForm();renderBook();return}
+  var sk=e.target.closest('[data-sk],[data-pkg],[data-term]');
+  if(sk){keepForm();if(sk.dataset.sk)P.scanKind=sk.dataset.sk;if(sk.dataset.pkg)P.pkg=sk.dataset.pkg;if(sk.dataset.term)P.term=+sk.dataset.term;renderBook();return}
   var ls=e.target.closest('[data-lesson]');
   if(ls){keepForm();P.done=null;P.type='group';P.lessonId=ls.getAttribute('data-lesson');renderBook();if(!ls.closest('#bookMain'))$('#boeken').scrollIntoView();else{var fi=$('#bookForm input');if(fi&&!P.form.first)fi.focus({preventScroll:true})}return}
   var n=e.target.closest('#nextList button');
@@ -238,7 +251,7 @@ function renderAdmin(){
   h+=A.tab==='bookings'?vBookings():A.tab==='lessons'?vLessons():A.tab==='agenda'?vAgenda():vSettings();
   host.innerHTML=h+'</div>';
 }
-function bLabel(b){if(b.type==='group'){var l=lessonById(b.lessonId);return 'Groepsles'+(l?': '+esc(l.title)+' ('+lessonCount(l)+'/'+S.settings.groupMax+')':'')}return TYPES[b.type].name}
+function bLabel(b){if(b.type==='scan')return scanLabel(b);if(b.type==='group'){var l=lessonById(b.lessonId);return 'Groepsles'+(l?': '+esc(l.title)+' ('+lessonCount(l)+'/'+S.settings.groupMax+')':'')}return TYPES[b.type].name}
 function vBookings(){
   var now=new Date(),t0=ymd(today()),wk=ymd(addDays(today(),7));
   var up=S.bookings.filter(function(b){return active(b)&&at(b.date,b.time)>=now});
@@ -298,7 +311,7 @@ function vAgenda(){
     var ov2=lessonOverlap(ds,tm);if(ov2&&rawSlots(ds).indexOf(tm)>-1)return '<td class="c-closed">groepsles</td>';
     if(rawSlots(ds).indexOf(tm)<0)return '<td class="c-closed">dicht</td>';
     var bs=bookingsIn(ds,mins(tm),mins(tm)+S.settings.slotMin),b=bs[0];
-    if(b)return '<td><button class="cell c-'+b.status+'" data-goto="'+b.id+'" title="'+ST[b.status]+'">'+esc(b.first+' '+b.last.charAt(0))+'.<br>'+({intro:'kennismaking',scan:'InBody '+b.time,pt:'PT'}[b.type])+(bs.length>1?' +'+(bs.length-1):'')+'</button></td>';
+    if(b)return '<td><button class="cell c-'+b.status+'" data-goto="'+b.id+'" title="'+ST[b.status]+'">'+esc(b.first+' '+b.last.charAt(0))+'.<br>'+({intro:'kennismaking',scan:(b.scanKind==='start'?'Nulmeting ':'InBody ')+b.time,pt:'PT'}[b.type])+(bs.length>1?' +'+(bs.length-1):'')+'</button></td>';
     if(isBlocked(ds,tm))return '<td><button class="cell c-blocked" data-block="'+ds+'T'+tm+'">geblokkeerd</button></td>';
     if(at(ds,tm)<new Date())return '<td class="c-closed">voorbij</td>';
     return '<td><button class="cell c-free" data-block="'+ds+'T'+tm+'">vrij</button></td>'}).join('')+'</tr>'});
@@ -333,8 +346,8 @@ function vSettings(){
 }
 function byId(id){for(var i=0;i<S.bookings.length;i++)if(S.bookings[i].id===id)return S.bookings[i]}
 function newModal(){
-  var t0=ymd(today()),d=A.newDate,ty=A.newType||'pt';function fut(x){return adminTimes(x,null,ty).filter(function(t){return at(x,t)>new Date()})}if(!d){d=t0;for(var i=0;i<60&&!fut(d).length;i++)d=ymd(addDays(today(),i+1))}var opts=fut(d);
-  $('#modalHost').innerHTML='<div class="modal"><div class="panel"><h3 style="font-size:1.2rem;margin-bottom:4px">Nieuwe boeking</h3><p class="hint">Voor klanten die bellen of ter plaatse afspreken. De regel van '+hrsTxt(S.settings.minNoticeH)+' geldt hier niet. Inschrijven voor een groepsles kan via de website.</p><form class="form" id="newForm"><label class="f">Voornaam<input name="first" required></label><label class="f">Naam<input name="last" required></label><label class="f">E-mail<input name="email" type="email"></label><label class="f">Telefoon<input name="tel" type="tel"></label><label class="f">Type<select name="type" id="newType">'+['pt','scan','intro'].map(function(k){return '<option value="'+k+'"'+(ty===k?' selected':'')+'>'+TYPES[k].name+'</option>'}).join('')+'</select></label><label class="f">Dag<input name="date" type="date" id="newDate" value="'+d+'" min="'+t0+'" required></label><label class="f full">Uur<select name="time" required>'+(opts.length?opts.map(function(t){return '<option>'+t+'</option>'}).join(''):'<option value="">Geen vrije uren op deze dag</option>')+'</select></label><div class="full cta-row"><button class="btn btn-gold" type="submit"'+(opts.length?'':' disabled')+'>Boeking toevoegen</button><button class="btn btn-line" type="button" data-a="closeModal">Annuleren</button></div></form></div></div>';
+  var t0=ymd(today()),d=A.newDate,ty=A.newType||'pt';function fut(x){return adminTimes(x,null,ty==='scanstart'?'scan':ty).filter(function(t){return at(x,t)>new Date()})}if(!d){d=t0;for(var i=0;i<60&&!fut(d).length;i++)d=ymd(addDays(today(),i+1))}var opts=fut(d);
+  $('#modalHost').innerHTML='<div class="modal"><div class="panel"><h3 style="font-size:1.2rem;margin-bottom:4px">Nieuwe boeking</h3><p class="hint">Voor klanten die bellen of ter plaatse afspreken. De regel van '+hrsTxt(S.settings.minNoticeH)+' geldt hier niet. Inschrijven voor een groepsles kan via de website.</p><form class="form" id="newForm"><label class="f">Voornaam<input name="first" required></label><label class="f">Naam<input name="last" required></label><label class="f">E-mail<input name="email" type="email"></label><label class="f">Telefoon<input name="tel" type="tel"></label><label class="f">Type<select name="type" id="newType">'+[['pt','PT-sessie'],['scan','Losse InBody-scan'],['scanstart','InBody-nulmeting (Ritme of Ritme+)'],['intro','Kennismaking']].map(function(k){return '<option value="'+k[0]+'"'+(ty===k[0]?' selected':'')+'>'+k[1]+'</option>'}).join('')+'</select></label><label class="f">Dag<input name="date" type="date" id="newDate" value="'+d+'" min="'+t0+'" required></label><label class="f full">Uur<select name="time" required>'+(opts.length?opts.map(function(t){return '<option>'+t+'</option>'}).join(''):'<option value="">Geen vrije uren op deze dag</option>')+'</select></label><div class="full cta-row"><button class="btn btn-gold" type="submit"'+(opts.length?'':' disabled')+'>Boeking toevoegen</button><button class="btn btn-line" type="button" data-a="closeModal">Annuleren</button></div></form></div></div>';
 }
 host.addEventListener('submit',function(e){
   if(e.target.id==='aLogin'){e.preventDefault();A.auth=true;renderAdmin();return}
@@ -349,7 +362,7 @@ host.addEventListener('submit',function(e){
 $('#modalHost').addEventListener('change',function(e){if(e.target.id==='newDate'||e.target.id==='newType'){var fm=$('#newForm'),keep={};['first','last','email','tel','type'].forEach(function(n){keep[n]=fm.elements[n].value});if(e.target.id==='newDate')A.newDate=e.target.value;else{A.newType=e.target.value;A.newDate=null}newModal();fm=$('#newForm');Object.keys(keep).forEach(function(n){fm.elements[n].value=keep[n]})}});
 $('#modalHost').addEventListener('click',function(e){if(e.target.closest('[data-a="closeModal"]')||e.target.classList.contains('modal'))$('#modalHost').innerHTML=''});
 $('#modalHost').addEventListener('submit',function(e){e.preventDefault();var f=e.target.elements;if(!f.first.value.trim()||!f.last.value.trim()||!f.time.value)return;
-  S.bookings.push({id:uid('b'),type:f.type.value,date:f.date.value,time:f.time.value,first:f.first.value.trim(),last:f.last.value.trim(),email:f.email.value.trim()||'geen e-mail',tel:f.tel.value.trim()||'geen nummer',note:'',status:'confirmed',created:Date.now()});
+  var tv=f.type.value,extra=tv==='scanstart'?{scanKind:'start',pkg:'ritme',term:1}:tv==='scan'?{scanKind:'los'}:{};S.bookings.push(Object.assign({id:uid('b'),type:tv==='scanstart'?'scan':tv,date:f.date.value,time:f.time.value,first:f.first.value.trim(),last:f.last.value.trim(),email:f.email.value.trim()||'geen e-mail',tel:f.tel.value.trim()||'geen nummer',note:'',status:'confirmed',created:Date.now()},extra));
   save();$('#modalHost').innerHTML='';A.newDate=null;A.filter='upcoming';renderAdmin();toast('Boeking toegevoegd en bevestigd.')});
 function rangesValid(rs){var x=rs.slice().sort(function(a,b){return mins(a.from)-mins(b.from)});for(var i=0;i<x.length;i++){if(mins(x[i].to)<=mins(x[i].from))return 'Het einduur moet na het beginuur liggen.';if(i&&mins(x[i].from)<mins(x[i-1].to))return 'Twee momenten op dezelfde dag mogen niet overlappen.'}return ''}
 host.addEventListener('click',function(e){

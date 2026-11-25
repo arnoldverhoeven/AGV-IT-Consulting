@@ -127,6 +127,8 @@ header.site .wrap{display:flex;align-items:center;justify-content:space-between;
 .checks li{padding-left:28px;position:relative}
 .checks li::before{content:"✓";position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;background:var(--champ);color:var(--navy);font-size:.72rem;font-weight:800;display:grid;place-items:center;margin-top:3px}
 .price{font-family:var(--f-d);font-size:2rem;font-weight:700;color:var(--navy);line-height:1}
+.price.incl{font-size:1.5rem}
+.price.incl small{display:block;margin-top:6px}
 .price small{font-family:var(--f-b);font-size:.86rem;font-weight:600;color:var(--muted)}
 .card.hl{border-color:var(--gold-2);box-shadow:0 14px 34px rgba(138,88,35,.1)}
 .card .btn{margin-top:16px}
@@ -445,7 +447,7 @@ footer.site a{color:#fff}footer.site a:hover{color:var(--champ)}
       <p class="lead">Geen drukke zaal, geen standaardschema. Je traint één op één, met een plan dat past bij je lichaam, je agenda en je doel. Met een InBody-scan zie je zwart op wit wat er verandert. Je kiest zelf je moment en boekt online.</p>
       <div class="cta-row">
         <a href="#boeken" class="btn btn-gold">Boek een sessie</a>
-        <a href="#boeken" class="btn btn-line" data-type="intro">Gratis kennismaking + scan</a>
+        <a href="#boeken" class="btn btn-line" data-type="intro">Gratis kennismaking</a>
       </div>
       <ul class="facts" id="facts"></ul>
     </div>
@@ -474,7 +476,7 @@ footer.site a{color:#fff}footer.site a:hover{color:var(--champ)}
       <h2>Van eerste gesprek tot <span class="serif">vaste gewoonte</span></h2>
     </div>
     <div class="grid3">
-      <div class="card"><span class="tag">Kennismaking</span><h3>Eerst meten en luisteren</h3><p>Een gratis gesprek van 30 minuten met een InBody-nulmeting. Waar sta je nu, wat wil je bereiken, wat hield je tot nu toe tegen?</p></div>
+      <div class="card"><span class="tag">Kennismaking</span><h3>Eerst luisteren</h3><p>Een gratis gesprek van 30 minuten. Waar sta je nu, wat wil je bereiken, wat hield je tot nu toe tegen? Start je daarna met Ritme of Ritme+, dan begin je met een InBody-nulmeting.</p></div>
       <div class="card"><span class="tag">Plan</span><h3>Een schema dat bij jou past</h3><p>Je krijgt een plan op maat van je niveau, je doel en je week. Geen kopie van iemand anders, en haalbaar naast werk en gezin.</p></div>
       <div class="card"><span class="tag">Opvolging</span><h3>Trainen en meten</h3><p>Elke sessie stuurt Kevin techniek en belasting bij. Met een maandelijkse InBody-scan zie je wat het oplevert, in spiermassa en vet, niet alleen op de weegschaal.</p></div>
     </div>
@@ -482,7 +484,7 @@ footer.site a{color:#fff}footer.site a:hover{color:var(--champ)}
       <div><b>1 op 1</b><span>Altijd persoonlijke begeleiding</span></div>
       <div><b>7 dagen</b><span>Weekavonden en weekendochtenden</span></div>
       <div><b id="bandN">48 uur</b><span id="bandNs">Online boeken tot 48 uur vooraf</span></div>
-      <div><b>€ 0</b><span>Kennismaking met InBody-nulmeting</span></div>
+      <div><b>€ 0</b><span>Vrijblijvend kennismakingsgesprek</span></div>
     </div>
   </div>
 </section>
@@ -493,8 +495,8 @@ footer.site a{color:#fff}footer.site a:hover{color:var(--champ)}
       <p class="eyebrow">InBody-scan</p>
       <h2>Meer dan een weegschaal: <span class="serif">zie wat er verandert</span></h2>
       <p style="color:var(--muted);margin-top:10px">Kevin werkt met de InBody 380. Je staat even op het toestel, houdt de handgrepen vast en in minder dan 30 seconden heb je een volledig beeld van je lichaamssamenstelling. Daarna overloop je samen de resultaten.</p>
-      <div class="cta-row" style="margin-top:18px"><a href="#boeken" class="btn btn-gold" data-type="scan">Boek een InBody-scan</a><a href="#boeken" class="btn btn-line" data-type="intro">Gratis nulmeting</a></div>
-      <p class="note">Losse scan € <span data-sprice>30</span>. Maandelijks inbegrepen in de Ritme-pakketten. Je eerste meting is gratis bij de kennismaking.</p>
+      <div class="cta-row" style="margin-top:18px"><a href="#boeken" class="btn btn-gold" data-type="scan" data-skind="los">Boek een InBody-scan</a><a href="#tarieven" class="btn btn-line">Bekijk Ritme en Ritme+</a></div>
+      <p class="note">Losse scan € <span data-sprice>30</span>. Start je met Ritme of Ritme+ voor 1 of 3 maanden, dan zijn de nulmeting en een maandelijkse scan inbegrepen.</p>
     </div>
     <div class="ib-grid">
       <div><b>Spiermassa</b><span>Bouw je effectief spieren op?</span></div>
@@ -532,10 +534,10 @@ footer.site a{color:#fff}footer.site a:hover{color:var(--champ)}
       <h2>Duidelijke prijzen, <span class="serif">geen abonnement</span> dat je vastzet</h2>
     </div>
     <div class="grid4">
-      <div class="card"><span class="tag">Start</span><h3>Kennismaking</h3><div class="price">€ 0 <small>| 30 min</small></div><ul class="checks"><li>Gesprek over je doel</li><li>InBody-nulmeting</li><li>Vrijblijvend advies</li></ul><a href="#boeken" class="btn btn-line" data-type="intro">Plan je kennismaking</a></div>
+      <div class="card"><span class="tag">Start</span><h3>InBody-nulmeting</h3><div class="price incl">Inbegrepen <small>bij Ritme en Ritme+</small></div><ul class="checks"><li>Je vertrekpunt in cijfers</li><li>Bij een start voor 1 of 3 maanden</li><li>Vooraf een gratis kennismakingsgesprek</li></ul><a href="#boeken" class="btn btn-line" data-type="intro">Plan je kennismaking</a></div>
       <div class="card"><span class="tag">Los</span><h3>PT-sessie</h3><div class="price">€ <span data-pprice>80</span> <small>| <span data-dur>60</span> min</small></div><ul class="checks"><li>Eén op één begeleiding</li><li>Persoonlijk trainingsplan</li><li>InBody-scan los: € <span data-sprice>30</span></li></ul><a href="#boeken" class="btn btn-line" data-type="pt">Boek een sessie</a></div>
-      <div class="card hl"><span class="tag">Meest gekozen</span><h3>Ritme</h3><div class="price">€ 300 <small>| per maand</small></div><ul class="checks"><li>4 PT-sessies (1× per week)</li><li>Maandelijkse InBody-scan inbegrepen</li><li>€ 75 per sessie</li></ul><a href="#contact" class="btn btn-gold">Start met Ritme</a></div>
-      <div class="card"><span class="tag">Resultaat</span><h3>Ritme+</h3><div class="price">€ 560 <small>| per maand</small></div><ul class="checks"><li>8 PT-sessies (2× per week)</li><li>Maandelijkse InBody-scan</li><li>Voedingsrichtlijnen op basis van je scan</li></ul><a href="#contact" class="btn btn-line">Start met Ritme+</a></div>
+      <div class="card hl"><span class="tag">Meest gekozen</span><h3>Ritme</h3><div class="price">€ 300 <small>| per maand</small></div><ul class="checks"><li>4 PT-sessies (1× per week)</li><li>InBody-nulmeting en maandelijkse scan</li><li>Voor 1 of 3 maanden</li></ul><a href="#boeken" class="btn btn-gold" data-type="scan" data-skind="start" data-spkg="ritme">Start met Ritme</a></div>
+      <div class="card"><span class="tag">Resultaat</span><h3>Ritme+</h3><div class="price">€ 560 <small>| per maand</small></div><ul class="checks"><li>8 PT-sessies (2× per week)</li><li>InBody-nulmeting en maandelijkse scan</li><li>Voedingsrichtlijnen op basis van je scan</li><li>Voor 1 of 3 maanden</li></ul><a href="#boeken" class="btn btn-line" data-type="scan" data-skind="start" data-spkg="ritmeplus">Start met Ritme+</a></div>
     </div>
     <p class="note">Groepsles € <span data-gprice>15</span> per les. Losse InBody-scan gedaan en binnen 14 dagen een Ritme-pakket gestart? Dan trekken we de € <span data-sprice>30</span> af van je eerste maand.</p>
     <p class="note">Richtprijzen incl. btw, definitief af te stemmen met Aurix.</p>
