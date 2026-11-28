@@ -98,25 +98,22 @@ function toast(msg){var o=$('.toast');if(o)o.remove();var t=document.createEleme
 var P={scanKind:'start',pkg:'ritme',term:1,type:'pt',date:null,time:null,lessonId:null,page:0,done:null,form:{}};
 function renderStatic(){
   var s=S.settings;
-  $('#facts').innerHTML=['Eén op één','InBody-scan','Groepslessen tot '+s.groupMax+' personen','Antwerpsebaan 143, Berendrecht'].map(function(x){return '<li>'+x+'</li>'}).join('');
-  $('#bookIntro').textContent='Boeken kan tot '+hrsTxt(s.minNoticeH)+' voor de start, en tot '+Math.round(s.horizonDays/7)+' weken vooruit.';
-  $('#faqNotice').textContent='Je kan online boeken tot '+hrsTxt(s.minNoticeH)+' voor de start van de sessie. Zo kan elke training goed voorbereid worden. Momenten die dichterbij liggen, verschijnen niet meer in de agenda.';
-  $('#faqApproval').textContent=s.approval?'Na je aanvraag krijg je meteen een ontvangstbevestiging per e-mail. Je coach bekijkt elke aanvraag persoonlijk en bevestigt ze zo snel mogelijk. Pas dan is je plaats definitief.':'Ja. Zodra je boekt, is je plaats gereserveerd en krijg je een bevestiging per e-mail.';
-  $('#faqHours').textContent=hoursSummary().filter(function(r){return r[1]!=='gesloten'}).map(function(r){return r[0]+' van '+r[1]}).join('. ')+'. Een PT-sessie duurt '+s.slotMin+' minuten.';
-  $('#faqCancel').textContent='Kosteloos verplaatsen of annuleren kan tot '+hrsTxt(s.cancelH)+' voor je sessie, via de link in je bevestigingsmail.';
-  $('#faqGroup').textContent='Een groepsles telt maximaal '+s.groupMax+' deelnemers en gaat door vanaf '+s.groupMin+' inschrijvingen. Zijn er '+hrsTxt(s.minNoticeH)+' voor de start minder dan '+s.groupMin+' deelnemers, dan vervalt de les en krijg je meteen bericht. Je betaalt dan niets.';
-  $('#hoursTable').innerHTML=hoursSummary().map(function(r){return '<tr><td>'+r[0]+'</td><td>'+r[1]+'</td></tr>'}).join('');
+  function T(sel,v){var e=$(sel);if(e)e.textContent=v}
+  T('#bookIntro','Online boeken kan tot '+hrsTxt(s.minNoticeH)+' voor de start.');
+  T('#faqNotice','Tot '+hrsTxt(s.minNoticeH)+' voor de start, en maximaal '+Math.round(s.horizonDays/7)+' weken vooruit.');
+  T('#faqApproval',s.approval?'Kevin bevestigt elke aanvraag persoonlijk. Je krijgt bericht per e-mail.':'Ja, je krijgt meteen een bevestiging per e-mail.');
+  T('#faqHours',hoursSummary().filter(function(r){return r[1]!=='gesloten'}).map(function(r){return r[0]+': '+r[1]}).join('. ')+'.');
+  T('#faqCancel','Kosteloos tot '+hrsTxt(s.cancelH)+' vooraf, via de link in je bevestiging.');
+  T('#faqGroup','Maximaal '+s.groupMax+' deelnemers. De les gaat door vanaf '+s.groupMin+'. Zo niet, dan krijg je '+hrsTxt(s.minNoticeH)+' vooraf bericht en betaal je niets.');
+  var ht=$('#hoursTable');if(ht)ht.innerHTML=hoursSummary().map(function(r){return '<tr><td>'+r[0]+'</td><td>'+r[1]+'</td></tr>'}).join('');
   $$('[data-dur]').forEach(function(e){e.textContent=s.slotMin});
   $$('[data-gmax]').forEach(function(e){e.textContent=s.groupMax});
   $$('[data-gmin]').forEach(function(e){e.textContent=s.groupMin});
   $$('[data-gprice]').forEach(function(e){e.textContent=s.groupPrice});
   $$('[data-sprice]').forEach(function(e){e.textContent=s.scanPrice});
   $$('[data-pprice]').forEach(function(e){e.textContent=s.ptPrice});
-  var nf=nextFree(4);
-  $('#nextList').innerHTML=nf.length?nf.map(function(f){var d=pd(f[0]);return '<button type="button" data-d="'+f[0]+'" data-t="'+f[1]+'"><span>'+DOWL[d.getDay()]+' '+d.getDate()+' '+MON[d.getMonth()]+'</span><b>'+f[1]+'</b></button>'}).join(''):'<div class="empty">Momenteel volzet. Stuur gerust een bericht.</div>';
-  $('#nextNote').textContent='Rechtstreeks uit de agenda. Klik een moment om te boeken.';
-  var L=publicLessons().slice(0,4);
-  $('#groupList').innerHTML=L.length?L.map(function(l){var sp=spotsLine(l);return '<div class="gl"><div class="gl-when"><b>'+l.time+'</b><span>'+short(l.date)+'</span></div><div class="gl-what"><b>'+esc(l.title)+'</b>'+spotsBar(l)+'<span class="sp-'+sp.cls+'">'+sp.txt+'</span></div><button type="button" class="btn btn-sm '+(sp.cls==='full'?'btn-line" disabled':'btn-gold"')+' data-lesson="'+l.id+'">'+(sp.cls==='full'?'Volzet':'Inschrijven')+'</button></div>'}).join(''):'<div class="empty">Momenteel geen groepslessen gepland.</div>';
+  var nl=$('#nextList');if(nl){var nf=nextFree(3);
+    nl.innerHTML=nf.length?nf.map(function(f){var d=pd(f[0]);return '<button type="button" data-d="'+f[0]+'" data-t="'+f[1]+'">'+DOW[d.getDay()]+' '+d.getDate()+' '+MON[d.getMonth()]+' <b>'+f[1]+'</b></button>'}).join(''):'<span>Momenteel volzet</span>'}
 }
 function dayList(){var out=[],d=today();for(var i=0;i<=S.settings.horizonDays;i++)out.push(ymd(addDays(d,i)));return out}
 function typeSub(k){var s=S.settings;return k==='pt'?s.slotMin+' min, € '+s.ptPrice:k==='group'?'Max. '+s.groupMax+' pers., € '+s.groupPrice:k==='scan'?'Nulmeting of losse scan':'30 min, gratis en vrijblijvend'}
